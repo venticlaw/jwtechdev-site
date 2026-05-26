@@ -1,0 +1,958 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JWTechDev — Joshua Walker · Cloud, AI, and one anime reference</title>
+  <meta name="description" content="Joshua TechDev Walker — senior cloud + AI builder, AWS Community Builder, Claude enthusiast. YouTube tutorials, TikTok shorts, tutoring, branded content, speaking, and free study guides." />
+  <link rel="icon" type="image/png" href="assets/jwtechdev-logo.png" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="JWTechDev home">
+        <img src="assets/jwtechdev-logo.png" alt="" class="brand__mark" />
+        <span class="brand__word">JWTechDev<small>Joshua Walker</small></span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#youtube">YouTube</a>
+        <a href="#tiktok">TikTok</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#assets">Assets</a>
+      </nav>
+      <a href="#connect" class="btn btn--primary btn--sm header-cta">Work with me</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <a href="#youtube">YouTube</a>
+      <a href="#tiktok">TikTok</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#assets">Assets</a>
+      <a href="#connect" class="btn btn--primary">Work with me</a>
+    </div>
+  </header>
+  <main id="top">
+    <section class="hero" data-screen-label="01 Hero">
+      <div class="hero__watermark" aria-hidden="true"><img src="assets/jwtechdev-logo.png" alt="" /></div>
+      <div class="container hero__inner">
+        <div class="hero__copy reveal">
+          <span class="eyebrow">Cloud · AI · Builder · Florida</span>
+          <h1 class="hero__title">
+            Hey, I’m Josh.<br/>
+            <span class="hero__title-accent">I build cloud stuff</span><br/>
+            and explain it badly<br/>
+            on purpose.
+          </h1>
+          <p class="hero__lede">10+ years deep in tech. AWS Community Builder, Claude enthusiast, full-time anime apologist. I take the gnarly stuff — Kubernetes, IAM, RAG — and turn it into something you’d watch on your phone while waiting for the bus.</p>
+          <div class="hero__cta">
+            <a href="#youtube" class="btn btn--primary btn--lg"><svg class="ico" viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg>Watch the latest</a>
+            <a href="#about" class="btn btn--outline btn--lg">More about me →</a>
+          </div>
+        </div>
+        <aside class="hero__stats reveal" aria-label="At a glance">
+          <div class="hero__stat hero__stat--burgundy"><span class="num">10+</span><span class="label">Years in tech</span></div>
+          <div class="hero__stat hero__stat--orange"><span class="num">120K</span><span class="label">Followers · all platforms</span></div>
+          <div class="hero__stat hero__stat--navy"><span class="num">8</span><span class="label">Industry certifications</span></div>
+          <div class="hero__stat hero__stat--green"><span class="num">200+</span><span class="label">Students tutored</span></div>
+        </aside>
+      </div>
+    </section>
+    <section class="section" id="youtube" data-screen-label="02 YouTube">
+      <div class="container">
+        <header class="section__head section__head--row">
+          <div class="section__head-text">
+            <span class="eyebrow">YouTube — long form</span>
+            <h2 class="section__title">Tutorials you can actually finish.</h2>
+            <p class="section__lede">Deep-dives, full builds, and the occasional rant. New video every Wednesday. Subscribe if you want more — don’t if you don’t, I’ll know.</p>
+          </div>
+          <a href="#" class="link-arrow" aria-label="Open YouTube channel">Visit channel <span aria-hidden="true">↗</span></a>
+        </header>
+        <article class="yt-feature reveal">
+          <div class="yt-feature__thumb" role="button" tabindex="0" aria-label="Play featured video">
+            <span class="yt-feature__chrome">
+              <svg viewBox="0 0 24 17" fill="currentColor">
+                <path d="M23 2.5a3 3 0 0 0-2.1-2.1C19 0 12 0 12 0s-7 0-8.9.4A3 3 0 0 0 1 2.5 31 31 0 0 0 .6 7 31 31 0 0 0 1 11.5a3 3 0 0 0 2.1 2.1C5 14 12 14 12 14s7 0 8.9-.4A3 3 0 0 0 23 11.5 31 31 0 0 0 23.4 7 31 31 0 0 0 23 2.5Z" fill="#FF0033" stroke="none"/>
+                <polygon points="10 10 14 7 10 4 10 10" fill="#fff" stroke="none"/>
+              </svg>
+              YouTube
+            </span>
+            <span class="yt-feature__duration">24:18</span>
+            <div class="yt-feature__caption">
+              <h3>Building a RAG agent with Claude — start to deployed, in one sitting.</h3>
+            </div>
+            <div class="yt-feature__play" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
+          </div>
+          <div class="yt-feature__side">
+            <span class="yt-feature__tag">New this week</span>
+            <h3 class="yt-feature__h">RAG, but make it actually work</h3>
+            <p class="yt-feature__desc">I built a retrieval-augmented agent on top of Claude — Bedrock for the model, a vector store I’d never used before, and a deploy pipeline that didn’t catch fire. Whole build, 24 minutes. Repo in the description.</p>
+            <ul class="yt-feature__meta">
+              <li><strong>24:18</strong> runtime</li>
+              <li><strong>32K</strong> views</li>
+              <li>Posted 4 days ago</li>
+            </ul>
+            <div><a href="#" class="btn btn--dark"><svg class="ico" viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4" fill="currentColor" stroke="none"/></svg>Watch on YouTube</a></div>
+          </div>
+        </article>
+        <div class="yt-grid">
+          
+          <article class="yt-card reveal">
+            <div class="yt-card__thumb yt-card__thumb--a">
+              <div class="yt-card__playicon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
+              <div class="yt-card__overlay">
+                <h4 class="yt-card__overlay-title">VPCs without crying</h4>
+                <span class="yt-card__duration">14:02</span>
+              </div>
+            </div>
+            <div class="yt-card__body">
+              <span class="badge badge--burgundy">Tutorial</span>
+              <h3 class="yt-card__title">Why Kubernetes feels like Bleach filler — and how to skip it</h3>
+              <ul class="yt-card__meta"><li>Cloud</li><li>12K views</li><li>1 week ago</li></ul>
+            </div>
+          </article>
+          <article class="yt-card reveal">
+            <div class="yt-card__thumb yt-card__thumb--b">
+              <div class="yt-card__playicon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
+              <div class="yt-card__overlay">
+                <h4 class="yt-card__overlay-title">IAM in plain English</h4>
+                <span class="yt-card__duration">18:47</span>
+              </div>
+            </div>
+            <div class="yt-card__body">
+              <span class="badge badge--green">Deep dive</span>
+              <h3 class="yt-card__title">IAM policies, but I explain every line like you’re my coworker</h3>
+              <ul class="yt-card__meta"><li>AWS</li><li>21K views</li><li>2 weeks ago</li></ul>
+            </div>
+          </article>
+          <article class="yt-card reveal">
+            <div class="yt-card__thumb yt-card__thumb--c">
+              <div class="yt-card__playicon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
+              <div class="yt-card__overlay">
+                <h4 class="yt-card__overlay-title">Claude · agents · 101</h4>
+                <span class="yt-card__duration">22:30</span>
+              </div>
+            </div>
+            <div class="yt-card__body">
+              <span class="badge badge--burgundy">Claude</span>
+              <h3 class="yt-card__title">Building your first Claude agent (no, you don’t need a framework yet)</h3>
+              <ul class="yt-card__meta"><li>AI</li><li>48K views</li><li>3 weeks ago</li></ul>
+            </div>
+          </article>
+          <article class="yt-card reveal">
+            <div class="yt-card__thumb yt-card__thumb--d">
+              <div class="yt-card__playicon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
+              <div class="yt-card__overlay">
+                <h4 class="yt-card__overlay-title">Lambda · cold start</h4>
+                <span class="yt-card__duration">9:55</span>
+              </div>
+            </div>
+            <div class="yt-card__body">
+              <span class="badge badge--orange">Serverless</span>
+              <h3 class="yt-card__title">Lambda is a vending machine — and cold starts are why you’re hangry</h3>
+              <ul class="yt-card__meta"><li>Serverless</li><li>9.4K views</li><li>1 month ago</li></ul>
+            </div>
+          </article>
+          <article class="yt-card reveal">
+            <div class="yt-card__thumb yt-card__thumb--e">
+              <div class="yt-card__playicon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
+              <div class="yt-card__overlay">
+                <h4 class="yt-card__overlay-title">Junior → Senior</h4>
+                <span class="yt-card__duration">16:08</span>
+              </div>
+            </div>
+            <div class="yt-card__body">
+              <span class="badge badge--navy">Career</span>
+              <h3 class="yt-card__title">Junior to senior in 5 years — the moves nobody tells you about</h3>
+              <ul class="yt-card__meta"><li>Career</li><li>54K views</li><li>1 month ago</li></ul>
+            </div>
+          </article>
+          <article class="yt-card reveal">
+            <div class="yt-card__thumb yt-card__thumb--f">
+              <div class="yt-card__playicon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
+              <div class="yt-card__overlay">
+                <h4 class="yt-card__overlay-title">Terraform · the right way</h4>
+                <span class="yt-card__duration">28:12</span>
+              </div>
+            </div>
+            <div class="yt-card__body">
+              <span class="badge badge--green">Builder</span>
+              <h3 class="yt-card__title">Terraform from zero — modules, state, and why you should care about both</h3>
+              <ul class="yt-card__meta"><li>IaC</li><li>17K views</li><li>5 weeks ago</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="section section--ink" id="tiktok" data-screen-label="03 TikTok">
+      <div class="container">
+        <header class="section__head section__head--row">
+          <div class="section__head-text">
+            <span class="eyebrow eyebrow--light">TikTok — short form</span>
+            <h2 class="section__title section__title--light">Forty-seven seconds of tech, one anime reference.</h2>
+            <p class="section__lede section__lede--light">Quick hits, hot takes, and the occasional Florida weather metaphor. Daily-ish.</p>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:14px;">
+            <div class="tt-head__count">68.4K<small>followers · @jwtechdev</small></div>
+            <a class="tt-handle" href="#" aria-label="Open TikTok profile">
+              <span class="tt-handle__avatar">JW</span>
+              <span>Follow @jwtechdev</span>
+            </a>
+          </div>
+        </header>
+        <div class="tt-grid">
+          
+          <a class="tt-card reveal" href="#" aria-label="Lambda is just a vending machine and I w">
+            <div class="tt-card__thumb tt-card__thumb--a">
+              <div class="tt-card__sound"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>original sound</div>
+              <div class="tt-card__playicon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
+              <div class="tt-card__body">
+                <p class="tt-card__caption">Lambda is just a vending machine and I will die on this hill 🥤</p>
+                <div class="tt-card__stats">
+                  <span><svg viewBox="0 0 24 24" class="filled"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 5a5.5 5.5 0 0 1 9.5 7c-2.5 4.5-9.5 9-9.5 9z"/></svg> 124K</span>
+                  <span><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 1 1-3.7-6.8L21 4l-1 4-4 1 2.5 1.5A8 8 0 0 1 21 12z"/></svg> 1.8K</span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="tt-card reveal" href="#" aria-label="POV: explaining a VPC using only the lay">
+            <div class="tt-card__thumb tt-card__thumb--b">
+              <div class="tt-card__sound"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>original sound</div>
+              <div class="tt-card__playicon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
+              <div class="tt-card__body">
+                <p class="tt-card__caption">POV: explaining a VPC using only the layout of your house</p>
+                <div class="tt-card__stats">
+                  <span><svg viewBox="0 0 24 24" class="filled"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 5a5.5 5.5 0 0 1 9.5 7c-2.5 4.5-9.5 9-9.5 9z"/></svg> 89K</span>
+                  <span><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 1 1-3.7-6.8L21 4l-1 4-4 1 2.5 1.5A8 8 0 0 1 21 12z"/></svg> 902</span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="tt-card reveal" href="#" aria-label="Claude wrote my deploy script. I’m scare">
+            <div class="tt-card__thumb tt-card__thumb--c">
+              <div class="tt-card__sound"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>original sound</div>
+              <div class="tt-card__playicon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
+              <div class="tt-card__body">
+                <p class="tt-card__caption">Claude wrote my deploy script. I’m scared and impressed. 🍥</p>
+                <div class="tt-card__stats">
+                  <span><svg viewBox="0 0 24 24" class="filled"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 5a5.5 5.5 0 0 1 9.5 7c-2.5 4.5-9.5 9-9.5 9z"/></svg> 212K</span>
+                  <span><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 1 1-3.7-6.8L21 4l-1 4-4 1 2.5 1.5A8 8 0 0 1 21 12z"/></svg> 3.4K</span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="tt-card reveal" href="#" aria-label="3 things juniors do that I wish I’d done">
+            <div class="tt-card__thumb tt-card__thumb--d">
+              <div class="tt-card__sound"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>original sound</div>
+              <div class="tt-card__playicon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
+              <div class="tt-card__body">
+                <p class="tt-card__caption">3 things juniors do that I wish I’d done at 22</p>
+                <div class="tt-card__stats">
+                  <span><svg viewBox="0 0 24 24" class="filled"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 5a5.5 5.5 0 0 1 9.5 7c-2.5 4.5-9.5 9-9.5 9z"/></svg> 96K</span>
+                  <span><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 1 1-3.7-6.8L21 4l-1 4-4 1 2.5 1.5A8 8 0 0 1 21 12z"/></svg> 1.2K</span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="tt-card reveal" href="#" aria-label="In Florida the cloud is a metaphor AND a">
+            <div class="tt-card__thumb tt-card__thumb--e">
+              <div class="tt-card__sound"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>original sound</div>
+              <div class="tt-card__playicon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
+              <div class="tt-card__body">
+                <p class="tt-card__caption">In Florida the cloud is a metaphor AND a weather report ☁️</p>
+                <div class="tt-card__stats">
+                  <span><svg viewBox="0 0 24 24" class="filled"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 5a5.5 5.5 0 0 1 9.5 7c-2.5 4.5-9.5 9-9.5 9z"/></svg> 71K</span>
+                  <span><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 1 1-3.7-6.8L21 4l-1 4-4 1 2.5 1.5A8 8 0 0 1 21 12z"/></svg> 640</span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="tt-card reveal" href="#" aria-label="S3 storage classes ranked from “duh” to ">
+            <div class="tt-card__thumb tt-card__thumb--f">
+              <div class="tt-card__sound"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>original sound</div>
+              <div class="tt-card__playicon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
+              <div class="tt-card__body">
+                <p class="tt-card__caption">S3 storage classes ranked from “duh” to “what were you doing”</p>
+                <div class="tt-card__stats">
+                  <span><svg viewBox="0 0 24 24" class="filled"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 5a5.5 5.5 0 0 1 9.5 7c-2.5 4.5-9.5 9-9.5 9z"/></svg> 58K</span>
+                  <span><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 1 1-3.7-6.8L21 4l-1 4-4 1 2.5 1.5A8 8 0 0 1 21 12z"/></svg> 480</span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="tt-card reveal" href="#" aria-label="Auto-scaling, but I describe it as a Nar">
+            <div class="tt-card__thumb tt-card__thumb--g">
+              <div class="tt-card__sound"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>original sound</div>
+              <div class="tt-card__playicon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
+              <div class="tt-card__body">
+                <p class="tt-card__caption">Auto-scaling, but I describe it as a Naruto shadow clone jutsu</p>
+                <div class="tt-card__stats">
+                  <span><svg viewBox="0 0 24 24" class="filled"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 5a5.5 5.5 0 0 1 9.5 7c-2.5 4.5-9.5 9-9.5 9z"/></svg> 184K</span>
+                  <span><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 1 1-3.7-6.8L21 4l-1 4-4 1 2.5 1.5A8 8 0 0 1 21 12z"/></svg> 2.1K</span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="tt-card reveal" href="#" aria-label="The cloud interview question that filter">
+            <div class="tt-card__thumb tt-card__thumb--h">
+              <div class="tt-card__sound"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>original sound</div>
+              <div class="tt-card__playicon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
+              <div class="tt-card__body">
+                <p class="tt-card__caption">The cloud interview question that filters out 80% of people</p>
+                <div class="tt-card__stats">
+                  <span><svg viewBox="0 0 24 24" class="filled"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 5a5.5 5.5 0 0 1 9.5 7c-2.5 4.5-9.5 9-9.5 9z"/></svg> 109K</span>
+                  <span><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 1 1-3.7-6.8L21 4l-1 4-4 1 2.5 1.5A8 8 0 0 1 21 12z"/></svg> 1.6K</span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="tt-card reveal" href="#" aria-label="A day in the life: cloud engineer in Tam">
+            <div class="tt-card__thumb tt-card__thumb--i">
+              <div class="tt-card__sound"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>original sound</div>
+              <div class="tt-card__playicon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
+              <div class="tt-card__body">
+                <p class="tt-card__caption">A day in the life: cloud engineer in Tampa edition</p>
+                <div class="tt-card__stats">
+                  <span><svg viewBox="0 0 24 24" class="filled"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 5a5.5 5.5 0 0 1 9.5 7c-2.5 4.5-9.5 9-9.5 9z"/></svg> 44K</span>
+                  <span><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 1 1-3.7-6.8L21 4l-1 4-4 1 2.5 1.5A8 8 0 0 1 21 12z"/></svg> 380</span>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a class="tt-card reveal" href="#" aria-label="One prompt trick that makes Claude 10x b">
+            <div class="tt-card__thumb tt-card__thumb--j">
+              <div class="tt-card__sound"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>original sound</div>
+              <div class="tt-card__playicon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
+              <div class="tt-card__body">
+                <p class="tt-card__caption">One prompt trick that makes Claude 10x better at code</p>
+                <div class="tt-card__stats">
+                  <span><svg viewBox="0 0 24 24" class="filled"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 5a5.5 5.5 0 0 1 9.5 7c-2.5 4.5-9.5 9-9.5 9z"/></svg> 256K</span>
+                  <span><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 1 1-3.7-6.8L21 4l-1 4-4 1 2.5 1.5A8 8 0 0 1 21 12z"/></svg> 4.2K</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="about" data-screen-label="04 About">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about__portrait reveal" role="img" aria-label="Portrait placeholder of Joshua Walker">
+            <span class="about__portrait-pin about__portrait-pin--tl">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              Tampa, FL
+            </span>
+            <span class="about__portrait-pin about__portrait-pin--br">AWS Community Builder</span>
+            <div class="about__portrait-inner">
+              <span class="who">Joshua Walker</span>
+              <span class="who-sub">a.k.a. TechDev</span>
+              <span class="placeholder-tag">drop photo at assets/portrait.jpg</span>
+            </div>
+          </div>
+          <div class="about__copy reveal">
+            <span class="eyebrow">About me</span>
+            <h2 class="section__title">Senior eng who hangs out at the anime con.</h2>
+            <p>I’ve spent <strong>more than a decade in tech</strong> — from racking servers in a closet to architecting cloud platforms most of you have probably used without knowing it. Now I make videos.</p>
+            <p>My whole thing is this: complex concepts are not actually complex, they’re just badly explained. I take the gnarly stuff — Kubernetes, IAM, retrieval-augmented generation — and turn it into something you’d watch on your phone while waiting for the bus. With jokes. And usually one anime reference.</p>
+            <p>Off the channel I’m an <strong>AWS Community Builder</strong>, I lead a tech non-profit focused on getting more underrepresented folks into cloud careers, and I live in Florida where the cloud is both a metaphor and a weather report.</p>
+            <div class="creds-block">
+              <div class="creds-col">
+                <h4>Certifications</h4>
+                <ul class="cert-list">
+                  <li class="cert">
+                    <span class="cert__badge cert__badge--aws">AWS</span>
+                    <div>
+                      <div class="cert__name">Solutions Architect — Professional</div>
+                      <div class="cert__org">Amazon Web Services</div>
+                    </div>
+                    <span class="cert__year">2024</span>
+                  </li>
+                  <li class="cert">
+                    <span class="cert__badge cert__badge--aws">AWS</span>
+                    <div>
+                      <div class="cert__name">DevOps Engineer — Professional</div>
+                      <div class="cert__org">Amazon Web Services</div>
+                    </div>
+                    <span class="cert__year">2023</span>
+                  </li>
+                  <li class="cert">
+                    <span class="cert__badge cert__badge--aws">AWS</span>
+                    <div>
+                      <div class="cert__name">Security — Specialty</div>
+                      <div class="cert__org">Amazon Web Services</div>
+                    </div>
+                    <span class="cert__year">2023</span>
+                  </li>
+                  <li class="cert">
+                    <span class="cert__badge cert__badge--ai">AI</span>
+                    <div>
+                      <div class="cert__name">AI Practitioner</div>
+                      <div class="cert__org">Amazon Web Services</div>
+                    </div>
+                    <span class="cert__year">2024</span>
+                  </li>
+                  <li class="cert">
+                    <span class="cert__badge cert__badge--ccp">K8s</span>
+                    <div>
+                      <div class="cert__name">Certified Kubernetes Administrator</div>
+                      <div class="cert__org">Cloud Native Computing Foundation</div>
+                    </div>
+                    <span class="cert__year">2022</span>
+                  </li>
+                  <li class="cert">
+                    <span class="cert__badge cert__badge--ai">TF</span>
+                    <div>
+                      <div class="cert__name">Terraform Associate</div>
+                      <div class="cert__org">HashiCorp</div>
+                    </div>
+                    <span class="cert__year">2022</span>
+                  </li>
+                  <li class="cert">
+                    <span class="cert__badge cert__badge--sec">Sec+</span>
+                    <div>
+                      <div class="cert__name">Security+ ce</div>
+                      <div class="cert__org">CompTIA</div>
+                    </div>
+                    <span class="cert__year">2020</span>
+                  </li>
+                  <li class="cert">
+                    <span class="cert__badge cert__badge--it">A+</span>
+                    <div>
+                      <div class="cert__name">Network+ &amp; A+</div>
+                      <div class="cert__org">CompTIA</div>
+                    </div>
+                    <span class="cert__year">2018</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="creds-col">
+                <h4>Credentials &amp; roles</h4>
+                <ul class="cert-list">
+                  <li class="cert">
+                    <span class="cert__badge cert__badge--aws">CB</span>
+                    <div>
+                      <div class="cert__name">AWS Community Builder</div>
+                      <div class="cert__org">Serverless category · since 2023</div>
+                    </div>
+                    <span class="cert__year">Active</span>
+                  </li>
+                  <li class="cert">
+                    <span class="cert__badge cert__badge--ai">CC</span>
+                    <div>
+                      <div class="cert__name">Claude Builder &amp; advocate</div>
+                      <div class="cert__org">Anthropic developer community</div>
+                    </div>
+                    <span class="cert__year">2024</span>
+                  </li>
+                  <li class="cert">
+                    <span class="cert__badge cert__badge--sec">NP</span>
+                    <div>
+                      <div class="cert__name">Founder &amp; director</div>
+                      <div class="cert__org">Tech non-profit · cloud careers access</div>
+                    </div>
+                    <span class="cert__year">Active</span>
+                  </li>
+                  <li class="cert">
+                    <span class="cert__badge cert__badge--ccp">SR</span>
+                    <div>
+                      <div class="cert__name">Senior cloud engineer</div>
+                      <div class="cert__org">Fortune 500 · platform team</div>
+                    </div>
+                    <span class="cert__year">Day job</span>
+                  </li>
+                  <li class="cert">
+                    <span class="cert__badge cert__badge--it">BS</span>
+                    <div>
+                      <div class="cert__name">B.S., Information Technology</div>
+                      <div class="cert__org">University of South Florida</div>
+                    </div>
+                    <span class="cert__year">2014</span>
+                  </li>
+                </ul>
+                <h4 style="margin-top: var(--space-6);">What I’m good at</h4>
+                <ul class="creds-tags">
+                  <li>AWS</li><li>Claude · Anthropic</li><li>Kubernetes</li><li>Terraform</li><li>Serverless</li><li>IAM &amp; security</li><li>CI/CD pipelines</li><li>RAG &amp; agents</li><li>Public speaking</li><li>Mentorship</li><li>Tech non-profits</li><li>Anime metaphors</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section section--muted" id="services" data-screen-label="05 Services">
+      <div class="container">
+        <header class="section__head">
+          <span class="eyebrow">Work with me</span>
+          <h2 class="section__title">Three ways to bring me on.</h2>
+          <p class="section__lede">I keep a small slate of branded work, a couple tutoring slots a week, and a speaking calendar I plan a quarter out. Hit the form at the bottom and tell me which one you’re after.</p>
+        </header>
+        <div class="services-grid">
+          
+          <article class="service service--branded reveal">
+            <span class="service__num">01 / 03</span>
+            <span class="service__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v10H3z"/><path d="M7 17v3"/><path d="M17 17v3"/><circle cx="9" cy="12" r="1.5"/><path d="M14 9l5 6"/><path d="M19 9l-5 6"/></svg></span>
+            <h3 class="service__title">Branded content</h3>
+            <p class="service__desc">Sponsored videos, dev-tool launches, AWS &amp; AI product walkthroughs. I only pitch the stuff I’d use myself, which means I’ll tell you if your thing is mid before we shoot.</p>
+            <ul class="service__list"><li><span>Dedicated long-form video (10–25 min)</span></li><li><span>Short-form bundle: TikTok + Reels + Shorts</span></li><li><span>Newsletter feature with code sample</span></li><li><span>Honest, hands-on technical review</span></li><li><span>Usage-rights for 12 months</span></li></ul>
+            <div class="service__price">
+              <div>
+                <div class="label">Long-form campaign</div>
+                <div class="amount">from $4.8K</div>
+              </div>
+              <a href="#connect" class="btn btn--ghost btn--sm">Request rate card →</a>
+            </div>
+          </article>
+          <article class="service service--tutoring reveal">
+            <span class="service__num">02 / 03</span>
+            <span class="service__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v13"/><path d="M4 19h16"/><path d="M8 9h8"/><path d="M8 13h5"/></svg></span>
+            <h3 class="service__title">1:1 tutoring</h3>
+            <p class="service__desc">Cloud certs, system design interviews, "I have a job offer in 3 weeks and I’m panicking" sessions. We pick a goal, work backward, and I keep you accountable.</p>
+            <ul class="service__list"><li><span>AWS / GCP / Azure certification prep</span></li><li><span>System design &amp; cloud architecture</span></li><li><span>Mock interviews with real feedback</span></li><li><span>Career-change &amp; resume review</span></li><li><span>Recorded session + custom study plan</span></li></ul>
+            <div class="service__price">
+              <div>
+                <div class="label">Per session</div>
+                <div class="amount">$180 / hr</div>
+              </div>
+              <a href="#connect" class="btn btn--ghost btn--sm">Book a session →</a>
+            </div>
+          </article>
+          <article class="service service--speaking reveal">
+            <span class="service__num">03 / 03</span>
+            <span class="service__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M9 9l3 3 5-5"/></svg></span>
+            <h3 class="service__title">Speaking engagements</h3>
+            <p class="service__desc">Keynotes, conference talks, university lectures, internal company sessions. Topics I’ve done a lot: cloud careers, AI for builders, dev-creator economy, building inclusive tech orgs.</p>
+            <ul class="service__list"><li><span>Conference keynote (45–60 min)</span></li><li><span>Workshop or half-day session</span></li><li><span>University guest lecture</span></li><li><span>Internal team training &amp; town halls</span></li><li><span>Virtual / hybrid / in-person</span></li></ul>
+            <div class="service__price">
+              <div>
+                <div class="label">Day rate</div>
+                <div class="amount">starts at $6K</div>
+              </div>
+              <a href="#connect" class="btn btn--ghost btn--sm">Check availability →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="assets" data-screen-label="06 Assets">
+      <div class="container">
+        <header class="section__head">
+          <span class="eyebrow">The shop</span>
+          <h2 class="section__title">Things I’ve made you can take with you.</h2>
+          <p class="section__lede">Study guides, Claude assets, prompt packs, the workflow I run my own channel on. Some free, some not. All field-tested.</p>
+        </header>
+        <div class="assets-tabs" role="tablist" aria-label="Asset categories">
+          <button class="assets-tab is-active" role="tab" aria-selected="true" aria-controls="panel-guides" id="tab-guides">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4V4z"/><path d="M4 16a4 4 0 0 1 4-4h12"/></svg>
+            Study guides
+          </button>
+          <button class="assets-tab" role="tab" aria-selected="false" aria-controls="panel-claude" id="tab-claude">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7l9 5 9-5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>
+            Claude assets
+          </button>
+        </div>
+        <div class="assets-panel is-active" role="tabpanel" id="panel-guides" aria-labelledby="tab-guides">
+          <div class="assets-grid">
+          <article class="asset-card reveal">
+            <div class="asset-card__cover asset-card__cover--burgundy">
+              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4V4z"/><path d="M4 16a4 4 0 0 1 4-4h12"/><path d="M8 8h6"/></svg>PDF · 42 pages</span>
+              <span class="asset-card__price ">$19</span>
+              
+              <div class="asset-card__page" aria-hidden="true">
+                <div class="asset-card__page-head">JWTechDev study guide</div>
+                <div class="asset-card__page-title">AWS SAA-C03 — the cheat sheet I actually use</div>
+                <div class="asset-card__page-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="asset-card__page-foot">jwtechdev · 01</div>
+              </div>
+            </div>
+            <div class="asset-card__body">
+              <h3 class="asset-card__title">AWS Solutions Architect — Associate study guide</h3>
+              <p class="asset-card__desc">Every domain, every service, with the gotchas I learned the hard way. Updated for the C03 exam.</p>
+              <div class="asset-card__meta">
+                <span>2,400+ downloads</span>
+                <span class="download">Buy now<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></span>
+              </div>
+            </div>
+          </article>
+          <article class="asset-card reveal">
+            <div class="asset-card__cover asset-card__cover--navy">
+              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4V4z"/><path d="M4 16a4 4 0 0 1 4-4h12"/><path d="M8 8h6"/></svg>PDF · 28 pages</span>
+              <span class="asset-card__price ">$12</span>
+              
+              <div class="asset-card__page" aria-hidden="true">
+                <div class="asset-card__page-head">JWTechDev study guide</div>
+                <div class="asset-card__page-title">IAM, demystified</div>
+                <div class="asset-card__page-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="asset-card__page-foot">jwtechdev · 01</div>
+              </div>
+            </div>
+            <div class="asset-card__body">
+              <h3 class="asset-card__title">IAM &amp; policy authoring — the field manual</h3>
+              <p class="asset-card__desc">Policies, roles, boundaries, STS — explained like you’re my coworker, with copy-paste examples.</p>
+              <div class="asset-card__meta">
+                <span>1,100+ downloads</span>
+                <span class="download">Buy now<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></span>
+              </div>
+            </div>
+          </article>
+          <article class="asset-card reveal">
+            <div class="asset-card__cover asset-card__cover--orange">
+              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4V4z"/><path d="M4 16a4 4 0 0 1 4-4h12"/><path d="M8 8h6"/></svg>PDF · 36 pages</span>
+              <span class="asset-card__price ">$15</span>
+              
+              <div class="asset-card__page" aria-hidden="true">
+                <div class="asset-card__page-head">JWTechDev study guide</div>
+                <div class="asset-card__page-title">K8s in 90 minutes</div>
+                <div class="asset-card__page-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="asset-card__page-foot">jwtechdev · 01</div>
+              </div>
+            </div>
+            <div class="asset-card__body">
+              <h3 class="asset-card__title">Kubernetes for AWS engineers</h3>
+              <p class="asset-card__desc">A weekend sprint to get from kubectl-novice to deploying a real workload on EKS without crying.</p>
+              <div class="asset-card__meta">
+                <span>870 downloads</span>
+                <span class="download">Buy now<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></span>
+              </div>
+            </div>
+          </article>
+          <article class="asset-card reveal">
+            <div class="asset-card__cover asset-card__cover--green">
+              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4V4z"/><path d="M4 16a4 4 0 0 1 4-4h12"/><path d="M8 8h6"/></svg>PDF · 30 pages</span>
+              <span class="asset-card__price asset-card__price--free">FREE</span>
+              
+              <div class="asset-card__page" aria-hidden="true">
+                <div class="asset-card__page-head">JWTechDev study guide</div>
+                <div class="asset-card__page-title">The cloud interview kit</div>
+                <div class="asset-card__page-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="asset-card__page-foot">jwtechdev · 01</div>
+              </div>
+            </div>
+            <div class="asset-card__body">
+              <h3 class="asset-card__title">The cloud interview prep kit</h3>
+              <p class="asset-card__desc">System-design prompts, behavioral questions, salary scripts, and the exact answers I’ve coached people through.</p>
+              <div class="asset-card__meta">
+                <span>5,200+ downloads</span>
+                <span class="download">Get it<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></span>
+              </div>
+            </div>
+          </article>
+          <article class="asset-card reveal">
+            <div class="asset-card__cover asset-card__cover--ink">
+              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4V4z"/><path d="M4 16a4 4 0 0 1 4-4h12"/><path d="M8 8h6"/></svg>PDF · 24 pages</span>
+              <span class="asset-card__price ">$12</span>
+              
+              <div class="asset-card__page" aria-hidden="true">
+                <div class="asset-card__page-head">JWTechDev study guide</div>
+                <div class="asset-card__page-title">Terraform without the tears</div>
+                <div class="asset-card__page-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="asset-card__page-foot">jwtechdev · 01</div>
+              </div>
+            </div>
+            <div class="asset-card__body">
+              <h3 class="asset-card__title">Terraform from zero — modules &amp; state</h3>
+              <p class="asset-card__desc">My opinionated starter setup, with everything I wish someone had told me before I shipped to prod.</p>
+              <div class="asset-card__meta">
+                <span>640 downloads</span>
+                <span class="download">Buy now<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></span>
+              </div>
+            </div>
+          </article>
+          <article class="asset-card reveal">
+            <div class="asset-card__cover asset-card__cover--fog">
+              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4V4z"/><path d="M4 16a4 4 0 0 1 4-4h12"/><path d="M8 8h6"/></svg>PDF · 22 pages</span>
+              <span class="asset-card__price ">$14</span>
+              
+              <div class="asset-card__page" aria-hidden="true">
+                <div class="asset-card__page-head">JWTechDev study guide</div>
+                <div class="asset-card__page-title">RAG, but actually good</div>
+                <div class="asset-card__page-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="asset-card__page-foot">jwtechdev · 01</div>
+              </div>
+            </div>
+            <div class="asset-card__body">
+              <h3 class="asset-card__title">RAG patterns for builders</h3>
+              <p class="asset-card__desc">Six retrieval patterns, when to use which, and a checklist I run on every agent I ship.</p>
+              <div class="asset-card__meta">
+                <span>420 downloads</span>
+                <span class="download">Buy now<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></span>
+              </div>
+            </div>
+          </article></div>
+        </div>
+        <div class="assets-panel" role="tabpanel" id="panel-claude" aria-labelledby="tab-claude" hidden>
+          <div class="assets-grid">
+          <article class="asset-card reveal">
+            <div class="asset-card__cover asset-card__cover--ink">
+              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7l9 5 9-5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>Project · Claude Code</span>
+              <span class="asset-card__price asset-card__price--free">FREE</span>
+              
+              <div class="asset-card__claude" aria-hidden="true">
+                <div class="pp">aws-auditor: scan started</div>
+                <div class="lines"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+            <div class="asset-card__body">
+              <h3 class="asset-card__title">AWS Account Auditor — Claude Code project</h3>
+              <p class="asset-card__desc">A Claude Code project that scans an AWS account, surfaces drift, IAM risk, and cost cliffs. Drop your creds, hit run.</p>
+              <div class="asset-card__meta">
+                <span>1,800+ installs</span>
+                <span class="download">Get it<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></span>
+              </div>
+            </div>
+          </article>
+          <article class="asset-card reveal">
+            <div class="asset-card__cover asset-card__cover--burgundy">
+              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7l9 5 9-5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>Skill · Claude.ai</span>
+              <span class="asset-card__price asset-card__price--free">FREE</span>
+              
+              <div class="asset-card__claude" aria-hidden="true">
+                <div class="pp">cert-tutor: ready</div>
+                <div class="lines"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+            <div class="asset-card__body">
+              <h3 class="asset-card__title">Cloud-cert tutor skill</h3>
+              <p class="asset-card__desc">My personal study coach as a Claude Skill — quizzes you on AWS, GCP, or Azure, adapts to the gaps you keep missing.</p>
+              <div class="asset-card__meta">
+                <span>Add to Claude in 1 click</span>
+                <span class="download">Get it<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></span>
+              </div>
+            </div>
+          </article>
+          <article class="asset-card reveal">
+            <div class="asset-card__cover asset-card__cover--navy">
+              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7l9 5 9-5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>Prompt pack</span>
+              <span class="asset-card__price ">$9</span>
+              
+              <div class="asset-card__claude" aria-hidden="true">
+                <div class="pp">prompt: code-review --depth=deep</div>
+                <div class="lines"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+            <div class="asset-card__body">
+              <h3 class="asset-card__title">Prompt pack — the 25 I use weekly</h3>
+              <p class="asset-card__desc">My actual prompts for code review, doc writing, RAG eval, postmortems, and "make this email less aggressive".</p>
+              <div class="asset-card__meta">
+                <span>25 prompts · 6 categories</span>
+                <span class="download">Buy now<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></span>
+              </div>
+            </div>
+          </article>
+          <article class="asset-card reveal">
+            <div class="asset-card__cover asset-card__cover--green">
+              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7l9 5 9-5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>MCP server</span>
+              <span class="asset-card__price asset-card__price--free">FREE</span>
+              
+              <div class="asset-card__claude" aria-hidden="true">
+                <div class="pp">mcp: notion server live</div>
+                <div class="lines"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+            <div class="asset-card__body">
+              <h3 class="asset-card__title">Notion → Claude MCP server</h3>
+              <p class="asset-card__desc">Hook Claude into your Notion workspace with proper scoping and a sane setup script. Zero ops to run.</p>
+              <div class="asset-card__meta">
+                <span>GitHub · 320 stars</span>
+                <span class="download">Get it<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></span>
+              </div>
+            </div>
+          </article>
+          <article class="asset-card reveal">
+            <div class="asset-card__cover asset-card__cover--orange">
+              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7l9 5 9-5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>Template · Artifact</span>
+              <span class="asset-card__price ">$7</span>
+              
+              <div class="asset-card__claude" aria-hidden="true">
+                <div class="pp">artifact: dashboard.tsx</div>
+                <div class="lines"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+            <div class="asset-card__body">
+              <h3 class="asset-card__title">Claude Artifact starter — dashboards</h3>
+              <p class="asset-card__desc">Production-ready Artifact template for data dashboards. Drop in your data, get a working tool.</p>
+              <div class="asset-card__meta">
+                <span>4 layouts included</span>
+                <span class="download">Buy now<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></span>
+              </div>
+            </div>
+          </article>
+          <article class="asset-card reveal">
+            <div class="asset-card__cover asset-card__cover--fog">
+              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7l9 5 9-5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>Workflow · n8n</span>
+              <span class="asset-card__price ">$12</span>
+              
+              <div class="asset-card__claude" aria-hidden="true">
+                <div class="pp">workflow: content-engine</div>
+                <div class="lines"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+            <div class="asset-card__body">
+              <h3 class="asset-card__title">Content-engine workflow (Claude + n8n)</h3>
+              <p class="asset-card__desc">My personal content-engine: brief in, scripts + thumbnails + scheduling out. The pipeline I actually run for this channel.</p>
+              <div class="asset-card__meta">
+                <span>9 nodes · ready to import</span>
+                <span class="download">Buy now<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></span>
+              </div>
+            </div>
+          </article></div>
+        </div>
+      </div>
+    </section>
+    <section class="section section--accent" id="connect" data-screen-label="07 Connect">
+      <div class="container">
+        <header class="section__head section__head--center">
+          <span class="eyebrow eyebrow--light">Don’t be a stranger</span>
+          <h2 class="section__title section__title--light">Tuesday emails. No filler.</h2>
+          <p class="section__lede section__lede--light">One short note a week — what I’m building, what I’m learning, plus links to the videos before they go public. Unsubscribe in two clicks if I’m boring.</p>
+        </header>
+        <form class="newsletter" id="newsletterForm" novalidate>
+          <label class="sr-only" for="newsletterEmail">Email address</label>
+          <input id="newsletterEmail" name="email" type="email" required placeholder="you@yourcompany.com" autocomplete="email" />
+          <button type="submit" class="btn btn--primary btn--lg">Subscribe</button>
+          <p class="newsletter__msg" id="newsletterMsg" role="status" aria-live="polite"></p>
+        </form>
+        <div class="socials">
+          <a class="social" href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.4A3 3 0 0 0 1 7.5 31 31 0 0 0 .6 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1C5 19 12 19 12 19s7 0 8.9-.4A3 3 0 0 0 23 16.5 31 31 0 0 0 23.4 12 31 31 0 0 0 23 7.5Z"/><polygon points="10 15 16 12 10 9 10 15" fill="#721817"/></svg>
+            YouTube
+          </a>
+          <a class="social" href="#" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M16 3v3a4 4 0 0 0 4 4v3a7 7 0 0 1-4-1.3V16a5 5 0 1 1-5-5v3a2 2 0 1 0 2 2V3h3z"/></svg>
+            TikTok
+          </a>
+          <a class="social" href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><rect x="3" y="9" width="4" height="12"/><circle cx="5" cy="5" r="2"/><path d="M11 9h4v2a4 4 0 0 1 7 4v6h-4v-6a2 2 0 0 0-4 0v6h-4z" fill="currentColor" stroke="none"/></svg>
+            LinkedIn
+          </a>
+          <a class="social" href="#" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-2c-2.7.6-3.3-1.2-3.3-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.4-1.1-4.4-4.9 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.8-2.3 4.6-4.4 4.9.3.3.7.9.7 1.8v2.7c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>
+            GitHub
+          </a>
+          <a class="social" href="#" aria-label="X (Twitter)">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M4 4l7 9-7 7h3l5.5-5.5L17 20h3l-7.5-9.5L19 4h-3l-5 5L7 4z"/></svg>
+            X / Twitter
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand-block">
+        <a class="footer__brand" href="#top">
+          <img src="assets/jwtechdev-logo.png" alt="" class="footer__mark" />
+          <span class="footer__word">JWTechDev</span>
+        </a>
+        <p class="footer__line">Joshua TechDev Walker — senior cloud + AI builder, AWS Community Builder, and the guy who keeps comparing Lambda to a vending machine. Tampa, FL.</p>
+      </div>
+      <div class="footer__col">
+        <h5>Watch</h5>
+        <ul>
+          <li><a href="#youtube">YouTube — long form</a></li>
+          <li><a href="#tiktok">TikTok — shorts</a></li>
+          <li><a href="#">Newsletter archive</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Work</h5>
+        <ul>
+          <li><a href="#services">Branded content</a></li>
+          <li><a href="#services">Tutoring</a></li>
+          <li><a href="#services">Speaking</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h5>Get it</h5>
+        <ul>
+          <li><a href="#assets">Study guides</a></li>
+          <li><a href="#assets">Claude assets</a></li>
+          <li><a href="#connect">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <div class="footer__legal">
+        <span>© <span id="year">2026</span> Joshua Walker · JWTechDev.ai</span>
+        <span>Brand &amp; build by yours truly. Powered by Claude. Hosted on AWS, obviously.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header shadow on scroll
+    const header = document.getElementById('siteHeader');
+    const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Mobile menu
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      const open = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!open));
+      mobileMenu.hidden = open;
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      menuBtn.setAttribute('aria-expanded', 'false');
+      mobileMenu.hidden = true;
+    }));
+
+    // Assets tabs
+    const tabs = document.querySelectorAll('.assets-tab');
+    const panels = {
+      'tab-guides': document.getElementById('panel-guides'),
+      'tab-claude': document.getElementById('panel-claude'),
+    };
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.classList.toggle('is-active', t === tab);
+          t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
+        });
+        Object.entries(panels).forEach(([id, p]) => {
+          const active = id === tab.id;
+          p.classList.toggle('is-active', active);
+          p.hidden = !active;
+        });
+      });
+    });
+
+    // Newsletter (mock)
+    const form = document.getElementById('newsletterForm');
+    const msg = document.getElementById('newsletterMsg');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = form.email.value.trim();
+      form.classList.remove('is-error', 'is-success');
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        form.classList.add('is-error');
+        msg.textContent = "That email doesn't look right — give it another shot.";
+        return;
+      }
+      form.classList.add('is-success');
+      msg.textContent = "You're in. Check your inbox for a hello from me — and don't reply 'k', I'll cry.";
+      form.email.value = '';
+    });
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          io.unobserve(e.target);
+        }
+      }
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Year
+    document.getElementById('year').textContent = String(new Date().getFullYear());
+  </script>
+</body>
+</html>
