@@ -841,7 +841,17 @@
           <h2 class="section__title section__title--light">One useful note a week.</h2>
           <p class="section__lede section__lede--light">Join the early-access list for cloud and AI build notes, study resources, agent workflow drops, and new videos before they disappear into the feed.</p>
         </header>
-        <form class="newsletter" id="newsletterForm" novalidate>
+        <form
+          class="newsletter"
+          id="newsletterForm"
+          action=""
+          method="post"
+          data-brand="JWTechDev.ai"
+          data-formspree-endpoint=""
+          data-local-mirror-endpoint=""
+          data-fallback-email="joshyouwut@gmail.com"
+          novalidate
+        >
           <label class="sr-only" for="newsletterName">First name</label>
           <input id="newsletterName" name="first_name" type="text" required placeholder="First name" autocomplete="given-name" />
           <label class="sr-only" for="newsletterEmail">Email address</label>
@@ -858,6 +868,7 @@
             <option>Newsletter</option>
           </select>
           <input type="hidden" id="selectedAsset" name="selected_asset" value="">
+          <input type="hidden" name="source_site" value="JWTechDev.ai">
           <button type="submit" class="btn btn--primary btn--lg">Join waitlist</button>
           <p class="newsletter__msg" id="newsletterMsg" role="status" aria-live="polite"></p>
         </form>
@@ -989,7 +1000,7 @@
       });
     });
 
-    // Newsletter (static mock)
+    // Newsletter capture
     const form = document.getElementById('newsletterForm');
     const msg = document.getElementById('newsletterMsg');
     form.addEventListener('submit', (e) => {
@@ -997,6 +1008,10 @@
       const firstName = form.first_name.value.trim();
       const email = form.email.value.trim();
       const interest = form.interest.value.trim();
+      const formspreeEndpoint = form.dataset.formspreeEndpoint?.trim();
+      const localMirrorEndpoint = form.dataset.localMirrorEndpoint?.trim();
+      const fallbackEmail = form.dataset.fallbackEmail || 'joshyouwut@gmail.com';
+      const submitButton = form.querySelector('button[type="submit"]');
       form.classList.remove('is-error', 'is-success');
       if (!firstName) {
         form.classList.add('is-error');
@@ -1013,12 +1028,77 @@
         msg.textContent = "Pick the resource you want first.";
         return;
       }
-      form.classList.add('is-success');
-      msg.textContent = `Got it, ${firstName}. You are on the early-access list for ${interest}. No download or payment is active yet.`;
-      form.first_name.value = '';
-      form.email.value = '';
-      form.interest.value = '';
-      selectedAsset.value = '';
+
+      const formData = new FormData(form);
+      const payload = Object.fromEntries(formData.entries());
+      const normalizedPayload = {
+        ...payload,
+        brand: 'JWTechDev.ai',
+        source_site: 'JWTechDev.ai',
+        source_url: window.location.href,
+        ingestion_method: formspreeEndpoint ? 'formspree' : 'static_form_mailto',
+        status: 'new'
+      };
+
+      const subject = encodeURIComponent(`JWTechDev.ai waitlist: ${interest}`);
+      const body = encodeURIComponent([
+        'JWTechDev.ai waitlist lead',
+        '',
+        `Interest: ${interest}`,
+        `Selected asset: ${payload.selected_asset || ''}`,
+        `First name: ${firstName}`,
+        `Email: ${email}`,
+        '',
+        'Source: JWTechDev.ai waitlist form'
+      ].join('\n'));
+
+      const mirrorLead = () => {
+        if (!localMirrorEndpoint) return Promise.resolve();
+        return fetch(localMirrorEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(normalizedPayload)
+        }).catch(() => {});
+      };
+
+      const submitLead = async () => {
+        submitButton.disabled = true;
+        msg.textContent = 'Sending waitlist request...';
+
+        if (formspreeEndpoint) {
+          const response = await fetch(formspreeEndpoint, {
+            method: 'POST',
+            headers: { Accept: 'application/json' },
+            body: new FormData(form)
+          });
+
+          if (!response.ok) {
+            throw new Error('Form endpoint rejected the submission.');
+          }
+
+          await mirrorLead();
+          form.classList.add('is-success');
+          msg.textContent = `Got it, ${firstName}. You are on the early-access list for ${interest}.`;
+          form.reset();
+          selectedAsset.value = '';
+          return;
+        }
+
+        await mirrorLead();
+        window.location.href = `mailto:${fallbackEmail}?subject=${subject}&body=${body}`;
+        form.classList.add('is-success');
+        msg.textContent = `Opening email fallback for ${interest}. Add the Formspree endpoint to capture this directly.`;
+      };
+
+      submitLead()
+        .catch(() => {
+          window.location.href = `mailto:${fallbackEmail}?subject=${subject}&body=${body}`;
+          form.classList.add('is-error');
+          msg.textContent = 'The form endpoint was not available, so this opened a structured email fallback.';
+        })
+        .finally(() => {
+          submitButton.disabled = false;
+        });
     });
 
     // Reveal on scroll
