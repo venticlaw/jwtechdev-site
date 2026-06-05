@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Anime Social Volume Engine</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Engine controls">
+        <a class="back-link" href="../../nucleus/index.html">Nucleus</a>
+        <div class="brand-block">
+          <p class="eyebrow">Experimental Media</p>
+          <h1>Anime Social Volume Engine</h1>
+          <p>
+            Manual-review MVP for niche anime social pages. It drafts ideas, formats, visual directions,
+            and a one-week queue without copyrighted screenshots or posting automation.
+          </p>
+        </div>
+
+        <form class="control-panel" id="controlPanel">
+          <label>
+            <span>Niche</span>
+            <select id="nicheSelect"></select>
+          </label>
+          <label>
+            <span>Goal</span>
+            <select id="goalSelect">
+              <option value="audience testing">Audience testing</option>
+              <option value="followers">Follower growth</option>
+              <option value="affiliate traffic">Affiliate traffic</option>
+              <option value="merch concepts">Merch concept testing</option>
+            </select>
+          </label>
+          <label>
+            <span>Risk mode</span>
+            <select id="riskSelect">
+              <option value="rights-safe original layouts">Rights-safe originals</option>
+              <option value="text-first parody/commentary">Text-first parody/commentary</option>
+            </select>
+          </label>
+          <button type="button" id="buildButton">Build Queue</button>
+        </form>
+
+        <div class="guardrail-box">
+          <strong>Hard gates</strong>
+          <span>No official stills, clips, logos, impersonation, misleading affiliation, or automated public posting.</span>
+        </div>
+
+        <a class="example-link" href="./dragon-ball-z-fans-example.html">
+          Open Dragon Ball Z post example
+        </a>
+      </aside>
+
+      <main class="main">
+        <section class="hero-panel">
+          <div>
+            <p class="eyebrow">MVP Review Dashboard</p>
+            <h2 id="heroTitle">Dragon Ball power-scaling absurdity</h2>
+            <p id="heroCopy">
+              A queue for fast, fandom-native posts that stay original, approval-gated, and easy to remix.
+            </p>
+          </div>
+          <div class="signal-card" aria-label="Rights safe signal">
+            <span>Manual</span>
+            <strong>Review Before Posting</strong>
+            <small>Everything here is a draft until Josh approves it.</small>
+          </div>
+        </section>
+
+        <section class="metrics" aria-label="Generated plan metrics">
+          <article><span>Ideas</span><strong id="ideaCount">50</strong></article>
+          <article><span>Formats</span><strong id="formatCount">10</strong></article>
+          <article><span>Visuals</span><strong id="visualCount">5</strong></article>
+          <article><span>Queue</span><strong id="queueCount">7</strong></article>
+        </section>
+
+        <section class="workspace">
+          <div class="tabs" role="tablist" aria-label="Dashboard sections">
+            <button class="is-active" type="button" data-view="ideas">Ideas</button>
+            <button type="button" data-view="formats">Formats</button>
+            <button type="button" data-view="visuals">Visuals</button>
+            <button type="button" data-view="queue">7-Day Queue</button>
+            <button type="button" data-view="export">Export</button>
+          </div>
+
+          <section class="panel is-active" data-panel="ideas">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Idea Bank</p>
+                <h3>50 draftable post concepts</h3>
+              </div>
+              <label class="search">
+                <span>Search</span>
+                <input id="searchInput" type="search" placeholder="Find hooks, bits, or formats" />
+              </label>
+            </div>
+            <div class="card-grid" id="ideaGrid"></div>
+          </section>
+
+          <section class="panel" data-panel="formats">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Recurring Formats</p>
+                <h3>10 templates for repeat posting</h3>
+              </div>
+            </div>
+            <div class="format-grid" id="formatGrid"></div>
+          </section>
+
+          <section class="panel" data-panel="visuals">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Visual Directions</p>
+                <h3>Original layouts, no protected source imagery</h3>
+              </div>
+            </div>
+            <div class="visual-grid" id="visualGrid"></div>
+          </section>
+
+          <section class="panel" data-panel="queue">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Manual Queue</p>
+                <h3>One week of approval-gated drafts</h3>
+              </div>
+              <button class="secondary-button" type="button" id="clearApprovalsButton">Clear Local Reviews</button>
+            </div>
+            <div class="queue-list" id="queueList"></div>
+          </section>
+
+          <section class="panel" data-panel="export">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Export Packet</p>
+                <h3>Copy-ready JSON for the next build slice</h3>
+              </div>
+              <button class="secondary-button" type="button" id="copyButton">Copy JSON</button>
+            </div>
+            <textarea id="exportText" readonly></textarea>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

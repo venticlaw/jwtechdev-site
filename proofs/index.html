@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TecDev Proofs</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #171b20;
+        --muted: #69717a;
+        --paper: #f7f8f4;
+        --panel: #ffffff;
+        --line: #d9ddd4;
+        --teal: #0f766e;
+        --gold: #d08b2f;
+        --shadow: 0 18px 48px rgba(23, 27, 32, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        color: var(--ink);
+        background: var(--paper);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
+
+      main {
+        display: grid;
+        gap: 18px;
+        width: min(920px, calc(100% - 36px));
+        margin: 0 auto;
+        padding: 34px 0;
+      }
+
+      .hero,
+      .proof-card {
+        padding: 20px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        box-shadow: var(--shadow);
+      }
+
+      .eyebrow {
+        margin: 0 0 6px;
+        color: var(--teal);
+        font-size: 0.76rem;
+        font-weight: 900;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        margin-bottom: 10px;
+        font-size: clamp(2.3rem, 8vw, 5rem);
+        line-height: 0.95;
+      }
+
+      .hero p,
+      .proof-card p {
+        max-width: 700px;
+        margin-bottom: 0;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .proof-grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      .proof-card {
+        display: grid;
+        gap: 14px;
+      }
+
+      .proof-card h2 {
+        margin-bottom: 0;
+        font-size: clamp(1.4rem, 4vw, 2.2rem);
+        line-height: 1;
+      }
+
+      .proof-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .proof-links a {
+        padding: 10px 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        color: var(--ink);
+        background: #fbfcfa;
+        font-weight: 850;
+        text-decoration: none;
+      }
+
+      .proof-links a.primary {
+        border-color: var(--teal);
+        color: #ffffff;
+        background: var(--teal);
+      }
+
+      .status {
+        justify-self: start;
+        padding: 6px 9px;
+        border-radius: 999px;
+        color: #402a08;
+        background: #f7dfb7;
+        font-size: 0.78rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <p class="eyebrow">TecDev Proofs</p>
+        <h1>Mobile-accessible proof links.</h1>
+        <p>
+          Static previews for review on phone. Proofs are public GitHub Pages artifacts; approval,
+          posting, payments, forms, and automations remain separate gates.
+        </p>
+      </section>
+
+      <section class="proof-grid" aria-label="Published proofs">
+        <article class="proof-card">
+          <span class="status">Experimental media</span>
+          <div>
+            <p class="eyebrow">Anime Social Volume Engine</p>
+            <h2>Dragon Ball Z power-scaling carousel proof</h2>
+          </div>
+          <p>
+            Rights-safe static carousel proof with post-pack export, caption, hashtags,
+            alt text, and manual upload checklist.
+          </p>
+          <div class="proof-links">
+            <a class="primary" href="./anime-social-volume-engine/dragon-ball-z-fans-example.html">Open proof</a>
+            <a href="./anime-social-volume-engine/">Open engine</a>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
