@@ -190,7 +190,7 @@ button { font: inherit; }
 .btn .ico { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
 
 /* ============================================================
-   AEO PREVIEW
+   ARTICLE CARDS
    ============================================================ */
 .aeo-grid {
   display: grid;
