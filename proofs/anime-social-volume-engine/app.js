@@ -108,10 +108,17 @@ const bits = [
   "keeps the caption short and argument-ready"
 ];
 
+const normalizeContent = (value) =>
+  String(value || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+
 const state = {
   niche: niches[0],
   goal: "audience testing",
   riskMode: "rights-safe original layouts",
+  contentHistory: { items: [] },
   ideas: [],
   formats: [],
   visuals: [],
@@ -142,17 +149,39 @@ const elements = {
   panels: [...document.querySelectorAll("[data-panel]")]
 };
 
-const makeIdeas = (niche) =>
-  Array.from({ length: 50 }, (_, index) => {
+const historyFingerprints = () =>
+  new Set(
+    state.contentHistory.items.flatMap((item) =>
+      [item.title, item.caption, item.angle, ...(item.fingerprints || [])].map(normalizeContent)
+    )
+  );
+
+const historyMatches = (idea, fingerprints = historyFingerprints()) => {
+  const checks = [
+    idea.title,
+    idea.caption,
+    idea.angle,
+    idea.fingerprint,
+    `${idea.nicheId} ${idea.format} ${idea.subject} ${idea.angle}`
+  ].map(normalizeContent);
+
+  return checks.some((check) => check && fingerprints.has(check));
+};
+
+const makeIdeaCandidate = (niche, index) => {
     const subject = niche.subjects[index % niche.subjects.length];
     const hook = hooks[index % hooks.length];
     const bit = bits[(index + Math.floor(index / hooks.length)) % bits.length];
     const format = formatTemplates[index % formatTemplates.length][0];
+    const angle = `${hook} / ${subject} / ${bit}`;
     return {
       id: `${niche.id}-${String(index + 1).padStart(2, "0")}`,
+      nicheId: niche.id,
+      subject,
       title: `${hook}: ${subject}`,
       format,
       hook,
+      angle,
       premise: `A ${niche.tone} post that ${bit}.`,
       slideArc: [
         `Slide 1: ${hook}`,
@@ -162,15 +191,32 @@ const makeIdeas = (niche) =>
         `Slide 5: Ask a short debate question.`
       ],
       caption: `Argue with the chart, not with me. Which ${subject} take belongs in fandom jail?`,
-      hashtags: ["anime", "animememes", "fandom", subject.replaceAll(" ", "")]
+      hashtags: ["anime", "animememes", "fandom", subject.replaceAll(" ", "")],
+      fingerprint: normalizeContent(`${niche.id} ${format} ${subject} ${angle}`)
     };
+};
+
+const makeIdeas = (niche) => {
+  const fingerprints = historyFingerprints();
+  const candidates = Array.from({ length: 150 }, (_, index) => makeIdeaCandidate(niche, index));
+  const unique = [];
+  const seen = new Set();
+
+  candidates.forEach((idea) => {
+    const localKey = normalizeContent(`${idea.title} ${idea.format} ${idea.caption} ${idea.angle} ${idea.premise}`);
+    if (seen.has(localKey) || historyMatches(idea, fingerprints)) return;
+    seen.add(localKey);
+    unique.push({ ...idea, id: `${niche.id}-${String(unique.length + 1).padStart(2, "0")}` });
   });
+
+  return unique.slice(0, 50);
+};
 
 const makeQueue = (ideas) =>
   ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].map((day, index) => ({
     day,
-    post: ideas[index * 6],
-    backup: ideas[index * 6 + 1],
+    post: ideas[(index * 6) % ideas.length],
+    backup: ideas[(index * 6 + 1) % ideas.length],
     status: state.reviews[`${state.niche.id}-${day}`] || "hold"
   }));
 
@@ -295,8 +341,14 @@ const exportPacket = () => ({
     "No official anime stills, clips, or logos.",
     "No impersonation or misleading affiliation.",
     "No automated public posting.",
-    "Manual approval before asset generation or scheduling."
+    "Manual approval before asset generation or scheduling.",
+    "Every batch must check content-history.json before production and append approved/exported posts after production."
   ],
+  uniquenessCheck: {
+    historyItemsChecked: state.contentHistory.items.length,
+    duplicatePolicy: "Candidates matching prior title, caption, angle, or fingerprint are filtered before batching.",
+    historySource: "./content-history.json"
+  },
   ideas: state.ideas,
   formats: state.formats,
   visualDirections: state.visuals.map(({ title, description }) => ({ title, description })),
@@ -316,7 +368,7 @@ const renderExport = () => {
 
 const render = () => {
   elements.heroTitle.textContent = state.niche.label;
-  elements.heroCopy.textContent = `${state.niche.fandom}. Goal: ${state.goal}. Mode: ${state.riskMode}.`;
+  elements.heroCopy.textContent = `${state.niche.fandom}. Goal: ${state.goal}. Mode: ${state.riskMode}. Prior posts checked: ${state.contentHistory.items.length}.`;
   elements.ideaCount.textContent = state.ideas.length;
   elements.formatCount.textContent = state.formats.length;
   elements.visualCount.textContent = state.visuals.length;
@@ -334,6 +386,16 @@ niches.forEach((niche) => {
   option.textContent = niche.label;
   elements.nicheSelect.append(option);
 });
+
+const loadContentHistory = async () => {
+  try {
+    const response = await fetch("./content-history.json", { cache: "no-store" });
+    if (!response.ok) throw new Error(`History returned ${response.status}`);
+    state.contentHistory = await response.json();
+  } catch (error) {
+    state.contentHistory = { items: [] };
+  }
+};
 
 elements.buildButton.addEventListener("click", buildPlan);
 elements.searchInput.addEventListener("input", renderIdeas);
@@ -358,4 +420,5 @@ elements.tabs.forEach((tab) => {
   });
 });
 
+await loadContentHistory();
 buildPlan();

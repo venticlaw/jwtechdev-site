@@ -1,0 +1,22 @@
+{
+  "updatedAt": "2026-06-06",
+  "rule": "Every new batch must check this file before generation and append approved/exported posts after production.",
+  "items": [
+    {
+      "id": "2026-06-05-dragon-ball-z-power-scaling-checklist",
+      "niche": "dragon-ball-power-scaling",
+      "format": "Before You Argue",
+      "subject": "power scaling",
+      "angle": "pre-fight checklist for power-scaling debates",
+      "title": "Dragon Ball Z fans need a pre-fight checklist for power-scaling debates.",
+      "caption": "Dragon Ball Z fans, what power-scaling argument should be retired immediately? Keep it funny. Keep it specific. Bring your fake math.",
+      "proofUrl": "https://venticlaw.github.io/jwtechdev-site/proofs/anime-social-volume-engine/dragon-ball-z-fans-example.html",
+      "producedAt": "2026-06-05",
+      "fingerprints": [
+        "dragon ball z fans need a pre fight checklist for power scaling debates",
+        "dragon ball z fans what power scaling argument should be retired immediately keep it funny keep it specific bring your fake math",
+        "dragon-ball-power-scaling before you argue power scaling pre fight checklist"
+      ]
+    }
+  ]
+}
