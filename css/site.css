@@ -1526,6 +1526,246 @@ button { font: inherit; }
   color: var(--ink-900);
 }
 
+.article-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: var(--space-4) 0 0;
+}
+
+.article-kicker span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-subtle);
+  color: var(--fg-muted);
+  font-size: var(--fs-sm);
+  font-weight: 800;
+}
+
+.article-hero {
+  display: grid;
+  gap: var(--space-6);
+  padding: var(--space-6);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(135deg, rgba(11,110,79,.08), rgba(250,159,66,.12)),
+    var(--bg);
+  box-shadow: var(--shadow-sm);
+}
+
+.article-hero img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  background: var(--ink-900);
+}
+
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  color: var(--fg-muted);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+}
+
+.article-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-8);
+}
+
+.article-toc {
+  display: grid;
+  gap: 10px;
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--bg-subtle);
+}
+
+.article-toc strong {
+  color: var(--ink-900);
+}
+
+.article-toc a {
+  color: var(--link);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.quick-answer,
+.article-callout,
+.article-cta,
+.article-checklist,
+.article-tool {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  background: var(--bg);
+  box-shadow: var(--shadow-sm);
+}
+
+.quick-answer {
+  border-color: var(--brand-green-100);
+  background: var(--brand-green-50);
+}
+
+.quick-answer h2,
+.article-callout h2,
+.article-cta h2,
+.article-checklist h2,
+.article-tool h2 {
+  margin-top: 0;
+}
+
+.article-callout {
+  border-color: var(--brand-orange-100);
+  background: var(--brand-orange-50);
+}
+
+.article-cta {
+  display: grid;
+  gap: var(--space-4);
+  border-color: var(--brand-navy-100);
+  background: var(--brand-navy-50);
+}
+
+.article-cta p {
+  margin: 0;
+}
+
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+}
+
+.article-mini-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  background: var(--bg);
+}
+
+.article-mini-card h3 {
+  margin: 0 0 var(--space-2);
+  color: var(--ink-900);
+  font-size: 1.1rem;
+}
+
+.article-mini-card p {
+  margin: 0;
+}
+
+.article-checklist label {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: start;
+  margin: 10px 0;
+  color: var(--fg-muted);
+  font-size: 1.02rem;
+}
+
+.article-checklist input {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  accent-color: var(--brand-green);
+}
+
+.check-progress {
+  display: inline-flex;
+  align-items: center;
+  min-height: 32px;
+  margin-top: var(--space-3);
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--ink-900);
+  color: var(--ink-0);
+  font-size: var(--fs-sm);
+  font-weight: 800;
+}
+
+.article-tool {
+  background: var(--ink-900);
+  color: var(--ink-0);
+}
+
+.article-tool p,
+.article-tool li {
+  color: rgba(255,255,255,.78);
+}
+
+.article-tool h2,
+.article-tool strong {
+  color: var(--ink-0);
+}
+
+.article-tool button {
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,.1);
+  color: var(--ink-0);
+  padding: 10px 12px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.article-tool button.is-active {
+  background: var(--brand-orange);
+  color: var(--ink-900);
+}
+
+.tool-result {
+  min-height: 54px;
+  margin-top: var(--space-4);
+  padding: var(--space-4);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,.08);
+}
+
+.faq details {
+  border-top: 1px solid var(--border);
+  padding: var(--space-4) 0;
+}
+
+.faq summary {
+  cursor: pointer;
+  color: var(--ink-900);
+  font-weight: 900;
+}
+
+.faq p {
+  margin-bottom: 0;
+}
+
+@media (min-width: 980px) {
+  .article-layout {
+    grid-template-columns: 240px minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .article-toc {
+    position: sticky;
+    top: 96px;
+  }
+}
+
+@media (max-width: 720px) {
+  .article-grid { grid-template-columns: 1fr; }
+  .article-body h1 { max-width: none; }
+  .article-hero { padding: var(--space-4); }
+}
+
 /* ============================================================
    REVEAL ANIMATIONS
    ============================================================ */
