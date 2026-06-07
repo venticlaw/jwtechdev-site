@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Monetization Marketing Brief | TecDev</title>
+    <meta
+      name="description"
+      content="A static marketing brief ranking the fastest monetization opportunities across Your Mix Sucks, JWTechDev.ai, The Nucleus, and rights-safe content."
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #17211d;
+        --muted: #64706b;
+        --paper: #f5f7f2;
+        --panel: #ffffff;
+        --line: #d9dfd7;
+        --teal: #0f766e;
+        --blue: #1d4ed8;
+        --gold: #b7791f;
+        --rose: #be123c;
+        --shadow: 0 18px 52px rgba(23, 33, 29, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        color: var(--ink);
+        background:
+          linear-gradient(180deg, rgba(15, 118, 110, 0.08), transparent 280px),
+          var(--paper);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .page {
+        width: min(1120px, calc(100% - 36px));
+        margin: 0 auto;
+        padding: 32px 0 70px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 22px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 900;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 38px;
+        height: 38px;
+        place-items: center;
+        border-radius: 8px;
+        color: #ffffff;
+        background: var(--teal);
+      }
+
+      .nav a {
+        color: var(--muted);
+        font-size: 0.9rem;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .hero,
+      .panel,
+      .offer-card,
+      .rank-card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        box-shadow: var(--shadow);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 0.48fr);
+        gap: 26px;
+        align-items: end;
+        padding: clamp(22px, 5vw, 44px);
+      }
+
+      .eyebrow {
+        margin: 0 0 8px;
+        color: var(--teal);
+        font-size: 0.76rem;
+        font-weight: 900;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        max-width: 780px;
+        margin-bottom: 14px;
+        font-size: clamp(2.4rem, 8vw, 5.8rem);
+        line-height: 0.92;
+      }
+
+      h2 {
+        margin-bottom: 10px;
+        font-size: clamp(1.55rem, 3.5vw, 2.7rem);
+        line-height: 1;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 1.2rem;
+        line-height: 1.15;
+      }
+
+      .lead {
+        max-width: 720px;
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 1.08rem;
+        line-height: 1.55;
+      }
+
+      .hero-aside {
+        display: grid;
+        gap: 10px;
+      }
+
+      .hero-aside article {
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #f8faf8;
+      }
+
+      .hero-aside span,
+      .stat span,
+      .rank-card span {
+        display: block;
+        color: var(--muted);
+        font-size: 0.76rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .hero-aside strong {
+        display: block;
+        margin-top: 6px;
+        font-size: 1.05rem;
+      }
+
+      .section {
+        margin-top: 18px;
+      }
+
+      .panel {
+        padding: 22px;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .stat {
+        min-height: 116px;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #f8faf8;
+      }
+
+      .stat strong {
+        display: block;
+        margin-top: 8px;
+        font-size: 1.7rem;
+        line-height: 1;
+      }
+
+      .rank-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .rank-card {
+        display: grid;
+        gap: 8px;
+        min-height: 210px;
+        padding: 18px;
+      }
+
+      .rank-card strong {
+        display: block;
+        font-size: 1.15rem;
+        line-height: 1.1;
+      }
+
+      .rank-card p {
+        margin-bottom: 0;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
+      .rank-card b {
+        align-self: end;
+        color: var(--teal);
+        font-size: 0.82rem;
+        text-transform: uppercase;
+      }
+
+      .offer-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .offer-card {
+        padding: 20px;
+      }
+
+      .offer-card.primary {
+        border-left: 5px solid var(--teal);
+      }
+
+      .offer-card.secondary {
+        border-left: 5px solid var(--blue);
+      }
+
+      .offer-card.tertiary {
+        border-left: 5px solid var(--gold);
+      }
+
+      .offer-card.quiet {
+        border-left: 5px solid var(--muted);
+      }
+
+      .offer-card p,
+      .offer-card li,
+      .panel p,
+      .panel li {
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      ul {
+        margin: 12px 0 0 18px;
+        padding: 0;
+      }
+
+      li + li {
+        margin-top: 6px;
+      }
+
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 12px;
+      }
+
+      .tag {
+        padding: 5px 8px;
+        border-radius: 999px;
+        color: #17423e;
+        background: #dff4ef;
+        font-size: 0.76rem;
+        font-weight: 900;
+      }
+
+      .ad-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .ad-card {
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #f8faf8;
+      }
+
+      .ad-card strong {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .gates {
+        border-left: 5px solid var(--rose);
+      }
+
+      .footer {
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 900px) {
+        .hero,
+        .stats,
+        .rank-grid,
+        .offer-grid,
+        .ad-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .rank-card {
+          min-height: 0;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .page {
+          width: min(100% - 24px, 1120px);
+          padding-top: 18px;
+        }
+
+        .nav {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .hero,
+        .panel,
+        .offer-card {
+          padding: 16px;
+        }
+
+        h1 {
+          font-size: 2.55rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <nav class="nav" aria-label="Proof navigation">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">N</span>
+          <span>TecDev Monetization Brief</span>
+        </div>
+        <a href="../">Back to proofs</a>
+      </nav>
+
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Marketing brief</p>
+          <h1>Fastest paths to new revenue.</h1>
+          <p class="lead">
+            A review-ready monetization brief using Alex Hormozi's $100M Offers, $100M Leads,
+            and $100M Money Models lens across JoshYouWut, Your Mix Sucks, JWTechDev.ai,
+            The Nucleus, and rights-safe content. BOT Funding is intentionally excluded.
+          </p>
+        </div>
+        <aside class="hero-aside" aria-label="Top recommendations">
+          <article>
+            <span>Fastest direct cash</span>
+            <strong>Your Mix Sucks Early Access Pack</strong>
+          </article>
+          <article>
+            <span>Best education path</span>
+            <strong>JW Cloud Career Starter Kit</strong>
+          </article>
+          <article>
+            <span>Best upside service</span>
+            <strong>AI Agent Ops Starter Kit</strong>
+          </article>
+        </aside>
+      </section>
+
+      <section class="section stats" aria-label="Brief summary stats">
+        <article class="stat">
+          <span>Ranked offers</span>
+          <strong>4</strong>
+        </article>
+        <article class="stat">
+          <span>Fastest launch</span>
+          <strong>YMS</strong>
+        </article>
+        <article class="stat">
+          <span>Ad tests</span>
+          <strong>2</strong>
+        </article>
+        <article class="stat">
+          <span>External actions</span>
+          <strong>0</strong>
+        </article>
+      </section>
+
+      <section class="section panel">
+        <p class="eyebrow">Ranking</p>
+        <h2>ASAP launch order</h2>
+        <div class="rank-grid">
+          <article class="rank-card">
+            <span>01</span>
+            <strong>Your Mix Sucks Early Access Pack</strong>
+            <p>
+              The clearest immediate buyer, pain, price point, and offer stack. Best path once
+              checkout, refund, support, and delivery are approved.
+            </p>
+            <b>Fastest direct money</b>
+          </article>
+          <article class="rank-card">
+            <span>02</span>
+            <strong>JW Cloud Career Starter Kit</strong>
+            <p>
+              Turns existing cloud/AWS study assets into a lead magnet, low-ticket starter kit,
+              and audit/cohort upsells.
+            </p>
+            <b>Best learning funnel</b>
+          </article>
+          <article class="rank-card">
+            <span>03</span>
+            <strong>AI Agent Ops Starter Kit</strong>
+            <p>
+              Packages Nucleus patterns into templates and setup services after internal proof
+              is stable enough to show.
+            </p>
+            <b>Best service upside</b>
+          </article>
+          <article class="rank-card">
+            <span>04</span>
+            <strong>Rights-Safe Content Engine</strong>
+            <p>
+              Useful attention layer for JW/JYW, but weaker immediate buyer urgency than YMS
+              or JW learning products.
+            </p>
+            <b>Best content engine</b>
+          </article>
+        </div>
+      </section>
+
+      <section class="section offer-grid" aria-label="Offer concepts">
+        <article class="offer-card primary">
+          <p class="eyebrow">Offer 01</p>
+          <h2>Your Mix Sucks Early Access Pack</h2>
+          <p>
+            For Logic Pro users who want timestamped AI mix notes before sending, releasing,
+            or second-guessing the track for another week.
+          </p>
+          <ul>
+            <li>Core: Your Mix Sucks plugin access.</li>
+            <li>Bonuses: quickstart, first-mix checklist, reference-track setup templates.</li>
+            <li>Upsell: paid human review or producer consult.</li>
+            <li>Price path: planned $59 launch, $99-$199 review upsell.</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Fastest</span>
+            <span class="tag">Direct payment</span>
+            <span class="tag">Niche pain</span>
+          </div>
+        </article>
+
+        <article class="offer-card secondary">
+          <p class="eyebrow">Offer 02</p>
+          <h2>JW Cloud Career Starter Kit</h2>
+          <p>
+            For beginners who need a plain-English cloud infrastructure map, AWS cert path,
+            30-day study plan, and portfolio prompts.
+          </p>
+          <ul>
+            <li>Free lead magnet: Cloud Infrastructure First Map.</li>
+            <li>Paid kit: AWS cert decision path, study calendar, portfolio templates.</li>
+            <li>Upsell: 1-hour study plan audit.</li>
+            <li>Price path: $19-$49 starter kit, $99-$199 audit.</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Lead magnet</span>
+            <span class="tag">Tripwire</span>
+            <span class="tag">Education</span>
+          </div>
+        </article>
+
+        <article class="offer-card tertiary">
+          <p class="eyebrow">Offer 03</p>
+          <h2>AI Agent Ops Starter Kit</h2>
+          <p>
+            For solo builders and small teams who need channel ownership, approval gates,
+            backlog, status, and daily execution loops for AI agent work.
+          </p>
+          <ul>
+            <li>Core: Nucleus template pack.</li>
+            <li>Bonuses: channel registry, approval ledger, runbooks, Todoist sync plan.</li>
+            <li>Upsell: done-with-you setup.</li>
+            <li>Price path: $49-$149 template, $500-$2,500 setup.</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Productized service</span>
+            <span class="tag">Proof needed</span>
+            <span class="tag">Higher upside</span>
+          </div>
+        </article>
+
+        <article class="offer-card quiet">
+          <p class="eyebrow">Offer 04</p>
+          <h2>Rights-Safe Nerd Culture Content Engine</h2>
+          <p>
+            For tech creators who want original, rights-safe content prompts and visual briefs
+            without protected screenshots, logos, clips, or affiliation claims.
+          </p>
+          <ul>
+            <li>Core: monthly content queue.</li>
+            <li>Bonuses: carousel templates and rights-safety checklist.</li>
+            <li>Upsell: generated image pack.</li>
+            <li>Price path: $29-$99 starter pack, $99-$500 monthly.</li>
+          </ul>
+          <div class="tag-row">
+            <span class="tag">Content volume</span>
+            <span class="tag">Rights-safe</span>
+            <span class="tag">Later-stage</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="section panel">
+        <p class="eyebrow">Paid acceleration</p>
+        <h2>Ad tests worth considering</h2>
+        <div class="ad-grid">
+          <article class="ad-card">
+            <strong>Your Mix Sucks demand test</strong>
+            <p>
+              Run a $10-$30/day, 7-day validation test to an early-access or purchase-interest
+              page. Use Logic Pro, home studio, producers, mixing, and self-producing artist
+              targeting. Measure cost per signup and purchase-intent quality.
+            </p>
+          </article>
+          <article class="ad-card">
+            <strong>JW cloud lead magnet test</strong>
+            <p>
+              Run a $10-$25/day, 7-day test around "cloud infrastructure explained in 20 minutes"
+              or "pick the right AWS cert path." Measure cost per lead and readiness for the
+              starter kit.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section panel gates">
+        <p class="eyebrow">Approval gates</p>
+        <h2>No launch actions are active from this page.</h2>
+        <ul>
+          <li>No ads launched without approval.</li>
+          <li>No checkout, payment links, or automatic delivery activated without approval.</li>
+          <li>No public lead capture activated without approval.</li>
+          <li>No Slack, email, forms, or outbound sends without approval.</li>
+          <li>No Google Drive uploads or moves without exact approval.</li>
+        </ul>
+      </section>
+
+      <p class="footer">
+        Static GitHub Pages proof. Strategy source:
+        <code>_data/channel-work/nucleus/2026-06-07-hormozi-monetization-review.md</code>.
+      </p>
+    </main>
+  </body>
+</html>
