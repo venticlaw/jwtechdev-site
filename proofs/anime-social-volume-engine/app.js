@@ -119,6 +119,8 @@ const state = {
   goal: "audience testing",
   riskMode: "rights-safe original layouts",
   contentHistory: { items: [] },
+  approvedQueue: { items: [] },
+  dailyReport: null,
   ideas: [],
   formats: [],
   visuals: [],
@@ -138,6 +140,8 @@ const elements = {
   formatGrid: document.querySelector("#formatGrid"),
   visualGrid: document.querySelector("#visualGrid"),
   queueList: document.querySelector("#queueList"),
+  approvalList: document.querySelector("#approvalList"),
+  dailyReport: document.querySelector("#dailyReport"),
   exportText: document.querySelector("#exportText"),
   copyButton: document.querySelector("#copyButton"),
   clearApprovalsButton: document.querySelector("#clearApprovalsButton"),
@@ -215,8 +219,8 @@ const makeIdeas = (niche) => {
 const makeQueue = (ideas) =>
   ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].map((day, index) => ({
     day,
-    post: ideas[(index * 6) % ideas.length],
-    backup: ideas[(index * 6 + 1) % ideas.length],
+    post: ideas[(index * 6) % ideas.length] || ideas[0],
+    backup: ideas[(index * 6 + 1) % ideas.length] || ideas[0],
     status: state.reviews[`${state.niche.id}-${day}`] || "hold"
   }));
 
@@ -297,7 +301,7 @@ const saveReviews = () => {
 
 const renderQueue = () => {
   elements.queueList.replaceChildren(
-    ...state.queue.map((item) => {
+    ...state.queue.filter((item) => item.post && item.backup).map((item) => {
       const id = `${state.niche.id}-${item.day}`;
       const card = document.createElement("article");
       card.className = "queue-item";
@@ -330,6 +334,90 @@ const renderQueue = () => {
   );
 };
 
+const statusLabels = {
+  approved_for_creation: "Approved",
+  in_production: "In Production",
+  proof_ready: "Proof Ready",
+  needs_revision: "Needs Revision",
+  exported: "Exported",
+  blocked: "Blocked"
+};
+
+const renderDailyReport = () => {
+  const report = state.dailyReport;
+  if (!report) {
+    elements.dailyReport.replaceChildren();
+    return;
+  }
+
+  const summary = report.summary || {};
+  const stats = [
+    ["Queue Items", summary.totalQueueItems || 0],
+    ["Approved", summary.approvedForCreation || 0],
+    ["Ready", summary.readyForProduction || 0],
+    ["Blocked", summary.blockedDuplicates || 0]
+  ];
+
+  elements.dailyReport.replaceChildren(
+    ...stats.map(([label, value]) => {
+      const item = document.createElement("article");
+      item.innerHTML = `<span>${label}</span><strong>${value}</strong>`;
+      return item;
+    }),
+    (() => {
+      const item = document.createElement("article");
+      item.className = "report-meta";
+      item.innerHTML = `
+        <span>Last Scan</span>
+        <strong>${report.mode || "not_run"}</strong>
+        <small>${report.generatedAt || "No report generated yet"}</small>
+      `;
+      return item;
+    })()
+  );
+};
+
+const renderApprovals = () => {
+  const items = state.approvedQueue.items || [];
+  if (!items.length) {
+    const empty = document.createElement("article");
+    empty.className = "approval-item";
+    empty.innerHTML = `
+      <div class="status-pill">Empty</div>
+      <div>
+        <h4>No durable approval queue items yet</h4>
+        <p>Approved posts should be added to approved-post-queue.json before daily production.</p>
+      </div>
+    `;
+    elements.approvalList.replaceChildren(empty);
+    return;
+  }
+
+  elements.approvalList.replaceChildren(
+    ...items.map((item) => {
+      const card = document.createElement("article");
+      card.className = "approval-item";
+      const status = statusLabels[item.status] || item.status || "Unknown";
+      const duplicateCount = item.duplicateMatches?.length || 0;
+      card.innerHTML = `
+        <div class="status-pill" data-status="${item.status || "unknown"}">${status}</div>
+        <div>
+          <b>${item.niche || "anime-social"}</b>
+          <h4>${item.title || "Untitled approved post"}</h4>
+          <p>${item.requestedFormat || item.format || "Format TBD"}</p>
+          <p><strong>Proof:</strong> ${
+            item.proofUrl ? `<a href="${item.proofUrl}">Open proof</a>` : "Not ready"
+          }</p>
+          <small>Approved: ${item.approvedAt || "pending"}${
+            duplicateCount ? ` · duplicate matches: ${duplicateCount}` : ""
+          }</small>
+        </div>
+      `;
+      return card;
+    })
+  );
+};
+
 const exportPacket = () => ({
   generatedAt: new Date().toISOString(),
   status: "manual-review-mvp",
@@ -346,8 +434,12 @@ const exportPacket = () => ({
   ],
   uniquenessCheck: {
     historyItemsChecked: state.contentHistory.items.length,
+    approvedQueueItemsChecked: state.approvedQueue.items.length,
+    lastDailyProductionScan: state.dailyReport?.generatedAt || null,
     duplicatePolicy: "Candidates matching prior title, caption, angle, or fingerprint are filtered before batching.",
-    historySource: "./content-history.json"
+    historySource: "./content-history.json",
+    approvalQueueSource: "./approved-post-queue.json",
+    productionReportSource: "./daily-production-report.json"
   },
   ideas: state.ideas,
   formats: state.formats,
@@ -359,7 +451,9 @@ const exportPacket = () => ({
     backup: item.backup.title,
     caption: item.post.caption,
     hashtags: item.post.hashtags
-  }))
+  })),
+  approvedPostQueue: state.approvedQueue.items,
+  dailyProductionReport: state.dailyReport
 });
 
 const renderExport = () => {
@@ -377,6 +471,8 @@ const render = () => {
   renderFormats();
   renderVisuals();
   renderQueue();
+  renderDailyReport();
+  renderApprovals();
   renderExport();
 };
 
@@ -394,6 +490,16 @@ const loadContentHistory = async () => {
     state.contentHistory = await response.json();
   } catch (error) {
     state.contentHistory = { items: [] };
+  }
+};
+
+const loadJson = async (url, fallback) => {
+  try {
+    const response = await fetch(url, { cache: "no-store" });
+    if (!response.ok) throw new Error(`${url} returned ${response.status}`);
+    return await response.json();
+  } catch (error) {
+    return fallback;
   }
 };
 
@@ -421,4 +527,6 @@ elements.tabs.forEach((tab) => {
 });
 
 await loadContentHistory();
+state.approvedQueue = await loadJson("./approved-post-queue.json", { items: [] });
+state.dailyReport = await loadJson("./daily-production-report.json", null);
 buildPlan();

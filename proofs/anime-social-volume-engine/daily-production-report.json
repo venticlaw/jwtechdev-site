@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-06-07T14:12:26.641Z",
+  "mode": "dry_run",
+  "queuePath": "experiments/anime-social-volume-engine/approved-post-queue.json",
+  "historyPath": "experiments/anime-social-volume-engine/content-history.json",
+  "summary": {
+    "totalQueueItems": 1,
+    "approvedForCreation": 0,
+    "readyForProduction": 0,
+    "blockedDuplicates": 0
+  },
+  "results": [],
+  "gates": [
+    "No social auto-posting was performed.",
+    "No Instagram API calls were made.",
+    "Duplicate matches must not move into proof production."
+  ]
+}

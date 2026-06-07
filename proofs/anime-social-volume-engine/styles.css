@@ -233,7 +233,9 @@ textarea {
 .idea-card,
 .format-card,
 .visual-card,
-.queue-item {
+.queue-item,
+.approval-item,
+.report-strip article {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
@@ -368,7 +370,8 @@ textarea {
   gap: 12px;
 }
 
-.queue-item {
+.queue-item,
+.approval-item {
   display: grid;
   grid-template-columns: minmax(110px, 0.18fr) minmax(0, 1fr) auto;
   gap: 14px;
@@ -377,7 +380,45 @@ textarea {
   box-shadow: none;
 }
 
-.day-pill {
+.approval-list {
+  display: grid;
+  gap: 12px;
+}
+
+.report-strip {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(120px, 1fr));
+  gap: 10px;
+}
+
+.report-strip article {
+  display: grid;
+  gap: 5px;
+  align-content: start;
+  padding: 14px;
+  box-shadow: none;
+}
+
+.report-strip span {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.report-strip strong {
+  font-size: 1.5rem;
+  line-height: 1.1;
+}
+
+.report-strip small,
+.approval-item small {
+  color: var(--muted);
+  line-height: 1.35;
+}
+
+.day-pill,
+.status-pill {
   display: grid;
   min-height: 70px;
   place-items: center;
@@ -385,6 +426,56 @@ textarea {
   color: #ffffff;
   background: var(--plum);
   font-weight: 900;
+}
+
+.status-pill {
+  min-height: 54px;
+  padding: 10px;
+  text-align: center;
+}
+
+.status-pill[data-status="approved_for_creation"] {
+  background: var(--gold);
+  color: var(--charcoal);
+}
+
+.status-pill[data-status="in_production"],
+.status-pill[data-status="proof_ready"] {
+  background: var(--blue);
+}
+
+.status-pill[data-status="exported"] {
+  background: var(--teal);
+}
+
+.status-pill[data-status="needs_revision"],
+.status-pill[data-status="blocked"] {
+  background: var(--coral);
+}
+
+.approval-item {
+  grid-template-columns: minmax(130px, 0.18fr) minmax(0, 1fr);
+}
+
+.approval-item b {
+  display: block;
+  color: var(--teal);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+}
+
+.approval-item h4,
+.approval-item p {
+  margin: 0 0 7px;
+}
+
+.approval-item p,
+.approval-item a {
+  color: var(--muted);
+}
+
+.approval-item a {
+  font-weight: 850;
 }
 
 .review-actions {
@@ -418,11 +509,13 @@ textarea {
   }
 
   .hero-panel,
-  .queue-item {
+  .queue-item,
+  .approval-item {
     grid-template-columns: 1fr;
   }
 
-  .metrics {
+  .metrics,
+  .report-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -439,6 +532,7 @@ textarea {
   }
 
   .metrics,
+  .report-strip,
   .card-grid,
   .format-grid,
   .visual-grid {

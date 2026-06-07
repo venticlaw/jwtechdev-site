@@ -1,0 +1,33 @@
+{
+  "updatedAt": "2026-06-07",
+  "purpose": "Durable queue for posts Josh has approved for creation/export. Agents must check this file daily before creating new proof batches.",
+  "statuses": [
+    "approved_for_creation",
+    "in_production",
+    "proof_ready",
+    "needs_revision",
+    "exported",
+    "blocked"
+  ],
+  "rules": [
+    "Do not rely on browser localStorage as the source of truth for daily production.",
+    "Only items in approved_for_creation should be picked up by the daily production lane.",
+    "Before creating any item, compare it against content-history.json.",
+    "After proof_ready or exported, append the produced concept to content-history.json.",
+    "Do not publish publicly or auto-post to social platforms from this queue."
+  ],
+  "items": [
+    {
+      "id": "dbz-power-scaling-checklist-proof",
+      "niche": "dragon-ball-power-scaling",
+      "title": "Dragon Ball Z fans before the power-scaling debate starts",
+      "requestedFormat": "5-card carousel",
+      "status": "exported",
+      "approvedBy": "Josh",
+      "approvedAt": "2026-06-05",
+      "proofUrl": "https://venticlaw.github.io/jwtechdev-site/proofs/anime-social-volume-engine/dragon-ball-z-fans-example.html",
+      "historyId": "2026-06-05-dragon-ball-z-power-scaling-checklist",
+      "notes": "Existing proof used to seed the durable queue and duplicate-prevention history."
+    }
+  ]
+}

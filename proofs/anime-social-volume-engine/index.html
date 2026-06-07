@@ -82,6 +82,7 @@
             <button type="button" data-view="formats">Formats</button>
             <button type="button" data-view="visuals">Visuals</button>
             <button type="button" data-view="queue">7-Day Queue</button>
+            <button type="button" data-view="approvals">Approvals</button>
             <button type="button" data-view="export">Export</button>
           </div>
 
@@ -128,6 +129,17 @@
               <button class="secondary-button" type="button" id="clearApprovalsButton">Clear Local Reviews</button>
             </div>
             <div class="queue-list" id="queueList"></div>
+          </section>
+
+          <section class="panel" data-panel="approvals">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Daily Production Lane</p>
+                <h3>Approved posts checked against prior output</h3>
+              </div>
+            </div>
+            <div class="report-strip" id="dailyReport"></div>
+            <div class="approval-list" id="approvalList"></div>
           </section>
 
           <section class="panel" data-panel="export">
