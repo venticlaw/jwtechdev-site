@@ -1085,6 +1085,25 @@
     interestSelect?.addEventListener('change', updateDecisionTree);
     updateDecisionTree();
 
+    const applyInquiryParams = () => {
+      const params = new URLSearchParams(window.location.search);
+      const interest = params.get('interest');
+      const asset = params.get('asset');
+      if (interest && interestSelect) {
+        interestSelect.value = interest;
+        if (!interestSelect.value && /Cloud|AWS|Codex|Agent|Guide|Pack|Map|Checklist|Prompt|MCP|Dashboard|Workflow/.test(interest)) {
+          interestSelect.value = 'Study guides & resources';
+        }
+      }
+      if (asset && selectedAsset) {
+        selectedAsset.value = asset;
+        const resourceInput = document.querySelector('[name="resource_interest"]');
+        if (resourceInput && !resourceInput.value) resourceInput.value = asset;
+      }
+      updateDecisionTree();
+    };
+    applyInquiryParams();
+
     const routeLinks = document.querySelectorAll('[data-asset-interest], [data-inquiry-interest]');
     routeLinks.forEach(link => {
       link.addEventListener('click', () => {
@@ -1098,6 +1117,10 @@
         }
         if (selectedAsset) {
           selectedAsset.value = link.closest('.asset-card')?.querySelector('.asset-card__title')?.textContent?.trim() || interest || '';
+          const resourceInput = document.querySelector('[name="resource_interest"]');
+          if (resourceInput && interestSelect?.value === 'Study guides & resources') {
+            resourceInput.value = selectedAsset.value;
+          }
         }
         setTimeout(() => document.getElementById('inquiryName')?.focus({ preventScroll: true }), 350);
       });

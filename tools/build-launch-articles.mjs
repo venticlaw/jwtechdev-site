@@ -46,6 +46,7 @@ const articles = [
       ['Do I need to code before learning cloud infrastructure?', 'You do not need to be an advanced programmer, but basic scripting, command line comfort, and Git will make cloud projects much easier.'],
       ['What is the best first cloud project?', 'A static website with a clear deployment path and a written architecture explanation is a strong first project because it teaches deployment, ownership, DNS, and documentation.']
     ],
+    ctaAsset: 'Cloud Infrastructure First Map',
     cta: 'Request the Cloud Infrastructure First Map and use it to turn the six categories into your first clean portfolio project.'
   },
   {
@@ -90,6 +91,7 @@ const articles = [
       ['AWS Cloud Practitioner exam guide CLF-C02', 'https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html'],
       ['AWS Solutions Architect Associate exam guide SAA-C03', 'https://docs.aws.amazon.com/aws-certification/latest/solutions-architect-associate-03/solutions-architect-associate-03.html']
     ],
+    ctaAsset: 'AWS Certification Study Map',
     cta: 'Request the AWS Certification Study Map to choose a path, plan your first 30 days, and pair the cert with portfolio proof.'
   },
   {
@@ -129,6 +131,7 @@ const articles = [
       ['What is the safest first agent?', 'A draft or research agent that writes to a local output folder and cannot send, delete, publish, or change production systems.'],
       ['Why does an agent need infrastructure?', 'Because real work needs identity, storage, logs, permissions, approvals, and recovery. The model is only one part of the system.']
     ],
+    ctaAsset: 'AI Agent Builder Checklist',
     cta: 'Request the AI Agent Builder Checklist before handing tools to any workflow that can touch real systems.'
   },
   {
@@ -168,6 +171,7 @@ const articles = [
       ['How complex should the first project be?', 'Simple enough to finish, polished enough to explain, and structured enough to show judgment.'],
       ['Should I include screenshots?', 'Yes. Screenshots help reviewers understand the result quickly, especially if they do not run the project locally.']
     ],
+    ctaAsset: 'Cloud Portfolio Project Pack',
     cta: 'Request the Cloud Portfolio Project Pack for project ideas, README structure, and interview talking points.'
   },
   {
@@ -207,6 +211,7 @@ const articles = [
       ['What should live on social instead?', 'Short discovery content, behind-the-scenes clips, conversations, and distribution. Keep durable resources on the owned site.'],
       ['Can a static site collect leads?', 'It can route inquiries through email, form providers, or an approved local capture endpoint. The storage decision should be intentional.']
     ],
+    ctaAsset: 'Codex Content-engine Workflow',
     cta: 'Request the Codex Content-engine Workflow to turn one idea into articles, scripts, posts, and guide assets.'
   },
   {
@@ -246,6 +251,7 @@ const articles = [
       ['Should Codex create separate agents?', 'For multi-step work, yes. Split by function, then run an integration wave to merge and verify the outputs.'],
       ['What is the biggest risk?', 'Vague authority. The fix is boundaries: allowed files, forbidden actions, approval gates, and clear verification.']
     ],
+    ctaAsset: 'Codex Workspace Field Guide',
     cta: 'Request the Codex Workspace Field Guide and AI Agent Builder Checklist to set up safe AI-assisted project work.'
   }
 ];
@@ -365,7 +371,7 @@ function articleHtml(article) {
           <section class="article-cta">
             <h2>Want the working resource?</h2>
             <p>${esc(article.cta)}</p>
-            <a class="btn btn--primary btn--lg" href="../#connect">Request access</a>
+            <a class="btn btn--primary btn--lg" href="../?interest=${encodeURIComponent('Study guides & resources')}&asset=${encodeURIComponent(article.ctaAsset || article.title)}#connect">Request access</a>
           </section>
         </div>
       </div>
