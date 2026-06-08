@@ -258,24 +258,25 @@ const articles = [
 
 function visualSvg(article) {
   const nodes = article.visual.nodes.map((node, index) => {
-    const x = 120 + (index % 3) * 250;
-    const y = index < 3 ? 170 : 350;
-    return `<g><rect x="${x - 82}" y="${y - 42}" width="164" height="84" rx="14" fill="rgba(255,255,255,.92)" stroke="rgba(255,255,255,.55)"/><text x="${x}" y="${y + 6}" text-anchor="middle" font-family="Roboto, Arial, sans-serif" font-size="22" font-weight="900" fill="#0e0e11">${esc(node)}</text></g>`;
+    const x = 190 + (index % 3) * 280;
+    const y = index < 3 ? 225 : 380;
+    return `<g><rect x="${x - 86}" y="${y - 42}" width="172" height="84" rx="16" fill="rgba(255,255,255,.94)" stroke="rgba(255,255,255,.6)"/><text x="${x}" y="${y + 6}" text-anchor="middle" font-family="Roboto, Arial, sans-serif" font-size="22" font-weight="900" fill="#0e0e11">${esc(node)}</text></g>`;
   }).join('');
-  const lines = `<path d="M202 170h86M452 170h86M620 218v84M538 350h-86M288 350h-86" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="5" stroke-linecap="round"/>`;
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  const lines = `<path d="M276 225h108M556 225h108M750 272v66M664 380h-108M384 380h-108" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="5" stroke-linecap="round"/>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
   <title id="title">${esc(article.visual.label)}</title>
   <desc id="desc">JWTechDev.ai visual diagram for ${esc(article.title)}</desc>
-  <rect width="1200" height="675" fill="#0e0e11"/>
+  <rect width="1200" height="600" fill="#0e0e11"/>
   <circle cx="1030" cy="120" r="240" fill="${article.visual.accent}" opacity=".35"/>
-  <circle cx="80" cy="620" r="260" fill="#FA9F42" opacity=".18"/>
-  <path d="M0 120h1200M0 240h1200M0 360h1200M0 480h1200M240 0v675M480 0v675M720 0v675M960 0v675" stroke="rgba(255,255,255,.055)" stroke-width="2"/>
-  <text x="72" y="88" font-family="Roboto Condensed, Arial, sans-serif" font-size="58" font-weight="900" fill="#fff">${esc(article.visual.label)}</text>
-  <text x="74" y="126" font-family="Roboto, Arial, sans-serif" font-size="24" font-weight="700" fill="rgba(255,255,255,.72)">JWTechDev.ai practical systems map</text>
+  <circle cx="80" cy="560" r="230" fill="#FA9F42" opacity=".18"/>
+  <rect x="32" y="32" width="1136" height="536" rx="28" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/>
+  <path d="M0 120h1200M0 240h1200M0 360h1200M0 480h1200M240 0v600M480 0v600M720 0v600M960 0v600" stroke="rgba(255,255,255,.055)" stroke-width="2"/>
+  <text x="72" y="82" font-family="Roboto Condensed, Arial, sans-serif" font-size="54" font-weight="900" fill="#fff">${esc(article.visual.label)}</text>
+  <text x="74" y="124" font-family="Roboto, Arial, sans-serif" font-size="22" font-weight="700" fill="rgba(255,255,255,.72)">JWTechDev.ai practical systems map</text>
   ${lines}
   ${nodes}
-  <rect x="72" y="554" width="240" height="58" rx="29" fill="${article.visual.accent}"/>
-  <text x="192" y="592" text-anchor="middle" font-family="Roboto, Arial, sans-serif" font-size="22" font-weight="900" fill="#fff">clear over clever</text>
+  <rect x="72" y="510" width="240" height="54" rx="27" fill="${article.visual.accent}"/>
+  <text x="192" y="545" text-anchor="middle" font-family="Roboto, Arial, sans-serif" font-size="21" font-weight="900" fill="#fff">clear over clever</text>
 </svg>`;
 }
 
