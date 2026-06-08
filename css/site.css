@@ -1489,12 +1489,12 @@ button { font: inherit; }
 }
 
 .article-body h1 {
-  max-width: 12ch;
+  max-width: 14ch;
   margin: 0;
   color: var(--ink-900);
-  font-size: clamp(3rem, 9vw, 6.2rem);
+  font-size: clamp(2.75rem, 7.5vw, 5.6rem);
   letter-spacing: 0;
-  line-height: 0.92;
+  line-height: 0.98;
 }
 
 .article-body section {
@@ -1765,7 +1765,11 @@ button { font: inherit; }
 
 @media (max-width: 720px) {
   .article-grid { grid-template-columns: 1fr; }
-  .article-body h1 { max-width: none; }
+  .article-body h1 {
+    max-width: none;
+    font-size: clamp(2.55rem, 13vw, 4rem);
+    line-height: 1;
+  }
   .article-hero {
     width: 100%;
     padding: var(--space-3);
