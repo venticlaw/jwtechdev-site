@@ -1,0 +1,803 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BOT Funding Slack Agent Training</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #102033;
+        --heading: #0f2742;
+        --muted: #566579;
+        --paper: #f4f7fb;
+        --panel: #ffffff;
+        --soft: #eef6ff;
+        --line: #d6e0eb;
+        --accent: #a95414;
+        --accent-strong: #d97706;
+        --blue: #2563eb;
+        --teal: #0f766e;
+        --danger: #be123c;
+        --shadow: 0 20px 56px rgba(15, 23, 42, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top right, rgba(217, 119, 6, 0.12), transparent 28%),
+          linear-gradient(180deg, #f5f7fb 0%, #edf2f7 100%);
+        font: 16px/1.6 "Avenir Next", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      main {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 32px 0 72px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 20px;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--heading);
+        font-weight: 900;
+        text-decoration: none;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 42px;
+        height: 42px;
+        place-items: center;
+        border: 1px solid rgba(169, 84, 20, 0.28);
+        border-radius: 8px;
+        color: #ffffff;
+        background: var(--accent);
+        font-size: 0.82rem;
+        letter-spacing: 0;
+      }
+
+      .nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: flex-end;
+      }
+
+      .nav a,
+      .button {
+        display: inline-flex;
+        min-height: 42px;
+        align-items: center;
+        justify-content: center;
+        padding: 9px 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        color: var(--heading);
+        background: rgba(255, 255, 255, 0.86);
+        font-size: 0.92rem;
+        font-weight: 850;
+        text-decoration: none;
+      }
+
+      .button.primary {
+        border-color: var(--accent);
+        color: #ffffff;
+        background: var(--accent);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.22fr) minmax(300px, 0.78fr);
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .hero-panel,
+      .workflow-visual,
+      .section,
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.94);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-panel {
+        min-height: 420px;
+        padding: 28px;
+      }
+
+      .eyebrow,
+      .meta,
+      .tag {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.82rem;
+        font-weight: 900;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1,
+      h2,
+      h3 {
+        color: var(--heading);
+        font-family: Georgia, "Times New Roman", serif;
+        line-height: 1.08;
+      }
+
+      h1 {
+        max-width: 820px;
+        margin-bottom: 16px;
+        font-size: clamp(2.65rem, 7vw, 5.8rem);
+      }
+
+      h2 {
+        margin-bottom: 14px;
+        font-size: clamp(1.7rem, 4vw, 2.55rem);
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 1.18rem;
+      }
+
+      .lead {
+        max-width: 740px;
+        margin-bottom: 22px;
+        color: var(--muted);
+        font-size: 1.08rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 24px;
+      }
+
+      .rule {
+        margin-top: 26px;
+        padding: 16px;
+        border-left: 6px solid var(--accent-strong);
+        border-radius: 8px;
+        background: #fff7ed;
+      }
+
+      .rule strong {
+        display: block;
+        color: var(--accent);
+        font-size: 0.82rem;
+        text-transform: uppercase;
+      }
+
+      .rule p {
+        margin: 6px 0 0;
+        color: var(--heading);
+        font-weight: 850;
+      }
+
+      .workflow-visual {
+        display: grid;
+        align-content: start;
+        gap: 14px;
+        padding: 20px;
+        overflow: hidden;
+      }
+
+      .visual-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .visual-head span {
+        color: var(--muted);
+        font-size: 0.86rem;
+        font-weight: 800;
+      }
+
+      .message {
+        display: grid;
+        grid-template-columns: 38px 1fr;
+        gap: 10px;
+        align-items: start;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #f8fbff;
+      }
+
+      .avatar {
+        display: grid;
+        width: 38px;
+        height: 38px;
+        place-items: center;
+        border-radius: 8px;
+        color: #ffffff;
+        background: var(--heading);
+        font-weight: 900;
+      }
+
+      .avatar.bot {
+        background: var(--accent);
+      }
+
+      .message strong {
+        display: block;
+        margin-bottom: 4px;
+        color: var(--heading);
+      }
+
+      .message p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .status-strip {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+      }
+
+      .status-strip span {
+        padding: 10px 8px;
+        border-radius: 8px;
+        color: #ffffff;
+        background: var(--teal);
+        font-size: 0.78rem;
+        font-weight: 900;
+        text-align: center;
+      }
+
+      .status-strip span:nth-child(2) {
+        background: var(--accent-strong);
+      }
+
+      .status-strip span:nth-child(3) {
+        background: var(--blue);
+      }
+
+      .section {
+        margin-top: 18px;
+        padding: 24px;
+      }
+
+      .section-header {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+
+      .section-header p {
+        max-width: 620px;
+        margin-bottom: 0;
+        color: var(--muted);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .grid.two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .card {
+        padding: 18px;
+        box-shadow: none;
+      }
+
+      .card p,
+      .card li {
+        color: var(--muted);
+      }
+
+      .card p:last-child,
+      .card ul:last-child,
+      .card ol:last-child {
+        margin-bottom: 0;
+      }
+
+      ul,
+      ol {
+        margin: 0;
+        padding-left: 19px;
+      }
+
+      li + li {
+        margin-top: 8px;
+      }
+
+      .prompt-list {
+        display: grid;
+        gap: 10px;
+      }
+
+      .prompt {
+        padding: 13px 14px;
+        border: 1px solid var(--line);
+        border-left: 5px solid var(--accent);
+        border-radius: 8px;
+        background: #fbfdff;
+        color: var(--heading);
+        font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+        font-size: 0.92rem;
+        overflow-wrap: anywhere;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 10px;
+        counter-reset: step;
+      }
+
+      .step {
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        gap: 12px;
+        align-items: start;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fbfdff;
+      }
+
+      .step::before {
+        counter-increment: step;
+        content: counter(step);
+        display: grid;
+        width: 36px;
+        height: 36px;
+        place-items: center;
+        border-radius: 8px;
+        color: #ffffff;
+        background: var(--accent);
+        font-weight: 900;
+      }
+
+      .step p {
+        margin-bottom: 0;
+        color: var(--muted);
+      }
+
+      .queue-table {
+        width: 100%;
+        border-collapse: collapse;
+        overflow: hidden;
+      }
+
+      .queue-table th,
+      .queue-table td {
+        padding: 13px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .queue-table th {
+        color: var(--heading);
+        background: var(--soft);
+        font-size: 0.82rem;
+        text-transform: uppercase;
+      }
+
+      .queue-table td {
+        color: var(--muted);
+      }
+
+      .queue-table tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        padding: 5px 8px;
+        border-radius: 999px;
+        color: #402a08;
+        background: #f7dfb7;
+        font-size: 0.76rem;
+        font-weight: 900;
+      }
+
+      .pill.safe {
+        color: #17423e;
+        background: #dff4ef;
+      }
+
+      .pill.stop {
+        color: #ffffff;
+        background: var(--danger);
+      }
+
+      .footer {
+        margin-top: 18px;
+        padding: 18px 0 0;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      @media (max-width: 900px) {
+        .topbar,
+        .section-header {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .nav {
+          justify-content: flex-start;
+        }
+
+        .hero,
+        .grid,
+        .grid.two {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-panel {
+          min-height: auto;
+        }
+      }
+
+      @media (max-width: 640px) {
+        main {
+          width: min(100% - 24px, 1120px);
+          padding-top: 18px;
+        }
+
+        .hero-panel,
+        .workflow-visual,
+        .section {
+          padding: 18px;
+        }
+
+        .status-strip {
+          grid-template-columns: 1fr;
+        }
+
+        .queue-table,
+        .queue-table thead,
+        .queue-table tbody,
+        .queue-table tr,
+        .queue-table th,
+        .queue-table td {
+          display: block;
+        }
+
+        .queue-table thead {
+          display: none;
+        }
+
+        .queue-table tr {
+          padding: 12px 0;
+          border-bottom: 1px solid var(--line);
+        }
+
+        .queue-table tr:last-child {
+          border-bottom: 0;
+        }
+
+        .queue-table td {
+          padding: 5px 0;
+          border-bottom: 0;
+        }
+
+        .queue-table td::before {
+          content: attr(data-label);
+          display: block;
+          color: var(--heading);
+          font-size: 0.76rem;
+          font-weight: 900;
+          text-transform: uppercase;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <nav class="topbar" aria-label="Page navigation">
+        <a class="brand" href="../">
+          <span class="brand-mark">BOT</span>
+          <span>Building Our Tech</span>
+        </a>
+        <div class="nav">
+          <a href="#workflow">Workflow</a>
+          <a href="#prompts">Prompts</a>
+          <a href="#demo">Demo</a>
+          <a href="#queue">Queue</a>
+        </div>
+      </nav>
+
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-panel">
+          <p class="eyebrow">Slack agent training</p>
+          <h1 id="page-title">BOT Funding Slack Agent Training</h1>
+          <p class="lead">
+            A practical session plan for showing the team how to use an AI agent in Slack for
+            funding research, grant queue review, draft preparation, and approval-safe handoffs.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#demo">Run the session</a>
+            <a class="button" href="#approvals">Review approval gates</a>
+          </div>
+          <div class="rule" id="approvals">
+            <strong>Core operating rule</strong>
+            <p>
+              Read, draft, validate, and summarize freely. Send, submit, upload, move, contact, or
+              post only after exact human approval immediately before the action.
+            </p>
+          </div>
+        </div>
+
+        <aside class="workflow-visual" aria-label="Slack workflow preview">
+          <div class="visual-head">
+            <strong>#bot-funding</strong>
+            <span>Manual workflow</span>
+          </div>
+          <div class="message">
+            <div class="avatar">J</div>
+            <div>
+              <strong>Josh</strong>
+              <p>@money summarize what is ready, what is blocked, and what needs approval.</p>
+            </div>
+          </div>
+          <div class="message">
+            <div class="avatar bot">AI</div>
+            <div>
+              <strong>Funding Agent</strong>
+              <p>Returns a queue update, draft targets, blockers, and explicit approval gates.</p>
+            </div>
+          </div>
+          <div class="status-strip" aria-label="Workflow status buckets">
+            <span>Validate</span>
+            <span>Draft</span>
+            <span>Approve</span>
+          </div>
+          <div class="message">
+            <div class="avatar">S</div>
+            <div>
+              <strong>Safia</strong>
+              <p>Reviews, edits, and submits only from final approved materials.</p>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section" id="workflow">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Workflow</p>
+            <h2>Use the agent as a funding operations layer.</h2>
+          </div>
+          <p>
+            The agent should make the work easier to see and prepare, while humans stay responsible
+            for final facts, judgment, and transmission.
+          </p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <h3>Good uses</h3>
+            <ul>
+              <li>Summarize current funding status and queue priority.</li>
+              <li>Compare grant fit, deadline, eligibility, and likely ask size.</li>
+              <li>Draft Slack-ready updates, LOIs, narratives, and checklist packets.</li>
+              <li>Identify missing BOT facts before a human starts submission.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Approval-gated uses</h3>
+            <ul>
+              <li>Posting to Slack or tagging reviewers.</li>
+              <li>Uploading, moving, or sharing Drive files.</li>
+              <li>Logging into portals or changing account data.</li>
+              <li>Emailing, contacting funders, or submitting applications.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Team roles</h3>
+            <ul>
+              <li>Josh owns approval, routing, and final go/no-go calls.</li>
+              <li>Safia reviews, modifies, and submits approved materials.</li>
+              <li>The agent validates, drafts, summarizes, and flags blockers.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="prompts">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Prompt set</p>
+            <h2>Start with precise Slack calls.</h2>
+          </div>
+          <p>
+            Keep prompts short, bounded, and explicit about whether the agent should draft locally
+            or request approval to send.
+          </p>
+        </div>
+        <div class="prompt-list">
+          <div class="prompt">@money status: open, watching, upcoming, follow-up only. Do not post outside this thread.</div>
+          <div class="prompt">@money review the current queue and rank the next three draft targets by deadline and fit.</div>
+          <div class="prompt">@money draft a Safia review packet for the top opportunity. Include blockers and required BOT facts.</div>
+          <div class="prompt">@money prepare an aggregated Slack update for Safia, but do not send until Josh approves exact wording.</div>
+          <div class="prompt">@money list what is blocked by eligibility, portal readiness, documents, or human approval.</div>
+        </div>
+      </section>
+
+      <section class="section" id="demo">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Teaching run of show</p>
+            <h2>45-minute session script.</h2>
+          </div>
+          <p>
+            This is built for a live Slack demo with funding work that stays inside BOT Funding
+            boundaries.
+          </p>
+        </div>
+        <div class="timeline">
+          <article class="step">
+            <div>
+              <h3>Set the guardrail</h3>
+              <p>Explain the approval rule and show examples of allowed drafting versus gated sending.</p>
+            </div>
+          </article>
+          <article class="step">
+            <div>
+              <h3>Call status</h3>
+              <p>Ask for a concise queue summary with open, watching, upcoming, and follow-up-only sections.</p>
+            </div>
+          </article>
+          <article class="step">
+            <div>
+              <h3>Pick one target</h3>
+              <p>Use deadline, eligibility, BOT fit, and missing documents to choose the next drafting target.</p>
+            </div>
+          </article>
+          <article class="step">
+            <div>
+              <h3>Draft locally</h3>
+              <p>Create a Slack-ready review packet, LOI outline, or narrative draft without transmitting it.</p>
+            </div>
+          </article>
+          <article class="step">
+            <div>
+              <h3>Review as humans</h3>
+              <p>Have Safia or the team modify facts, ask size, framing, attachments, and final submission plan.</p>
+            </div>
+          </article>
+          <article class="step">
+            <div>
+              <h3>Approve exact action</h3>
+              <p>If anything must be sent, posted, uploaded, or submitted, require exact final approval first.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="queue">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Queue language</p>
+            <h2>Teach the buckets, not just the grants.</h2>
+          </div>
+          <p>
+            These labels keep the team from confusing a promising opportunity with one that is
+            ready to submit.
+          </p>
+        </div>
+        <div class="card">
+          <table class="queue-table">
+            <thead>
+              <tr>
+                <th>Bucket</th>
+                <th>Meaning</th>
+                <th>Current examples</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Bucket"><span class="pill safe">Draft-ready after validation</span></td>
+                <td data-label="Meaning">Strong fit, live path, and useful deadline, but final facts still need human confirmation.</td>
+                <td data-label="Current examples">Bank of America RFP, Neighborhood Builders, Edyth Bush, First Horizon, Parikh, Pabst, Truist, Walmart Spark Good.</td>
+              </tr>
+              <tr>
+                <td data-label="Bucket"><span class="pill">Watch / recheck</span></td>
+                <td data-label="Meaning">Potential fit, but one or more path, county, eligibility, or timing details need revalidation.</td>
+                <td data-label="Current examples">Duke Energy Foundation Florida; invitation-only or not-yet-open funders.</td>
+              </tr>
+              <tr>
+                <td data-label="Bucket"><span class="pill">Follow-up only</span></td>
+                <td data-label="Meaning">Already acted on or no current drafting need; track only for response or next status.</td>
+                <td data-label="Current examples">AWS Imagine Grant follow-up tracking.</td>
+              </tr>
+              <tr>
+                <td data-label="Bucket"><span class="pill">Provider infrastructure</span></td>
+                <td data-label="Meaning">Useful for reimbursement or operating capacity, not a quick-grant draft candidate.</td>
+                <td data-label="Current examples">CareerSource ETPL.</td>
+              </tr>
+              <tr>
+                <td data-label="Bucket"><span class="pill stop">Stop gate</span></td>
+                <td data-label="Meaning">Transmission, portal, Drive, outreach, payment, or submission action requiring exact approval.</td>
+                <td data-label="Current examples">Slack post, funder email, portal login, document upload, application submit.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">Standard handoff</p>
+            <h2>End every agent response with action clarity.</h2>
+          </div>
+        </div>
+        <div class="grid two">
+          <article class="card">
+            <h3>Good final shape</h3>
+            <ul>
+              <li>What changed or what was found.</li>
+              <li>What is ready for human review.</li>
+              <li>What is blocked and who owns the unblock.</li>
+              <li>What exact approval is needed before any outbound action.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Do not normalize</h3>
+            <ul>
+              <li>Always-on posting without a current approval.</li>
+              <li>Portal work from stale facts.</li>
+              <li>Moving files as a substitute for review.</li>
+              <li>Calling a queue item submitted unless it is verified.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <p class="footer">
+        Public GitHub Pages proof. Built for BOT Funding training on June 11, 2026. No Slack post,
+        email, portal action, upload, or submission is performed by this page.
+      </p>
+    </main>
+  </body>
+</html>
