@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Nucleus | TecDev-Core-OS</title>
+    <meta
+      name="description"
+      content="A public-safe Nucleus mirror for TecDev-Core-OS status, proof links, channel boundaries, and approval gates."
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #12151d;
+        --muted: #5f6877;
+        --paper: #f6f8fb;
+        --panel: #ffffff;
+        --line: #dbe2ec;
+        --green: #0b6e4f;
+        --navy: #243b5a;
+        --orange: #b86b18;
+        --red: #8a2f2a;
+        --shadow: 0 18px 45px rgba(18, 21, 29, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        background: var(--paper);
+        color: var(--ink);
+        font: 16px/1.55 "Avenir Next", "Segoe UI", system-ui, sans-serif;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .wrap {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      header {
+        padding: 48px 0 28px;
+        background:
+          linear-gradient(135deg, rgba(11, 110, 79, 0.14), transparent 42%),
+          linear-gradient(225deg, rgba(184, 107, 24, 0.12), transparent 42%),
+          #ffffff;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        color: var(--green);
+        font-size: 0.78rem;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin-bottom: 14px;
+        font-size: clamp(2.7rem, 8vw, 6.4rem);
+        line-height: 0.94;
+      }
+
+      h2 {
+        margin-bottom: 12px;
+        font-size: clamp(1.7rem, 4vw, 3rem);
+        line-height: 1;
+      }
+
+      p {
+        color: var(--muted);
+      }
+
+      .lede {
+        max-width: 720px;
+        font-size: clamp(1.05rem, 2vw, 1.25rem);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .button {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 14px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        color: var(--ink);
+        font-weight: 850;
+        text-decoration: none;
+      }
+
+      .button.primary {
+        border-color: var(--green);
+        background: var(--green);
+        color: #ffffff;
+      }
+
+      main {
+        display: grid;
+        gap: 24px;
+        padding: 28px 0 48px;
+      }
+
+      section,
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        box-shadow: var(--shadow);
+      }
+
+      section {
+        padding: clamp(18px, 4vw, 28px);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .card {
+        min-height: 152px;
+        padding: 16px;
+        box-shadow: none;
+      }
+
+      .card span {
+        display: block;
+        color: var(--green);
+        font-size: 0.74rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .card strong {
+        display: block;
+        margin-top: 10px;
+        font-size: 1.05rem;
+      }
+
+      .card small {
+        display: block;
+        margin-top: 10px;
+        color: var(--muted);
+      }
+
+      .status-list {
+        display: grid;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .status-list li {
+        display: grid;
+        grid-template-columns: minmax(140px, 0.28fr) minmax(0, 1fr);
+        gap: 12px;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fbfcfe;
+      }
+
+      .status-list b {
+        color: var(--navy);
+      }
+
+      .guardrails {
+        border-left: 5px solid var(--red);
+      }
+
+      .guardrails ul {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px 18px;
+        margin-bottom: 0;
+        color: var(--muted);
+        font-weight: 760;
+      }
+
+      footer {
+        padding: 22px 0 36px;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 860px) {
+        .grid,
+        .guardrails ul {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 620px) {
+        header {
+          padding-top: 34px;
+        }
+
+        .grid,
+        .guardrails ul,
+        .status-list li {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <p class="eyebrow">TecDev-Core-OS</p>
+        <h1>The Nucleus public status mirror.</h1>
+        <p class="lede">
+          A sanitized GitHub Pages surface for channel boundaries, proof links, and approval-gated
+          operating status. The private local Nucleus remains the source of truth for internal paths,
+          ledgers, and execution details.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="./bot-funding/">Open BOT funding scout</a>
+          <a class="button" href="../proofs/">Open proof library</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section aria-labelledby="channels">
+        <p class="eyebrow">Channels</p>
+        <h2 id="channels">One owner per lane.</h2>
+        <div class="grid">
+          <article class="card">
+            <span>OPS</span>
+            <strong>The Nucleus</strong>
+            <small>Coordination, approvals, backlog, runbooks, status mirrors, and tool gaps.</small>
+          </article>
+          <article class="card">
+            <span>JW</span>
+            <strong>JWTechDev.ai</strong>
+            <small>Publishing, cloud/AI education assets, articles, content systems, and site work.</small>
+          </article>
+          <article class="card">
+            <span>JYW</span>
+            <strong>JoshYouWut</strong>
+            <small>Music site, beat store readiness, offers, inquiry flows, and catalog surfaces.</small>
+          </article>
+          <article class="card">
+            <span>BOT</span>
+            <strong>BOT Funding</strong>
+            <small>Funding scout, validation, candidate packs, and approval-ready draft prep.</small>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="status">
+        <p class="eyebrow">Current Public Status</p>
+        <h2 id="status">Safe review surfaces are live-ready.</h2>
+        <ul class="status-list">
+          <li>
+            <b>Nucleus mirror</b>
+            <span>Public-safe dashboard prepared for GitHub Pages. Private ops data stays local.</span>
+          </li>
+          <li>
+            <b>BOT funding scout</b>
+            <span>Daily scout pages are dated artifacts and roll up into the single BOT Funding lane.</span>
+          </li>
+          <li>
+            <b>Proof library</b>
+            <span>Static review pages can be opened on mobile without exposing private ledgers.</span>
+          </li>
+          <li>
+            <b>Automation hygiene</b>
+            <span>The daily BOT scout is routed to the canonical BOT thread instead of creating duplicate channels.</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="guardrails" aria-labelledby="guardrails">
+        <p class="eyebrow">Guardrails</p>
+        <h2 id="guardrails">Public page, private source of truth.</h2>
+        <p>
+          This mirror is intentionally limited. It should help with mobile review and coordination,
+          but it should not expose approval ledgers, local machine paths, internal notes, tokens,
+          drafts, or operational secrets.
+        </p>
+        <ul>
+          <li>No Slack, email, or form sends from this page.</li>
+          <li>No portal logins, grant submissions, or funder outreach.</li>
+          <li>No payment, checkout, DNS, or backend activation.</li>
+          <li>No private approval ledger or local filesystem paths.</li>
+          <li>No Google Drive uploads, moves, or deletes.</li>
+          <li>No public lead capture without a separate approved endpoint.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="wrap">
+      <span>Public mirror updated June 12, 2026. Private Nucleus remains local-first.</span>
+    </footer>
+  </body>
+</html>
