@@ -118,6 +118,12 @@
         color: #ffffff;
       }
 
+      .button.compact {
+        min-height: 38px;
+        padding: 8px 11px;
+        font-size: 0.9rem;
+      }
+
       main {
         display: grid;
         gap: 24px;
@@ -194,6 +200,152 @@
         border-left: 5px solid var(--red);
       }
 
+      .app-note {
+        display: grid;
+        gap: 4px;
+        margin: 0 0 16px;
+        padding: 12px;
+        border: 1px solid rgba(184, 107, 24, 0.35);
+        border-radius: 8px;
+        background: #fff8ee;
+        color: var(--ink);
+      }
+
+      .app-note b {
+        color: var(--orange);
+      }
+
+      .review-toolbar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 16px;
+      }
+
+      .review-board {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .review-card {
+        display: grid;
+        gap: 12px;
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fbfcfe;
+      }
+
+      .review-card header {
+        display: grid;
+        gap: 8px;
+        padding: 0;
+        border: 0;
+        background: transparent;
+      }
+
+      .review-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .pill {
+        display: inline-flex;
+        min-height: 28px;
+        align-items: center;
+        justify-content: center;
+        padding: 4px 8px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: #ffffff;
+        color: var(--navy);
+        font-size: 0.76rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .pill.decision-approved {
+        border-color: rgba(11, 110, 79, 0.3);
+        background: rgba(11, 110, 79, 0.1);
+        color: var(--green);
+      }
+
+      .pill.decision-fix,
+      .pill.decision-blocked {
+        border-color: rgba(138, 47, 42, 0.3);
+        background: rgba(138, 47, 42, 0.09);
+        color: var(--red);
+      }
+
+      .pill.decision-backlog {
+        border-color: rgba(36, 59, 90, 0.24);
+        background: rgba(36, 59, 90, 0.08);
+        color: var(--navy);
+      }
+
+      .review-card h3 {
+        margin: 0;
+        font-size: 1.12rem;
+        line-height: 1.22;
+      }
+
+      .review-card p {
+        margin: 0;
+      }
+
+      .review-actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .decision-button {
+        min-height: 40px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #ffffff;
+        color: var(--ink);
+        font: inherit;
+        font-weight: 850;
+        cursor: pointer;
+      }
+
+      .decision-button[aria-pressed="true"] {
+        border-color: var(--green);
+        background: var(--green);
+        color: #ffffff;
+      }
+
+      .comment-box {
+        width: 100%;
+        min-height: 86px;
+        resize: vertical;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 10px;
+        background: #ffffff;
+        color: var(--ink);
+        font: inherit;
+      }
+
+      .packet-output {
+        width: 100%;
+        min-height: 180px;
+        margin-top: 14px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 12px;
+        background: #0f1720;
+        color: #f4f7fb;
+        font: 0.9rem/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+
       .loop-map {
         display: grid;
         gap: 12px;
@@ -233,6 +385,7 @@
 
       @media (max-width: 860px) {
         .grid,
+        .review-board,
         .guardrails ul {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
@@ -244,9 +397,11 @@
         }
 
         .grid,
+        .review-board,
         .guardrails ul,
         .loop-map li,
-        .status-list li {
+        .status-list li,
+        .review-actions {
           grid-template-columns: 1fr;
         }
       }
@@ -320,6 +475,36 @@
         </ul>
       </section>
 
+      <section aria-labelledby="review-app">
+        <p class="eyebrow">Review App</p>
+        <h2 id="review-app">Approve, comment, and package decisions.</h2>
+        <div class="app-note">
+          <b>Local draft only.</b>
+          <span>
+            Decisions and comments stay in this browser until copied or exported. This page does not
+            write to GitHub, Todoist, Slack, email, Drive, forms, or any backend.
+          </span>
+        </div>
+        <p>
+          Use this as a mobile approval inbox. Copy the packet back into Codex or a GitHub issue when
+          a decision should become part of the private source of truth.
+        </p>
+        <div class="review-toolbar">
+          <span id="reviewSummary" aria-live="polite">Loading review queue...</span>
+          <div class="actions">
+            <button class="button primary compact" id="copyPacket" type="button">Copy approval packet</button>
+            <button class="button compact" id="downloadPacket" type="button">Download JSON</button>
+          </div>
+        </div>
+        <div class="review-board" id="reviewBoard"></div>
+        <textarea
+          class="packet-output"
+          id="packetOutput"
+          aria-label="Approval packet preview"
+          readonly
+        ></textarea>
+      </section>
+
       <section aria-labelledby="loops">
         <p class="eyebrow">Self-Improving Loops</p>
         <h2 id="loops">The operating model is the product proof.</h2>
@@ -369,5 +554,223 @@
     <footer class="wrap">
       <span>Public mirror updated June 13, 2026. Private Nucleus remains local-first.</span>
     </footer>
+    <script>
+      const reviewItems = [
+        {
+          id: "nucleus-review-app",
+          lane: "OPS",
+          title: "Make the public Nucleus page app-like",
+          ask: "Use local comments, decisions, and exported approval packets as the first mobile review layer.",
+          recommendation: "Approve as local-only review workflow.",
+          gate: "Backend writes, GitHub issue creation, Todoist sync, and outbound comments remain approval-gated."
+        },
+        {
+          id: "self-improving-loops",
+          lane: "OPS",
+          title: "Keep self-improving loops as the operating model",
+          ask: "Treat every channel as a loop that reads context, performs bounded work, evaluates output, updates memory, and escalates gates.",
+          recommendation: "Approve for Nucleus governance.",
+          gate: "Live automations and external actions still need explicit approval."
+        },
+        {
+          id: "jw-ai-ops-starter-kit",
+          lane: "JW",
+          title: "Move AI Ops Starter Kit into JW planning",
+          ask: "Use the internal operating system as proof for JWTechDev.ai content and offer design.",
+          recommendation: "Approve planning only; execution belongs in the JW channel.",
+          gate: "Lead capture, paid offer activation, DNS, and outbound promotion remain gated."
+        },
+        {
+          id: "jyw-catalog-loop",
+          lane: "JYW",
+          title: "Apply the loop model to JoshYouWut catalog work",
+          ask: "Improve offer routing, metadata, artist-fit language, and inquiry quality from each review cycle.",
+          recommendation: "Backlog for JYW execution.",
+          gate: "Checkout, payment, file delivery, and public inquiry capture remain gated."
+        },
+        {
+          id: "bot-funding-memory",
+          lane: "BOT",
+          title: "Keep BOT funding scout memory clean",
+          ask: "Use every scout to improve scoring, blockers, validation notes, and draft readiness without creating duplicate channels.",
+          recommendation: "Approve local-only status tracking.",
+          gate: "Submissions, outreach, portal logins, Slack/email sends, and Drive movement remain gated."
+        }
+      ];
+
+      const storageKey = "nucleus-public-review-v1";
+      const decisions = {
+        review: "Review",
+        approved: "Approved",
+        fix: "Needs fix",
+        backlog: "Backlog",
+        blocked: "Blocked"
+      };
+
+      const state = loadState();
+      const board = document.getElementById("reviewBoard");
+      const summary = document.getElementById("reviewSummary");
+      const packetOutput = document.getElementById("packetOutput");
+
+      function loadState() {
+        try {
+          const raw = localStorage.getItem(storageKey);
+          return raw ? JSON.parse(raw) : {};
+        } catch {
+          return {};
+        }
+      }
+
+      function saveState() {
+        localStorage.setItem(storageKey, JSON.stringify(state));
+        renderPacket();
+      }
+
+      function itemState(id) {
+        state[id] = state[id] || { decision: "review", comment: "" };
+        return state[id];
+      }
+
+      function setDecision(id, decision) {
+        itemState(id).decision = decision;
+        saveState();
+        render();
+      }
+
+      function setComment(id, comment) {
+        itemState(id).comment = comment;
+        saveState();
+        renderSummary();
+      }
+
+      function escapeHtml(value) {
+        return String(value)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function renderSummary() {
+        const counts = reviewItems.reduce((acc, item) => {
+          const decision = itemState(item.id).decision;
+          acc[decision] = (acc[decision] || 0) + 1;
+          return acc;
+        }, {});
+        summary.textContent = `${counts.approved || 0} approved, ${counts.fix || 0} need fix, ${counts.backlog || 0} backlog, ${counts.blocked || 0} blocked, ${counts.review || 0} in review`;
+      }
+
+      function render() {
+        board.innerHTML = "";
+        reviewItems.forEach((item) => {
+          const saved = itemState(item.id);
+          const article = document.createElement("article");
+          article.className = "review-card";
+          article.dataset.card = item.id;
+          article.innerHTML = `
+            <header>
+              <div class="review-meta">
+                <span class="pill">${escapeHtml(item.lane)}</span>
+                <span class="pill decision-${escapeHtml(saved.decision)}">${escapeHtml(decisions[saved.decision])}</span>
+              </div>
+              <h3>${escapeHtml(item.title)}</h3>
+            </header>
+            <p>${escapeHtml(item.ask)}</p>
+            <p><b>Recommended:</b> ${escapeHtml(item.recommendation)}</p>
+            <p><b>Gate:</b> ${escapeHtml(item.gate)}</p>
+            <div class="review-actions" aria-label="Decision buttons for ${escapeHtml(item.title)}">
+              ${Object.entries(decisions)
+                .map(([key, label]) => `
+                  <button
+                    class="decision-button"
+                    type="button"
+                    data-id="${escapeHtml(item.id)}"
+                    data-decision="${escapeHtml(key)}"
+                    aria-pressed="${saved.decision === key ? "true" : "false"}"
+                  >${escapeHtml(label)}</button>
+                `)
+                .join("")}
+            </div>
+            <textarea
+              class="comment-box"
+              data-comment="${escapeHtml(item.id)}"
+              aria-label="Comment for ${escapeHtml(item.title)}"
+              placeholder="Add private-to-this-browser notes for the packet..."
+            >${escapeHtml(saved.comment)}</textarea>
+          `;
+          board.appendChild(article);
+        });
+
+        board.querySelectorAll("[data-decision]").forEach((button) => {
+          button.addEventListener("click", () => setDecision(button.dataset.id, button.dataset.decision));
+        });
+        board.querySelectorAll("[data-comment]").forEach((textarea) => {
+          textarea.addEventListener("input", () => setComment(textarea.dataset.comment, textarea.value));
+        });
+        renderSummary();
+        renderPacket();
+      }
+
+      function buildPacket() {
+        const savedAt = new Date().toLocaleString();
+        const lines = [
+          "# Nucleus Public Review Packet",
+          "",
+          `Saved locally: ${savedAt}`,
+          "Source: GitHub Pages local browser state",
+          "",
+          "No external write has been performed by this page.",
+          ""
+        ];
+
+        reviewItems.forEach((item) => {
+          const saved = itemState(item.id);
+          lines.push(`## [${item.lane}] ${item.title}`);
+          lines.push(`Decision: ${decisions[saved.decision]}`);
+          lines.push(`Recommended: ${item.recommendation}`);
+          lines.push(`Gate: ${item.gate}`);
+          lines.push(`Comment: ${saved.comment.trim() || "None"}`);
+          lines.push("");
+        });
+
+        return lines.join("\n");
+      }
+
+      function renderPacket() {
+        packetOutput.value = buildPacket();
+      }
+
+      document.getElementById("copyPacket").addEventListener("click", async () => {
+        const packet = buildPacket();
+        packetOutput.value = packet;
+        packetOutput.select();
+        try {
+          await navigator.clipboard.writeText(packet);
+          summary.textContent = "Approval packet copied. Paste it into Codex or GitHub when ready.";
+        } catch {
+          document.execCommand("copy");
+          summary.textContent = "Approval packet selected. Use copy from the browser if needed.";
+        }
+      });
+
+      document.getElementById("downloadPacket").addEventListener("click", () => {
+        const payload = {
+          savedAt: new Date().toISOString(),
+          source: "nucleus-public-review-v1",
+          note: "Browser-local review export. No external write was performed.",
+          items: reviewItems.map((item) => ({ ...item, ...itemState(item.id) }))
+        };
+        const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "nucleus-review-packet.json";
+        link.click();
+        URL.revokeObjectURL(url);
+      });
+
+      render();
+    </script>
   </body>
 </html>
