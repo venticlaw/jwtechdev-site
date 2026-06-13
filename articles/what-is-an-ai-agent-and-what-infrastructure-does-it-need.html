@@ -3,57 +3,57 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>What is an AI agent, and what infrastructure does it need? | JWTechDev.ai</title>
-  <meta name="description" content="A plain-English explanation of AI agents and the infrastructure they need: context, tools, permissions, storage, logs, approvals, and recovery." />
-  <meta property="og:title" content="What is an AI agent, and what infrastructure does it need?" />
-  <meta property="og:description" content="A plain-English explanation of AI agents and the infrastructure they need: context, tools, permissions, storage, logs, approvals, and recovery." />
+  <title>What infrastructure does an AI workflow need before it touches real work? | JWTechDev.ai</title>
+  <meta name="description" content="A plain-English infrastructure checklist for AI workflows: identity, permissions, storage, logs, approvals, recovery, and cost control." />
+  <meta property="og:title" content="What infrastructure does an AI workflow need before it touches real work?" />
+  <meta property="og:description" content="A plain-English infrastructure checklist for AI workflows: identity, permissions, storage, logs, approvals, recovery, and cost control." />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="https://venticlaw.github.io/jwtechdev-site/assets/articles/what-is-an-ai-agent-and-what-infrastructure-does-it-need.svg" />
   <link rel="stylesheet" href="../css/tokens.css" />
   <link rel="stylesheet" href="../css/site.css" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What is an AI agent, and what infrastructure does it need?","description":"A plain-English explanation of AI agents and the infrastructure they need: context, tools, permissions, storage, logs, approvals, and recovery.","datePublished":"2026-06-06","dateModified":"2026-06-06","author":{"@type":"Person","name":"Joshua Walker","url":"https://venticlaw.github.io/jwtechdev-site"},"publisher":{"@type":"Organization","name":"JWTechDev.ai","logo":{"@type":"ImageObject","url":"https://venticlaw.github.io/jwtechdev-site/assets/jwtechdev-logo.png"}},"image":"https://venticlaw.github.io/jwtechdev-site/assets/articles/what-is-an-ai-agent-and-what-infrastructure-does-it-need.svg","mainEntityOfPage":"https://venticlaw.github.io/jwtechdev-site/articles/what-is-an-ai-agent-and-what-infrastructure-does-it-need.html"}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is an AI agent the same as automation?","acceptedAnswer":{"@type":"Answer","text":"Not exactly. Automation follows predefined steps. An agent can use context and tools to decide how to complete a bounded job, which makes boundaries and review more important."}},{"@type":"Question","name":"What is the safest first agent?","acceptedAnswer":{"@type":"Answer","text":"A draft or research agent that writes to a local output folder and cannot send, delete, publish, or change production systems."}},{"@type":"Question","name":"Why does an agent need infrastructure?","acceptedAnswer":{"@type":"Answer","text":"Because real work needs identity, storage, logs, permissions, approvals, and recovery. The model is only one part of the system."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What infrastructure does an AI workflow need before it touches real work?","description":"A plain-English infrastructure checklist for AI workflows: identity, permissions, storage, logs, approvals, recovery, and cost control.","datePublished":"2026-06-06","dateModified":"2026-06-06","author":{"@type":"Person","name":"Joshua Walker","url":"https://venticlaw.github.io/jwtechdev-site"},"publisher":{"@type":"Organization","name":"JWTechDev.ai","logo":{"@type":"ImageObject","url":"https://venticlaw.github.io/jwtechdev-site/assets/jwtechdev-logo.png"}},"image":"https://venticlaw.github.io/jwtechdev-site/assets/articles/what-is-an-ai-agent-and-what-infrastructure-does-it-need.svg","mainEntityOfPage":"https://venticlaw.github.io/jwtechdev-site/articles/what-is-an-ai-agent-and-what-infrastructure-does-it-need.html"}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is an AI workflow the same as automation?","acceptedAnswer":{"@type":"Answer","text":"Not exactly. Automation follows predefined steps. AI-assisted workflows can use context and tools inside a bounded job, which makes permissions and review more important."}},{"@type":"Question","name":"What is the safest first workflow?","acceptedAnswer":{"@type":"Answer","text":"A draft or research workflow that writes to a local output folder and cannot send, delete, publish, or change production systems."}},{"@type":"Question","name":"Why does this need infrastructure?","acceptedAnswer":{"@type":"Answer","text":"Because real work needs identity, storage, logs, permissions, approvals, and recovery. The model is only one part of the system."}}]}</script>
 </head>
 <body>
   <main class="article-shell">
     <a class="link-arrow" href="./">All articles <span aria-hidden="true">→</span></a>
-    <p class="eyebrow">AI Agents</p>
+    <p class="eyebrow">Infrastructure for AI Workflows</p>
     <article class="article-body">
-      <h1>What is an AI agent, and what infrastructure does it need?</h1>
-      <p class="section__lede">A plain-English explanation of AI agents and the infrastructure they need: context, tools, permissions, storage, logs, approvals, and recovery.</p>
-      <div class="article-kicker"><span>AI agents</span><span>Infrastructure</span><span>Human approval</span><span>8 min read</span></div>
+      <h1>What infrastructure does an AI workflow need before it touches real work?</h1>
+      <p class="section__lede">A plain-English infrastructure checklist for AI workflows: identity, permissions, storage, logs, approvals, recovery, and cost control.</p>
+      <div class="article-kicker"><span>Infrastructure</span><span>Automation safety</span><span>Human approval</span><span>8 min read</span></div>
       <figure class="article-hero">
-        <img src="../assets/articles/what-is-an-ai-agent-and-what-infrastructure-does-it-need.svg" alt="Agent system map diagram for What is an AI agent, and what infrastructure does it need?" />
+        <img src="../assets/articles/what-is-an-ai-agent-and-what-infrastructure-does-it-need.svg" alt="Workflow guardrails diagram for What infrastructure does an AI workflow need before it touches real work?" />
         <figcaption class="article-meta"><span>Published 2026-06-06</span><span>By Joshua Walker</span><span>JWTechDev.ai</span></figcaption>
       </figure>
       <div class="article-layout">
         <nav class="article-toc" aria-label="Article contents">
           <strong>In this article</strong>
           <a href="#quick-answer">Quick answer</a>
-          <a href="#agent-vs-chatbot">Agent vs chatbot</a>
-          <a href="#the-infrastructure-behind-the-agent">The infrastructure behind the agent</a>
+          <a href="#the-infrastructure-question-comes-first">The infrastructure question comes first</a>
+          <a href="#the-infrastructure-behind-the-workflow">The infrastructure behind the workflow</a>
           <a href="#approval-gates-are-not-optional">Approval gates are not optional</a>
-          <a href="#a-simple-first-agent-workflow">A simple first agent workflow</a>
+          <a href="#a-simple-first-workflow">A simple first workflow</a>
           <a href="#what-infrastructure-experts-notice-first">What infrastructure experts notice first</a>
-          <a href="#checklist">Agent readiness checklist</a>
+          <a href="#checklist">Workflow readiness checklist</a>
           <a href="#faq">FAQ</a>
         </nav>
         <div>
-          <section class="quick-answer" id="quick-answer"><h2>Quick answer</h2><p>An AI agent is a workflow that can use context and tools to complete a defined job. It needs infrastructure for identity, permissions, input and output routing, storage, logs, approval gates, recovery, and cost control.</p></section>
-          <section id="agent-vs-chatbot"><h2>Agent vs chatbot</h2><p>A chatbot mainly responds. An agent does work inside boundaries. That difference matters because work has consequences. If an AI assistant is only explaining a concept, the risk is mostly accuracy. If an agent can touch files, send messages, update records, run commands, or trigger workflows, the risk becomes operational.</p><p>A useful agent needs a job, a lane, tool access, context, approval gates, and verification. Without those pieces, it is just a powerful autocomplete system wandering around your workspace.</p></section>
-          <section id="the-infrastructure-behind-the-agent"><h2>The infrastructure behind the agent</h2><div class="article-grid"><div class="article-mini-card"><h3>Identity</h3><p>What account, role, or permission scope does the agent use?</p></div><div class="article-mini-card"><h3>Context</h3><p>What source material is allowed, trusted, and current?</p></div><div class="article-mini-card"><h3>Tools</h3><p>What can the agent read, write, run, browse, or call?</p></div><div class="article-mini-card"><h3>Storage</h3><p>Where do inputs, outputs, logs, drafts, and handoff notes live?</p></div><div class="article-mini-card"><h3>Approvals</h3><p>What must a human approve before impact?</p></div><div class="article-mini-card"><h3>Observability</h3><p>How do you know what happened and why?</p></div></div></section>
+          <section class="quick-answer" id="quick-answer"><h2>Quick answer</h2><p>Before an AI workflow touches real work, it needs the same infrastructure discipline as any production-adjacent system: identity, permissions, input and output routing, storage, logs, approval gates, recovery, and cost control.</p></section>
+          <section id="the-infrastructure-question-comes-first"><h2>The infrastructure question comes first</h2><p>A chatbot mainly responds. A workflow that can touch files, send messages, update records, run commands, or trigger tools creates operational risk. That risk is not solved by better wording. It is solved by infrastructure boundaries.</p><p>Before adding tools, define the job, the lane, the allowed systems, the approval gates, and the verification path. Without those pieces, the workflow is just a powerful autocomplete system wandering around your workspace.</p></section>
+          <section id="the-infrastructure-behind-the-workflow"><h2>The infrastructure behind the workflow</h2><div class="article-grid"><div class="article-mini-card"><h3>Identity</h3><p>What account, role, or permission scope does the workflow use?</p></div><div class="article-mini-card"><h3>Context</h3><p>What source material is allowed, trusted, and current?</p></div><div class="article-mini-card"><h3>Tools</h3><p>What can it read, write, run, browse, or call?</p></div><div class="article-mini-card"><h3>Storage</h3><p>Where do inputs, outputs, logs, drafts, and handoff notes live?</p></div><div class="article-mini-card"><h3>Approvals</h3><p>What must a human approve before impact?</p></div><div class="article-mini-card"><h3>Observability</h3><p>How do you know what happened and why?</p></div></div></section>
           <section id="approval-gates-are-not-optional"><h2>Approval gates are not optional</h2><p>Some work should stop for human approval every time. DNS changes, payment changes, live backend storage, outbound messages, deletion, credential handling, and public publishing all deserve a clear gate.</p><p>This does not make the system slower in a bad way. It makes the system usable. A good agent should move fast where the work is reversible and pause where the impact is real.</p></section>
-          <section id="a-simple-first-agent-workflow"><h2>A simple first agent workflow</h2><p>Start with a research and draft workflow. Give the agent a narrow question, approved source folders, a target output path, and a definition of done. Ask it to produce a draft, list assumptions, and record what still needs review.</p><p>That kind of workflow builds trust. Once the agent proves it can handle context, structure, and verification, you can gradually add more tools.</p></section>
+          <section id="a-simple-first-workflow"><h2>A simple first workflow</h2><p>Start with research and drafting. Give the system a narrow question, approved source folders, a target output path, and a definition of done. Ask it to produce a draft, list assumptions, and record what still needs review.</p><p>That kind of workflow builds trust. Once it proves it can handle context, structure, and verification, you can gradually add more tools.</p></section>
           <section id="what-infrastructure-experts-notice-first"><h2>What infrastructure experts notice first</h2><p>Infrastructure people do not only ask "can the model do it?" They ask: what identity is being used, where the logs go, what data is exposed, what happens when it fails, how it recovers, and who approves the risky step.</p><p>That is the differentiator. Agent work is not just prompt craft. It is systems design.</p></section>
           <section class="article-tool" data-choice-tool>
-            <h2>Is this ready to become an agent?</h2>
+            <h2>Is this workflow ready for tool access?</h2>
             <p>Pick the current state of your idea.</p>
-            <div class="article-kicker"><button type="button" data-result="Keep it as a prompt or draft task. Define the lane before giving tools.">I only have a vague goal</button><button type="button" data-result="Create an agent brief with source files, output path, and definition of done.">I know the inputs and output</button><button type="button" data-result="Add approval gates, logs, rollback notes, and a human review step before execution.">It touches real systems</button></div>
+            <div class="article-kicker"><button type="button" data-result="Keep it as a draft task. Define the lane before giving tools.">I only have a vague goal</button><button type="button" data-result="Create a workflow brief with source files, output path, and definition of done.">I know the inputs and output</button><button type="button" data-result="Add approval gates, logs, rollback notes, and a human review step before execution.">It touches real systems</button></div>
             <div class="tool-result" aria-live="polite">Choose one option to get a suggested next step.</div>
           </section>
           <section class="article-checklist" id="checklist" data-checklist>
-            <h2>Agent readiness checklist</h2>
-            <label><input type="checkbox" value="0"><span>The agent has one clear job.</span></label>
+            <h2>Workflow readiness checklist</h2>
+            <label><input type="checkbox" value="0"><span>The workflow has one clear job.</span></label>
             <label><input type="checkbox" value="1"><span>The allowed files and tools are named.</span></label>
             <label><input type="checkbox" value="2"><span>The forbidden actions are named.</span></label>
             <label><input type="checkbox" value="3"><span>Approval gates are written down.</span></label>
@@ -64,14 +64,14 @@
           
           <section class="faq" id="faq">
             <h2>FAQ</h2>
-            <details><summary>Is an AI agent the same as automation?</summary><p>Not exactly. Automation follows predefined steps. An agent can use context and tools to decide how to complete a bounded job, which makes boundaries and review more important.</p></details>
-            <details><summary>What is the safest first agent?</summary><p>A draft or research agent that writes to a local output folder and cannot send, delete, publish, or change production systems.</p></details>
-            <details><summary>Why does an agent need infrastructure?</summary><p>Because real work needs identity, storage, logs, permissions, approvals, and recovery. The model is only one part of the system.</p></details>
+            <details><summary>Is an AI workflow the same as automation?</summary><p>Not exactly. Automation follows predefined steps. AI-assisted workflows can use context and tools inside a bounded job, which makes permissions and review more important.</p></details>
+            <details><summary>What is the safest first workflow?</summary><p>A draft or research workflow that writes to a local output folder and cannot send, delete, publish, or change production systems.</p></details>
+            <details><summary>Why does this need infrastructure?</summary><p>Because real work needs identity, storage, logs, permissions, approvals, and recovery. The model is only one part of the system.</p></details>
           </section>
           <section class="article-cta">
             <h2>Want the working resource?</h2>
-            <p>Request the AI Agent Builder Checklist before handing tools to any workflow that can touch real systems.</p>
-            <a class="btn btn--primary btn--lg" href="../?interest=Study%20guides%20%26%20resources&asset=AI%20Agent%20Builder%20Checklist#connect">Request access</a>
+            <p>Request the Infrastructure Guardrails checklist before handing tools to any workflow that can touch real systems.</p>
+            <a class="btn btn--primary btn--lg" href="../?interest=Study%20guides%20%26%20resources&asset=Infrastructure%20Guardrails%20for%20AI%20Workflows#connect">Request access</a>
           </section>
         </div>
       </div>

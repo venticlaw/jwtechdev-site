@@ -96,43 +96,43 @@ const articles = [
   },
   {
     slug: 'what-is-an-ai-agent-and-what-infrastructure-does-it-need',
-    category: 'AI Agents',
-    badge: 'AI agents',
-    title: 'What is an AI agent, and what infrastructure does it need?',
-    description: 'A plain-English explanation of AI agents and the infrastructure they need: context, tools, permissions, storage, logs, approvals, and recovery.',
-    answer: 'An AI agent is a workflow that can use context and tools to complete a defined job. It needs infrastructure for identity, permissions, input and output routing, storage, logs, approval gates, recovery, and cost control.',
+    category: 'Infrastructure for AI Workflows',
+    badge: 'Cloud automation infrastructure',
+    title: 'What infrastructure does an AI workflow need before it touches real work?',
+    description: 'A plain-English infrastructure checklist for AI workflows: identity, permissions, storage, logs, approvals, recovery, and cost control.',
+    answer: 'Before an AI workflow touches real work, it needs the same infrastructure discipline as any production-adjacent system: identity, permissions, input and output routing, storage, logs, approval gates, recovery, and cost control.',
     readTime: '8 min read',
-    tags: ['AI agents', 'Infrastructure', 'Human approval'],
+    tags: ['Infrastructure', 'Automation safety', 'Human approval'],
     visual: {
-      label: 'Agent system map',
+      label: 'Workflow guardrails',
       accent: '#721817',
       nodes: ['Goal', 'Context', 'Tools', 'Approvals', 'Logs', 'Done']
     },
     sections: [
-      ['Agent vs chatbot', `<p>A chatbot mainly responds. An agent does work inside boundaries. That difference matters because work has consequences. If an AI assistant is only explaining a concept, the risk is mostly accuracy. If an agent can touch files, send messages, update records, run commands, or trigger workflows, the risk becomes operational.</p><p>A useful agent needs a job, a lane, tool access, context, approval gates, and verification. Without those pieces, it is just a powerful autocomplete system wandering around your workspace.</p>`],
-      ['The infrastructure behind the agent', `<div class="article-grid"><div class="article-mini-card"><h3>Identity</h3><p>What account, role, or permission scope does the agent use?</p></div><div class="article-mini-card"><h3>Context</h3><p>What source material is allowed, trusted, and current?</p></div><div class="article-mini-card"><h3>Tools</h3><p>What can the agent read, write, run, browse, or call?</p></div><div class="article-mini-card"><h3>Storage</h3><p>Where do inputs, outputs, logs, drafts, and handoff notes live?</p></div><div class="article-mini-card"><h3>Approvals</h3><p>What must a human approve before impact?</p></div><div class="article-mini-card"><h3>Observability</h3><p>How do you know what happened and why?</p></div></div>`],
+      ['The infrastructure question comes first', `<p>A chatbot mainly responds. A workflow that can touch files, send messages, update records, run commands, or trigger tools creates operational risk. That risk is not solved by better wording. It is solved by infrastructure boundaries.</p><p>Before adding tools, define the job, the lane, the allowed systems, the approval gates, and the verification path. Without those pieces, the workflow is just a powerful autocomplete system wandering around your workspace.</p>`],
+      ['The infrastructure behind the workflow', `<div class="article-grid"><div class="article-mini-card"><h3>Identity</h3><p>What account, role, or permission scope does the workflow use?</p></div><div class="article-mini-card"><h3>Context</h3><p>What source material is allowed, trusted, and current?</p></div><div class="article-mini-card"><h3>Tools</h3><p>What can it read, write, run, browse, or call?</p></div><div class="article-mini-card"><h3>Storage</h3><p>Where do inputs, outputs, logs, drafts, and handoff notes live?</p></div><div class="article-mini-card"><h3>Approvals</h3><p>What must a human approve before impact?</p></div><div class="article-mini-card"><h3>Observability</h3><p>How do you know what happened and why?</p></div></div>`],
       ['Approval gates are not optional', `<p>Some work should stop for human approval every time. DNS changes, payment changes, live backend storage, outbound messages, deletion, credential handling, and public publishing all deserve a clear gate.</p><p>This does not make the system slower in a bad way. It makes the system usable. A good agent should move fast where the work is reversible and pause where the impact is real.</p>`],
-      ['A simple first agent workflow', `<p>Start with a research and draft workflow. Give the agent a narrow question, approved source folders, a target output path, and a definition of done. Ask it to produce a draft, list assumptions, and record what still needs review.</p><p>That kind of workflow builds trust. Once the agent proves it can handle context, structure, and verification, you can gradually add more tools.</p>`],
+      ['A simple first workflow', `<p>Start with research and drafting. Give the system a narrow question, approved source folders, a target output path, and a definition of done. Ask it to produce a draft, list assumptions, and record what still needs review.</p><p>That kind of workflow builds trust. Once it proves it can handle context, structure, and verification, you can gradually add more tools.</p>`],
       ['What infrastructure experts notice first', `<p>Infrastructure people do not only ask "can the model do it?" They ask: what identity is being used, where the logs go, what data is exposed, what happens when it fails, how it recovers, and who approves the risky step.</p><p>That is the differentiator. Agent work is not just prompt craft. It is systems design.</p>`]
     ],
     tool: {
-      title: 'Is this ready to become an agent?',
+      title: 'Is this workflow ready for tool access?',
       prompt: 'Pick the current state of your idea.',
       choices: [
-        ['I only have a vague goal', 'Keep it as a prompt or draft task. Define the lane before giving tools.'],
-        ['I know the inputs and output', 'Create an agent brief with source files, output path, and definition of done.'],
+        ['I only have a vague goal', 'Keep it as a draft task. Define the lane before giving tools.'],
+        ['I know the inputs and output', 'Create a workflow brief with source files, output path, and definition of done.'],
         ['It touches real systems', 'Add approval gates, logs, rollback notes, and a human review step before execution.']
       ]
     },
-    checklistTitle: 'Agent readiness checklist',
-    checklist: ['The agent has one clear job.', 'The allowed files and tools are named.', 'The forbidden actions are named.', 'Approval gates are written down.', 'There is a log or handoff note.', 'There is a way to verify the final output.'],
+    checklistTitle: 'Workflow readiness checklist',
+    checklist: ['The workflow has one clear job.', 'The allowed files and tools are named.', 'The forbidden actions are named.', 'Approval gates are written down.', 'There is a log or handoff note.', 'There is a way to verify the final output.'],
     faqs: [
-      ['Is an AI agent the same as automation?', 'Not exactly. Automation follows predefined steps. An agent can use context and tools to decide how to complete a bounded job, which makes boundaries and review more important.'],
-      ['What is the safest first agent?', 'A draft or research agent that writes to a local output folder and cannot send, delete, publish, or change production systems.'],
-      ['Why does an agent need infrastructure?', 'Because real work needs identity, storage, logs, permissions, approvals, and recovery. The model is only one part of the system.']
+      ['Is an AI workflow the same as automation?', 'Not exactly. Automation follows predefined steps. AI-assisted workflows can use context and tools inside a bounded job, which makes permissions and review more important.'],
+      ['What is the safest first workflow?', 'A draft or research workflow that writes to a local output folder and cannot send, delete, publish, or change production systems.'],
+      ['Why does this need infrastructure?', 'Because real work needs identity, storage, logs, permissions, approvals, and recovery. The model is only one part of the system.']
     ],
-    ctaAsset: 'AI Agent Builder Checklist',
-    cta: 'Request the AI Agent Builder Checklist before handing tools to any workflow that can touch real systems.'
+    ctaAsset: 'Infrastructure Guardrails for AI Workflows',
+    cta: 'Request the Infrastructure Guardrails checklist before handing tools to any workflow that can touch real systems.'
   },
   {
     slug: 'what-should-a-cloud-portfolio-project-include',
@@ -211,48 +211,48 @@ const articles = [
       ['What should live on social instead?', 'Short discovery content, behind-the-scenes clips, conversations, and distribution. Keep durable resources on the owned site.'],
       ['Can a static site collect leads?', 'It can route inquiries through email, form providers, or an approved local capture endpoint. The storage decision should be intentional.']
     ],
-    ctaAsset: 'Codex Content-engine Workflow',
-    cta: 'Request the Codex Content-engine Workflow to turn one idea into articles, scripts, posts, and guide assets.'
+    ctaAsset: 'Static Content Infrastructure Workflow',
+    cta: 'Request the Static Content Infrastructure Workflow to turn one idea into articles, scripts, posts, and guide assets without losing ownership.'
   },
   {
     slug: 'how-to-use-codex-safely-for-real-work',
-    category: 'Codex Workflows',
-    badge: 'Codex operations',
-    title: 'How do you use Codex safely for real work?',
-    description: 'A practical Codex workflow for real projects: define the lane, read the repo, use approval gates, verify in browser, commit intentionally, and keep a status trail.',
-    answer: 'Use Codex safely by giving it a clear lane, trusted context, scoped files, approval gates, verification steps, and a definition of done. Let it move quickly on reversible drafting and code work, but stop for human approval before high-impact actions.',
+    category: 'Infrastructure for AI-Assisted Work',
+    badge: 'Safe build operations',
+    title: 'What infrastructure makes AI-assisted coding safe for real projects?',
+    description: 'A practical infrastructure workflow for AI-assisted projects: define the lane, read the repo, use approval gates, verify in browser, commit intentionally, and keep a status trail.',
+    answer: 'AI-assisted coding is safest when the project has a clear lane, trusted context, scoped files, approval gates, verification steps, and a definition of done. Move quickly on reversible drafting and code work, but stop for human approval before high-impact actions.',
     readTime: '9 min read',
-    tags: ['Codex', 'AI workflows', 'Safe automation'],
+    tags: ['Infrastructure', 'Safe automation', 'Code review'],
     visual: {
-      label: 'Safe Codex loop',
+      label: 'Safe build loop',
       accent: '#2B4162',
       nodes: ['Scope', 'Read', 'Build', 'Verify', 'Commit', 'Handoff']
     },
     sections: [
-      ['Codex is strongest with boundaries', `<p>Codex gets better when the work is specific. "Build my site" is too broad. "Update the article section, preserve the existing design system, add six launch articles, verify links, and do not touch DNS" is useful.</p><p>The better the lane, the safer the execution. A lane tells Codex what brand it owns, which files matter, where outputs belong, what approval gates exist, and what done means.</p>`],
+      ['AI-assisted coding is strongest with boundaries', `<p>AI-assisted coding gets better when the work is specific. "Build my site" is too broad. "Update the article section, preserve the existing design system, add six launch articles, verify links, and do not touch DNS" is useful.</p><p>The better the lane, the safer the execution. A lane tells the tool what brand it owns, which files matter, where outputs belong, what approval gates exist, and what done means.</p>`],
       ['The safe-work loop', `<div class="article-grid"><div class="article-mini-card"><h3>1. Scope</h3><p>Name the brand, repo, files, output path, and approval gates.</p></div><div class="article-mini-card"><h3>2. Read</h3><p>Inspect the current code, style, docs, and existing patterns before editing.</p></div><div class="article-mini-card"><h3>3. Build</h3><p>Make the smallest coherent change that satisfies the task.</p></div><div class="article-mini-card"><h3>4. Verify</h3><p>Run local checks, inspect the browser, and test the user path.</p></div><div class="article-mini-card"><h3>5. Commit</h3><p>Commit only scoped work with a clear message.</p></div><div class="article-mini-card"><h3>6. Handoff</h3><p>Record what changed, what was verified, and what still needs approval.</p></div></div>`],
-      ['Approval gates make automation practical', `<p>Approval gates are not a lack of trust. They are how real systems stay useful. Codex can draft content, refactor frontend code, create local runbooks, build static pages, and verify previews. It should stop before sending messages, changing DNS, exposing storage, charging payments, deleting data, or publishing anything that has not been approved.</p><p>That split lets the system move quickly while keeping Josh in control of risk.</p>`],
+      ['Approval gates make automation practical', `<p>Approval gates are not a lack of trust. They are how real systems stay useful. AI-assisted tools can draft content, refactor frontend code, create local runbooks, build static pages, and verify previews. They should stop before sending messages, changing DNS, exposing storage, charging payments, deleting data, or publishing anything that has not been approved.</p><p>That split lets the system move quickly while keeping Josh in control of risk.</p>`],
       ['Why infrastructure experience helps', `<p>People with infrastructure experience naturally ask the right questions: What can this access? What writes happen? Where are logs? What breaks if the machine sleeps? What is the rollback plan? What is the cost?</p><p>That is why Codex is not only a coding tool here. It becomes part of an operating system for projects.</p>`],
-      ['A reusable prompt for real work', `<p>Use this when starting a task: "You own the JWTechDev.ai lane. Read the repo before editing. Preserve existing design patterns. Do not delete files. Do not touch DNS, backend exposure, payment, outbound sends, or public storage without approval. Implement the smallest coherent change, verify it locally, update durable notes, then summarize changed files and blockers."</p>`]
+      ['A reusable brief for real work', `<p>Use this when starting a task: "You own the JWTechDev.ai lane. Read the repo before editing. Preserve existing design patterns. Do not delete files. Do not touch DNS, backend exposure, payment, outbound sends, or public storage without approval. Implement the smallest coherent change, verify it locally, update durable notes, then summarize changed files and blockers."</p>`]
     ],
     tool: {
-      title: 'Safe Codex lane picker',
-      prompt: 'What kind of work are you about to ask Codex to do?',
+      title: 'Safe build lane picker',
+      prompt: 'What kind of work are you about to delegate?',
       choices: [
         ['Drafting or content', 'Let Codex draft and organize freely, then review for voice, facts, and publish readiness.'],
-        ['Frontend/code change', 'Have Codex read the repo, patch scoped files, run a preview, and verify the interaction path.'],
+        ['Frontend/code change', 'Read the repo, patch scoped files, run a preview, and verify the interaction path.'],
         ['High-impact system action', 'Require approval immediately before DNS, payments, storage exposure, deletion, or outbound sends.']
       ]
     },
-    checklistTitle: 'Codex safety checklist',
+    checklistTitle: 'AI-assisted build safety checklist',
     checklist: ['The lane and brand are named.', 'The source files are named or discoverable.', 'Approval gates are explicit.', 'The output path is clear.', 'Verification is defined.', 'The final handoff includes changed files and blockers.'],
     faqs: [
-      ['Can Codex work overnight?', 'It can work through scoped, reversible tasks and prepare drafts, code, and runbooks. High-impact actions should remain gated for human approval.'],
-      ['Should Codex create separate agents?', 'For multi-step work, yes. Split by function, then run an integration wave to merge and verify the outputs.'],
+      ['Can AI-assisted tools work overnight?', 'They can work through scoped, reversible tasks and prepare drafts, code, and runbooks. High-impact actions should remain gated for human approval.'],
+      ['Should work split into separate lanes?', 'For multi-step work, yes. Split by function, then run an integration wave to merge and verify the outputs.'],
       ['What is the biggest risk?', 'Vague authority. The fix is boundaries: allowed files, forbidden actions, approval gates, and clear verification.']
     ],
-    ctaAsset: 'Codex Workspace Field Guide',
-    cta: 'Request the Codex Workspace Field Guide and AI Agent Builder Checklist to set up safe AI-assisted project work.'
+    ctaAsset: 'Safe Build Operations Field Guide',
+    cta: 'Request the Safe Build Operations Field Guide to set up infrastructure-aware AI-assisted project work.'
   }
 ];
 
@@ -390,7 +390,7 @@ function indexHtml() {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>JWTechDev.ai Articles</title>
-  <meta name="description" content="Plain-English cloud infrastructure, AI agent, AWS certification, Codex workflow, portfolio, and creator-owned web strategy articles from JWTechDev.ai." />
+  <meta name="description" content="Plain-English AWS, cloud infrastructure, certification, portfolio, creator-owned web, and infrastructure-aware AI workflow articles from JWTechDev.ai." />
   <link rel="stylesheet" href="../css/tokens.css" />
   <link rel="stylesheet" href="../css/site.css" />
 </head>
@@ -399,7 +399,7 @@ function indexHtml() {
     <a class="link-arrow" href="../">Back to JWTechDev.ai <span aria-hidden="true">→</span></a>
     <p class="eyebrow">Learning Library</p>
     <h1 class="section__title">Answers built for people who want the tech to finally make sense.</h1>
-    <p class="section__lede">The launch article cluster turns JWTechDev.ai into a durable knowledge base: cloud basics, AWS cert paths, AI agent infrastructure, portfolio proof, static-site ownership, and safe Codex workflows.</p>
+    <p class="section__lede">The launch article cluster turns JWTechDev.ai into a durable knowledge base: cloud basics, AWS cert paths, portfolio proof, static-site ownership, and infrastructure guardrails for AI-assisted workflows.</p>
     <div class="aeo-grid article-list">
       ${articles.map((article) => `<article class="aeo-card">
         <span class="badge badge--green">${esc(article.badge)}</span>

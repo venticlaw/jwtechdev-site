@@ -1,6 +1,6 @@
 # JWTechDev.ai Design System
 
-> Open Design-compatible brand contract for JWTechDev.ai. Use this for client-facing site pages, article visuals, study guides, Codex assets, social drafts, and Nucleus-facing JW reviews.
+> Open Design-compatible brand contract for JWTechDev.ai. Use this for client-facing site pages, article visuals, study guides, workflow templates, social drafts, and Nucleus-facing JW reviews.
 
 ## Visual Theme & Atmosphere
 Client-facing cloud infrastructure authority with builder energy. The experience should feel clear, practical, senior, and quietly creative. Use white space, strong information hierarchy, crisp system diagrams, and warm accent moments. The site should feel like a trusted infrastructure expert who can also explain modern AI workflows without making clients feel lost.
@@ -48,6 +48,7 @@ Mostly flat. Use small shadows only for cards, modals, and hover affordance. Avo
 
 ## Do's and Don'ts
 - Do make infrastructure concepts feel concrete with maps, checklists, decision trees, and examples.
+- Do keep public positioning roughly 70% AWS/cloud infrastructure and 30% practical AI/tool-assisted workflow, with AI framed as infrastructure-dependent.
 - Do make client-facing pages benefit-led and plainspoken.
 - Do keep internal terms like AEO, orchestration, and backend processes out of public-facing copy unless they are explained as client value.
 - Do use real visuals, screenshots, or useful diagrams when a page asks the user to trust a technical claim.

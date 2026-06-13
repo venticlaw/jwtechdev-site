@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
-  <title id="title">Agent system map</title>
-  <desc id="desc">JWTechDev.ai visual diagram for What is an AI agent, and what infrastructure does it need?</desc>
+  <title id="title">Workflow guardrails</title>
+  <desc id="desc">JWTechDev.ai visual diagram for What infrastructure does an AI workflow need before it touches real work?</desc>
   <rect width="1200" height="600" fill="#0e0e11"/>
   <circle cx="1030" cy="120" r="240" fill="#721817" opacity=".35"/>
   <circle cx="80" cy="560" r="230" fill="#FA9F42" opacity=".18"/>
   <rect x="32" y="32" width="1136" height="536" rx="28" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"/>
   <path d="M0 120h1200M0 240h1200M0 360h1200M0 480h1200M240 0v600M480 0v600M720 0v600M960 0v600" stroke="rgba(255,255,255,.055)" stroke-width="2"/>
-  <text x="72" y="82" font-family="Roboto Condensed, Arial, sans-serif" font-size="54" font-weight="900" fill="#fff">Agent system map</text>
+  <text x="72" y="82" font-family="Roboto Condensed, Arial, sans-serif" font-size="54" font-weight="900" fill="#fff">Workflow guardrails</text>
   <text x="74" y="124" font-family="Roboto, Arial, sans-serif" font-size="22" font-weight="700" fill="rgba(255,255,255,.72)">JWTechDev.ai practical systems map</text>
   <path d="M276 225h108M556 225h108M750 272v66M664 380h-108M384 380h-108" fill="none" stroke="rgba(255,255,255,.55)" stroke-width="5" stroke-linecap="round"/>
   <g><rect x="104" y="183" width="172" height="84" rx="16" fill="rgba(255,255,255,.94)" stroke="rgba(255,255,255,.6)"/><text x="190" y="231" text-anchor="middle" font-family="Roboto, Arial, sans-serif" font-size="22" font-weight="900" fill="#0e0e11">Goal</text></g><g><rect x="384" y="183" width="172" height="84" rx="16" fill="rgba(255,255,255,.94)" stroke="rgba(255,255,255,.6)"/><text x="470" y="231" text-anchor="middle" font-family="Roboto, Arial, sans-serif" font-size="22" font-weight="900" fill="#0e0e11">Context</text></g><g><rect x="664" y="183" width="172" height="84" rx="16" fill="rgba(255,255,255,.94)" stroke="rgba(255,255,255,.6)"/><text x="750" y="231" text-anchor="middle" font-family="Roboto, Arial, sans-serif" font-size="22" font-weight="900" fill="#0e0e11">Tools</text></g><g><rect x="104" y="338" width="172" height="84" rx="16" fill="rgba(255,255,255,.94)" stroke="rgba(255,255,255,.6)"/><text x="190" y="386" text-anchor="middle" font-family="Roboto, Arial, sans-serif" font-size="22" font-weight="900" fill="#0e0e11">Approvals</text></g><g><rect x="384" y="338" width="172" height="84" rx="16" fill="rgba(255,255,255,.94)" stroke="rgba(255,255,255,.6)"/><text x="470" y="386" text-anchor="middle" font-family="Roboto, Arial, sans-serif" font-size="22" font-weight="900" fill="#0e0e11">Logs</text></g><g><rect x="664" y="338" width="172" height="84" rx="16" fill="rgba(255,255,255,.94)" stroke="rgba(255,255,255,.6)"/><text x="750" y="386" text-anchor="middle" font-family="Roboto, Arial, sans-serif" font-size="22" font-weight="900" fill="#0e0e11">Done</text></g>
