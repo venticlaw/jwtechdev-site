@@ -194,6 +194,28 @@
         border-left: 5px solid var(--red);
       }
 
+      .loop-map {
+        display: grid;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .loop-map li {
+        display: grid;
+        grid-template-columns: minmax(150px, 0.28fr) minmax(0, 1fr);
+        gap: 12px;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fbfcfe;
+      }
+
+      .loop-map b {
+        color: var(--green);
+      }
+
       .guardrails ul {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -223,6 +245,7 @@
 
         .grid,
         .guardrails ul,
+        .loop-map li,
         .status-list li {
           grid-template-columns: 1fr;
         }
@@ -297,6 +320,33 @@
         </ul>
       </section>
 
+      <section aria-labelledby="loops">
+        <p class="eyebrow">Self-Improving Loops</p>
+        <h2 id="loops">The operating model is the product proof.</h2>
+        <p>
+          The Nucleus now models each brand as a loop: read context, do bounded work, evaluate the
+          result, update memory, and escalate only the decisions that need human judgment.
+        </p>
+        <ul class="loop-map">
+          <li>
+            <b>Nucleus</b>
+            <span>Coordinates ownership, approvals, blockers, runbooks, mobile sync, and public-safe proof surfaces.</span>
+          </li>
+          <li>
+            <b>JWTechDev.ai</b>
+            <span>Turns the internal AI operating system into articles, education assets, and the AI Ops Starter Kit offer.</span>
+          </li>
+          <li>
+            <b>JoshYouWut</b>
+            <span>Improves offer routing, catalog metadata, artist-fit language, and lead quality after each review.</span>
+          </li>
+          <li>
+            <b>BOT Funding</b>
+            <span>Uses every scout to improve opportunity scoring, blockers, validation notes, and draft readiness.</span>
+          </li>
+        </ul>
+      </section>
+
       <section class="guardrails" aria-labelledby="guardrails">
         <p class="eyebrow">Guardrails</p>
         <h2 id="guardrails">Public page, private source of truth.</h2>
@@ -317,7 +367,7 @@
     </main>
 
     <footer class="wrap">
-      <span>Public mirror updated June 12, 2026. Private Nucleus remains local-first.</span>
+      <span>Public mirror updated June 13, 2026. Private Nucleus remains local-first.</span>
     </footer>
   </body>
 </html>
