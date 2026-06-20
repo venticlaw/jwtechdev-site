@@ -1,1276 +1,181 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>JWTechDev.ai — AWS cloud infrastructure, tutoring, and practical tech education</title>
-  <meta name="description" content="JWTechDev.ai helps learners and builders understand AWS, cloud infrastructure, IAM, networking, certification paths, automation guardrails, tutorials, tutoring, study guides, speaking, and hands-on builds." />
-  <link rel="canonical" href="https://venticlaw.github.io/jwtechdev-site/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="JWTechDev.ai — AWS cloud infrastructure and practical tech education" />
-  <meta property="og:description" content="AWS, cloud infrastructure, IAM, networking, certification prep, tutorials, tutoring, hands-on builds, and automation guardrails explained in plain language." />
-  <meta property="og:url" content="https://venticlaw.github.io/jwtechdev-site/" />
-  <meta property="og:image" content="https://venticlaw.github.io/jwtechdev-site/assets/jwtechdev-logo.png" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="JWTechDev.ai — AWS cloud infrastructure and practical tech education" />
-  <meta name="twitter:description" content="Practical AWS and cloud infrastructure education for learners and builders who want the tech to finally make sense." />
-  <meta name="twitter:image" content="https://venticlaw.github.io/jwtechdev-site/assets/jwtechdev-logo.png" />
-  <link rel="icon" type="image/png" href="assets/jwtechdev-logo.png" />
-  <link rel="stylesheet" href="css/tokens.css" />
-  <link rel="stylesheet" href="css/site.css" />
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Joshua TecDev Walker",
-      "url": "https://venticlaw.github.io/jwtechdev-site/",
-      "brand": {
-        "@type": "Brand",
-        "name": "JWTechDev.ai"
-      },
-      "jobTitle": "Cloud infrastructure and AWS educator",
-      "description": "Cloud infrastructure education creator focused on AWS, IAM, networking, platform engineering, certification prep, automation guardrails, tutoring, speaking, and hands-on technical learning.",
-      "knowsAbout": [
-        "Cloud infrastructure",
-        "Cloud computing",
-        "AWS",
-        "Platform engineering",
-        "Infrastructure as code",
-        "DevOps",
-        "Cloud networking",
-        "Certification prep",
-        "Technical tutoring",
-        "AI workflow guardrails",
-        "tool-assisted development",
-        "practical automation",
-        "Model Context Protocol"
-      ],
-      "sameAs": [
-        "https://www.youtube.com/@VentiFriedChicken",
-        "https://www.tiktok.com/@jwtechdev.ai",
-        "https://www.instagram.com/jwtechdev.ai/",
-        "https://www.linkedin.com/in/jwtechdev/",
-        "https://github.com/venticlaw"
-      ]
-    }
-  </script>
-</head>
-<body>
-  <header class="site-header" id="siteHeader">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="JWTechDev home">
-        <img src="assets/jwtechdev-logo.png" alt="" class="brand__mark" />
-        <span class="brand__word">JWTechDev.ai<small>AWS · Cloud · Infra</small></span>
-      </a>
-      <nav class="nav" aria-label="Primary">
-        <a href="#youtube">YouTube</a>
-        <a href="#tiktok">TikTok</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#assets">Assets</a>
-        <a href="#articles">Articles</a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JWTechDev.ai | Cloud infrastructure, AI workflows, and launch systems</title>
+    <meta
+      name="description"
+      content="JWTechDev.ai helps beginners, builders, and creator-operators understand cloud infrastructure, practical AI workflows, and launch-ready web systems."
+    />
+    <meta property="og:title" content="JWTechDev.ai" />
+    <meta
+      property="og:description"
+      content="Cloud infrastructure, practical AI workflows, and launch systems explained in plain English."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="./styles.css?v=20260619-launch-v1" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="./index.html" aria-label="JWTechDev.ai home">
+          <span class="brand-mark">JW</span>
+          <span>JWTechDev.ai</span>
+        </a>
+        <div class="nav-links">
+          <a href="./articles/">Articles</a>
+          <a href="./resources/cloud-infrastructure-first-map.html">Cloud Map</a>
+          <a href="./resources/aws-certification-study-map.html">AWS Study Map</a>
+          <a href="#inquiry">Request Access</a>
+        </div>
       </nav>
-      <a href="#connect" class="btn btn--primary btn--sm header-cta">Work with me</a>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-    </div>
-    <div class="mobile-menu" id="mobileMenu" hidden>
-      <a href="#youtube">YouTube</a>
-      <a href="#tiktok">TikTok</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#assets">Assets</a>
-      <a href="#articles">Articles</a>
-      <a href="#connect" class="btn btn--primary">Work with me</a>
-    </div>
-  </header>
-  <main id="top">
-    <section class="hero" data-screen-label="01 Hero">
-      <div class="hero__watermark" aria-hidden="true"><img src="assets/portrait-2.avif" alt="" style="object-fit:cover;border-radius:50%;opacity:.15;" /></div>
-      <div class="container hero__inner">
-        <aside class="hero__media reveal" aria-label="Portrait and quick credentials">
-          <div class="hero__portrait">
-            <span class="about__portrait-pin about__portrait-pin--tl">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
-              Orlando, FL
-            </span>
-            <img src="assets/portrait-1.avif" alt="Joshua Walker" />
-            <span class="about__portrait-pin about__portrait-pin--br">AWS Community Builder</span>
-          </div>
-        </aside>
-        <div class="hero__copy reveal">
-          <span class="eyebrow">AWS · Cloud infrastructure · Systems · Orlando, FL</span>
-          <h1 class="hero__title">
-            AWS cloud infrastructure<br/>
-            <span class="hero__title-accent">should actually click</span><br/>
-            when someone<br/>
-            explains it.
-          </h1>
-          <p class="hero__lede">I’m Joshua TecDev Walker: infrastructure and cloud expert, Army veteran, AWS Community Builder, and the person people call when Kubernetes, IAM, VPCs, networking, Terraform, or certification paths start sounding like alphabet soup. JWTechDev.ai turns confusing infrastructure into clear, usable steps, with AI tools treated as a supporting layer when they help the build.</p>
-          <div class="hero__cta">
-            <a href="#youtube" class="btn btn--primary btn--lg"><svg class="ico" viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg>Start learning</a>
-            <a href="#services" class="btn btn--outline btn--lg">Work with me →</a>
-          </div>
-        </div>
-        <aside class="hero__stats reveal" aria-label="At a glance">
-          <div class="hero__stat hero__stat--burgundy"><span class="num">10+</span><span class="label">Years in tech</span></div>
-          <div class="hero__stat hero__stat--orange"><span class="num">39K+</span><span class="label">Followers</span></div>
-          <div class="hero__stat hero__stat--navy"><span class="num">15</span><span class="label">Builder certs</span></div>
-          <div class="hero__stat hero__stat--green"><span class="num">200+</span><span class="label">Students tutored</span></div>
-        </aside>
-      </div>
-    </section>
-    <section class="section" id="youtube" data-screen-label="02 YouTube">
-      <div class="container">
-        <header class="section__head section__head--row">
-          <div class="section__head-text">
-            <span class="eyebrow">YouTube — deep dives</span>
-            <h2 class="section__title">Tutorials that turn confusion into a working build.</h2>
-            <p class="section__lede">AWS projects, cloud infrastructure, career pivots, and practical breakdowns for people who want the concept and the next step. AI shows up where it depends on real systems: permissions, logs, storage, routing, and rollback.</p>
-          </div>
-          <a href="https://www.youtube.com/@VentiFriedChicken" class="link-arrow" aria-label="Open YouTube channel" target="_blank" rel="noopener">Visit channel <span aria-hidden="true">↗</span></a>
-        </header>
-        <article class="yt-feature reveal">
-          <a class="yt-feature__thumb" aria-label="Play featured video on YouTube" href="https://www.youtube.com/watch?v=3kY4PwZx_Eg" target="_blank" rel="noopener">
-            <img class="yt-feature__image" src="https://img.youtube.com/vi/3kY4PwZx_Eg/maxresdefault.jpg" alt="Thumbnail for 7 tips that got me hired in tech" loading="lazy" />
-            <span class="yt-feature__chrome">
-              <svg viewBox="0 0 24 17" fill="currentColor">
-                <path d="M23 2.5a3 3 0 0 0-2.1-2.1C19 0 12 0 12 0s-7 0-8.9.4A3 3 0 0 0 1 2.5 31 31 0 0 0 .6 7 31 31 0 0 0 1 11.5a3 3 0 0 0 2.1 2.1C5 14 12 14 12 14s7 0 8.9-.4A3 3 0 0 0 23 11.5 31 31 0 0 0 23.4 7 31 31 0 0 0 23 2.5Z" fill="#FF0033" stroke="none"/>
-                <polygon points="10 10 14 7 10 4 10 10" fill="#fff" stroke="none"/>
-              </svg>
-              YouTube
-            </span>
-            <div class="yt-feature__caption">
-              <h3>7 tips that got me hired in tech</h3>
-            </div>
-            <div class="yt-feature__play" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
-          </a>
-          <div class="yt-feature__side">
-            <span class="yt-feature__tag">Latest video</span>
-            <h3 class="yt-feature__h">7 tips that got me hired in tech</h3>
-            <p class="yt-feature__desc">Want to break into tech in 2026 but don’t know where to start? Actionable tips to help you land your first tech role — even if you have no degree, no experience, or are changing careers.</p>
-            <ul class="yt-feature__meta">
-              <li>Posted Jan 2026</li>
-            </ul>
-            <div><a href="https://www.youtube.com/watch?v=3kY4PwZx_Eg" class="btn btn--dark" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24"><polygon points="6 4 20 12 6 20 6 4" fill="currentColor" stroke="none"/></svg>Watch on YouTube</a></div>
-          </div>
-        </article>
-        <div class="yt-grid">
+    </header>
 
-          <a class="yt-card reveal" href="https://www.youtube.com/watch?v=5PF4jAFXnxc" target="_blank" rel="noopener">
-            <div class="yt-card__thumb yt-card__thumb--a">
-              <img class="yt-card__image" src="https://img.youtube.com/vi/5PF4jAFXnxc/hqdefault.jpg" alt="Thumbnail for AI cloud services on AWS and Stranger Things" loading="lazy" />
-              <div class="yt-card__playicon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
-              <div class="yt-card__overlay">
-                <h4 class="yt-card__overlay-title">AWS AI · Stranger Things</h4>
-              </div>
+    <main id="main">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <p class="eyebrow">Cloud infrastructure first</p>
+            <h1>Learn the systems behind cloud, AI, and launch-ready websites.</h1>
+            <p class="lede">
+              JWTechDev.ai turns infrastructure into plain-English maps, study paths,
+              and practical build guides for people who want the system to make sense
+              before they chase tools.
+            </p>
+            <div class="actions" aria-label="Primary actions">
+              <a class="button" href="./resources/cloud-infrastructure-first-map.html">Open the Cloud Map</a>
+              <a class="button secondary" href="./articles/">Read the articles</a>
             </div>
-            <div class="yt-card__body">
-              <span class="badge badge--burgundy">AI / Cloud</span>
-              <h3 class="yt-card__title">AI cloud services on AWS and Stranger Things</h3>
-              <ul class="yt-card__meta"><li>AWS</li><li>33 views</li><li>Dec 2025</li></ul>
-            </div>
-          </a>
-          <a class="yt-card reveal" href="https://www.youtube.com/watch?v=Oq45YhnV5go" target="_blank" rel="noopener">
-            <div class="yt-card__thumb yt-card__thumb--b">
-              <img class="yt-card__image" src="https://img.youtube.com/vi/Oq45YhnV5go/hqdefault.jpg" alt="Thumbnail for Avoid Tech Crash!" loading="lazy" />
-              <div class="yt-card__playicon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
-              <div class="yt-card__overlay">
-                <h4 class="yt-card__overlay-title">Avoid Tech Crash!</h4>
-              </div>
-            </div>
-            <div class="yt-card__body">
-              <span class="badge badge--green">Career</span>
-              <h3 class="yt-card__title">Avoid Tech Crash!</h3>
-              <ul class="yt-card__meta"><li>Career</li><li>17 views</li><li>Jun 2025</li></ul>
-            </div>
-          </a>
-          <a class="yt-card reveal" href="https://www.youtube.com/watch?v=iSbRrXg-pUg" target="_blank" rel="noopener">
-            <div class="yt-card__thumb yt-card__thumb--c">
-              <img class="yt-card__image" src="https://img.youtube.com/vi/iSbRrXg-pUg/hqdefault.jpg" alt="Thumbnail for Is AI Coming for Your Enterprise Tech Job?" loading="lazy" />
-              <div class="yt-card__playicon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
-              <div class="yt-card__overlay">
-                <h4 class="yt-card__overlay-title">AI &amp; Your Job</h4>
-              </div>
-            </div>
-            <div class="yt-card__body">
-              <span class="badge badge--burgundy">AI</span>
-              <h3 class="yt-card__title">Is AI Coming for Your Enterprise Tech Job?</h3>
-              <ul class="yt-card__meta"><li>AI</li><li>112 views</li><li>Feb 2025</li></ul>
-            </div>
-          </a>
-          <a class="yt-card reveal" href="https://www.youtube.com/watch?v=hf2Rh-YCKKc" target="_blank" rel="noopener">
-            <div class="yt-card__thumb yt-card__thumb--d">
-              <img class="yt-card__image" src="https://img.youtube.com/vi/hf2Rh-YCKKc/hqdefault.jpg" alt="Thumbnail for Stop sucking at cloud interviews" loading="lazy" />
-              <div class="yt-card__playicon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
-              <div class="yt-card__overlay">
-                <h4 class="yt-card__overlay-title">Cloud Interviews</h4>
-              </div>
-            </div>
-            <div class="yt-card__body">
-              <span class="badge badge--orange">Interview</span>
-              <h3 class="yt-card__title">Stop sucking at cloud interviews</h3>
-              <ul class="yt-card__meta"><li>Career</li><li>60 views</li><li>Jul 2024</li></ul>
-            </div>
-          </a>
-          <a class="yt-card reveal" href="https://www.youtube.com/watch?v=w9Iddz9a23w" target="_blank" rel="noopener">
-            <div class="yt-card__thumb yt-card__thumb--e">
-              <img class="yt-card__image" src="https://img.youtube.com/vi/w9Iddz9a23w/hqdefault.jpg" alt="Thumbnail for Stay in tech!" loading="lazy" />
-              <div class="yt-card__playicon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
-              <div class="yt-card__overlay">
-                <h4 class="yt-card__overlay-title">Stay in tech!</h4>
-              </div>
-            </div>
-            <div class="yt-card__body">
-              <span class="badge badge--navy">Career</span>
-              <h3 class="yt-card__title">Stay in tech!</h3>
-              <ul class="yt-card__meta"><li>Career</li><li>2.3K views</li><li>Jun 2024</li></ul>
-            </div>
-          </a>
-          <a class="yt-card reveal" href="https://www.youtube.com/watch?v=AbzXQiI7kTA" target="_blank" rel="noopener">
-            <div class="yt-card__thumb yt-card__thumb--f">
-              <img class="yt-card__image" src="https://img.youtube.com/vi/AbzXQiI7kTA/hqdefault.jpg" alt="Thumbnail for 10 AWS Cloud Projects for Beginners 2024" loading="lazy" />
-              <div class="yt-card__playicon" aria-hidden="true"><svg viewBox="0 0 24 24"><polygon points="7 4 21 12 7 20 7 4"/></svg></div>
-              <div class="yt-card__overlay">
-                <h4 class="yt-card__overlay-title">10 AWS Projects</h4>
-              </div>
-            </div>
-            <div class="yt-card__body">
-              <span class="badge badge--green">Cloud</span>
-              <h3 class="yt-card__title">10 AWS Cloud Projects for Beginners 2024 (and a few harder ones)</h3>
-              <ul class="yt-card__meta"><li>AWS</li><li>421 views</li><li>Jan 2024</li></ul>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-    <section class="section section--ink" id="tiktok" data-screen-label="03 TikTok">
-      <div class="container">
-        <header class="section__head section__head--row">
-          <div class="section__head-text">
-            <span class="eyebrow eyebrow--light">TikTok — fast explanations</span>
-            <h2 class="section__title section__title--light">Cloud, AWS, and practical AI without the textbook voice.</h2>
-            <p class="section__lede section__lede--light">Short-form explainers, career guidance, AWS concepts, cloud architecture breakdowns, and quick takes on what builders should actually pay attention to.</p>
           </div>
-          <div style="display:flex;flex-direction:column;align-items:flex-end;gap:14px;">
-            <div class="tt-head__count">27.7K<small>followers · @jwtechdev.ai</small></div>
-            <a class="tt-handle" href="https://www.tiktok.com/@jwtechdev.ai" aria-label="Open TikTok profile" target="_blank" rel="noopener">
-              <span class="tt-handle__avatar">JW</span>
-              <span>Follow @jwtechdev.ai</span>
+          <aside class="hero-panel" aria-label="JWTechDev.ai launch focus">
+            <div class="system-map">
+              <div class="node">
+                <strong>Identity</strong>
+                <span>Know who can do what before anything connects.</span>
+              </div>
+              <div class="node">
+                <strong>Network</strong>
+                <span>Map what talks to what, and what should stay private.</span>
+              </div>
+              <div class="node">
+                <strong>Compute</strong>
+                <span>Pick where the code runs after the traffic path is clear.</span>
+              </div>
+              <div class="node">
+                <strong>Monitor</strong>
+                <span>Use logs, alarms, and cost checks so failures do not hide.</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section band" id="resources">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Launch resources</p>
+              <h2>Start with the maps.</h2>
+            </div>
+            <p>
+              These are local preview versions of the first JWTechDev.ai lead magnets.
+              They are not wired to a public download or lead capture endpoint yet.
+            </p>
+          </div>
+          <div class="grid two">
+            <a class="resource-card" href="./resources/cloud-infrastructure-first-map.html">
+              <div class="tag-row">
+                <span class="tag">Beginner cloud</span>
+                <span class="tag">Study asset</span>
+              </div>
+              <h3>Cloud Infrastructure First Map</h3>
+              <p>
+                A six-layer map for learning identity, networking, compute, storage,
+                monitoring, and cost without memorizing random service names.
+              </p>
+              <span class="card-link">Preview the map</span>
+            </a>
+            <a class="resource-card" href="./resources/aws-certification-study-map.html">
+              <div class="tag-row">
+                <span class="tag">AWS</span>
+                <span class="tag">Certification path</span>
+              </div>
+              <h3>AWS Certification Study Map</h3>
+              <p>
+                A starting-point guide for Cloud Practitioner, AI Practitioner, and
+                Solutions Architect Associate candidates.
+              </p>
+              <span class="card-link">Preview the study path</span>
             </a>
           </div>
-        </header>
-        <div class="tt-embed-wrap reveal" style="display:flex;justify-content:center;padding:var(--space-8) 0;">
-          <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@jwtechdev.ai" data-unique-id="jwtechdev.ai" data-embed-type="creator" style="max-width:780px;min-width:288px;">
-            <section><a target="_blank" href="https://www.tiktok.com/@jwtechdev.ai?refer=creator_embed">@jwtechdev.ai</a></section>
-          </blockquote>
-          <script async src="https://www.tiktok.com/embed.js"></script>
         </div>
-      </div>
-    </section>
-    <section class="section" id="about" data-screen-label="04 Credentials">
-      <div class="container">
-        <header class="section__head">
-          <span class="eyebrow">Why listen</span>
-          <h2 class="section__title">The receipts behind the teaching.</h2>
-          <p class="section__lede">More than a decade in cloud and engineering, active AWS community work, practical AI fluency, and a bias toward helping people build something real instead of just collecting vocabulary.</p>
-        </header>
-        <div class="about-grid about-grid--credentials">
-          <div class="about__copy reveal">
-            <div class="creds-block creds-block--flush">
-              <div class="creds-col">
-                <h4>Anthropic Academy — all 15 certifications</h4>
-                <ul class="cert-list">
-                  <li class="cert">
-                    <span class="cert__badge cert__badge--ai">AI</span>
-                    <div>
-                      <div class="cert__name">Claude 101</div>
-                      <div class="cert__org">Anthropic Skilljar</div>
-                    </div>
-                    <span class="cert__year">2026</span>
-                  </li>
-                  <li class="cert">
-                    <span class="cert__badge cert__badge--ai">CC</span>
-                    <div>
-                      <div class="cert__name">Claude Code 101</div>
-                      <div class="cert__org">Anthropic Skilljar</div>
-                    </div>
-                    <span class="cert__year">2026</span>
-                  </li>
-                  <li class="cert">
-                    <span class="cert__badge cert__badge--ai">CC</span>
-                    <div>
-                      <div class="cert__name">Claude Code in Action</div>
-                      <div class="cert__org">Anthropic Skilljar</div>
-                    </div>
-                    <span class="cert__year">2026</span>
-                  </li>
-                  <li class="cert">
-                    <span class="cert__badge cert__badge--ai">CW</span>
-                    <div>
-                      <div class="cert__name">Introduction to Claude Cowork</div>
-                      <div class="cert__org">Anthropic Skilljar</div>
-                    </div>
-                    <span class="cert__year">2026</span>
-                  </li>
-                  <li class="cert">
-                    <span class="cert__badge cert__badge--ai">API</span>
-                    <div>
-                      <div class="cert__name">Building with the Claude API</div>
-                      <div class="cert__org">Anthropic Skilljar</div>
-                    </div>
-                    <span class="cert__year">2026</span>
-                  </li>
-                  <li class="cert">
-                    <span class="cert__badge cert__badge--ai">MCP</span>
-                    <div>
-                      <div class="cert__name">Introduction to Model Context Protocol</div>
-                      <div class="cert__org">Anthropic Skilljar</div>
-                    </div>
-                    <span class="cert__year">2026</span>
-                  </li>
-                  <li class="cert">
-                    <span class="cert__badge cert__badge--ai">MCP</span>
-                    <div>
-                      <div class="cert__name">Model Context Protocol: Advanced Topics</div>
-                      <div class="cert__org">Anthropic Skilljar</div>
-                    </div>
-                    <span class="cert__year">2026</span>
-                  </li>
-                  <li class="cert">
-                    <span class="cert__badge cert__badge--ai">AG</span>
-                    <div>
-                      <div class="cert__name">Introduction to Agent Skills</div>
-                      <div class="cert__org">Anthropic Skilljar</div>
-                    </div>
-                    <span class="cert__year">2026</span>
-                  </li>
-                  <li class="cert">
-                    <span class="cert__badge cert__badge--ai">AG</span>
-                    <div>
-                      <div class="cert__name">Introduction to Subagents</div>
-                      <div class="cert__org">Anthropic Skilljar</div>
-                    </div>
-                    <span class="cert__year">2026</span>
-                  </li>
-                  <li class="cert">
-                    <span class="cert__badge cert__badge--ai">AF</span>
-                    <div>
-                      <div class="cert__name">AI Fluency: Framework &amp; Foundations</div>
-                      <div class="cert__org">Anthropic Skilljar</div>
-                    </div>
-                    <span class="cert__year">2026</span>
-                  </li>
-                  <li class="cert">
-                    <span class="cert__badge cert__badge--ai">AF</span>
-                    <div>
-                      <div class="cert__name">AI Capabilities and Limitations</div>
-                      <div class="cert__org">Anthropic Skilljar</div>
-                    </div>
-                    <span class="cert__year">2026</span>
-                  </li>
-                  <li class="cert">
-                    <span class="cert__badge cert__badge--ai">AF</span>
-                    <div>
-                      <div class="cert__name">Teaching AI Fluency</div>
-                      <div class="cert__org">Anthropic Skilljar</div>
-                    </div>
-                    <span class="cert__year">2026</span>
-                  </li>
-                  <li class="cert">
-                    <span class="cert__badge cert__badge--ai">AF</span>
-                    <div>
-                      <div class="cert__name">AI Fluency for Educators</div>
-                      <div class="cert__org">Anthropic Skilljar</div>
-                    </div>
-                    <span class="cert__year">2026</span>
-                  </li>
-                  <li class="cert">
-                    <span class="cert__badge cert__badge--aws">BR</span>
-                    <div>
-                      <div class="cert__name">Claude with Amazon Bedrock</div>
-                      <div class="cert__org">Anthropic Skilljar</div>
-                    </div>
-                    <span class="cert__year">2026</span>
-                  </li>
-                  <li class="cert">
-                    <span class="cert__badge cert__badge--ccp">GC</span>
-                    <div>
-                      <div class="cert__name">Claude with Google Cloud's Vertex AI</div>
-                      <div class="cert__org">Anthropic Skilljar</div>
-                    </div>
-                    <span class="cert__year">2026</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="creds-col">
-                <h4>Credentials &amp; roles</h4>
-                <ul class="cert-list">
-                  <li class="cert">
-                    <span class="cert__badge cert__badge--aws">CB</span>
-                    <div>
-                      <div class="cert__name">4x AWS Community Builder</div>
-                      <div class="cert__org">Since 2023</div>
-                    </div>
-                    <span class="cert__year">Active</span>
-                  </li>
-                  <li class="cert">
-                    <span class="cert__badge cert__badge--ai">CC</span>
-                    <div>
-                      <div class="cert__name">Claude Builder &amp; advocate</div>
-                      <div class="cert__org">Anthropic developer community</div>
-                    </div>
-                    <span class="cert__year">2024</span>
-                  </li>
-                  <li class="cert">
-                    <span class="cert__badge cert__badge--sec">NP</span>
-                    <div>
-                      <div class="cert__name">Co-founder, Building Our Tech (BOT)</div>
-                      <div class="cert__org">Non-profit · cloud careers access</div>
-                    </div>
-                    <span class="cert__year">Active</span>
-                  </li>
-                  <li class="cert">
-                    <span class="cert__badge cert__badge--ccp">SM</span>
-                    <div>
-                      <div class="cert__name">Senior Manager, Cloud &amp; Engineering</div>
-                      <div class="cert__org">Deloitte</div>
-                    </div>
-                    <span class="cert__year">Day job</span>
-                  </li>
-                  <li class="cert">
-                    <span class="cert__badge cert__badge--sec">VET</span>
-                    <div>
-                      <div class="cert__name">U.S. Army Veteran</div>
-                      <div class="cert__org">Honorable Discharge</div>
-                    </div>
-                    <span class="cert__year"></span>
-                  </li>
-                  <li class="cert">
-                    <span class="cert__badge cert__badge--it">BS</span>
-                    <div>
-                      <div class="cert__name">Full Sail University</div>
-                      <div class="cert__org">2012 – 2013</div>
-                    </div>
-                    <span class="cert__year"></span>
-                  </li>
-                </ul>
-                <h4 style="margin-top: var(--space-6);">What I’m good at</h4>
-                <ul class="creds-tags">
-                  <li>AWS</li><li>Cloud architecture</li><li>IAM &amp; security</li><li>Networking</li><li>Kubernetes</li><li>Terraform</li><li>Serverless</li><li>CI/CD pipelines</li><li>Claude · Anthropic</li><li>RAG &amp; agents</li><li>Mentorship</li><li>Public speaking</li>
-                </ul>
-              </div>
+      </section>
+
+      <section class="section" id="articles">
+        <div class="container">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">AEO article cluster</p>
+              <h2>Plain answers for cloud beginners.</h2>
             </div>
+            <a class="button secondary" href="./articles/">View all articles</a>
+          </div>
+          <div class="grid three">
+            <a class="article-card" href="./articles/cloud-infrastructure-plain-english.html">
+              <span class="tag">Cloud basics</span>
+              <h3>What is cloud infrastructure in plain English?</h3>
+              <p>Cloud infrastructure is the system of identity, network, compute, storage, monitoring, and cost controls behind an app.</p>
+              <span class="card-link">Read answer</span>
+            </a>
+            <a class="article-card" href="./articles/learn-iam-before-ai-tools.html">
+              <span class="tag">IAM</span>
+              <h3>Why should beginners learn IAM before AI tools?</h3>
+              <p>AI workflows still need permissions, secrets, logs, and recovery. IAM is where that discipline starts.</p>
+              <span class="card-link">Read answer</span>
+            </a>
+            <a class="article-card" href="./articles/aws-certification-start.html">
+              <span class="tag">AWS certs</span>
+              <h3>What AWS certification should I start with?</h3>
+              <p>The best first AWS cert depends on your background, confidence, and the kind of proof you need next.</p>
+              <span class="card-link">Read answer</span>
+            </a>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="section section--muted" id="services" data-screen-label="05 Services">
-      <div class="container">
-        <header class="section__head">
-          <span class="eyebrow">Work with me</span>
-          <h2 class="section__title">Bring me in when the tech needs to make sense.</h2>
-          <p class="section__lede">Tutoring, speaking, and hands-on AWS/cloud infrastructure education for learners, builders, teams, and brands that need the material to land with real people. AI is covered when it connects back to real infrastructure decisions.</p>
-        </header>
-        <div class="services-grid">
-          
-          <article class="service service--branded reveal">
-            <span class="service__num">01 / 03</span>
-            <span class="service__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18v10H3z"/><path d="M7 17v3"/><path d="M17 17v3"/><circle cx="9" cy="12" r="1.5"/><path d="M14 9l5 6"/><path d="M19 9l-5 6"/></svg></span>
-            <h3 class="service__title">AWS &amp; infrastructure explainers</h3>
-            <p class="service__desc">AWS projects, cloud infrastructure walkthroughs, platform-tool launches, and occasional automation explainers framed through the systems they need to run safely.</p>
-            <ul class="service__list"><li><span>Dedicated long-form walkthrough</span></li><li><span>Short-form bundle for TikTok, Reels, and Shorts</span></li><li><span>Newsletter or blog feature with practical examples</span></li><li><span>Honest technical framing for builder audiences</span></li><li><span>Clear CTA without the hype machine</span></li></ul>
-            <div class="service__fit">
-              <div>
-                <div class="label">Best fit</div>
-                <div class="amount">Brand teams</div>
-              </div>
-              <a href="#connect" class="btn btn--ghost btn--sm" data-inquiry-interest="AWS & infrastructure explainers">Start the brief →</a>
+      </section>
+
+      <section class="section band" id="inquiry">
+        <div class="container inquiry">
+          <div>
+            <p class="eyebrow">Request access</p>
+            <h2>Want the first JWTechDev.ai study drops?</h2>
+            <p class="lede">
+              For launch v1, this page uses a manual request path instead of a live
+              public lead capture backend. That keeps the site shippable while the
+              capture endpoint remains approval-gated.
+            </p>
+            <div class="actions">
+              <a class="button" href="mailto:josh@jwtechdev.ai?subject=JWTechDev.ai%20study%20map%20request">Email a study map request</a>
+              <a class="button secondary" href="./resources/aws-certification-study-map.html">Preview the AWS Study Map</a>
             </div>
-          </article>
-          <article class="service service--tutoring reveal">
-            <span class="service__num">02 / 03</span>
-            <span class="service__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v13"/><path d="M4 19h16"/><path d="M8 9h8"/><path d="M8 13h5"/></svg></span>
-            <h3 class="service__title">Tutoring &amp; coaching</h3>
-            <p class="service__desc">AWS fundamentals, certification prep, portfolio builds, architecture review, and practical AI tool onboarding for people who want a guide, not a lecture.</p>
-            <ul class="service__list"><li><span>AWS and cloud certification prep</span></li><li><span>IAM, networking, compute, storage, and cost review</span></li><li><span>Portfolio projects you can actually show</span></li><li><span>Mock interviews and architecture review</span></li><li><span>Practical AI tool setup when it supports the cloud workflow</span></li></ul>
-            <div class="service__fit">
-              <div>
-                <div class="label">Format</div>
-                <div class="amount">1:1 or group</div>
-              </div>
-              <a href="#connect" class="btn btn--ghost btn--sm" data-inquiry-interest="Tutoring & coaching">Book a session →</a>
-            </div>
-          </article>
-          <article class="service service--speaking reveal">
-            <span class="service__num">03 / 03</span>
-            <span class="service__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M9 9l3 3 5-5"/></svg></span>
-            <h3 class="service__title">Speaking &amp; workshops</h3>
-            <p class="service__desc">Keynotes, panels, workshops, and internal sessions on cloud careers, AWS ecosystems, infrastructure fundamentals, and practical AI adoption without hype.</p>
-            <ul class="service__list"><li><span>Conference talks and panels</span></li><li><span>Hands-on AWS and cloud workshops</span></li><li><span>University and career-program sessions</span></li><li><span>Team training for non-specialist audiences</span></li><li><span>Practical AI sessions tied to infrastructure, governance, and workflow</span></li></ul>
-            <div class="service__fit">
-              <div>
-                <div class="label">Format</div>
-                <div class="amount">Talks + workshops</div>
-              </div>
-              <a href="#connect" class="btn btn--ghost btn--sm" data-inquiry-interest="Speaking & workshops">Check availability →</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-    <section class="section" id="assets" data-screen-label="06 Assets">
-      <div class="container">
-        <header class="section__head">
-          <span class="eyebrow">Skills library</span>
-          <h2 class="section__title">Field-tested resources for builders and learners.</h2>
-          <p class="section__lede">AWS study guides, cloud infrastructure maps, portfolio project kits, and a smaller set of practical workflow templates built around the same promise: you came confused, you leave confident, and you have something to show for it.</p>
-        </header>
-        <div class="assets-tabs" role="tablist" aria-label="Asset categories">
-          <button class="assets-tab is-active" role="tab" aria-selected="true" aria-controls="panel-guides" id="tab-guides">
-            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4V4z"/><path d="M4 16a4 4 0 0 1 4-4h12"/></svg>
-            Study guides
-          </button>
-          <button class="assets-tab" role="tab" aria-selected="false" aria-controls="panel-codex" id="tab-codex">
-            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7l9 5 9-5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>
-            Workflow templates
-          </button>
-        </div>
-        <div class="asset-ladder-note reveal">
-          <strong>Early-access ladder:</strong>
-          Start with the Cloud Infrastructure First Map, then get the AWS Certification Study Map, portfolio project kits, and infrastructure guardrails for AI-assisted workflows as they release.
-        </div>
-        <div class="assets-panel is-active" role="tabpanel" id="panel-guides" aria-labelledby="tab-guides">
-          <div class="assets-grid">
-          <article class="asset-card reveal">
-            <div class="asset-card__cover asset-card__cover--green">
-              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4V4z"/><path d="M4 16a4 4 0 0 1 4-4h12"/><path d="M8 8h6"/></svg>Guide · 10 pages</span>
-              <span class="asset-card__label asset-card__label--highlight">Guide</span>
-              
-              <div class="asset-card__page" aria-hidden="true">
-                <div class="asset-card__page-head">JWTechDev study guide</div>
-                <div class="asset-card__page-title">Cloud Infrastructure First Map</div>
-                <div class="asset-card__page-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-                <div class="asset-card__page-foot">jwtechdev · 01</div>
-              </div>
-            </div>
-            <div class="asset-card__body">
-              <h3 class="asset-card__title">Cloud Infrastructure First Map</h3>
-              <p class="asset-card__desc">The six concepts beginners should learn before memorizing AWS service names: identity, networking, compute, storage, monitoring, and cost.</p>
-              <div class="asset-card__meta">
-                <span>First guide</span>
-                <a class="download" href="#connect" data-asset-interest="Cloud Infrastructure First Map" aria-label="Request access to the Cloud Infrastructure First Map">Request access<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></a>
-              </div>
-            </div>
-          </article>
-          <article class="asset-card reveal">
-            <div class="asset-card__cover asset-card__cover--navy">
-              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4V4z"/><path d="M4 16a4 4 0 0 1 4-4h12"/><path d="M8 8h6"/></svg>Checklist</span>
-              <span class="asset-card__label asset-card__label--highlight">Checklist</span>
-              
-              <div class="asset-card__page" aria-hidden="true">
-                <div class="asset-card__page-head">JWTechDev study guide</div>
-                <div class="asset-card__page-title">Infrastructure Guardrails Before Tool Access</div>
-                <div class="asset-card__page-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-                <div class="asset-card__page-foot">jwtechdev · 01</div>
-              </div>
-            </div>
-            <div class="asset-card__body">
-              <h3 class="asset-card__title">Infrastructure Guardrails Checklist</h3>
-              <p class="asset-card__desc">A practical scoping worksheet for any tool-assisted workflow: identity, permissions, inputs, outputs, approvals, routing, verification, and what should never run automatically.</p>
-              <div class="asset-card__meta">
-                <span>Safety layer</span>
-                <a class="download" href="#connect" data-asset-interest="Infrastructure Guardrails Checklist" aria-label="Request access to the Infrastructure Guardrails Checklist">Request access<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></a>
-              </div>
-            </div>
-          </article>
-          <article class="asset-card reveal">
-            <div class="asset-card__cover asset-card__cover--orange">
-              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4V4z"/><path d="M4 16a4 4 0 0 1 4-4h12"/><path d="M8 8h6"/></svg>Decision map</span>
-              <span class="asset-card__label asset-card__label--highlight">Map</span>
-              
-              <div class="asset-card__page" aria-hidden="true">
-                <div class="asset-card__page-head">JWTechDev study guide</div>
-                <div class="asset-card__page-title">Which AWS cert should I start with?</div>
-                <div class="asset-card__page-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-                <div class="asset-card__page-foot">jwtechdev · 01</div>
-              </div>
-            </div>
-            <div class="asset-card__body">
-              <h3 class="asset-card__title">AWS Certification Study Map</h3>
-              <p class="asset-card__desc">A simple path for beginners, career switchers, support pros, and builders who need to stop collecting random courses and start moving.</p>
-              <div class="asset-card__meta">
-                <span>Cert path selector</span>
-                <a class="download" href="#connect" data-asset-interest="AWS Certification Study Map" aria-label="Request access to the AWS Certification Study Map">Request access<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></a>
-              </div>
-            </div>
-          </article>
-          <article class="asset-card reveal">
-            <div class="asset-card__cover asset-card__cover--green">
-              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4V4z"/><path d="M4 16a4 4 0 0 1 4-4h12"/><path d="M8 8h6"/></svg>PDF · 30 pages</span>
-              <span class="asset-card__label asset-card__label--highlight">Guide</span>
-              
-              <div class="asset-card__page" aria-hidden="true">
-                <div class="asset-card__page-head">JWTechDev study guide</div>
-                <div class="asset-card__page-title">The cloud interview kit</div>
-                <div class="asset-card__page-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-                <div class="asset-card__page-foot">jwtechdev · 01</div>
-              </div>
-            </div>
-            <div class="asset-card__body">
-              <h3 class="asset-card__title">AWS Cloud Practitioner No-Fluff Study Guide</h3>
-              <p class="asset-card__desc">Plain-English fundamentals, IAM, compute, storage, networking, billing, Well-Architected basics, glossary, and practice questions with explanations.</p>
-              <div class="asset-card__meta">
-                <span>Premium guide</span>
-                <a class="download" href="#connect" data-asset-interest="Cloud Confidence Starter Pack" aria-label="Request access to the AWS Cloud Practitioner No-Fluff Study Guide">Request access<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></a>
-              </div>
-            </div>
-          </article>
-          <article class="asset-card reveal">
-            <div class="asset-card__cover asset-card__cover--ink">
-              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4V4z"/><path d="M4 16a4 4 0 0 1 4-4h12"/><path d="M8 8h6"/></svg>PDF · 24 pages</span>
-              <span class="asset-card__label ">Field guide</span>
-              
-              <div class="asset-card__page" aria-hidden="true">
-                <div class="asset-card__page-head">JWTechDev study guide</div>
-                <div class="asset-card__page-title">Terraform without the tears</div>
-                <div class="asset-card__page-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-                <div class="asset-card__page-foot">jwtechdev · 01</div>
-              </div>
-            </div>
-            <div class="asset-card__body">
-              <h3 class="asset-card__title">Static Site Deployment Field Guide</h3>
-              <p class="asset-card__desc">Repo hygiene, GitHub Pages deployment, frontend verification, DNS readiness, and the infrastructure decisions behind a clean static launch.</p>
-              <div class="asset-card__meta">
-                <span>Based on this site build</span>
-                <a class="download" href="#connect" data-asset-interest="Static Site Deployment Field Guide" aria-label="Request access to the Static Site Deployment Field Guide">Request access<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></a>
-              </div>
-            </div>
-          </article>
-          <article class="asset-card reveal">
-            <div class="asset-card__cover asset-card__cover--fog">
-              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4V4z"/><path d="M4 16a4 4 0 0 1 4-4h12"/><path d="M8 8h6"/></svg>PDF · 22 pages</span>
-              <span class="asset-card__label ">Project pack</span>
-              
-              <div class="asset-card__page" aria-hidden="true">
-                <div class="asset-card__page-head">JWTechDev study guide</div>
-                <div class="asset-card__page-title">Cloud portfolio project stack</div>
-                <div class="asset-card__page-lines"><i></i><i></i><i></i><i></i><i></i><i></i></div>
-                <div class="asset-card__page-foot">jwtechdev · 01</div>
-              </div>
-            </div>
-            <div class="asset-card__body">
-              <h3 class="asset-card__title">Cloud Portfolio Project Pack</h3>
-              <p class="asset-card__desc">Static site portfolio, serverless contact-form concept, S3/CloudFront mental model, README templates, diagrams, and interview talking points.</p>
-              <div class="asset-card__meta">
-                <span>Portfolio proof path</span>
-                <a class="download" href="#connect" data-asset-interest="Cloud Portfolio Project Pack" aria-label="Request access to the Cloud Portfolio Project Pack">Request access<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></a>
-              </div>
-            </div>
-          </article></div>
-        </div>
-        <div class="assets-panel" role="tabpanel" id="panel-codex" aria-labelledby="tab-codex" hidden>
-          <div class="assets-grid">
-          <article class="asset-card reveal">
-            <div class="asset-card__cover asset-card__cover--ink">
-              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7l9 5 9-5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>Template · Workflow</span>
-              <span class="asset-card__label asset-card__label--highlight">Template</span>
-              
-              <div class="asset-card__claude" aria-hidden="true">
-                <div class="pp">aws-auditor: scan started</div>
-                <div class="lines"><i></i><i></i><i></i></div>
-              </div>
-            </div>
-            <div class="asset-card__body">
-              <h3 class="asset-card__title">Tool-assisted workflow brief</h3>
-              <p class="asset-card__desc">A worksheet for defining a workflow's job, allowed files, outputs, approval gates, failure mode, verification path, and what done actually means.</p>
-              <div class="asset-card__meta">
-                <span>Pairs with guardrails</span>
-                <a class="download" href="#connect" data-asset-interest="Tool-assisted Workflow Brief" aria-label="Request access to the tool-assisted workflow brief">Request access<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></a>
-              </div>
-            </div>
-          </article>
-          <article class="asset-card reveal">
-            <div class="asset-card__cover asset-card__cover--burgundy">
-              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7l9 5 9-5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>Assistant · Study loop</span>
-              <span class="asset-card__label asset-card__label--highlight">Skill</span>
-              
-              <div class="asset-card__claude" aria-hidden="true">
-                <div class="pp">cert-tutor: ready</div>
-                <div class="lines"><i></i><i></i><i></i></div>
-              </div>
-            </div>
-            <div class="asset-card__body">
-              <h3 class="asset-card__title">Cloud-cert tutor blueprint</h3>
-              <p class="asset-card__desc">A tutoring blueprint that turns AWS cert prep into an adaptive study loop: quiz, explain, retry, and track which cloud concepts keep tripping you up.</p>
-              <div class="asset-card__meta">
-                <span>Cloud study assistant</span>
-                <a class="download" href="#connect" data-asset-interest="Cloud-cert Tutor Blueprint" aria-label="Request access to the cloud-cert tutor blueprint">Request access<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></a>
-              </div>
-            </div>
-          </article>
-          <article class="asset-card reveal">
-            <div class="asset-card__cover asset-card__cover--navy">
-              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7l9 5 9-5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>Prompt pack</span>
-              <span class="asset-card__label ">Prompt pack</span>
-              
-              <div class="asset-card__claude" aria-hidden="true">
-                <div class="pp">review: architecture --depth=deep</div>
-                <div class="lines"><i></i><i></i><i></i></div>
-              </div>
-            </div>
-            <div class="asset-card__body">
-              <h3 class="asset-card__title">Architecture review prompt pack</h3>
-              <p class="asset-card__desc">Prompts for cloud architecture thinking, IAM review, cost tradeoffs, incident notes, postmortems, and getting unstuck without outsourcing your judgment.</p>
-              <div class="asset-card__meta">
-                <span>25 prompts · 6 categories</span>
-                <a class="download" href="#connect" data-asset-interest="Prompt Pack" aria-label="Request access to the prompt pack">Request access<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></a>
-              </div>
-            </div>
-          </article>
-          <article class="asset-card reveal">
-            <div class="asset-card__cover asset-card__cover--green">
-              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7l9 5 9-5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>MCP server</span>
-              <span class="asset-card__label asset-card__label--highlight">Starter</span>
-              
-              <div class="asset-card__claude" aria-hidden="true">
-                <div class="pp">mcp: notion server live</div>
-                <div class="lines"><i></i><i></i><i></i></div>
-              </div>
-            </div>
-            <div class="asset-card__body">
-              <h3 class="asset-card__title">Knowledge vault MCP starter</h3>
-              <p class="asset-card__desc">A scoped pattern for connecting a knowledge workspace to local tools without turning your second brain into a permissions mess.</p>
-              <div class="asset-card__meta">
-                <span>Local-first pattern</span>
-                <a class="download" href="#connect" data-asset-interest="Knowledge Vault MCP Starter" aria-label="Request access to the Knowledge Vault MCP Starter">Request access<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></a>
-              </div>
-            </div>
-          </article>
-          <article class="asset-card reveal">
-            <div class="asset-card__cover asset-card__cover--orange">
-              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7l9 5 9-5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>Template · Dashboard</span>
-              <span class="asset-card__label ">Template</span>
-              
-              <div class="asset-card__claude" aria-hidden="true">
-                <div class="pp">dashboard: infra-status.html</div>
-                <div class="lines"><i></i><i></i><i></i></div>
-              </div>
-            </div>
-            <div class="asset-card__body">
-              <h3 class="asset-card__title">Infrastructure dashboard starter</h3>
-              <p class="asset-card__desc">A practical starter for turning messy status data into a working operations dashboard with layout, interaction, and explanation already thought through.</p>
-              <div class="asset-card__meta">
-                <span>4 layouts included</span>
-                <a class="download" href="#connect" data-asset-interest="Infrastructure Dashboard Starter" aria-label="Request access to the infrastructure dashboard starter">Request access<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></a>
-              </div>
-            </div>
-          </article>
-          <article class="asset-card reveal">
-            <div class="asset-card__cover asset-card__cover--fog">
-              <span class="asset-card__type"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 7l9 5 9-5-9-5z"/><path d="M3 12l9 5 9-5"/><path d="M3 17l9 5 9-5"/></svg>Workflow · n8n</span>
-              <span class="asset-card__label ">Workflow</span>
-              
-              <div class="asset-card__claude" aria-hidden="true">
-                <div class="pp">workflow: content-engine</div>
-                <div class="lines"><i></i><i></i><i></i></div>
-              </div>
-            </div>
-            <div class="asset-card__body">
-              <h3 class="asset-card__title">Static content infrastructure workflow</h3>
-              <p class="asset-card__desc">The repeatable workflow for turning one cloud idea into articles, scripts, newsletter notes, and site content without rebuilding the process every week.</p>
-              <div class="asset-card__meta">
-                <span>9 nodes · ready to import</span>
-                <a class="download" href="#connect" data-asset-interest="Static Content Infrastructure Workflow" aria-label="Request access to the static content infrastructure workflow">Request access<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12l7 7 7-7"/><path d="M12 5v14"/></svg></a>
-              </div>
-            </div>
-          </article></div>
-        </div>
-      </div>
-    </section>
-    <section class="section section--muted" id="articles" data-screen-label="07 Articles">
-      <div class="container">
-        <header class="section__head section__head--row">
-          <div class="section__head-text">
-            <span class="eyebrow">Practical AWS and cloud articles</span>
-            <h2 class="section__title">Answers built for people who want the tech to finally make sense.</h2>
-            <p class="section__lede">Plain-English explainers for cloud basics, AWS certification, portfolio projects, creator-owned web infrastructure, and the guardrails that make AI-assisted workflows safe enough to use.</p>
           </div>
-          <a class="link-arrow" href="#connect">Request the first guide <span aria-hidden="true">→</span></a>
-        </header>
-        <div class="aeo-grid">
-          <article class="aeo-card reveal">
-            <span class="badge badge--green">Cloud infrastructure path</span>
-            <h3>What should a beginner learn first in cloud infrastructure?</h3>
-            <p>Start with identity, networking, compute, storage, and monitoring, then pair the fundamentals with one portfolio project so the knowledge turns into proof.</p>
-            <ul>
-              <li>Infrastructure fundamentals</li>
-              <li>Best first AWS cert by background</li>
-              <li>Portfolio project pairing</li>
-            </ul>
-            <a href="articles/what-to-learn-first-cloud-infrastructure.html">Read article →</a>
-          </article>
-          <article class="aeo-card reveal">
-            <span class="badge badge--orange">AWS certs</span>
-            <h3>Which AWS certification should a beginner take first?</h3>
-            <p>Pick the certification based on your background, then pair the study plan with one project so the badge turns into proof.</p>
-            <ul>
-              <li>Cloud Practitioner vs SAA</li>
-              <li>Path by background</li>
-              <li>30-day study rhythm</li>
-            </ul>
-            <a href="articles/which-aws-certification-should-a-beginner-take-first.html">Read article →</a>
-          </article>
-          <article class="aeo-card reveal">
-            <span class="badge badge--burgundy">Cloud automation infrastructure</span>
-            <h3>What infrastructure should AI workflows have before they touch real work?</h3>
-            <p>Real workflows need identity, permissions, storage, logs, approval gates, and recovery before any tool gets access.</p>
-            <ul>
-              <li>Identity and permissions</li>
-              <li>Human approval gates</li>
-              <li>Safe first workflows</li>
-            </ul>
-            <a href="articles/what-is-an-ai-agent-and-what-infrastructure-does-it-need.html">Read article →</a>
-          </article>
-          <article class="aeo-card reveal">
-            <span class="badge badge--green">Portfolio projects</span>
-            <h3>What should a cloud portfolio project include?</h3>
-            <p>A strong project proves your thinking: working artifact, architecture, security, cost, monitoring, and a clear README.</p>
-            <ul>
-              <li>Project proof checklist</li>
-              <li>README structure</li>
-              <li>Interview talking points</li>
-            </ul>
-            <a href="articles/what-should-a-cloud-portfolio-project-include.html">Read article →</a>
-          </article>
-          <article class="aeo-card reveal">
-            <span class="badge badge--orange">Static web strategy</span>
-            <h3>How can creators avoid platform lock-in?</h3>
-            <p>Own the website, own the list, keep content portable, and use social platforms as distribution instead of headquarters.</p>
-            <ul>
-              <li>Static site structure</li>
-              <li>Free guide ladder</li>
-              <li>Newsletter handoff</li>
-            </ul>
-            <a href="articles/how-creators-use-static-websites-to-avoid-platform-lock-in.html">Read article →</a>
-          </article>
-          <article class="aeo-card reveal">
-            <span class="badge badge--navy">Safe build operations</span>
-            <h3>What infrastructure makes AI-assisted coding safe for real projects?</h3>
-            <p>Use clear lanes, trusted context, approval gates, browser verification, and a status trail so tool-assisted work stays useful.</p>
-            <ul>
-              <li>Safe build loop</li>
-              <li>Approval gates</li>
-              <li>Infrastructure-minded handoff</li>
-            </ul>
-            <a href="articles/how-to-use-codex-safely-for-real-work.html">Read article →</a>
-          </article>
+          <div class="status-box">
+            <strong>Launch guardrail</strong>
+            <p>
+              No form submission, database write, public download gate, payment,
+              automation, or DNS change is active in this local package.
+            </p>
+          </div>
         </div>
-        <div class="aeo-actions">
-          <a class="btn btn--outline btn--lg" href="articles/">Open article library</a>
-        </div>
-      </div>
-    </section>
-    <section class="section section--accent" id="connect" data-screen-label="08 Connect">
+      </section>
+    </main>
+
+    <footer class="footer">
       <div class="container">
-        <header class="section__head section__head--center">
-          <span class="eyebrow eyebrow--light">Inquiry path</span>
-          <h2 class="section__title section__title--light">Tell me what you are trying to build, learn, or explain.</h2>
-          <p class="section__lede section__lede--light">Choose the path that matches what you need. The form will ask a few focused questions so the first conversation starts in the right place.</p>
-        </header>
-        <form
-          class="newsletter inquiry-form"
-          id="inquiryForm"
-          action=""
-          method="post"
-          data-brand="JWTechDev.ai"
-          data-formspree-endpoint=""
-          data-local-mirror-endpoint=""
-          data-fallback-email="jwtechdev@gmail.com"
-          novalidate
-        >
-          <div class="inquiry-grid">
-            <label>
-              <span>First name</span>
-              <input id="inquiryName" name="first_name" type="text" required placeholder="First name" autocomplete="given-name" />
-            </label>
-            <label>
-              <span>Email</span>
-              <input id="inquiryEmail" name="email" type="email" required placeholder="you@yourcompany.com" autocomplete="email" />
-            </label>
-            <label>
-              <span>Organization or project</span>
-              <input id="inquiryOrg" name="organization" type="text" placeholder="Company, school, team, or solo project" autocomplete="organization" />
-            </label>
-            <label>
-              <span>Phone</span>
-              <input id="inquiryPhone" name="phone" type="tel" placeholder="Optional" autocomplete="tel" />
-            </label>
-            <label class="inquiry-full">
-              <span>What do you want to talk about?</span>
-              <select id="inquiryInterest" name="interest" required>
-                <option value="">Choose a path</option>
-                <option>AWS & infrastructure explainers</option>
-                <option>Tutoring & coaching</option>
-                <option>Speaking & workshops</option>
-                <option>Study guides & resources</option>
-                <option>Newsletter</option>
-              </select>
-            </label>
-          </div>
-          <div class="decision-panels" aria-live="polite">
-            <fieldset class="decision-panel" data-panel="AWS & infrastructure explainers" hidden>
-              <legend>Cloud or infrastructure collaboration</legend>
-              <label><span>What needs explaining?</span><input name="brand_topic" type="text" placeholder="AWS service, cloud platform, infrastructure tool, or technical campaign" /></label>
-              <label><span>Who needs to understand it?</span><input name="brand_audience" type="text" placeholder="Developers, founders, students, enterprise buyers..." /></label>
-              <label><span>What would make this useful?</span><textarea name="brand_outcome" rows="3" placeholder="Example: a clear demo, a short-form bundle, a tutorial, or a practical POV for builders."></textarea></label>
-            </fieldset>
-            <fieldset class="decision-panel" data-panel="Tutoring & coaching" hidden>
-              <legend>Tutoring or coaching</legend>
-              <label><span>Current level</span><select name="coaching_level"><option value="">Choose one</option><option>Brand new</option><option>Some tech experience</option><option>Working professional</option><option>Career switcher</option></select></label>
-              <label><span>Main goal</span><input name="coaching_goal" type="text" placeholder="AWS cert, cloud portfolio project, interview prep, IAM/networking..." /></label>
-              <label><span>Where are you stuck?</span><textarea name="coaching_blocker" rows="3" placeholder="Tell me what has been confusing, slow, or hard to finish."></textarea></label>
-            </fieldset>
-            <fieldset class="decision-panel" data-panel="Speaking & workshops" hidden>
-              <legend>Speaking or workshop request</legend>
-              <label><span>Event or audience</span><input name="event_audience" type="text" placeholder="Conference, school, internal team, cohort, community..." /></label>
-              <label><span>Target timing</span><input name="event_timing" type="text" placeholder="Month, date, or general window" /></label>
-              <label><span>Session outcome</span><textarea name="event_outcome" rows="3" placeholder="What should people understand, build, or feel ready to do afterward?"></textarea></label>
-            </fieldset>
-            <fieldset class="decision-panel" data-panel="Study guides & resources" hidden>
-              <legend>Study guide or resource request</legend>
-              <label><span>Which resource?</span><input name="resource_interest" type="text" placeholder="Cloud map, AWS cert map, infrastructure guardrails checklist, deployment guide..." /></label>
-              <label><span>What are you trying to learn?</span><textarea name="resource_goal" rows="3" placeholder="Tell me the outcome you want the resource to help with."></textarea></label>
-            </fieldset>
-            <fieldset class="decision-panel" data-panel="Newsletter" hidden>
-              <legend>Newsletter preference</legend>
-              <label><span>What do you want more of?</span><textarea name="newsletter_goal" rows="3" placeholder="Cloud career notes, AWS study plans, infrastructure breakdowns, new videos, or build logs."></textarea></label>
-            </fieldset>
-          </div>
-          <label class="inquiry-full">
-            <span>Anything else I should know?</span>
-            <textarea id="inquiryNotes" name="notes" rows="4" placeholder="Context, deadlines, goals, links, or what a good first conversation should cover."></textarea>
-          </label>
-          <input type="hidden" id="selectedAsset" name="selected_asset" value="">
-          <input type="hidden" id="leadId" name="lead_id" value="">
-          <input type="hidden" id="capturedAt" name="captured_at" value="">
-          <input type="hidden" name="source_site" value="JWTechDev.ai">
-          <button type="submit" class="btn btn--primary btn--lg">Send inquiry</button>
-          <p class="newsletter__msg" id="inquiryMsg" role="status" aria-live="polite"></p>
-        </form>
-        <div class="socials">
-          <a class="social" href="https://www.youtube.com/@VentiFriedChicken" aria-label="YouTube" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.4A3 3 0 0 0 1 7.5 31 31 0 0 0 .6 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1C5 19 12 19 12 19s7 0 8.9-.4A3 3 0 0 0 23 16.5 31 31 0 0 0 23.4 12 31 31 0 0 0 23 7.5Z"/><polygon points="10 15 16 12 10 9 10 15" fill="#721817"/></svg>
-            YouTube
-          </a>
-          <a class="social" href="https://www.tiktok.com/@jwtechdev.ai" aria-label="TikTok" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M16 3v3a4 4 0 0 0 4 4v3a7 7 0 0 1-4-1.3V16a5 5 0 1 1-5-5v3a2 2 0 1 0 2 2V3h3z"/></svg>
-            TikTok
-          </a>
-          <a class="social" href="https://www.instagram.com/jwtechdev.ai/" aria-label="Instagram" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
-            Instagram
-          </a>
-          <a class="social" href="https://www.linkedin.com/in/jwtechdev/" aria-label="LinkedIn" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24"><rect x="3" y="9" width="4" height="12"/><circle cx="5" cy="5" r="2"/><path d="M11 9h4v2a4 4 0 0 1 7 4v6h-4v-6a2 2 0 0 0-4 0v6h-4z" fill="currentColor" stroke="none"/></svg>
-            LinkedIn
-          </a>
-          <a class="social" href="https://github.com/venticlaw" aria-label="GitHub" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-2c-2.7.6-3.3-1.2-3.3-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.4-1.1-4.4-4.9 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.8-2.3 4.6-4.4 4.9.3.3.7.9.7 1.8v2.7c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>
-            GitHub
-          </a>
-        </div>
+        <span>JWTechDev.ai - cloud infrastructure, practical AI, and launch systems.</span>
+        <span>Static local launch package.</span>
       </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__brand-block">
-        <a class="footer__brand" href="#top">
-          <img src="assets/jwtechdev-logo.png" alt="" class="footer__mark" />
-          <span class="footer__word">JWTechDev</span>
-        </a>
-        <p class="footer__line">JWTechDev.ai is Joshua TecDev Walker’s AWS and cloud infrastructure education brand: practical tutorials, certification guidance, portfolio projects, tutoring, speaking, and carefully scoped AI workflow guardrails for people who want the tech to finally make sense.</p>
-      </div>
-      <div class="footer__col">
-        <h5>Watch</h5>
-        <ul>
-          <li><a href="#youtube">YouTube — long form</a></li>
-          <li><a href="#tiktok">TikTok — shorts</a></li>
-          <li><a href="#connect">Newsletter signup</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h5>Work</h5>
-        <ul>
-          <li><a href="#services">Branded content</a></li>
-          <li><a href="#services">Tutoring</a></li>
-          <li><a href="#services">Speaking</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h5>Get it</h5>
-        <ul>
-          <li><a href="#assets">Study guides</a></li>
-          <li><a href="#assets">Workflow templates</a></li>
-          <li><a href="#articles">Articles</a></li>
-          <li><a href="#connect">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="container">
-      <div class="footer__legal">
-        <span>© <span id="year">2026</span> Joshua Walker · JWTechDev.ai</span>
-        <span>Built as a static site. Powered by curiosity, AWS reps, practical cloud scars, and carefully scoped automation.</span>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    // Header shadow on scroll
-    const header = document.getElementById('siteHeader');
-    const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 8);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-
-    // Mobile menu
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    menuBtn.setAttribute('aria-expanded', 'false');
-    mobileMenu.hidden = true;
-    menuBtn.addEventListener('click', () => {
-      const open = menuBtn.getAttribute('aria-expanded') === 'true';
-      menuBtn.setAttribute('aria-expanded', String(!open));
-      mobileMenu.hidden = open;
-    });
-    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      menuBtn.setAttribute('aria-expanded', 'false');
-      mobileMenu.hidden = true;
-    }));
-
-    // Assets tabs
-    const tabs = document.querySelectorAll('.assets-tab');
-    const panels = {
-      'tab-guides': document.getElementById('panel-guides'),
-      'tab-codex': document.getElementById('panel-codex'),
-    };
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => {
-          t.classList.toggle('is-active', t === tab);
-          t.setAttribute('aria-selected', t === tab ? 'true' : 'false');
-        });
-        Object.entries(panels).forEach(([id, p]) => {
-          const active = id === tab.id;
-          p.classList.toggle('is-active', active);
-          p.hidden = !active;
-        });
-      });
-    });
-
-    // Inquiry routing
-    const selectedAsset = document.getElementById('selectedAsset');
-    const interestSelect = document.getElementById('inquiryInterest');
-    const decisionPanels = document.querySelectorAll('.decision-panel');
-    const updateDecisionTree = () => {
-      const interest = interestSelect?.value || '';
-      decisionPanels.forEach(panel => {
-        const active = panel.dataset.panel === interest;
-        panel.hidden = !active;
-        panel.querySelectorAll('input, select, textarea').forEach(field => {
-          field.disabled = !active;
-        });
-      });
-    };
-    interestSelect?.addEventListener('change', updateDecisionTree);
-    updateDecisionTree();
-
-    const applyInquiryParams = () => {
-      const params = new URLSearchParams(window.location.search);
-      const interest = params.get('interest');
-      const asset = params.get('asset');
-      if (interest && interestSelect) {
-        interestSelect.value = interest;
-        if (!interestSelect.value && /Cloud|AWS|Codex|Agent|Guide|Pack|Map|Checklist|Prompt|MCP|Dashboard|Workflow/.test(interest)) {
-          interestSelect.value = 'Study guides & resources';
-        }
-      }
-      if (asset && selectedAsset) {
-        selectedAsset.value = asset;
-        const resourceInput = document.querySelector('[name="resource_interest"]');
-        if (resourceInput && !resourceInput.value) resourceInput.value = asset;
-      }
-      updateDecisionTree();
-    };
-    applyInquiryParams();
-
-    const routeLinks = document.querySelectorAll('[data-asset-interest], [data-inquiry-interest]');
-    routeLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        const interest = link.dataset.inquiryInterest || link.dataset.assetInterest;
-        if (interestSelect && interest) {
-          interestSelect.value = interest;
-          if (!interestSelect.value && /Cloud|AWS|Codex|Agent|Guide|Pack|Map|Checklist|Prompt|MCP|Dashboard|Workflow/.test(interest)) {
-            interestSelect.value = 'Study guides & resources';
-          }
-          updateDecisionTree();
-        }
-        if (selectedAsset) {
-          selectedAsset.value = link.closest('.asset-card')?.querySelector('.asset-card__title')?.textContent?.trim() || interest || '';
-          const resourceInput = document.querySelector('[name="resource_interest"]');
-          if (resourceInput && interestSelect?.value === 'Study guides & resources') {
-            resourceInput.value = selectedAsset.value;
-          }
-        }
-        setTimeout(() => document.getElementById('inquiryName')?.focus({ preventScroll: true }), 350);
-      });
-    });
-
-    // Inquiry capture
-    const form = document.getElementById('inquiryForm');
-    const msg = document.getElementById('inquiryMsg');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const firstName = form.first_name.value.trim();
-      const email = form.email.value.trim();
-      const interest = form.interest.value.trim();
-      const formspreeEndpoint = form.dataset.formspreeEndpoint?.trim();
-      const localMirrorEndpoint = form.dataset.localMirrorEndpoint?.trim();
-      const fallbackEmail = form.dataset.fallbackEmail || 'jwtechdev@gmail.com';
-      const submitButton = form.querySelector('button[type="submit"]');
-      form.classList.remove('is-error', 'is-success');
-      if (!firstName) {
-        form.classList.add('is-error');
-        msg.textContent = "Drop your first name so I know who is reaching out.";
-        return;
-      }
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        form.classList.add('is-error');
-        msg.textContent = "That email doesn't look right — give it another shot.";
-        return;
-      }
-      if (!interest) {
-        form.classList.add('is-error');
-        msg.textContent = "Choose what you want to talk about first.";
-        return;
-      }
-
-      const formData = new FormData(form);
-      const generatedLeadId = `jw-${Date.now()}-${Math.random().toString(16).slice(2)}`;
-      const capturedAt = new Date().toISOString();
-      document.getElementById('leadId').value = generatedLeadId;
-      document.getElementById('capturedAt').value = capturedAt;
-      formData.set('lead_id', generatedLeadId);
-      formData.set('captured_at', capturedAt);
-      const payload = Object.fromEntries(formData.entries());
-      const normalizedPayload = {
-        ...payload,
-        brand: 'JWTechDev.ai',
-        source_site: 'JWTechDev.ai',
-        source_url: window.location.href,
-        ingestion_method: localMirrorEndpoint ? 'mac_mini_csv' : (formspreeEndpoint ? 'formspree' : 'static_form_mailto'),
-        status: 'new'
-      };
-
-      const labels = {
-        selected_asset: 'Selected asset',
-        lead_id: 'Lead ID',
-        captured_at: 'Captured at',
-        first_name: 'First name',
-        email: 'Email',
-        organization: 'Organization or project',
-        phone: 'Phone',
-        interest: 'Interest',
-        brand_topic: 'What needs explaining',
-        brand_audience: 'Audience',
-        brand_outcome: 'Useful outcome',
-        coaching_level: 'Current level',
-        coaching_goal: 'Main goal',
-        coaching_blocker: 'Where they are stuck',
-        event_audience: 'Event or audience',
-        event_timing: 'Target timing',
-        event_outcome: 'Session outcome',
-        resource_interest: 'Resource interest',
-        resource_goal: 'Learning goal',
-        newsletter_goal: 'Newsletter preference',
-        notes: 'Additional notes'
-      };
-      const details = Object.entries(payload)
-        .filter(([key, value]) => key !== 'source_site' && value && String(value).trim())
-        .map(([key, value]) => `${labels[key] || key}: ${String(value).trim()}`);
-
-      const subject = encodeURIComponent(`JWTechDev.ai inquiry: ${interest}`);
-      const body = encodeURIComponent([
-        'JWTechDev.ai inquiry',
-        '',
-        ...details,
-        '',
-        'Source: JWTechDev.ai inquiry form'
-      ].join('\n'));
-
-      const mirrorLead = () => {
-        if (!localMirrorEndpoint) return Promise.resolve();
-        return fetch(localMirrorEndpoint, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(normalizedPayload)
-        }).catch(() => {});
-      };
-
-      const submitLead = async () => {
-        submitButton.disabled = true;
-        msg.textContent = 'Preparing your inquiry...';
-
-        if (formspreeEndpoint) {
-          const response = await fetch(formspreeEndpoint, {
-            method: 'POST',
-            headers: { Accept: 'application/json' },
-            body: new FormData(form)
-          });
-
-          if (!response.ok) {
-            throw new Error('Form endpoint rejected the submission.');
-          }
-
-          await mirrorLead();
-          form.classList.add('is-success');
-          msg.textContent = `Got it, ${firstName}. Your inquiry is ready for ${interest}.`;
-          form.reset();
-          selectedAsset.value = '';
-          updateDecisionTree();
-          return;
-        }
-
-        await mirrorLead();
-        window.location.href = `mailto:${fallbackEmail}?subject=${subject}&body=${body}`;
-        form.classList.add('is-success');
-        msg.textContent = `Opening your email app so you can send the inquiry for ${interest}.`;
-      };
-
-      submitLead()
-        .catch(() => {
-          window.location.href = `mailto:${fallbackEmail}?subject=${subject}&body=${body}`;
-          form.classList.add('is-error');
-          msg.textContent = 'The form endpoint was not available, so this opened a structured email draft.';
-        })
-        .finally(() => {
-          submitButton.disabled = false;
-        });
-    });
-
-    // Reveal on scroll
-    const io = new IntersectionObserver((entries) => {
-      for (const e of entries) {
-        if (e.isIntersecting) {
-          e.target.classList.add('is-visible');
-          io.unobserve(e.target);
-        }
-      }
-    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-    // Year
-    document.getElementById('year').textContent = String(new Date().getFullYear());
-  </script>
-</body>
+    </footer>
+  </body>
 </html>
