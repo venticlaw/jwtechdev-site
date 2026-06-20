@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Why learn IAM before AI tools? | JWTechDev.ai</title>
+    <meta name="description" content="Why cloud beginners should learn IAM, permissions, roles, and access boundaries before automating with AI tools." />
+    <link rel="stylesheet" href="../styles.css?v=20260619-launch-v1" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="../index.html"><span class="brand-mark">JW</span><span>JWTechDev.ai</span></a>
+        <div class="nav-links"><a href="./">Articles</a><a href="../resources/cloud-infrastructure-first-map.html">Cloud Map</a><a href="../index.html#inquiry">Request Access</a></div>
+      </nav>
+    </header>
+    <main>
+      <section class="page-title"><div class="container"><p class="eyebrow">Direct answer</p><h1>Why should beginners learn IAM before AI tools?</h1><p class="lede">Because AI workflows still need permissions, secrets, review, logs, and rollback. IAM teaches the habit of asking what a tool is allowed to touch.</p></div></section>
+      <section class="section tight"><div class="container article-layout"><article class="article-body">
+        <p>AI can help write code, draft content, summarize docs, and automate repeated work. But the real infrastructure question is not just what the tool can do. It is what the tool can access.</p>
+        <h2>IAM is the boundary layer</h2>
+        <p>IAM means identity and access management. In AWS, it includes users, roles, policies, and permissions. In plain English, IAM answers: who can do what, to which resource, under what conditions?</p>
+        <h2>Why this matters for AI-assisted work</h2>
+        <ul>
+          <li>An agent that can read files should not automatically delete files.</li>
+          <li>A tool that can draft an email should not send it without approval.</li>
+          <li>A build script should not expose secrets just because it can read them.</li>
+          <li>A site launch should not activate DNS or lead capture before QA.</li>
+        </ul>
+        <h2>Study prompt</h2>
+        <p>Before using any automation, write three lists: what it may read, what it may write, and what requires human approval. That is IAM thinking, even outside AWS.</p>
+      </article><aside class="aside"><div class="panel"><h3>Related resource</h3><p>Pair this with the Infrastructure Guardrails idea in the JW content backlog.</p><div class="actions"><a class="button secondary" href="../articles/">Article library</a></div></div></aside></div></section>
+    </main>
+  </body>
+</html>
