@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SA Value Capture Plan | JW</title>
+    <meta
+      name="description"
+      content="A lightweight interim operating plan for capturing solution architecture demand, hours, and business impact while a dedicated role is being formalized."
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #17211d;
+        --muted: #64706b;
+        --paper: #f5f7f2;
+        --panel: #ffffff;
+        --line: #d9dfd7;
+        --teal: #0f766e;
+        --blue: #1d4ed8;
+        --gold: #b7791f;
+        --rose: #be123c;
+        --shadow: 0 18px 52px rgba(23, 33, 29, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-width: 320px;
+        color: var(--ink);
+        background:
+          linear-gradient(180deg, rgba(15, 118, 110, 0.08), transparent 280px),
+          var(--paper);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .page {
+        width: min(1120px, calc(100% - 36px));
+        margin: 0 auto;
+        padding: 32px 0 70px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 22px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 900;
+      }
+
+      .brand-mark {
+        display: grid;
+        width: 38px;
+        height: 38px;
+        place-items: center;
+        border-radius: 8px;
+        color: #ffffff;
+        background: var(--teal);
+      }
+
+      .nav a {
+        color: var(--muted);
+        font-size: 0.9rem;
+        font-weight: 800;
+        text-decoration: none;
+      }
+
+      .hero,
+      .panel,
+      .stat,
+      .card,
+      .script,
+      .table-wrap {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--panel);
+        box-shadow: var(--shadow);
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(280px, 0.44fr);
+        gap: 26px;
+        align-items: end;
+        padding: clamp(22px, 5vw, 44px);
+      }
+
+      .eyebrow {
+        margin: 0 0 8px;
+        color: var(--teal);
+        font-size: 0.76rem;
+        font-weight: 900;
+        letter-spacing: 0;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        max-width: 760px;
+        margin-bottom: 14px;
+        font-size: clamp(2.35rem, 8vw, 5.7rem);
+        line-height: 0.92;
+      }
+
+      h2 {
+        margin-bottom: 10px;
+        font-size: clamp(1.55rem, 3.5vw, 2.65rem);
+        line-height: 1;
+      }
+
+      h3 {
+        margin-bottom: 8px;
+        font-size: 1.12rem;
+        line-height: 1.15;
+      }
+
+      .lead {
+        max-width: 760px;
+        margin-bottom: 0;
+        color: var(--muted);
+        font-size: 1.08rem;
+        line-height: 1.55;
+      }
+
+      .hero-aside {
+        display: grid;
+        gap: 10px;
+      }
+
+      .hero-aside article {
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #f8faf8;
+      }
+
+      .hero-aside span,
+      .stat span,
+      .card span {
+        display: block;
+        color: var(--muted);
+        font-size: 0.76rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      .hero-aside strong,
+      .stat strong {
+        display: block;
+        margin-top: 6px;
+        font-size: 1.06rem;
+      }
+
+      .section {
+        margin-top: 18px;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .stat {
+        min-height: 116px;
+        padding: 16px;
+        background: #f8faf8;
+      }
+
+      .stat strong {
+        font-size: 1.55rem;
+        line-height: 1;
+      }
+
+      .panel {
+        padding: 22px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .card {
+        display: grid;
+        gap: 8px;
+        min-height: 210px;
+        padding: 18px;
+      }
+
+      .card strong {
+        font-size: 1.12rem;
+        line-height: 1.15;
+      }
+
+      .card p,
+      .panel p,
+      .panel li,
+      .script p,
+      td,
+      th {
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .card b {
+        align-self: end;
+        color: var(--teal);
+        font-size: 0.82rem;
+        text-transform: uppercase;
+      }
+
+      .script-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .script {
+        padding: 18px;
+      }
+
+      .script.primary {
+        border-left: 5px solid var(--teal);
+      }
+
+      .script.secondary {
+        border-left: 5px solid var(--blue);
+      }
+
+      .script strong {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      ul {
+        margin: 12px 0 0 18px;
+        padding: 0;
+      }
+
+      li + li {
+        margin-top: 6px;
+      }
+
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin-top: 12px;
+      }
+
+      .tag {
+        padding: 5px 8px;
+        border-radius: 999px;
+        color: #17423e;
+        background: #dff4ef;
+        font-size: 0.76rem;
+        font-weight: 900;
+      }
+
+      .table-wrap {
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        min-width: 920px;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        color: var(--ink);
+        background: #f8faf8;
+        font-size: 0.78rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+
+      tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .callout {
+        border-left: 5px solid var(--gold);
+      }
+
+      .guardrail {
+        border-left: 5px solid var(--rose);
+      }
+
+      .footer {
+        margin-top: 24px;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      @media (max-width: 900px) {
+        .hero,
+        .stats,
+        .grid,
+        .script-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .card,
+        .stat {
+          min-height: 0;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .page {
+          width: min(100% - 24px, 1120px);
+          padding-top: 18px;
+        }
+
+        .nav {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .hero,
+        .panel,
+        .script {
+          padding: 16px;
+        }
+
+        h1 {
+          font-size: 2.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <nav class="nav" aria-label="Proof navigation">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">JW</span>
+          <span>JW Executive Ops</span>
+        </div>
+        <a href="../">Back to proofs</a>
+      </nav>
+
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Interim operating plan</p>
+          <h1>Make architecture value visible.</h1>
+          <p class="lead">
+            A direct but defensible plan for capturing solution architecture demand, hours,
+            and influenced business impact while the dedicated role is still informal.
+          </p>
+        </div>
+        <aside class="hero-aside" aria-label="Plan framing">
+          <article>
+            <span>Positioning</span>
+            <strong>Value capture, not chargeback</strong>
+          </article>
+          <article>
+            <span>Cadence</span>
+            <strong>Weekly team validation</strong>
+          </article>
+          <article>
+            <span>Decision point</span>
+            <strong>30-day capacity case</strong>
+          </article>
+        </aside>
+      </section>
+
+      <section class="section stats" aria-label="Operating summary">
+        <article class="stat">
+          <span>Time horizon</span>
+          <strong>30 days</strong>
+        </article>
+        <article class="stat">
+          <span>Core measure</span>
+          <strong>Hours</strong>
+        </article>
+        <article class="stat">
+          <span>Impact lens</span>
+          <strong>Pipeline</strong>
+        </article>
+        <article class="stat">
+          <span>Admin load</span>
+          <strong>Lightweight</strong>
+        </article>
+      </section>
+
+      <section class="section panel callout">
+        <p class="eyebrow">Executive frame</p>
+        <h2>The current model hides material SA demand.</h2>
+        <p>
+          The goal is to quantify demand, capacity, and business impact for solution architecture
+          support that is currently handled through side-channel requests. The data should help
+          leadership decide whether the work needs a dedicated enablement role with clear ownership,
+          sales attachment, and measurable outcomes.
+        </p>
+      </section>
+
+      <section class="section grid" aria-label="Operating model">
+        <article class="card">
+          <span>01</span>
+          <strong>Capture every meaningful assist</strong>
+          <p>
+            Log account or pursuit, requesting team, support type, hours, funding mechanism,
+            revenue influence, stage, outcome, and confirmation owner.
+          </p>
+          <b>Single source of truth</b>
+        </article>
+        <article class="card">
+          <span>02</span>
+          <strong>Validate weekly instead of chasing daily</strong>
+          <p>
+            Send a Friday confirmation to each involved team with approximate hours and business
+            context. Corrections are due by Monday.
+          </p>
+          <b>Low friction</b>
+        </article>
+        <article class="card">
+          <span>03</span>
+          <strong>Convert activity into a scorecard</strong>
+          <p>
+            Summarize hours, accounts supported, pursuits influenced, closed-won impact, funding
+            influence, risks reduced, reusable assets, and duplicated work avoided.
+          </p>
+          <b>Leadership ready</b>
+        </article>
+      </section>
+
+      <section class="section panel">
+        <p class="eyebrow">Support categories</p>
+        <h2>Bucket the work into business language.</h2>
+        <div class="tag-row">
+          <span class="tag">Sales enablement</span>
+          <span class="tag">Deal acceleration</span>
+          <span class="tag">Delivery enablement</span>
+          <span class="tag">Escalation reduction</span>
+          <span class="tag">Reusable assets</span>
+        </div>
+        <ul>
+          <li><strong>Sales enablement:</strong> pursuit strategy, technical positioning, funding alignment.</li>
+          <li><strong>Deal acceleration:</strong> proposal support, solution review, pricing and funding mechanics.</li>
+          <li><strong>Delivery enablement:</strong> delivery architecture, partner handoff, ProServe alignment.</li>
+          <li><strong>Escalation reduction:</strong> ambiguity resolution, RACI clarification, client-facing recovery.</li>
+          <li><strong>Reusable assets:</strong> templates, agentic tools, playbooks, process improvements.</li>
+        </ul>
+      </section>
+
+      <section class="section table-wrap" aria-label="Minimum viable tracker">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Account / Pursuit</th>
+              <th>Requesting Team</th>
+              <th>Support Type</th>
+              <th>Hours</th>
+              <th>Pipeline / Revenue Influence</th>
+              <th>Funding / Partner Impact</th>
+              <th>Outcome</th>
+              <th>Owner Confirmed</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>YYYY-MM-DD</td>
+              <td>Use sanitized name or internal code</td>
+              <td>Team or practice</td>
+              <td>Solutioning, SOW shaping, funding strategy, delivery rescue</td>
+              <td>0.5, 1, 2, 4+</td>
+              <td>Estimated or confirmed influence</td>
+              <td>Funding mechanism, partner alignment, ProServe impact</td>
+              <td>Decision, next step, risk reduced, asset created</td>
+              <td>Yes / No / Pending</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section script-grid" aria-label="Operating scripts">
+        <article class="script primary">
+          <p class="eyebrow">Launch note</p>
+          <strong>Use this to introduce the tracker.</strong>
+          <p>
+            I am starting a lightweight tracking process for solution architecture support so we
+            can quantify demand, capacity, and business impact. For any account or pursuit where
+            I support solutioning, funding strategy, partner alignment, SOW shaping, or delivery
+            architecture, I will track approximate hours and associated pipeline or revenue
+            influence. This is not a chargeback model. It is a visibility model.
+          </p>
+        </article>
+        <article class="script secondary">
+          <p class="eyebrow">Weekly confirmation</p>
+          <strong>Use this every Friday.</strong>
+          <p>
+            For this week, I have your team down for roughly X hours of solution architecture
+            support tied to Y pursuit or account. Revenue or pipeline influence is currently
+            estimated at Z. Please confirm or correct by EOD Monday so the monthly leadership
+            view is accurate.
+          </p>
+        </article>
+      </section>
+
+      <section class="section panel">
+        <p class="eyebrow">30-day output</p>
+        <h2>The leadership readout should be blunt.</h2>
+        <p>
+          In the last month, informal solution architecture support covered X accounts, Y pursuits,
+          Z hours, and N in influenced pipeline or revenue. This is currently handled as a side
+          responsibility, which creates scale risk and poor visibility. A dedicated enablement role
+          would turn this into a measurable growth function.
+        </p>
+      </section>
+
+      <section class="section panel guardrail">
+        <p class="eyebrow">Tone guardrails</p>
+        <h2>Be direct without sounding aggrieved.</h2>
+        <ul>
+          <li>Say "value capture" instead of "collecting hours."</li>
+          <li>Say "influenced pipeline and delivery leverage" instead of personal credit claims.</li>
+          <li>Keep the tracker approximate unless a formal timekeeping model exists.</li>
+          <li>Do not publish client names, confidential revenue, private deal details, or internal escalations.</li>
+          <li>Use the data to request capacity, ownership, and sales attachment.</li>
+        </ul>
+      </section>
+
+      <p class="footer">
+        Static GitHub Pages proof. This is a sanitized operating model for review and reading;
+        confidential team, client, and pursuit details should stay in approved internal systems.
+      </p>
+    </main>
+  </body>
+</html>
