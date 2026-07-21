@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Why Are There So Many F*cking Flies? | JWTechDev.ai</title>
+  <meta name="description" content="JWTechDev.ai local review page for a 60-90 second comedic, data-backed video about why there seem to be so many flies.">
+  <style>
+    :root {
+      --ink: #12212f;
+      --muted: #526171;
+      --paper: #f7f9fc;
+      --surface: #ffffff;
+      --soft: #eaf0f7;
+      --line: #d7e0ea;
+      --blue: #245bff;
+      --green: #12786b;
+      --gold: #b86b00;
+      --red: #a7332d;
+      --shadow: 0 18px 44px rgba(18, 33, 47, 0.1);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, rgba(36, 91, 255, 0.08), transparent 360px),
+        var(--paper);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    a { color: var(--blue); }
+
+    .shell {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .top {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(215, 224, 234, 0.86);
+      background: rgba(247, 249, 252, 0.94);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      display: flex;
+      min-height: 64px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .mark {
+      display: grid;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 8px;
+      color: #ffffff;
+      background: var(--ink);
+      font-size: 0.82rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      border-radius: 8px;
+      padding: 8px 10px;
+      color: var(--muted);
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--ink);
+      background: var(--soft);
+    }
+
+    .hero {
+      padding: 64px 0 42px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--green);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 850px;
+      font-size: clamp(2.6rem, 7vw, 6.4rem);
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+    }
+
+    h3 {
+      font-size: 1.18rem;
+    }
+
+    .lede {
+      max-width: 780px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.24rem);
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .badge {
+      display: inline-flex;
+      min-height: 34px;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 10px;
+      color: var(--ink);
+      background: var(--surface);
+      font-size: 0.86rem;
+      font-weight: 850;
+    }
+
+    .panel,
+    .card,
+    .script,
+    .source {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .panel {
+      padding: 22px;
+    }
+
+    .fly-card {
+      display: grid;
+      min-height: 100%;
+      place-items: center;
+      gap: 18px;
+      text-align: center;
+    }
+
+    .fly {
+      position: relative;
+      width: 164px;
+      height: 164px;
+    }
+
+    .fly::before,
+    .fly::after {
+      content: "";
+      position: absolute;
+      top: 34px;
+      width: 86px;
+      height: 62px;
+      border: 2px solid rgba(18, 33, 47, 0.3);
+      background: rgba(36, 91, 255, 0.13);
+    }
+
+    .fly::before {
+      left: 6px;
+      transform: rotate(-28deg);
+      border-radius: 74% 40% 60% 38%;
+    }
+
+    .fly::after {
+      right: 6px;
+      transform: rotate(28deg);
+      border-radius: 40% 74% 38% 60%;
+    }
+
+    .fly-body {
+      position: absolute;
+      left: 58px;
+      top: 50px;
+      z-index: 2;
+      width: 48px;
+      height: 86px;
+      border: 2px solid var(--ink);
+      border-radius: 42px;
+      background: linear-gradient(180deg, var(--gold), var(--red));
+    }
+
+    .fly-body::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: -28px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--ink);
+      box-shadow: 0 0 0 6px rgba(167, 51, 45, 0.16);
+    }
+
+    .section {
+      padding: 38px 0;
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card {
+      padding: 20px;
+    }
+
+    .card strong {
+      display: block;
+      color: var(--blue);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      line-height: 0.95;
+    }
+
+    .card span {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .script {
+      padding: 28px;
+    }
+
+    .script p {
+      margin: 0 0 16px;
+      font-size: clamp(1.1rem, 2vw, 1.42rem);
+      font-weight: 740;
+      line-height: 1.52;
+    }
+
+    .script p:last-child {
+      margin-bottom: 0;
+    }
+
+    .beat {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .beat:last-child {
+      border-bottom: 0;
+    }
+
+    .time {
+      color: var(--green);
+      font-weight: 900;
+    }
+
+    .beat p {
+      margin: 4px 0 0;
+      color: var(--muted);
+    }
+
+    .source {
+      display: block;
+      padding: 18px;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .source span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .callout {
+      border-left: 5px solid var(--red);
+      padding: 16px 18px;
+      border-radius: 8px;
+      color: var(--ink);
+      background: #fff5f4;
+      font-weight: 760;
+    }
+
+    .footer {
+      padding: 38px 0 54px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .grid.two,
+      .grid.three {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .beat {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="shell nav">
+      <a class="brand" href="#top" aria-label="JWTechDev.ai"><span class="mark">JW</span><span>JWTechDev.ai</span></a>
+      <nav class="nav-links" aria-label="Page sections">
+        <a href="#script">Script</a>
+        <a href="#data">Data</a>
+        <a href="#recording">Recording</a>
+        <a href="#sources">Sources</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <p class="eyebrow">$tt recording page · local review</p>
+          <h1>Why are there so many f*cking flies?</h1>
+          <p class="lede">A 60-90 second data-backed rant about heat, landfills, food waste, COVID-era trash behavior, and the small winged production incidents currently disrespecting the environment.</p>
+          <div class="badge-row">
+            <span class="badge">JWTechDev.ai</span>
+            <span class="badge">60-90 sec</span>
+            <span class="badge">Comedic explainer</span>
+            <span class="badge">Fact-check before posting</span>
+          </div>
+        </div>
+        <aside class="panel fly-card" aria-label="Video tone">
+          <div class="fly" aria-hidden="true"><div class="fly-body"></div></div>
+          <div>
+            <p class="eyebrow">Tone</p>
+            <h3>Data, climate, waste, and controlled comedic escalation.</h3>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="recording">
+      <div class="shell grid three">
+        <div class="card">
+          <strong>Format</strong>
+          <span>Talking head with quick data cards or screen-recorded scroll.</span>
+        </div>
+        <div class="card">
+          <strong>Hook</strong>
+          <span>"I am not saying every fly got a stimulus check..."</span>
+        </div>
+        <div class="card">
+          <strong>CTA</strong>
+          <span>"Are flies worse where you live, or am I being personally targeted?"</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="script">
+      <div class="shell">
+        <p class="eyebrow">Presenter Script</p>
+        <h2>60-90 second version</h2>
+        <div class="script" style="margin-top: 20px;">
+          <p>I am not saying every fly got a stimulus check. I am saying the conditions after COVID got real comfortable for an insect with no rent, no job, and 600 children.</p>
+          <p>Flies need three things: heat, moisture, and gross organic material. Society looked at that list and said, "Say less."</p>
+          <p>Exhibit A: they breed like bad decisions. In hot conditions, house flies can go from egg to adult in about a week. One female can lay hundreds of eggs. So when you say, "I saw a fly," congratulations. You saw a startup pitch.</p>
+          <p>Exhibit B: the buffet is elite. EPA says food is the single most common material sent to U.S. landfills, and food plus other organic materials make up a huge chunk of landfill waste. That is not trash. That is fly brunch with methane.</p>
+          <p>Exhibit C: COVID changed the trash math. More delivery, more packaging, more household waste pressure, more PPE and plastic waste. I am not saying COVID made flies. I am saying we made more fly-friendly mess.</p>
+          <p>Exhibit D: heat makes the schedule nastier. Warmer conditions can speed development and shift fly activity. Global warming is basically giving pest behavior a calendar invite.</p>
+          <p>So why are there so many f*cking flies? Heat, waste, food, moisture, fast reproduction, and nearby breeding sites. They are not invading. They are responding to market conditions. And apparently the market is disgusting.</p>
+          <p>Stay blessed. Stay screened. Cloud Gang.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="data">
+      <div class="shell">
+        <p class="eyebrow">Data Cards</p>
+        <h2>The case</h2>
+        <div class="grid two" style="margin-top: 20px;">
+          <div class="card">
+            <strong>7 days</strong>
+            <span>House fly development can shrink to about a week in hot conditions, according to Texas A&M AgriLife Extension.</span>
+          </div>
+          <div class="card">
+            <strong>350-900</strong>
+            <span>UNH Extension says one female house fly can deposit hundreds of eggs over her lifetime.</span>
+          </div>
+          <div class="card">
+            <strong>24.1%</strong>
+            <span>EPA says food is the single most common material sent to U.S. landfills.</span>
+          </div>
+          <div class="card">
+            <strong>51.4%</strong>
+            <span>EPA says food, yard trimmings, wood, and paper/paperboard together are over half of landfilled municipal solid waste.</span>
+          </div>
+        </div>
+        <p class="callout" style="margin-top: 18px;">Claim discipline: this argues a plausible systems case. It does not claim official national fly-count data proves a post-COVID fly surge.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <p class="eyebrow">Beat Map</p>
+        <h2>Recording flow</h2>
+        <div class="panel" style="margin-top: 20px;">
+          <div class="beat">
+            <div class="time">0:00-0:08</div>
+            <div><h3>Hook</h3><p>Stimulus-check line. Establish this is funny but evidence-backed.</p></div>
+          </div>
+          <div class="beat">
+            <div class="time">0:08-0:22</div>
+            <div><h3>Fly requirements</h3><p>Heat, moisture, organic material. "Society said say less."</p></div>
+          </div>
+          <div class="beat">
+            <div class="time">0:22-0:42</div>
+            <div><h3>Breeding speed</h3><p>7-day lifecycle in hot conditions and hundreds of eggs.</p></div>
+          </div>
+          <div class="beat">
+            <div class="time">0:42-1:05</div>
+            <div><h3>Waste case</h3><p>Food and organic landfill waste create fly-friendly conditions.</p></div>
+          </div>
+          <div class="beat">
+            <div class="time">1:05-1:25</div>
+            <div><h3>COVID + heat</h3><p>Waste behavior shifted; warmer conditions accelerate the problem.</p></div>
+          </div>
+          <div class="beat">
+            <div class="time">1:25-1:35</div>
+            <div><h3>Close</h3><p>"Responding to market conditions" plus Cloud Gang.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <p class="eyebrow">On-Screen Text</p>
+        <h2>Quick overlays</h2>
+        <div class="grid three" style="margin-top: 20px;">
+          <div class="card"><h3>Why so many flies?</h3><span>Opening card</span></div>
+          <div class="card"><h3>Heat + trash + moisture</h3><span>Thesis card</span></div>
+          <div class="card"><h3>7-day fly startup</h3><span>Breeding-speed card</span></div>
+          <div class="card"><h3>Fly brunch with methane</h3><span>Landfill joke card</span></div>
+          <div class="card"><h3>COVID changed the trash math</h3><span>Context card</span></div>
+          <div class="card"><h3>Market conditions: disgusting</h3><span>Closing card</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sources">
+      <div class="shell">
+        <p class="eyebrow">Source Spine</p>
+        <h2>Use these for fact-checking before posting</h2>
+        <div class="grid two" style="margin-top: 20px;">
+          <a class="source" href="https://agrilifeextension.tamu.edu/library/insects/indoor-flies-and-their-control/">Texas A&M AgriLife Extension<span>Indoor flies, lifecycle timing, breeding conditions.</span></a>
+          <a class="source" href="https://extension.unh.edu/resource/house-fly-fact-sheet">University of New Hampshire Extension<span>House fly eggs, breeding sites, generations, sanitation.</span></a>
+          <a class="source" href="https://www.epa.gov/sustainable-management-food/composting">U.S. EPA composting/food waste<span>Food and organic material share of landfilled municipal solid waste.</span></a>
+          <a class="source" href="https://www.epa.gov/land-research/quantifying-methane-emissions-landfilled-food-waste">U.S. EPA landfill food waste methane<span>Food waste and landfill methane context.</span></a>
+          <a class="source" href="https://www.ars.usda.gov/research/publications/publication/?seqNo115=333422">USDA ARS fly/weather study<span>Temperature and precipitation effects on stable fly population dynamics.</span></a>
+          <a class="source" href="https://www.sciencedirect.com/science/article/pii/S2949750723000330">COVID solid waste review<span>Pandemic shifts in PPE, plastic/fiber waste, food delivery, and household waste.</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell">Local review artifact. No publishing, upload, lead capture, checkout, backend, DNS, Drive movement, or outbound post is active.</div>
+  </footer>
+</body>
+</html>
