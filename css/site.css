@@ -1299,6 +1299,13 @@ button { font: inherit; }
 }
 .asset-card__meta .download:hover { color: var(--brand-green-700); }
 .asset-card__meta svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 2; fill: none; }
+.asset-disclaimer {
+  max-width: 860px;
+  margin: var(--space-4) 0 var(--space-6);
+  color: var(--ink-500);
+  font-size: var(--fs-sm);
+  line-height: 1.55;
+}
 
 /* ============================================================
    CONNECT (newsletter + socials)
@@ -1364,6 +1371,36 @@ button { font: inherit; }
   border-color: var(--ink-0);
   background: rgba(255,255,255,.18);
   box-shadow: 0 0 0 3px rgba(255,255,255,.20);
+}
+.inquiry-guardrail {
+  display: grid !important;
+  grid-template-columns: 20px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px !important;
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,.08);
+}
+.inquiry-guardrail input {
+  width: 18px;
+  height: 18px;
+  margin: 2px 0 0;
+  accent-color: var(--brand-orange);
+}
+.inquiry-guardrail span {
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-weight: 600 !important;
+  line-height: 1.45;
+  color: rgba(255,255,255,.86) !important;
+}
+.inquiry-disclaimer {
+  flex-basis: 100%;
+  margin: -6px 0 0;
+  color: rgba(255,255,255,.72);
+  font-size: var(--fs-sm);
+  line-height: 1.5;
 }
 .decision-panels {
   display: grid;
@@ -1460,6 +1497,13 @@ button { font: inherit; }
   display: flex; flex-wrap: wrap; justify-content: space-between;
   gap: var(--space-4);
   font-size: var(--fs-xs); color: var(--ink-400);
+}
+.footer__disclaimer {
+  max-width: 980px;
+  margin: var(--space-4) 0 0;
+  color: var(--ink-500);
+  font-size: var(--fs-xs);
+  line-height: 1.6;
 }
 
 /* ============================================================
