@@ -1,3 +1,6 @@
 User-agent: *
 Disallow: /proofs/
 Disallow: /nucleus/
+Disallow: /jwtechdev/
+
+Sitemap: https://jwtechdev.com/sitemap.xml
