@@ -330,7 +330,7 @@ function articleHtml(article) {
   <meta property="og:type" content="article" />
   <meta property="og:image" content="${site}/assets/articles/${article.slug}.svg" />
   <link rel="stylesheet" href="../css/tokens.css" />
-  <link rel="stylesheet" href="../css/site.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20260817-1" />
   ${schema(article)}
 </head>
 <body>
@@ -392,7 +392,7 @@ function indexHtml() {
   <title>JWTechDev.ai Articles</title>
   <meta name="description" content="Plain-English AWS, cloud infrastructure, certification, portfolio, creator-owned web, and infrastructure-aware AI workflow articles from JWTechDev.ai." />
   <link rel="stylesheet" href="../css/tokens.css" />
-  <link rel="stylesheet" href="../css/site.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20260817-1" />
 </head>
 <body>
   <main class="article-shell">
