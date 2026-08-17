@@ -1683,12 +1683,12 @@ button { font: inherit; }
 }
 
 .article-body h1 {
-  max-width: 14ch;
+  max-width: 16ch;
   margin: 0;
   color: var(--ink-900);
-  font-size: clamp(2.75rem, 7.5vw, 5.6rem);
+  font-size: clamp(2.75rem, 6.8vw, 5.1rem);
   letter-spacing: 0;
-  line-height: 0.98;
+  line-height: 1.08;
 }
 
 .article-body section {
@@ -1756,8 +1756,7 @@ button { font: inherit; }
 
 .article-hero img {
   width: 100%;
-  aspect-ratio: 2 / 1;
-  object-fit: contain;
+  height: auto;
   border-radius: var(--radius-md);
   background: var(--ink-900);
 }
@@ -1973,15 +1972,12 @@ a.article-mini-card:focus-visible {
   .article-grid { grid-template-columns: 1fr; }
   .article-body h1 {
     max-width: none;
-    font-size: clamp(2.55rem, 13vw, 4rem);
-    line-height: 1;
+    font-size: clamp(2.45rem, 11vw, 3.55rem);
+    line-height: 1.06;
   }
   .article-hero {
     width: 100%;
     padding: var(--space-3);
-  }
-  .article-hero img {
-    aspect-ratio: 16 / 10;
   }
 }
 
