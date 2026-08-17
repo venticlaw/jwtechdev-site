@@ -1829,9 +1829,18 @@ button { font: inherit; }
 .article-cta {
   display: grid;
   gap: var(--space-4);
-  margin-top: var(--space-7);
   border-color: var(--brand-navy-100);
   background: var(--brand-navy-50);
+}
+
+.article-body .article-cta {
+  margin-top: clamp(56px, 8vw, 88px);
+  padding: clamp(24px, 4vw, 36px);
+  border: 1px solid var(--brand-green-100);
+  border-left: 6px solid var(--brand-green);
+  background:
+    linear-gradient(135deg, rgba(11, 110, 79, .08), rgba(250, 159, 66, .1)),
+    var(--bg);
 }
 
 .article-cta p {
