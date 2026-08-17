@@ -150,4 +150,34 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://jwtechdev.com/articles/ai-cybersecurity-career-roadmap.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jwtechdev.com/articles/ai-cybersecurity-career-roadmap/aws-iam-and-logging-baseline.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jwtechdev.com/articles/ai-cybersecurity-career-roadmap/aws-ai-chatbot-threat-model.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jwtechdev.com/articles/ai-cybersecurity-career-roadmap/aws-rag-data-boundary.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jwtechdev.com/articles/ai-cybersecurity-career-roadmap/aws-human-approval-gates.html</loc>
+    <lastmod>2026-08-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AWS RAG data boundary runbook | JWTechDev.com</title>
+  <meta name="description" content="A learning runbook for practicing RAG data boundaries, retrieval scope, encryption, and logging in AWS." />
+  <link rel="stylesheet" href="../../css/tokens.css" />
+  <link rel="stylesheet" href="../../css/site.css" />
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="../ai-cybersecurity-career-roadmap.html">Back to roadmap <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">Runbook 03</p>
+    <article class="article-body">
+      <h1>RAG data boundary lab</h1>
+      <p class="section__lede">Goal: learn retrieval-augmented generation by focusing on the security question first: what is the model allowed to retrieve?</p>
+      <section class="quick-answer">
+        <h2>Outcome</h2>
+        <p>You should finish with a simple RAG design that separates public learning docs from private or restricted data, then documents how access is controlled.</p>
+      </section>
+      <section>
+        <h2>Example AWS shape</h2>
+        <ul>
+          <li>Data source: S3 bucket with public-safe sample docs only.</li>
+          <li>Indexing path: Amazon Bedrock Knowledge Bases or a small vector-search lab.</li>
+          <li>Encryption: KMS-managed encryption for storage where applicable.</li>
+          <li>Access: IAM role scoped to only the approved bucket or collection.</li>
+          <li>Logging: CloudTrail for API activity and CloudWatch for app behavior.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Runbook steps</h2>
+        <ol>
+          <li>Create a public-safe sample document set. Do not use confidential data.</li>
+          <li>Label each document as public, internal-test, or restricted. Only public-safe docs go into the lab.</li>
+          <li>Write the retrieval boundary before building the index.</li>
+          <li>Build or diagram the retrieval flow.</li>
+          <li>Test questions the system should answer and questions it should refuse or not know.</li>
+          <li>Record where logs and access records would be reviewed.</li>
+        </ol>
+      </section>
+      <section>
+        <h2>Questions to answer</h2>
+        <ul>
+          <li>Can the model access only the intended documents?</li>
+          <li>What happens if a user asks for data outside the allowed set?</li>
+          <li>Where could sensitive information leak into logs?</li>
+          <li>Who can update the source documents?</li>
+          <li>How would stale or poisoned documents be removed?</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Portfolio artifact</h2>
+        <p>Create a RAG boundary diagram plus a short test plan. Show what data is allowed, what data is blocked, who can update it, and how retrieval behavior is checked.</p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

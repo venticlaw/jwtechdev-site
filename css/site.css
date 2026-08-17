@@ -1851,6 +1851,17 @@ button { font: inherit; }
   background: var(--bg);
 }
 
+a.article-mini-card {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.article-mini-card:hover,
+a.article-mini-card:focus-visible {
+  border-color: var(--brand-green);
+  box-shadow: var(--shadow-sm);
+}
+
 .article-mini-card h3 {
   margin: 0 0 var(--space-2);
   color: var(--ink-900);

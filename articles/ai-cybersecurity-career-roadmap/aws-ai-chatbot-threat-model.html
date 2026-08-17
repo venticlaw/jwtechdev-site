@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AWS AI chatbot threat model runbook | JWTechDev.com</title>
+  <meta name="description" content="A learning runbook for threat modeling a basic AI chatbot on AWS with authentication, logs, and data boundaries." />
+  <link rel="stylesheet" href="../../css/tokens.css" />
+  <link rel="stylesheet" href="../../css/site.css" />
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="../ai-cybersecurity-career-roadmap.html">Back to roadmap <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">Runbook 02</p>
+    <article class="article-body">
+      <h1>AI chatbot threat model</h1>
+      <p class="section__lede">Goal: map a simple AI chatbot before building it, then identify where AI-specific and normal application risks show up.</p>
+      <section class="quick-answer">
+        <h2>Outcome</h2>
+        <p>You should finish with a data-flow diagram, a threat list, and a mitigation plan for a basic AWS-hosted AI app.</p>
+      </section>
+      <section>
+        <h2>Example AWS shape</h2>
+        <ul>
+          <li>Frontend: static site or simple local UI.</li>
+          <li>API layer: Amazon API Gateway or an isolated test endpoint.</li>
+          <li>Compute: AWS Lambda for request handling.</li>
+          <li>Model path: Amazon Bedrock model invocation in a sandbox.</li>
+          <li>Logs: CloudWatch Logs for request IDs, errors, and guardrail decisions.</li>
+          <li>Secrets: AWS Secrets Manager or environment variables with strict IAM access.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Threats to map</h2>
+        <ul>
+          <li>Prompt injection that tries to override system instructions.</li>
+          <li>User input that asks the model to reveal hidden context.</li>
+          <li>Model output passed to another system without validation.</li>
+          <li>Overly broad Lambda role permissions.</li>
+          <li>Logs that accidentally store sensitive prompts or responses.</li>
+          <li>Missing rate limits that create cost or abuse risk.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Mitigation checklist</h2>
+        <ol>
+          <li>Define what the chatbot is allowed to answer.</li>
+          <li>Define what data must never be pasted into it.</li>
+          <li>Use least-privilege IAM for the compute role.</li>
+          <li>Validate inputs and outputs before downstream use.</li>
+          <li>Log enough for debugging without storing secrets.</li>
+          <li>Add rate limits, budget alerts, and a disable switch.</li>
+        </ol>
+      </section>
+      <section>
+        <h2>Portfolio artifact</h2>
+        <p>Create a threat model table with columns for asset, threat, impact, mitigation, and verification. This is often more impressive than a fragile demo that has no security story.</p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

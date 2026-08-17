@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AWS human approval gates runbook | JWTechDev.com</title>
+  <meta name="description" content="A learning runbook for designing human approval gates, logs, and review states into AI workflows on AWS." />
+  <link rel="stylesheet" href="../../css/tokens.css" />
+  <link rel="stylesheet" href="../../css/site.css" />
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="../ai-cybersecurity-career-roadmap.html">Back to roadmap <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">Runbook 04</p>
+    <article class="article-body">
+      <h1>Human approval gates</h1>
+      <p class="section__lede">Goal: design an AI workflow where risky action pauses for review instead of letting automation run loose.</p>
+      <section class="quick-answer">
+        <h2>Outcome</h2>
+        <p>You should finish with an approval-state diagram, an audit log plan, and a list of actions that require human review.</p>
+      </section>
+      <section>
+        <h2>Example AWS shape</h2>
+        <ul>
+          <li>Workflow orchestration: AWS Step Functions for explicit states.</li>
+          <li>Task execution: Lambda functions with scoped IAM permissions.</li>
+          <li>Events: EventBridge for routing review-needed events.</li>
+          <li>Logging: CloudWatch Logs for state transitions and decision records.</li>
+          <li>Storage: DynamoDB or S3 for approved test artifacts.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Approval gates to model</h2>
+        <ul>
+          <li>Outbound messages.</li>
+          <li>Public publishing.</li>
+          <li>Payment or checkout changes.</li>
+          <li>DNS, backend, or production changes.</li>
+          <li>Access to sensitive data.</li>
+          <li>Deleting, overwriting, or moving files.</li>
+        </ul>
+      </section>
+      <section>
+        <h2>Runbook steps</h2>
+        <ol>
+          <li>Draw the workflow as draft, review, approved, executed, and logged.</li>
+          <li>Write one example payload that should stop for review.</li>
+          <li>Write one example payload that can proceed automatically.</li>
+          <li>Design the log fields: request ID, actor, action, risk level, approval state, timestamp, and result.</li>
+          <li>Explain how rollback would work if the approved action creates a problem.</li>
+        </ol>
+      </section>
+      <section>
+        <h2>Portfolio artifact</h2>
+        <p>Create an approval-gate README and a workflow diagram. The point is to prove that you understand AI security is not only model safety. It is operational control.</p>
+      </section>
+    </article>
+  </main>
+</body>
+</html>

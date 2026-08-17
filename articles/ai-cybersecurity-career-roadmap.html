@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' https://img.youtube.com data:; script-src 'self' 'unsafe-inline' https://www.tiktok.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; frame-src https://www.tiktok.com https://www.youtube.com; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>How to move into cybersecurity for AI | JWTechDev.ai</title>
+  <meta name="description" content="A practical AI cybersecurity career roadmap: security fundamentals, cloud security, AI workflow risk, and AWS learning runbooks for builders." />
+  <meta property="og:title" content="How to move into cybersecurity for AI" />
+  <meta property="og:description" content="Security fundamentals plus cloud security plus AI workflow risk. A practical roadmap with AWS runbooks." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/ai-cybersecurity-career-roadmap.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to move into cybersecurity for AI","description":"A practical AI cybersecurity career roadmap: security fundamentals, cloud security, AI workflow risk, and AWS learning runbooks for builders.","datePublished":"2026-08-17","dateModified":"2026-08-17","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":"https://jwtechdev.com/assets/articles/ai-cybersecurity-career-roadmap.png","mainEntityOfPage":"https://jwtechdev.com/articles/ai-cybersecurity-career-roadmap.html"}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">AI security career path</p>
+    <article class="article-body">
+      <h1>How to move into cybersecurity for AI</h1>
+      <p class="section__lede">This question is normal. A lot of people are looking at AI and thinking, &quot;I do not want to get left behind, but I also do not know where to start.&quot; So I went overkill and built a community resource you can actually work through.</p>
+      <div class="article-kicker"><span>AI security</span><span>Cloud security</span><span>AWS labs</span><span>Career pivot</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/ai-cybersecurity-career-roadmap.png" alt="Hand-drawn AI cybersecurity career roadmap showing security fundamentals, cloud security, and AI workflow risk" />
+        <figcaption class="article-meta"><span>Published 2026-08-17</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#why-this-question-is-normal">Why this question is normal</a>
+          <a href="#the-roadmap">The roadmap</a>
+          <a href="#aws-runbooks">AWS runbooks</a>
+          <a href="#what-to-study">What to study</a>
+          <a href="#updated-script">Updated video script</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section class="quick-answer" id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>If you want to move into cybersecurity for AI, do not start by trying to become an &quot;AI security expert&quot; overnight. Build the bridge: security fundamentals, then cloud security, then AI workflow risk.</p>
+          </section>
+
+          <section id="why-this-question-is-normal">
+            <h2>Why this question is normal</h2>
+            <p>When people ask how to upskill for AI security, they are usually not asking for a buzzword list. They are asking a more practical question: &quot;What should I learn so I can be useful in the next version of tech work?&quot;</p>
+            <p>That is a fair question. AI is moving fast, but the useful jobs around AI are not only about prompts or model names. The useful jobs are around systems: identity, data boundaries, logs, approvals, cloud services, cost, and risk.</p>
+            <p>The money lane is not &quot;I know prompts.&quot; The stronger lane is: &quot;I can help a team use AI without leaking data, over-permissioning tools, losing auditability, or letting automation take risky actions without review.&quot;</p>
+          </section>
+
+          <section id="the-roadmap">
+            <h2>The roadmap</h2>
+            <h3>1. Security fundamentals</h3>
+            <p>Start with the basics that still matter when AI is involved: identity, access control, networking, logging, incident response, secrets, vulnerability management, and risk. A beginner certification like Security+ or ISC2 Certified in Cybersecurity can be useful for vocabulary, but the real goal is understanding how systems fail.</p>
+            <h3>2. Cloud security</h3>
+            <p>Most AI workflows will touch cloud services, storage, APIs, logs, queues, databases, serverless functions, or managed AI platforms. That means cloud security is not optional. Learn IAM, least privilege, S3 access boundaries, KMS encryption, CloudTrail, CloudWatch, VPC basics, secrets management, and cost alarms.</p>
+            <h3>3. AI workflow risk</h3>
+            <p>Then layer in AI-specific concerns: prompt injection, sensitive information disclosure, insecure tool access, excessive agency, insecure output handling, model misuse, RAG data exposure, and overreliance on generated output.</p>
+            <p>Read the OWASP Top 10 for LLM Applications, MITRE ATLAS, and NIST AI RMF. They give you language for the risks instead of forcing you to invent your own framework from TikTok comments and panic.</p>
+          </section>
+
+          <section id="aws-runbooks">
+            <h2>AWS runbooks you can build</h2>
+            <p>Do not just say you are learning AI security. Build small proof artifacts. These are not production templates. They are learning runbooks you can use to practice the thinking.</p>
+            <div class="article-grid">
+              <a class="article-mini-card" href="./ai-cybersecurity-career-roadmap/aws-iam-and-logging-baseline.html">
+                <span class="tag">Runbook 01</span>
+                <h3>AWS IAM and logging baseline</h3>
+                <p>Build the habit of least privilege, audit trails, and cost-aware lab setup before AI touches anything.</p>
+                <span class="card-link">Open runbook</span>
+              </a>
+              <a class="article-mini-card" href="./ai-cybersecurity-career-roadmap/aws-ai-chatbot-threat-model.html">
+                <span class="tag">Runbook 02</span>
+                <h3>AI chatbot threat model</h3>
+                <p>Map a basic AI app and identify where prompt injection, data exposure, and insecure outputs can happen.</p>
+                <span class="card-link">Open runbook</span>
+              </a>
+              <a class="article-mini-card" href="./ai-cybersecurity-career-roadmap/aws-rag-data-boundary.html">
+                <span class="tag">Runbook 03</span>
+                <h3>RAG data boundary lab</h3>
+                <p>Practice building a retrieval flow where the main lesson is what the model is allowed to see.</p>
+                <span class="card-link">Open runbook</span>
+              </a>
+              <a class="article-mini-card" href="./ai-cybersecurity-career-roadmap/aws-human-approval-gates.html">
+                <span class="tag">Runbook 04</span>
+                <h3>Human approval gates</h3>
+                <p>Design an AI workflow where logs, review, and human approval are part of the system from the start.</p>
+                <span class="card-link">Open runbook</span>
+              </a>
+            </div>
+          </section>
+
+          <section id="what-to-study">
+            <h2>What to study next</h2>
+            <ul>
+              <li><strong>IAM:</strong> users, roles, policies, permission boundaries, service roles, and least privilege.</li>
+              <li><strong>Logging:</strong> CloudTrail for API activity, CloudWatch for application logs and metrics, and what you would need during an incident.</li>
+              <li><strong>Data boundaries:</strong> what data is public, private, sensitive, encrypted, logged, retrieved, or sent to a model.</li>
+              <li><strong>AI app risks:</strong> prompt injection, excessive agency, insecure output handling, sensitive information disclosure, and tool misuse.</li>
+              <li><strong>Governance:</strong> NIST AI RMF language: govern, map, measure, and manage.</li>
+            </ul>
+          </section>
+
+          <section id="updated-script">
+            <h2>Updated video script</h2>
+            <p><strong>On-screen hook:</strong> Do not chase &quot;AI cyber&quot; first. Build the bridge.</p>
+            <p>If you feel stuck at work and want to move into cyber for AI, that is a normal question. A lot of people are looking at this new wave and thinking, &quot;I do not want to get left behind, but I also do not know where to start.&quot;</p>
+            <p>So I went overkill and made a community resource for this.</p>
+            <p>My honest answer: do not start by trying to become an AI security expert overnight. Start with three layers.</p>
+            <p>First, get solid at security fundamentals: identity, access control, networking, logging, incident response, and risk. Security+ or ISC2 CC is fine for vocabulary.</p>
+            <p>Second, learn cloud security because most AI systems live in cloud workflows now. IAM, S3 permissions, secrets management, logging, and least privilege matter a lot.</p>
+            <p>Third, add AI-specific risk: prompt injection, data leakage, insecure tools, model misuse, RAG security, and human approval gates. Read OWASP Top 10 for LLM Apps, MITRE ATLAS, and NIST AI RMF.</p>
+            <p>The money lane is not &quot;I know prompts.&quot; It is: &quot;I can help a company use AI without leaking data, breaking access controls, or letting automation do something dangerous.&quot;</p>
+            <p>Build one small AWS project: a chatbot or AI workflow with authentication, logging, a data boundary, and a threat model. I put runbooks on JWTechDev.com if you want a place to start.</p>
+            <p><strong>Closer:</strong> Cyber for AI is security fundamentals plus cloud plus AI workflow risk. Learn that stack and you will be useful.</p>
+          </section>
+
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/" target="_blank" rel="noopener">OWASP Top 10 for Large Language Model Applications</a></li>
+              <li><a href="https://atlas.mitre.org/" target="_blank" rel="noopener">MITRE ATLAS</a></li>
+              <li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener">NIST AI Risk Management Framework</a></li>
+              <li><a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-how.html" target="_blank" rel="noopener">Amazon Bedrock Guardrails documentation</a></li>
+            </ul>
+          </section>
+
+          <section class="article-cta">
+            <h2>Want the starter kit?</h2>
+            <p>Grab the free JWTechDev.com starter kit for cloud, AWS study, AI 101, and launch checklists.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
