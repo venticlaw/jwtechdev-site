@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' https://img.youtube.com data:; script-src 'self' 'unsafe-inline' https://www.tiktok.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; frame-src https://www.tiktok.com https://www.youtube.com; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>What stateless MCP means in plain English | JWTechDev.com</title>
+  <meta name="description" content="Stateless MCP means every request carries the context it needs. Here is why that matters for AI tools, cloud infrastructure, load balancing, approvals, and production agent workflows." />
+  <meta property="og:title" content="What stateless MCP means in plain English" />
+  <meta property="og:description" content="Every MCP request now needs to carry its own context. That is a cloud infrastructure lesson, not just an AI tooling update." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/stateless-mcp.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20260818-1" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What stateless MCP means in plain English","description":"Stateless MCP means every request carries the context it needs. Here is why that matters for AI tools, cloud infrastructure, load balancing, approvals, and production agent workflows.","datePublished":"2026-08-18","dateModified":"2026-08-18","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":"https://jwtechdev.com/assets/articles/stateless-mcp.png","mainEntityOfPage":"https://jwtechdev.com/articles/stateless-mcp-explained.html"}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">AI infrastructure</p>
+    <article class="article-body">
+      <h1>What stateless MCP means in plain English</h1>
+      <p class="section__lede">MCP going stateless sounds like protocol plumbing. It is really a sign that AI tools are being forced to grow up into normal cloud infrastructure.</p>
+      <div class="article-kicker"><span>MCP</span><span>AI agents</span><span>Cloud scale</span><span>Approval gates</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/stateless-mcp.png" alt="Hand-drawn diagram comparing stateful MCP sessions with stateless MCP requests routed through a load balancer" />
+        <figcaption class="article-meta"><span>Published 2026-08-18</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#what-changed">What changed</a>
+          <a href="#why-it-matters">Why it matters</a>
+          <a href="#what-builders-should-learn">What builders should learn</a>
+          <a href="#watch-outs">Watch outs</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section class="quick-answer" id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>Stateless MCP means the protocol no longer depends on a hidden session between the client and server. Each request carries what the server needs, so the request can land on any healthy server instance.</p>
+          </section>
+
+          <section id="what-changed">
+            <h2>What changed</h2>
+            <p>In the older MCP flow, the client initialized a session, the server returned an <code>Mcp-Session-Id</code>, and later requests depended on that session still existing. That can work locally, but it creates pain when you try to run remote MCP servers like normal production services.</p>
+            <p>In the 2026-07-28 MCP specification, the protocol removes the initialize handshake and protocol-level sessions. Protocol version, client identity, and capabilities move into request metadata. Method and tool names also travel in HTTP headers, which makes routing and authorization easier for gateways.</p>
+            <p>The important mental model: the server should not need to remember the transport session to understand the next request.</p>
+          </section>
+
+          <section id="why-it-matters">
+            <h2>Why it matters</h2>
+            <p>This is the same lesson web apps learned a long time ago. If request two must hit the exact same server as request one, you need sticky sessions, shared session stores, or custom routing. That makes scaling harder and failure recovery uglier.</p>
+            <p>Stateless MCP lets a request go through ordinary HTTP infrastructure. A load balancer can route it to any available server instance because the request brings its own context. That is better for scaling, deploys, retries, and serverless-style hosting.</p>
+            <p>For our audience, the lesson is bigger than MCP: serious AI systems are not just prompts. They are identity, context, tools, routing, logs, approvals, and rollback thinking.</p>
+          </section>
+
+          <section id="what-builders-should-learn">
+            <h2>What builders should learn</h2>
+            <ul>
+              <li><strong>HTTP basics:</strong> requests, responses, headers, status codes, retries, and why stateless services scale.</li>
+              <li><strong>Load balancing:</strong> why routing to any healthy instance is simpler than pinning a user to one server.</li>
+              <li><strong>Explicit context:</strong> what the model, client, and tool server need to know on every call.</li>
+              <li><strong>Tool permissions:</strong> which tool calls are read-only, which modify state, and which need approval.</li>
+              <li><strong>Durable state:</strong> if the workflow needs memory, put it in a database, object store, queue, or explicit handle instead of hiding it in the transport.</li>
+            </ul>
+          </section>
+
+          <section id="watch-outs">
+            <h2>Watch outs</h2>
+            <p>Stateless does not mean your whole application forgets everything. It means the protocol is no longer the place where hidden session state lives. If an agent needs to keep working on a task, the system should use explicit handles, task IDs, database records, or other durable state.</p>
+            <p>That is good design, but it also forces discipline. If your MCP server changes something important, the workflow still needs logs, idempotency, human approval for risky actions, and a recovery path when a later tool call fails.</p>
+            <p>The clean version is: make requests self-contained, make state explicit, and make side effects reviewable.</p>
+          </section>
+
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://www.youtube.com/watch?v=f4mI3d-nTrI" target="_blank" rel="noopener">Better Stack: MCP Was Wrong From The Start (They Just Fixed It)</a></li>
+              <li><a href="https://blog.modelcontextprotocol.io/posts/2026-07-28/" target="_blank" rel="noopener">Model Context Protocol: The 2026-07-28 Specification</a></li>
+              <li><a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/" target="_blank" rel="noopener">Model Context Protocol: 2026-07-28 Release Candidate</a></li>
+              <li><a href="https://csharp.sdk.modelcontextprotocol.io/v2/concepts/stateless/stateless.html" target="_blank" rel="noopener">MCP C# SDK: Stateless and stateful mode</a></li>
+            </ul>
+          </section>
+
+          <section class="article-cta">
+            <h2>Want the starter kit?</h2>
+            <p>Grab the free JWTechDev.com starter kit if you want a practical way to connect cloud basics, AI workflows, and approval gates.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
