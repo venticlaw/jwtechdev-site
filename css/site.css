@@ -1826,6 +1826,26 @@ button { font: inherit; }
   background: var(--brand-orange-50);
 }
 
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-4);
+  margin: var(--space-5) 0;
+}
+
+.comparison-grid article {
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--brand-green);
+  border-radius: var(--radius-md);
+  background: var(--bg);
+  box-shadow: var(--shadow-sm);
+}
+
+.comparison-grid h3 {
+  margin-top: 0;
+}
+
 .article-cta {
   display: grid;
   gap: var(--space-4);

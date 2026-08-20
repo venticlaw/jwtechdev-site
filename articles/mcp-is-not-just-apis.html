@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' https://img.youtube.com data:; script-src 'self' 'unsafe-inline' https://www.tiktok.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; frame-src https://www.tiktok.com https://www.youtube.com; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>MCP is not just a garbage API | JWTechDev.com</title>
+  <meta name="description" content="MCP is not a replacement for APIs. Here is the plain-English difference between APIs, MCP, tools, resources, prompts, context, and agent-facing infrastructure." />
+  <meta property="og:title" content="MCP is not just a garbage API" />
+  <meta property="og:description" content="APIs expose service capabilities. MCP gives AI clients a standard way to discover and use tools, resources, prompts, and context." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/mcp-is-not-just-apis.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20260818-1" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"MCP is not just a garbage API","description":"MCP is not a replacement for APIs. Here is the plain-English difference between APIs, MCP, tools, resources, prompts, context, and agent-facing infrastructure.","datePublished":"2026-08-20","dateModified":"2026-08-20","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":"https://jwtechdev.com/assets/articles/mcp-is-not-just-apis.png","mainEntityOfPage":"https://jwtechdev.com/articles/mcp-is-not-just-apis.html"}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">AI infrastructure</p>
+    <article class="article-body">
+      <h1>MCP is not just a garbage API</h1>
+      <p class="section__lede">A troll comment can still be a useful whiteboard moment. MCP and APIs are related, but they are not the same layer.</p>
+      <div class="article-kicker"><span>MCP</span><span>APIs</span><span>AI agents</span><span>Tooling</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/mcp-is-not-just-apis.png" alt="Hand-drawn A/B diagram comparing APIs with MCP for AI agent workflows" />
+        <figcaption class="article-meta"><span>Published 2026-08-20</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#comment">The comment</a>
+          <a href="#api-side">Side A: APIs</a>
+          <a href="#mcp-side">Side B: MCP</a>
+          <a href="#mental-model">The mental model</a>
+          <a href="#why-builders-care">Why builders care</a>
+          <a href="#bottom-line">Bottom line</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section class="quick-answer" id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>MCP is not a replacement for APIs. APIs expose capabilities from a service. MCP gives AI clients a standard way to discover and use tools, resources, prompts, context, and metadata. In many real systems, an MCP server still calls normal APIs underneath.</p>
+          </section>
+
+          <section id="comment">
+            <h2>The comment is funny, but the confusion is real</h2>
+            <p>Somebody looked at MCP and said it was basically a garbage version of APIs.</p>
+            <p>I get why that take exists. If you squint hard enough, both APIs and MCP involve one system asking another system to do something. Both can move data. Both can trigger actions. Both can require authentication. Both can break when the system around them is designed poorly.</p>
+            <p>But saying MCP is just an API misses the point.</p>
+            <p>The better question is: who is the interface designed for?</p>
+          </section>
+
+          <section id="api-side">
+            <h2>Side A: What APIs are good at</h2>
+            <p>APIs are how software talks to software.</p>
+            <p>A developer reads documentation, chooses an endpoint, writes integration code, handles authentication, shapes the request, parses the response, handles errors, and decides what the application should do next.</p>
+            <p>That is powerful. It is also custom work.</p>
+            <p>If you integrate ten services, you usually learn ten different documentation styles, auth patterns, data shapes, rate limits, and operational quirks.</p>
+            <p>APIs are still the foundation. MCP does not erase that.</p>
+          </section>
+
+          <section id="mcp-side">
+            <h2>Side B: What MCP adds</h2>
+            <p>MCP is different because it is designed around AI clients and agents.</p>
+            <p>Instead of every AI app needing one-off glue for every tool, MCP gives the client a standard way to discover what a server offers.</p>
+            <p>That can include tools the model can call, resources the model can read, prompts or workflow templates, capability metadata, authorization boundaries, and context passed with a request.</p>
+            <p>An API says: here are endpoints your application can call.</p>
+            <p>MCP says: here are the tools, resources, prompts, and context an AI client can understand and use through a consistent protocol.</p>
+          </section>
+
+          <section id="mental-model">
+            <h2>The clean mental model</h2>
+            <div class="comparison-grid">
+              <article>
+                <h3>A: Traditional API</h3>
+                <ul>
+                  <li>Built for software integrations.</li>
+                  <li>Developer reads docs and writes custom glue.</li>
+                  <li>Endpoint-first.</li>
+                  <li>Often called directly by application code.</li>
+                </ul>
+              </article>
+              <article>
+                <h3>B: MCP</h3>
+                <ul>
+                  <li>Built for AI client and agent workflows.</li>
+                  <li>Client can discover tools, resources, prompts, and capabilities.</li>
+                  <li>Tool, resource, and prompt-first.</li>
+                  <li>Often wraps APIs so agents can use them safely.</li>
+                </ul>
+              </article>
+            </div>
+            <p>APIs connect software to services.</p>
+            <p>MCP connects AI clients to tools, resources, prompts, and context.</p>
+          </section>
+
+          <section id="why-builders-care">
+            <h2>Why this matters for builders</h2>
+            <p>An MCP server can absolutely call a normal API underneath. For example, an MCP server might expose a search tool to an AI client, while the server itself calls a documentation API, database, search index, or internal service behind the scenes.</p>
+            <p>That does not make MCP fake. It means MCP is an adapter layer.</p>
+            <p>Once AI workflows touch real systems, the hard part is not just whether the model can call an endpoint. The hard part is deciding what the model is allowed to see, what it can change, which tools are read-only, which actions need human approval, how actions are logged, and how the system recovers if a later step fails.</p>
+            <p>That is why MCP matters as part of AI infrastructure. It gives builders a common pattern for connecting agents to capabilities without pretending every integration should be hand-wired from scratch.</p>
+          </section>
+
+          <section id="bottom-line">
+            <h2>The bottom line</h2>
+            <p>If your takeaway is "MCP is just APIs," you are looking at the transport and missing the product shape.</p>
+            <p>APIs are how services expose capabilities.</p>
+            <p>MCP is how AI clients discover and use capabilities through tools, resources, prompts, and context.</p>
+            <p>In practical terms: APIs are still the engine room. MCP is the standardized agent-facing control panel.</p>
+          </section>
+
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://blog.modelcontextprotocol.io/posts/2026-07-28/" target="_blank" rel="noopener">Model Context Protocol: The 2026-07-28 Specification</a></li>
+              <li><a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/" target="_blank" rel="noopener">Model Context Protocol: 2026-07-28 Release Candidate</a></li>
+              <li><a href="https://modelcontextprotocol.io/specification/2024-11-05/index" target="_blank" rel="noopener">Model Context Protocol specification overview</a></li>
+              <li><a href="https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization" target="_blank" rel="noopener">Model Context Protocol authorization overview</a></li>
+            </ul>
+          </section>
+
+          <section class="article-cta">
+            <h2>Want the starter kit?</h2>
+            <p>Grab the free JWTechDev.com starter kit if you want a practical way to connect cloud basics, AI workflows, and approval gates.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
