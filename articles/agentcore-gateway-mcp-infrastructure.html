@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' https://img.youtube.com data:; script-src 'self' 'unsafe-inline' https://www.tiktok.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; frame-src https://www.tiktok.com https://www.youtube.com; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>AWS AgentCore Gateway shows MCP is real infrastructure | JWTechDev.com</title>
+  <meta name="description" content="AWS AgentCore Gateway support for MCP 2026-07-28 shows that AI agents need cloud infrastructure patterns: stateless requests, routing, headers, tracing, gateways, and approval boundaries." />
+  <meta property="og:title" content="AWS AgentCore Gateway shows MCP is real infrastructure" />
+  <meta property="og:description" content="MCP is moving from local tool demos into real infrastructure patterns. Here is what builders should learn from AWS AgentCore Gateway." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/agentcore-gateway-mcp.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20260818-1" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AWS AgentCore Gateway shows MCP is real infrastructure","description":"AWS AgentCore Gateway support for MCP 2026-07-28 shows that AI agents need cloud infrastructure patterns: stateless requests, routing, headers, tracing, gateways, and approval boundaries.","datePublished":"2026-08-27","dateModified":"2026-08-27","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":"https://jwtechdev.com/assets/articles/agentcore-gateway-mcp.png","mainEntityOfPage":"https://jwtechdev.com/articles/agentcore-gateway-mcp-infrastructure.html"}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">AI infrastructure</p>
+    <article class="article-body">
+      <h1>AWS AgentCore Gateway shows MCP is real infrastructure</h1>
+      <p class="section__lede">AWS supporting the MCP 2026-07-28 spec through AgentCore Gateway is a useful signal: agent tooling is being pulled into normal cloud infrastructure patterns.</p>
+      <div class="article-kicker"><span>AgentCore Gateway</span><span>MCP</span><span>AI agents</span><span>Cloud architecture</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/agentcore-gateway-mcp.png" alt="Hand-drawn diagram showing an AI agent using an MCP client through AgentCore Gateway to reach Lambda, APIs, MCP servers, and tools" />
+        <figcaption class="article-meta"><span>Published 2026-08-27</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#mcp-growing-up">MCP is growing up</a>
+          <a href="#gateway-model">Gateway mental model</a>
+          <a href="#headers">Why headers matter</a>
+          <a href="#observability">Observability story</a>
+          <a href="#builders">What builders should learn</a>
+          <a href="#bottom-line">Bottom line</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section class="quick-answer" id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>AWS AgentCore Gateway supporting the MCP 2026-07-28 spec matters because MCP is starting to look less like a local developer convenience and more like production infrastructure. The useful lesson is not just a new protocol version. It is routing, authentication, versioning, caching, tracing, error handling, and approval boundaries for AI agents.</p>
+          </section>
+
+          <section id="mcp-growing-up">
+            <h2>MCP is growing up</h2>
+            <p>For a while, MCP was easy to explain as the thing that lets AI tools connect to other tools. That is still useful, but it is not enough anymore.</p>
+            <p>AWS's AgentCore Gateway post makes the bigger point: MCP is being shaped into something that can survive outside a laptop demo.</p>
+            <p>The 2026-07-28 spec makes MCP stateless. That means each request carries the context it needs instead of depending on a hidden session between the client and server.</p>
+            <p>That sounds boring until you think like cloud infrastructure.</p>
+            <p>If request two must land on the same server as request one, you need sticky sessions, shared session storage, or extra routing tricks. That is manageable at small scale, but it gets messy when you want ordinary load balancing, retries, deployments, and failure recovery.</p>
+            <p>Stateless MCP makes the request easier to route through normal HTTPS infrastructure. That is not a small detail. That is the protocol learning how production systems work.</p>
+          </section>
+
+          <section id="gateway-model">
+            <h2>The gateway mental model matters</h2>
+            <p>The most important idea in the AWS post is the gateway.</p>
+            <p>AgentCore Gateway can sit between agents and the systems they want to use. Instead of an agent directly reaching into every Lambda function, API, or tool server, the gateway becomes the controlled front door.</p>
+            <p>That is the right mental model.</p>
+            <p>Agents should not wander around infrastructure like they found a badge on the floor. They should go through a governed path.</p>
+            <p>A gateway can help define what tools exist, which protocol versions are supported, how requests are routed, what authentication applies, what metadata travels with the call, how errors show up, and how logs and traces connect back to the workflow.</p>
+            <p>That is the difference between "my agent can call a tool" and "my agent is part of an actual system."</p>
+          </section>
+
+          <section id="headers">
+            <h2>Headers are not boring here</h2>
+            <p>One of the new MCP changes AWS highlights is that request intent can move into headers like <code>Mcp-Method</code>, <code>Mcp-Name</code>, and <code>MCP-Protocol-Version</code>.</p>
+            <p>That matters because infrastructure can understand more without digging into the JSON body.</p>
+            <p>Load balancers, gateways, rate limiters, routers, and monitoring tools are better when they can reason at the HTTP layer.</p>
+            <p>This is one of those details that sounds too technical until the first outage. Then suddenly everyone cares which calls failed, which tool was being called, which version was used, whether the request should have been throttled, and why the monitoring dashboard treated everything like a mystery blob.</p>
+            <p>MCP becoming easier to observe and route is MCP becoming more operationally serious.</p>
+          </section>
+
+          <section id="observability">
+            <h2>This is also an observability story</h2>
+            <p>AWS also points to trace context support.</p>
+            <p>That matters because agent workflows are not one-step events. An agent might receive a request, call a tool, hit a gateway, invoke a Lambda function, query a service, return structured output, ask for approval, and then continue.</p>
+            <p>If you cannot trace that path, you do not really understand the system.</p>
+            <p>For builders, the better question is not only "did the model answer?" It is: what did the agent call, what was it allowed to access, which system handled the request, what version was used, what failed, what got logged, and what happens if the action needs rollback?</p>
+            <p>That is infrastructure thinking.</p>
+          </section>
+
+          <section id="builders">
+            <h2>What builders should learn from this</h2>
+            <p>If you are learning AI agents, do not stop at prompts.</p>
+            <p>Prompts matter, but they are not the full system. The skills that keep showing up are old cloud skills with a new interface:</p>
+            <ul>
+              <li>HTTP requests and headers</li>
+              <li>load balancing</li>
+              <li>authentication and authorization</li>
+              <li>version negotiation</li>
+              <li>caching</li>
+              <li>tracing</li>
+              <li>structured errors</li>
+              <li>gateway patterns</li>
+              <li>approval gates</li>
+              <li>state management</li>
+            </ul>
+            <p>That is why MCP is such a good learning topic. It forces you to connect AI workflows back to real architecture.</p>
+            <p>The model is only one part of the system. The tool path matters.</p>
+          </section>
+
+          <section id="bottom-line">
+            <h2>The bottom line</h2>
+            <p>AWS AgentCore Gateway supporting the MCP 2026-07-28 spec is a signal.</p>
+            <p>MCP is moving from agent tool connector toward agent infrastructure contract.</p>
+            <p>The future is not just better prompts. The future is agents moving through controlled gateways, self-contained requests, explicit context, observable tool calls, and systems that know when to ask a human before doing something risky.</p>
+            <p>If you want to build with AI agents, learn the infrastructure around the agent. That is where the serious work lives.</p>
+          </section>
+
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://aws.amazon.com/blogs/machine-learning/how-agentcore-gateway-supports-the-mcp-2026-07-28-spec/" target="_blank" rel="noopener">AWS: How AgentCore Gateway supports the MCP 2026-07-28 spec</a></li>
+              <li><a href="https://blog.modelcontextprotocol.io/posts/2026-07-28/" target="_blank" rel="noopener">Model Context Protocol: The 2026-07-28 Specification</a></li>
+              <li><a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/" target="_blank" rel="noopener">Model Context Protocol: 2026-07-28 Release Candidate</a></li>
+            </ul>
+          </section>
+
+          <section class="article-cta">
+            <h2>Want the starter kit?</h2>
+            <p>Grab the free JWTechDev.com starter kit if you want a practical way to connect cloud basics, AI workflows, and approval gates.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

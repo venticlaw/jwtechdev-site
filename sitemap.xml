@@ -157,6 +157,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://jwtechdev.com/articles/agentcore-gateway-mcp-infrastructure.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://jwtechdev.com/articles/mcp-is-not-just-apis.html</loc>
     <lastmod>2026-08-20</lastmod>
     <changefreq>monthly</changefreq>
