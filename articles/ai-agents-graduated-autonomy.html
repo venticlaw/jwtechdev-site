@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' https://img.youtube.com data:; script-src 'self' 'unsafe-inline' https://www.tiktok.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; frame-src https://www.tiktok.com https://www.youtube.com; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>AI agents should earn autonomy over time | JWTechDev.com</title>
+  <meta name="description" content="Graduated autonomy is a better trust model than giving agents full access on day one or keeping them permanently read-only." />
+  <meta property="og:title" content="AI agents should earn autonomy over time" />
+  <meta property="og:description" content="Graduated autonomy is a better trust model than giving agents full access on day one or keeping them permanently read-only." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/ai-agents-graduated-autonomy.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20260818-1" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI agents should earn autonomy over time","description":"Graduated autonomy is a better trust model than giving agents full access on day one or keeping them permanently read-only.","datePublished":"2026-08-29","dateModified":"2026-08-29","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":"https://jwtechdev.com/assets/articles/ai-agents-graduated-autonomy.png","mainEntityOfPage":"https://jwtechdev.com/articles/ai-agents-graduated-autonomy.html"}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">AI governance</p>
+    <article class="article-body">
+      <h1>AI agents should earn autonomy over time</h1>
+      <p class="section__lede">The useful question is not whether agents should be autonomous. It is what they have proven they can safely do.</p>
+      <div class="article-kicker"><span>Graduated autonomy</span><span>Agent trust</span><span>Approval gates</span><span>AWS</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/ai-agents-graduated-autonomy.png" alt="Hand-drawn staircase showing AI agents earning autonomy through trust signals and approval gates" />
+        <figcaption class="article-meta"><span>Published 2026-08-29</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#binary-problem">The binary problem</a>
+          <a href="#earned-access">Earned access</a>
+          <a href="#cloud-pattern">Cloud pattern</a>
+          <a href="#builders">What builders should do</a>
+          <a href="#bottom-line">Bottom line</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>Do not treat agent access as all-or-nothing. A better model is graduated autonomy: agents start with low-risk permissions, earn expanded capability through reliable behavior, and lose access when their performance drops.</p>
+          </section>
+
+          <section id="binary-problem">
+            <h2>The binary problem</h2>
+            <p>A lot of AI deployments get stuck between two weak choices. Either the agent is read-only and cannot do useful work, or it gets too much access before anyone has evidence that it behaves well.</p>
+            <p>That is not how mature systems usually work. We do not hand every human, service account, or automation the same permission level on day one. Agents should be no different.</p>
+          </section>
+
+          <section id="earned-access">
+            <h2>Autonomy should be earned</h2>
+            <p>Graduated autonomy turns trust into a measurable system. The agent can move from reading context, to suggesting actions, to drafting changes, to requesting approval, to limited writes, and only later to broader actions.</p>
+            <p>The key is that the permission level is tied to signals: accuracy, safe behavior, clean logs, rollback readiness, and the risk level of the task.</p>
+          </section>
+
+          <section id="cloud-pattern">
+            <h2>This is a cloud pattern</h2>
+            <p>The AWS Architecture Blog connects graduated autonomy to cloud services such as AgentCore, policy, evaluation, and persistent trust state. The product names may change over time, but the architecture lesson is durable.</p>
+            <p>Store trust state. Evaluate behavior. Use deployment gates. Keep logs. Roll back privileges when the agent stops meeting the standard.</p>
+          </section>
+
+          <section id="builders">
+            <h2>What builders should do</h2>
+            <p>Create a permissions ladder for every agent workflow.</p>
+            <p>Define what evidence moves an agent up a level and what events move it down.</p>
+            <p>Keep high-impact actions behind approval until the system has real operating history.</p>
+            <p>Make rollback a first-class requirement before expanding access.</p>
+          </section>
+
+          <section id="bottom-line">
+            <h2>Bottom line</h2>
+            <p>The future is not agents with unlimited access. The future is agents with measured trust, scoped authority, and a path to earn more responsibility without skipping governance.</p>
+          </section>
+
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://aws.amazon.com/blogs/architecture/closing-the-ai-agent-trust-gap-with-graduated-autonomy/" target="_blank" rel="noopener">AWS Architecture Blog: Closing the AI agent trust gap with graduated autonomy</a></li>
+            </ul>
+          </section>
+
+          <section class="article-cta">
+            <h2>Want the starter kit?</h2>
+            <p>Grab the free JWTechDev.com starter kit if you want a practical way to connect cloud basics, AI workflows, and approval gates.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

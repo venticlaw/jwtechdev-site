@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' https://img.youtube.com data:; script-src 'self' 'unsafe-inline' https://www.tiktok.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; frame-src https://www.tiktok.com https://www.youtube.com; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>AI agents need consistent data, not just fast data | JWTechDev.com</title>
+  <meta name="description" content="Agent reliability depends on whether the data layer gives the model current enough truth for the action it is about to take." />
+  <meta property="og:title" content="AI agents need consistent data, not just fast data" />
+  <meta property="og:description" content="Agent reliability depends on whether the data layer gives the model current enough truth for the action it is about to take." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/ai-agent-data-consistency.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20260818-1" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI agents need consistent data, not just fast data","description":"Agent reliability depends on whether the data layer gives the model current enough truth for the action it is about to take.","datePublished":"2026-08-29","dateModified":"2026-08-29","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":"https://jwtechdev.com/assets/articles/ai-agent-data-consistency.png","mainEntityOfPage":"https://jwtechdev.com/articles/ai-agent-data-consistency.html"}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">Data architecture</p>
+    <article class="article-body">
+      <h1>AI agents need consistent data, not just fast data</h1>
+      <p class="section__lede">Fast stale data can still push an agent into a bad decision.</p>
+      <div class="article-kicker"><span>Data consistency</span><span>Agent context</span><span>Cloud databases</span><span>AWS</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/ai-agent-data-consistency.png" alt="Hand-drawn diagram showing stale replica data leading to a bad agent decision and a fix path with consistency controls" />
+        <figcaption class="article-meta"><span>Published 2026-08-29</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#why-it-breaks">Why this breaks agents</a>
+          <a href="#not-all-data">Not all data needs the same model</a>
+          <a href="#builders">What builders should do</a>
+          <a href="#examples">Examples</a>
+          <a href="#bottom-line">Bottom line</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>Agents do not just need more context. They need the right context at the right consistency level. If an agent reads stale data before taking action, the model may sound confident while reasoning from yesterday&#x27;s truth.</p>
+          </section>
+
+          <section id="why-it-breaks">
+            <h2>Why this breaks agents</h2>
+            <p>The AWS Architecture Blog frames consistency as a reliability issue for AI systems. That is the right framing. A context window can become the place where stale state turns into a bad action.</p>
+            <p>Replica lag, eventually consistent reads, cached records, and race conditions were already hard. Agents make the failure mode easier to miss because the final answer may look polished even when the input state was wrong.</p>
+          </section>
+
+          <section id="not-all-data">
+            <h2>Not all data needs the same model</h2>
+            <p>Some agent tasks can tolerate eventual consistency. A learning assistant summarizing old documentation probably does not need a global strongly consistent transaction.</p>
+            <p>Other tasks need stronger guarantees. Anything involving identity, permissions, money, production changes, inventory, customer state, or irreversible action deserves a stricter data model and a re-check before action.</p>
+          </section>
+
+          <section id="builders">
+            <h2>What builders should do</h2>
+            <p>Write down the truth requirement before choosing the database pattern.</p>
+            <p>Use read-your-writes behavior where the agent must see its own prior action.</p>
+            <p>Use conditional writes for state transitions that should not be overwritten.</p>
+            <p>Re-check critical state immediately before the agent triggers an action.</p>
+            <p>Log which data source and timestamp informed the final decision.</p>
+          </section>
+
+          <section id="examples">
+            <h2>Examples</h2>
+            <p>For a support agent, stale profile data could cause it to offer the wrong entitlement.</p>
+            <p>For a deployment agent, stale environment state could make it act on a version that is no longer current.</p>
+            <p>For a purchasing agent, stale budget data could let it approve spend that should have been blocked.</p>
+          </section>
+
+          <section id="bottom-line">
+            <h2>Bottom line</h2>
+            <p>Agent architecture is data architecture. Before asking whether the model is smart enough, ask whether the data it sees is current enough for the decision it is about to make.</p>
+          </section>
+
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://aws.amazon.com/blogs/architecture/consistency-is-the-new-latency-ai-at-the-data-layer/" target="_blank" rel="noopener">AWS Architecture Blog: Consistency is the new latency: AI at the data layer</a></li>
+            </ul>
+          </section>
+
+          <section class="article-cta">
+            <h2>Want the starter kit?</h2>
+            <p>Grab the free JWTechDev.com starter kit if you want a practical way to connect cloud basics, AI workflows, and approval gates.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

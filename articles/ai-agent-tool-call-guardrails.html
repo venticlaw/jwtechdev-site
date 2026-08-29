@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' https://img.youtube.com data:; script-src 'self' 'unsafe-inline' https://www.tiktok.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; frame-src https://www.tiktok.com https://www.youtube.com; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>AI agent guardrails need to cover tool calls, not just prompts | JWTechDev.com</title>
+  <meta name="description" content="AWS is showing why agent guardrails have to extend beyond model prompts and responses into tool selection, tool inputs, and tool outputs." />
+  <meta property="og:title" content="AI agent guardrails need to cover tool calls, not just prompts" />
+  <meta property="og:description" content="AWS is showing why agent guardrails have to extend beyond model prompts and responses into tool selection, tool inputs, and tool outputs." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/ai-agent-tool-call-guardrails.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20260818-1" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI agent guardrails need to cover tool calls, not just prompts","description":"AWS is showing why agent guardrails have to extend beyond model prompts and responses into tool selection, tool inputs, and tool outputs.","datePublished":"2026-08-29","dateModified":"2026-08-29","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":"https://jwtechdev.com/assets/articles/ai-agent-tool-call-guardrails.png","mainEntityOfPage":"https://jwtechdev.com/articles/ai-agent-tool-call-guardrails.html"}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">AI security</p>
+    <article class="article-body">
+      <h1>AI agent guardrails need to cover tool calls, not just prompts</h1>
+      <p class="section__lede">Prompt guardrails matter, but agent risk often shows up after the model decides to use a tool.</p>
+      <div class="article-kicker"><span>Tool calls</span><span>Guardrails</span><span>Agent safety</span><span>AWS</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/ai-agent-tool-call-guardrails.png" alt="Hand-drawn diagram showing guardrail checkpoints around an AI agent tool call path" />
+        <figcaption class="article-meta"><span>Published 2026-08-29</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#why-it-matters">Why it matters</a>
+          <a href="#three-checkpoints">Three checkpoints</a>
+          <a href="#aws-mental-model">AWS mental model</a>
+          <a href="#builders">What builders should do</a>
+          <a href="#bottom-line">Bottom line</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>If your agent can call tools, your guardrails cannot stop at the chat box. The useful mental model is to validate the tool choice, the tool input, and the tool output before the agent turns that information into action.</p>
+          </section>
+
+          <section id="why-it-matters">
+            <h2>Why this matters now</h2>
+            <p>Traditional AI safety conversations usually focus on the model boundary: what the user sends in and what the model sends back. Agents make that boundary bigger.</p>
+            <p>An agent may read files, call APIs, query business systems, or invoke an MCP tool. That means risk can enter through external data, leave through tool input, or come back through a tool result that the model treats as truth.</p>
+            <p>AWS&#x27;s recent Bedrock Guardrails and Strands Agents SDK example is useful because it frames guardrails as lifecycle checkpoints instead of a single filter at the end.</p>
+          </section>
+
+          <section id="three-checkpoints">
+            <h2>The three checkpoint model</h2>
+            <p>Checkpoint one is before the tool call. Ask whether the selected tool is allowed for this user, this workflow, and this task.</p>
+            <p>Checkpoint two is the tool input. Validate what the agent is about to send out. This is where secrets, private data, unsafe commands, or overly broad parameters can leak.</p>
+            <p>Checkpoint three is the tool output. Validate what came back before it enters the agent&#x27;s context. External systems can return stale, malicious, irrelevant, or overprivileged data.</p>
+          </section>
+
+          <section id="aws-mental-model">
+            <h2>The AWS mental model</h2>
+            <p>The AWS post shows how guardrails can be applied through lifecycle hooks in an agent framework. That is the important part for learners: safety is not just a policy document. It is code placed at the points where an agent changes state or touches a system.</p>
+            <p>This also connects to cloud security basics. You still need identity, scoped permissions, logs, allowlists, deny rules, and a way to review actions that should not be fully automated.</p>
+          </section>
+
+          <section id="builders">
+            <h2>What builders should do</h2>
+            <p>Build a small tool-calling demo and add logging around every tool call.</p>
+            <p>Label each tool by risk level: read-only, draft, write, external spend, or human-impacting action.</p>
+            <p>Add validation before tool input leaves the agent and before tool output enters the next prompt.</p>
+            <p>Create one approval gate for anything that changes data, spends money, sends a message, or touches production.</p>
+          </section>
+
+          <section id="bottom-line">
+            <h2>Bottom line</h2>
+            <p>AI agents are not safer because the prompt sounds careful. They are safer when the tool path is governed. The tool call is where the agent stops being a text generator and starts acting like infrastructure.</p>
+          </section>
+
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://aws.amazon.com/blogs/security/extend-amazon-bedrock-guardrails-to-tool-interactions-using-the-strands-agents-sdk/" target="_blank" rel="noopener">AWS Security Blog: Extend Amazon Bedrock Guardrails to Tool Interactions Using the Strands Agents SDK</a></li>
+            </ul>
+          </section>
+
+          <section class="article-cta">
+            <h2>Want the starter kit?</h2>
+            <p>Grab the free JWTechDev.com starter kit if you want a practical way to connect cloud basics, AI workflows, and approval gates.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' https://img.youtube.com data:; script-src 'self' 'unsafe-inline' https://www.tiktok.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; frame-src https://www.tiktok.com https://www.youtube.com; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>Async agent pipelines are cloud infrastructure, not chatbots | JWTechDev.com</title>
+  <meta name="description" content="Serverless AI agent workflows need durable orchestration patterns so compute does not sit idle while an agent thinks, waits, retries, or calls tools." />
+  <meta property="og:title" content="Async agent pipelines are cloud infrastructure, not chatbots" />
+  <meta property="og:description" content="Serverless AI agent workflows need durable orchestration patterns so compute does not sit idle while an agent thinks, waits, retries, or calls tools." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/async-agent-pipelines.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20260818-1" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Async agent pipelines are cloud infrastructure, not chatbots","description":"Serverless AI agent workflows need durable orchestration patterns so compute does not sit idle while an agent thinks, waits, retries, or calls tools.","datePublished":"2026-08-29","dateModified":"2026-08-29","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":"https://jwtechdev.com/assets/articles/async-agent-pipelines.png","mainEntityOfPage":"https://jwtechdev.com/articles/async-agent-pipelines.html"}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">Cloud architecture</p>
+    <article class="article-body">
+      <h1>Async agent pipelines are cloud infrastructure, not chatbots</h1>
+      <p class="section__lede">Once an agent enters a workflow, you need orchestration, callbacks, retries, and tracing.</p>
+      <div class="article-kicker"><span>Async agents</span><span>Serverless</span><span>Step Functions</span><span>AWS</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/async-agent-pipelines.png" alt="Hand-drawn diagram showing an event routed through Step Functions, an AgentCore agent, a callback token, and a continued workflow" />
+        <figcaption class="article-meta"><span>Published 2026-08-29</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#chatbot-trap">The chatbot trap</a>
+          <a href="#async-pattern">The async pattern</a>
+          <a href="#ops">Operational details</a>
+          <a href="#builders">What builders should do</a>
+          <a href="#bottom-line">Bottom line</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>Do not design every agent workflow like a chatbot request that has to finish immediately. Many real agent tasks need async orchestration so the workflow can wait, retry, resume, and keep context without wasting compute.</p>
+          </section>
+
+          <section id="chatbot-trap">
+            <h2>The chatbot trap</h2>
+            <p>Chat makes agents feel synchronous. A user asks, a model answers, and the whole thing looks like one request.</p>
+            <p>Production work is different. An agent may need to call tools, wait on external systems, request approval, process a callback, or recover from a failed step. That belongs in workflow infrastructure, not a long-running function that sits there burning time.</p>
+          </section>
+
+          <section id="async-pattern">
+            <h2>The async pattern</h2>
+            <p>The AWS ML Blog walks through patterns for calling AgentCore agents inside serverless pipelines. The big lesson is to separate the workflow from the wait.</p>
+            <p>Step Functions, task tokens, direct integrations, durable functions, queues, and callbacks help the system pause and resume without pretending every task is instant.</p>
+          </section>
+
+          <section id="ops">
+            <h2>The operational details matter</h2>
+            <p>Async workflows also make observability more important. You need a stable session ID, trace context, retry behavior, timeout handling, and a way to know where the work paused.</p>
+            <p>That is the difference between an agent demo and something a team can operate when it fails at 2:00 in the morning.</p>
+          </section>
+
+          <section id="builders">
+            <h2>What builders should do</h2>
+            <p>Map every agent workflow as steps before choosing services.</p>
+            <p>Mark which steps are instant, which wait, which require approval, and which may retry.</p>
+            <p>Use durable orchestration for waits instead of blocking compute.</p>
+            <p>Add tracing before the workflow gets complicated.</p>
+          </section>
+
+          <section id="bottom-line">
+            <h2>Bottom line</h2>
+            <p>Async agent pipelines are where AI work starts looking like normal distributed systems work. That is a good thing. It means builders can use proven cloud patterns instead of hoping the model finishes everything in one clean request.</p>
+          </section>
+
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://aws.amazon.com/blogs/machine-learning/asynchronous-patterns-for-calling-amazon-bedrock-agentcore-agents-in-serverless-pipelines/" target="_blank" rel="noopener">AWS Machine Learning Blog: Asynchronous patterns for calling Amazon Bedrock AgentCore agents in serverless pipelines</a></li>
+            </ul>
+          </section>
+
+          <section class="article-cta">
+            <h2>Want the starter kit?</h2>
+            <p>Grab the free JWTechDev.com starter kit if you want a practical way to connect cloud basics, AI workflows, and approval gates.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
