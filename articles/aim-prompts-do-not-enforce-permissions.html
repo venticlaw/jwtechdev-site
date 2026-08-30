@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' https://img.youtube.com data:; script-src 'self' 'unsafe-inline' https://www.tiktok.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; frame-src https://www.tiktok.com https://www.youtube.com; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>AIM prompts can guide agents, but they do not enforce permissions | JWTechDev.com</title>
+  <meta name="description" content="A reader asked whether the AIM prompt model can create backend perimeters and permissions. The short answer: it can guide intent, but IAM, policy boundaries, allowlists, approvals, and logs have to enforce access." />
+  <meta property="og:title" content="AIM prompts can guide agents, but they do not enforce permissions" />
+  <meta property="og:description" content="A reader asked whether the AIM prompt model can create backend perimeters and permissions. The short answer: it can guide intent, but IAM, policy boundaries, allowlists, approvals, and logs have to enforce access." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/aim-prompts-permissions.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20260818-1" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AIM prompts can guide agents, but they do not enforce permissions","description":"A reader asked whether the AIM prompt model can create backend perimeters and permissions. The short answer: it can guide intent, but IAM, policy boundaries, allowlists, approvals, and logs have to enforce access.","datePublished":"2026-08-30","dateModified":"2026-08-30","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":"https://jwtechdev.com/assets/articles/aim-prompts-permissions.png","mainEntityOfPage":"https://jwtechdev.com/articles/aim-prompts-do-not-enforce-permissions.html"}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">AI security</p>
+    <article class="article-body">
+      <h1>AIM prompts can guide agents, but they do not enforce permissions</h1>
+      <p class="section__lede">This is a sharp question because it separates prompt design from real authorization.</p>
+      <div class="article-kicker"><span>AIM prompt</span><span>IAM</span><span>Authorization</span><span>AI agents</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/aim-prompts-permissions.png" alt="Hand-drawn diagram showing AIM prompt guidance passing through policy enforcement before allowed or blocked data access" />
+        <figcaption class="article-meta"><span>Published 2026-08-30</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#why-question-matters">Why it matters</a>
+          <a href="#prompt-layer">Prompt layer</a>
+          <a href="#enforcement-layer">Enforcement layer</a>
+          <a href="#practical-architecture">Architecture model</a>
+          <a href="#what-to-learn">What to learn</a>
+          <a href="#nice-reply">Nice reply</a>
+          <a href="#bottom-line">Bottom line</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>AIM can help an agent understand who it is supposed to act as, what it is trying to do, and what mission it should stay focused on. But the prompt itself should not be trusted as the thing that creates backend perimeters or permissions. Prompts guide behavior. Policies enforce access.</p>
+          </section>
+
+          <section id="why-question-matters">
+            <h2>Why this question matters</h2>
+            <p>The comment is asking the right thing: if the prompt defines the actor, intent, and mission, does that become part of the permission system behind the scenes?</p>
+            <p>The answer is: it can inform the request, but it should not be the authority that grants access.</p>
+            <p>A prompt can say, &#x27;Only pull billing docs for this customer.&#x27; A real backend still has to check which identity is making the request, which role it is using, what resource it is touching, and whether that action is allowed.</p>
+          </section>
+
+          <section id="prompt-layer">
+            <h2>What the prompt layer can do</h2>
+            <p>A good AIM-style prompt can reduce confusion. It can tell the model the role it is playing, the outcome it is pursuing, and the boundaries of the task.</p>
+            <p>That helps the agent ask for narrower data, choose safer tools, and explain why it needs access. It can also help generate a structured request that downstream systems can evaluate.</p>
+            <p>But the model is still text-generation and reasoning software. It can misunderstand instructions, be manipulated, or ask for something outside the real policy boundary.</p>
+          </section>
+
+          <section id="enforcement-layer">
+            <h2>What the enforcement layer must do</h2>
+            <p>The enforcement layer is where permissions become real. In AWS terms, a request is evaluated against policy types, request context, explicit allows, implicit denies, and explicit denies.</p>
+            <p>That is the pattern AI agent systems need too. The backend should evaluate the agent request against IAM policy, permission boundaries, resource rules, tool allowlists, and approval requirements before anything sensitive is returned or changed.</p>
+            <p>If the prompt and the policy disagree, the policy should win every time.</p>
+          </section>
+
+          <section id="practical-architecture">
+            <h2>A practical architecture model</h2>
+            <p>Think about it as four layers.</p>
+            <p>Layer one is the prompt: actor, intent, mission, and task boundaries.</p>
+            <p>Layer two is the agent request: the specific tool, data, resource, or action the agent wants.</p>
+            <p>Layer three is policy enforcement: IAM, permission boundaries, allowlists, approval gates, and rate limits.</p>
+            <p>Layer four is observability: audit logs showing who asked, what was requested, what was allowed, what was blocked, and why.</p>
+          </section>
+
+          <section id="what-to-learn">
+            <h2>What learners should study next</h2>
+            <p>Learn the difference between authentication and authorization. Authentication proves who or what is making the request. Authorization decides what that identity is allowed to do.</p>
+            <p>Then learn IAM policy evaluation, explicit deny, permission boundaries, service roles, temporary credentials, resource policies, and access logs.</p>
+            <p>After that, map those concepts onto agents. Every serious agent workflow should have a named identity, a limited tool list, scoped data access, approval gates for risky actions, and logs you can actually read.</p>
+          </section>
+
+          <section id="nice-reply">
+            <h2>The nice answer to the comment</h2>
+            <p>So the thoughtful reply is: yes, the AIM prompt can help shape the agent&#x27;s intent and requested scope, but no, it should not be the thing that actually grants backend permissions.</p>
+            <p>The better system is prompt-guided and policy-enforced. That gives you the flexibility of AI without pretending the prompt is a security boundary.</p>
+          </section>
+
+          <section id="bottom-line">
+            <h2>Bottom line</h2>
+            <p>AIM is useful because it gives the agent a clear job. IAM and policy enforcement are necessary because they decide what the agent is actually allowed to touch.</p>
+            <p>That is the bridge learners need to understand: prompt engineering can shape behavior, but security architecture has to enforce reality.</p>
+          </section>
+
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html" target="_blank" rel="noopener">AWS IAM: Policy evaluation logic</a></li>
+              <li><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic_policy-eval-denyallow.html" target="_blank" rel="noopener">AWS IAM: How AWS evaluates requests to allow or deny access</a></li>
+              <li><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-policy-validation.html" target="_blank" rel="noopener">AWS IAM Access Analyzer: Validate policies</a></li>
+              <li><a href="https://genai.owasp.org/llmrisk/llm062025-excessive-agency/" target="_blank" rel="noopener">OWASP LLM06:2025 Excessive Agency</a></li>
+              <li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener">NIST AI Risk Management Framework</a></li>
+            </ul>
+          </section>
+
+          <section class="article-cta">
+            <h2>Want the starter kit?</h2>
+            <p>Grab the free JWTechDev.com starter kit if you want a practical way to connect cloud basics, AI workflows, and approval gates.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
