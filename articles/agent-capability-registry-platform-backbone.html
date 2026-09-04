@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' https://img.youtube.com data:; script-src 'self' 'unsafe-inline' https://www.tiktok.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; frame-src https://www.tiktok.com https://www.youtube.com; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>The agent capability registry should be the next platform backbone | JWTechDev.com</title>
+  <meta name="description" content="If organizations want reliable AI agents, they need a registry that catalogs workflows, skills, agents, tools, MCP servers, A2A endpoints, owners, approved data classes, allowed writes, approval gates, cost policy, evals, and deployment status." />
+  <meta property="og:title" content="The agent capability registry should be the next platform backbone" />
+  <meta property="og:description" content="If organizations want reliable AI agents, they need a registry that catalogs workflows, skills, agents, tools, MCP servers, A2A endpoints, owners, approved data classes, allowed writes, approval gates, cost policy, evals, and deployment status." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/agent-capability-registry-platform-backbone.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20260818-1" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The agent capability registry should be the next platform backbone","description":"If organizations want reliable AI agents, they need a registry that catalogs workflows, skills, agents, tools, MCP servers, A2A endpoints, owners, approved data classes, allowed writes, approval gates, cost policy, evals, and deployment status.","datePublished":"2026-09-04","dateModified":"2026-09-04","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":"https://jwtechdev.com/assets/articles/agent-capability-registry-platform-backbone.png","mainEntityOfPage":"https://jwtechdev.com/articles/agent-capability-registry-platform-backbone.html"}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">AI infrastructure</p>
+    <article class="article-body">
+      <h1>The agent capability registry should be the next platform backbone</h1>
+      <p class="section__lede">Agent platforms need a source of truth for what agents can do, who owns them, and what they are allowed to touch.</p>
+      <div class="article-kicker"><span>Agent registry</span><span>MCP</span><span>A2A</span><span>Platform governance</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/agent-capability-registry-platform-backbone.png" alt="Hand-drawn diagram showing an agent capability registry cataloging workflows, agents, tools, MCP servers, A2A endpoints, owners, data classes, approval gates, cost policy, evals, and deployment status" />
+        <figcaption class="article-meta"><span>Published 2026-09-04</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#why-now">Why now</a>
+          <a href="#what-registry-is">What it is</a>
+          <a href="#mcp-a2a">MCP and A2A</a>
+          <a href="#fields">Fields that matter</a>
+          <a href="#lifecycle">Lifecycle</a>
+          <a href="#control-plane">Control plane</a>
+          <a href="#starter-model">Starter model</a>
+          <a href="#bottom-line">Bottom line</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>The agent capability registry should become the backbone of serious agent platforms. It is the source of truth for workflows, skills, agents, tools, MCP servers, A2A endpoints, eval rubrics, owners, approved data classes, allowed write actions, approval gates, cost policy, and deployment status.</p>
+          </section>
+
+          <section id="why-now">
+            <h2>Why this needs to exist now</h2>
+            <p>The agent stack is getting more capable and more distributed. MCP gives agents a standard way to reach tools and data. A2A gives agents a standard way to discover and collaborate with other agents. That is useful, but it also creates a basic operating question: where does the platform remember what is approved?</p>
+            <p>Without a registry, every agent workflow becomes tribal knowledge. One team knows which tool is safe. Another knows which data class is allowed. Someone else knows who owns the eval. Nobody has the complete picture until something breaks.</p>
+          </section>
+
+          <section id="what-registry-is">
+            <h2>What the registry is</h2>
+            <p>A capability registry is not just a list of agents. It is a governed catalog of what work the platform can perform and under what conditions.</p>
+            <p>At minimum, it should track the workflow name, business purpose, owning team, agent identity, skills, tools, MCP servers, A2A endpoints, approved data classes, allowed write actions, approval gates, eval rubric, cost policy, deployment environment, status, and last review date.</p>
+            <p>That turns agent capability into something observable and reviewable instead of something hidden inside prompts, code comments, or a single developer&#x27;s laptop.</p>
+          </section>
+
+          <section id="mcp-a2a">
+            <h2>Where MCP and A2A fit</h2>
+            <p>MCP and A2A make the registry more important, not less.</p>
+            <p>MCP tool catalogs help agents discover tools and capabilities. A2A agent cards help agents describe themselves and collaborate across boundaries. A platform registry should sit above those pieces and answer governance questions: who approved this capability, what data can it touch, what writes are allowed, what eval proves it works, what cost limit applies, and whether it is production-ready.</p>
+            <p>In plain language: protocol discovery tells you what exists. The registry tells you what is allowed.</p>
+          </section>
+
+          <section id="fields">
+            <h2>The fields that matter</h2>
+            <p>A useful registry should include: workflows, skills, agents, tools, MCP servers, A2A endpoints, eval rubrics, owners, approved data classes, allowed write actions, approval gates, cost policy, deployment status, last review date, incident notes, and rollback path.</p>
+            <p>Those fields are not bureaucracy for its own sake. They map directly to risk. Excessive agency usually comes from too much functionality, too many permissions, or too much autonomy. A registry gives the platform a place to see and reduce that risk.</p>
+          </section>
+
+          <section id="lifecycle">
+            <h2>Make it part of the lifecycle</h2>
+            <p>The registry should not be a static spreadsheet that dies after the kickoff meeting. It should be part of the agent lifecycle.</p>
+            <p>Before build, the registry defines intended capability and data boundaries. During build, it links tools, owners, and evals. Before deployment, it records approval gates and cost policy. After deployment, it tracks status, usage, incidents, drift, and review dates.</p>
+          </section>
+
+          <section id="control-plane">
+            <h2>The control-plane pattern</h2>
+            <p>The registry becomes more powerful when other systems read from it. A gateway can use it to decide which tool endpoints are available. An approval system can use it to route human review. An eval runner can use it to decide which rubric applies. A cost monitor can use it to enforce budgets. A dashboard can use it to show deployment readiness.</p>
+            <p>That is the difference between a wiki page and a platform backbone. The registry should not only describe the system. It should help operate the system.</p>
+          </section>
+
+          <section id="starter-model">
+            <h2>A starter model</h2>
+            <p>Start small. Create one registry entry per production-facing workflow, not one entry per experiment.</p>
+            <p>For each workflow, record the user goal, agent owner, tools, data classes, allowed reads, allowed writes, approval gates, eval rubric, cost ceiling, deployment status, and rollback owner.</p>
+            <p>Then add automation only where the registry proves valuable: stale-owner alerts, missing-eval checks, unapproved-tool checks, cost-policy checks, and deployment-readiness views.</p>
+          </section>
+
+          <section id="bottom-line">
+            <h2>Bottom line</h2>
+            <p>The next serious agent platform feature is not another prompt template. It is the capability registry.</p>
+            <p>If agents are going to call tools, collaborate through A2A, reach MCP servers, write data, spend money, and trigger workflows, teams need a durable source of truth for what those agents are allowed to do. That registry becomes the backbone.</p>
+          </section>
+
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://a2a-protocol.org/latest/blog/2026/08/27/a-new-chapter-for-a2a-joining-the-agentic-ai-foundation/" target="_blank" rel="noopener">A2A Protocol: A New Chapter for A2A, Joining the Agentic AI Foundation</a></li>
+              <li><a href="https://a2a-protocol.org/latest/topics/key-concepts/" target="_blank" rel="noopener">A2A Protocol: Core Concepts and Components</a></li>
+              <li><a href="https://a2a-protocol.org/dev/specification/" target="_blank" rel="noopener">A2A Protocol Specification</a></li>
+              <li><a href="https://aws.amazon.com/blogs/machine-learning/how-agentcore-gateway-supports-the-mcp-2026-07-28-spec/" target="_blank" rel="noopener">AWS: How AgentCore Gateway supports the MCP 2026-07-28 spec</a></li>
+              <li><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-using.html" target="_blank" rel="noopener">AWS: Use an AgentCore gateway</a></li>
+              <li><a href="https://genai.owasp.org/llmrisk/llm062025-excessive-agency/" target="_blank" rel="noopener">OWASP LLM06:2025 Excessive Agency</a></li>
+            </ul>
+          </section>
+
+          <section class="article-cta">
+            <h2>Want the starter kit?</h2>
+            <p>Grab the free JWTechDev.com starter kit if you want a practical way to connect cloud basics, AI workflows, and approval gates.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
