@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' https://img.youtube.com data:; script-src 'self' 'unsafe-inline' https://www.tiktok.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; frame-src https://www.tiktok.com https://www.youtube.com; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>Forward deployed engineering 101 | JWTechDev.com</title>
+  <meta name="description" content="Forward deployed engineering is the discipline of turning real workflow knowledge into working software in the field. Here is the beginner mental model for AI and cloud builders." />
+  <meta property="og:title" content="Forward deployed engineering 101" />
+  <meta property="og:description" content="Forward deployed engineering is the discipline of turning real workflow knowledge into working software in the field. Here is the beginner mental model for AI and cloud builders." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/forward-deployed-engineering-101.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20260818-1" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Forward deployed engineering 101","description":"Forward deployed engineering is the discipline of turning real workflow knowledge into working software in the field. Here is the beginner mental model for AI and cloud builders.","datePublished":"2026-09-05","dateModified":"2026-09-05","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":"https://jwtechdev.com/assets/articles/forward-deployed-engineering-101.png","mainEntityOfPage":"https://jwtechdev.com/articles/forward-deployed-engineering-101.html"}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">AI delivery</p>
+    <article class="article-body">
+      <h1>Forward deployed engineering 101</h1>
+      <p class="section__lede">The simple version: a forward deployed engineer lives close enough to the real workflow to build the right thing, then turns that learning into production software.</p>
+      <div class="article-kicker"><span>FDE</span><span>AI delivery</span><span>Cloud systems</span><span>Workflow design</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/forward-deployed-engineering-101.png" alt="Hand-drawn diagram showing a forward deployed engineer translating real workflow notes into a production system with agents, integrations, evals, logs, and handoff" />
+        <figcaption class="article-meta"><span>Published 2026-09-05</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#what-it-means">What it means</a>
+          <a href="#why-ai-needs-it">Why AI needs it</a>
+          <a href="#what-they-do">What FDEs do</a>
+          <a href="#not-consulting">Not just consulting</a>
+          <a href="#skills">Skills to build</a>
+          <a href="#starter-project">Starter project</a>
+          <a href="#bottom-line">Bottom line</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>Forward deployed engineering is what happens when software engineering moves closer to the people doing the work. Instead of building from far away and hoping the requirements were right, the engineer studies the real workflow, builds the first useful slice, deploys it, learns from usage, and turns the lesson into something the platform can reuse.</p>
+            <p>For AI and cloud builders, that matters because the hardest part is rarely the demo. The hard part is connecting messy business reality to identity, data, tools, approvals, logs, evals, and handoff.</p>
+          </section>
+
+          <section id="what-it-means">
+            <h2>What forward deployed engineering means</h2>
+            <p>The phrase is strongly associated with companies that deploy technical teams into real customer environments. Palantir describes forward deployed engineers as working at the intersection of business, product, and engineering. OpenAI has also described deployment work as meeting teams in the field, understanding their workflows, and turning models into real products.</p>
+            <p>That is the important mental model: the FDE is not only collecting requirements. The FDE is reducing the distance between the user, the workflow, and the production system.</p>
+          </section>
+
+          <section id="why-ai-needs-it">
+            <h2>Why AI needs this role</h2>
+            <p>AI makes demos easier and production harder. A chatbot can look impressive in a clean example, but real work includes missing data, unclear ownership, privacy boundaries, approvals, exception paths, audit logs, and users who will do unexpected things.</p>
+            <p>Forward deployed engineering helps because it starts where the workflow is real. The builder can see what the user is trying to accomplish, what data they trust, where the process breaks, who has authority to approve, and what the system needs to remember after the model responds.</p>
+          </section>
+
+          <section id="what-they-do">
+            <h2>What an FDE actually does</h2>
+            <p>A practical FDE loop looks like this:</p>
+            <p><strong>Discover the workflow.</strong> Watch how the work happens now. Find the inputs, outputs, handoffs, approvals, exceptions, and pain points.</p>
+            <p><strong>Map the system boundary.</strong> Identify the data sources, tools, APIs, identities, permissions, and places where writes are allowed or blocked.</p>
+            <p><strong>Ship a thin slice.</strong> Build the smallest useful workflow that can survive contact with real users.</p>
+            <p><strong>Instrument the work.</strong> Add logs, metrics, evals, feedback, and review points so the team can tell whether the system is helping or guessing.</p>
+            <p><strong>Turn field lessons into platform patterns.</strong> If the same problem appears twice, it probably belongs in a reusable component, registry, template, runbook, or product capability.</p>
+          </section>
+
+          <section id="not-consulting">
+            <h2>Why this is not just consulting with code</h2>
+            <p>Consulting can produce advice, analysis, workshops, and implementation support. Forward deployed engineering should produce a working system and reusable product learning.</p>
+            <p>The difference is ownership of the technical loop. The FDE is close enough to understand the workflow, technical enough to build the system, and product-minded enough to ask, "What should the platform learn from this?"</p>
+          </section>
+
+          <section id="skills">
+            <h2>Skills to build</h2>
+            <p>If you want to grow into this lane, do not only study one tool. Build the stack of skills that lets you translate between people and systems.</p>
+            <p>Start with product thinking, workflow mapping, APIs, cloud fundamentals, IAM, data modeling, basic security, observability, evaluation, and clear technical writing. Then practice explaining tradeoffs without hiding behind jargon.</p>
+            <p>For AI work specifically, add prompt design, retrieval patterns, tool calling, agent boundaries, human approval gates, and evals. The goal is not to sound futuristic. The goal is to make useful systems that people can trust.</p>
+          </section>
+
+          <section id="starter-project">
+            <h2>A beginner project</h2>
+            <p>Build a small workflow that feels like real FDE work:</p>
+            <p>Create an intake form for a messy request. Route it into a queue. Let an AI assistant draft a recommendation using approved context. Require human approval before any write action. Log the decision, the source inputs, the final output, and the owner. Then publish a short runbook explaining the workflow, permissions, failure modes, and rollback path.</p>
+            <p>That one project teaches the core muscle: real workflow, constrained automation, traceability, and handoff.</p>
+          </section>
+
+          <section id="bottom-line">
+            <h2>Bottom line</h2>
+            <p>Forward deployed engineering is becoming more important because AI systems need more than clever prompts. They need builders who can stand between real work and production software, understand both sides, and turn messy workflow truth into durable systems.</p>
+            <p>Not a deck. A working system.</p>
+          </section>
+
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://openai.com/index/the-deployment-company/" target="_blank" rel="noopener">OpenAI: The Deployment Company</a></li>
+              <li><a href="https://openai.com/careers/forward-deployed-engineer" target="_blank" rel="noopener">OpenAI Careers: Forward Deployed Engineer</a></li>
+              <li><a href="https://www.palantir.com/careers/students/forward-deployed-software-engineer-new-grad/" target="_blank" rel="noopener">Palantir Careers: Forward Deployed Software Engineer</a></li>
+              <li><a href="https://www.palantir.com/docs/foundry/ontology/overview/" target="_blank" rel="noopener">Palantir Foundry: Ontology Overview</a></li>
+              <li><a href="https://www.palantir.com/platforms/aip/" target="_blank" rel="noopener">Palantir AIP</a></li>
+              <li><a href="https://modelcontextprotocol.io/docs/concepts/architecture" target="_blank" rel="noopener">Model Context Protocol: Architecture</a></li>
+            </ul>
+          </section>
+
+          <section class="article-cta">
+            <h2>Want the starter kit?</h2>
+            <p>Grab the free JWTechDev.com starter kit if you want a practical way to connect cloud basics, AI workflows, and approval gates.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
