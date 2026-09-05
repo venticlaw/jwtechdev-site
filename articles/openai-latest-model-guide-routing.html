@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' https://img.youtube.com data:; script-src 'self' 'unsafe-inline' https://www.tiktok.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; frame-src https://www.tiktok.com https://www.youtube.com; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>OpenAI latest model guidance is really a routing lesson | JWTechDev.com</title>
+  <meta name="description" content="OpenAI latest model guidance is a useful reminder for builders: do not chase model names. Pick the model by the job, tool needs, latency, cost, and risk." />
+  <meta property="og:title" content="OpenAI latest model guidance is really a routing lesson" />
+  <meta property="og:description" content="OpenAI latest model guidance is a useful reminder for builders: do not chase model names. Pick the model by the job, tool needs, latency, cost, and risk." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/openai-latest-model-guide-routing.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20260818-1" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"OpenAI latest model guidance is really a routing lesson","description":"OpenAI latest model guidance is a useful reminder for builders: do not chase model names. Pick the model by the job, tool needs, latency, cost, and risk.","datePublished":"2026-09-05","dateModified":"2026-09-05","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":"https://jwtechdev.com/assets/articles/openai-latest-model-guide-routing.png","mainEntityOfPage":"https://jwtechdev.com/articles/openai-latest-model-guide-routing.html"}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">AI model routing</p>
+    <article class="article-body">
+      <h1>OpenAI latest model guidance is really a routing lesson</h1>
+      <p class="section__lede">The useful takeaway from OpenAI's latest model guide is not just the new model name. It is the operating pattern: route the work before you run the model.</p>
+      <div class="article-kicker"><span>OpenAI models</span><span>Responses API</span><span>Tool workflows</span><span>Model routing</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/openai-latest-model-guide-routing.png" alt="Hand-drawn diagram showing request types routed through a model router by reasoning, tools, latency, cost, and risk" />
+        <figcaption class="article-meta"><span>Published 2026-09-05</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#what-changed">What changed</a>
+          <a href="#routing">The routing lesson</a>
+          <a href="#responses-api">Responses API</a>
+          <a href="#reasoning">Reasoning effort</a>
+          <a href="#tools">Tools and long work</a>
+          <a href="#migration">Migration checklist</a>
+          <a href="#builder-takeaway">Builder takeaway</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>OpenAI's latest model guidance points builders toward a better habit: stop picking models by hype and start picking models by the job.</p>
+            <p>If the task is simple, optimize for speed and cost. If the task needs tools, use the API surface built for tool workflows. If the task is long-running, plan for async work and mid-turn steering. If the task is high risk, raise reasoning effort, add evals, and verify the output before it touches anything real.</p>
+          </section>
+
+          <section id="what-changed">
+            <h2>What the latest guide highlights</h2>
+            <p>The official OpenAI model guidance now centers GPT-6 Astra as the most capable model for multistep work across code, browsers, professional software, science, and computer use. The guide also calls out features that matter for builders: async tool calling, mid-turn steering, reasoning changes during a conversation, prompt caching updates, tool workflow guidance, and migration checks.</p>
+            <p>That is more than a model announcement. It is a signal that serious AI systems are becoming orchestration systems.</p>
+          </section>
+
+          <section id="routing">
+            <h2>The routing lesson</h2>
+            <p>A good model router asks five questions before choosing the model:</p>
+            <p><strong>How hard is the task?</strong> A summary, a formatting pass, and a production architecture review should not use the same settings.</p>
+            <p><strong>Does it need tools?</strong> If the model has to call APIs, browse, write files, inspect code, or wait on external work, route it as a tool workflow.</p>
+            <p><strong>How long will it run?</strong> Long-running tasks need state, progress, and a way to steer the work without starting over.</p>
+            <p><strong>What is the blast radius?</strong> The closer a task gets to money, production systems, permissions, customer data, or public claims, the more verification it needs.</p>
+            <p><strong>What is the true cost?</strong> The cheapest model per token is not always cheapest per accepted task if it creates retries, bad drafts, or cleanup work.</p>
+          </section>
+
+          <section id="responses-api">
+            <h2>Why the Responses API matters</h2>
+            <p>The guide says to set <code>model</code> to <code>gpt-6-astra</code> in a Responses API request when building with Astra. It also says tool calling requires Responses, even though Astra supports Chat Completions.</p>
+            <p>That is the practical builder lesson: if your application needs tools, state, orchestration, or richer workflow control, design around the API surface built for that pattern instead of treating every model call like a chat message.</p>
+          </section>
+
+          <section id="reasoning">
+            <h2>Reasoning effort is a control knob</h2>
+            <p>The latest guide treats reasoning effort like a setting you should manage. If you currently use <code>none</code> or <code>minimal</code>, OpenAI says to start with <code>low</code> and compare results. It also notes that Astra does not support <code>none</code> reasoning effort.</p>
+            <p>For builders, that means reasoning is part of architecture. Use lower effort for routine work. Raise it when the task is ambiguous, high impact, or expensive to get wrong.</p>
+          </section>
+
+          <section id="tools">
+            <h2>Tools and long work need operating discipline</h2>
+            <p>Async tool calling means the model can continue while your application runs a tool, but the application still owns tool execution and pending state. Mid-turn steering means a user can add direction while the model is working, and the continuation can preserve completed work.</p>
+            <p>That is useful, but it also pushes responsibility back onto the builder. You still need logs, status, retries, permission boundaries, approval gates, and a clean handoff when the model is waiting on something outside itself.</p>
+          </section>
+
+          <section id="migration">
+            <h2>Migration checklist</h2>
+            <p>If you are updating an app to the latest model guidance, check these items before you celebrate:</p>
+            <p><strong>Model name:</strong> use the documented model value for the model you are adopting.</p>
+            <p><strong>API surface:</strong> use Responses for tool workflows.</p>
+            <p><strong>Reasoning:</strong> compare effort levels instead of assuming one setting fits every task.</p>
+            <p><strong>Unsupported parameters:</strong> remove parameters the guide tells you not to send, including <code>temperature</code>, <code>top_p</code>, and <code>top_logprobs</code> for Astra migration.</p>
+            <p><strong>Caching:</strong> review the prompt caching changes and update cache settings where needed.</p>
+            <p><strong>Latency tier:</strong> check Fast mode compatibility instead of assuming every tier works in every residency or deployment context.</p>
+          </section>
+
+          <section id="builder-takeaway">
+            <h2>The builder takeaway</h2>
+            <p>The new model guide is a reminder that AI apps need operating systems around the model. The model is important, but the production value comes from routing, tools, context, state, evaluation, cost policy, and human steering.</p>
+            <p>Pick the model by the job. Then prove the system works around it.</p>
+          </section>
+
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://developers.openai.com/api/docs/guides/latest-model" target="_blank" rel="noopener">OpenAI API Docs: Model guidance</a></li>
+              <li><a href="https://developers.openai.com/api/docs/guides/responses" target="_blank" rel="noopener">OpenAI API Docs: Responses API</a></li>
+              <li><a href="https://developers.openai.com/api/docs/guides/async-tool-calling" target="_blank" rel="noopener">OpenAI API Docs: Async tool calling</a></li>
+              <li><a href="https://developers.openai.com/api/docs/guides/mid-turn-steering" target="_blank" rel="noopener">OpenAI API Docs: Mid-turn steering</a></li>
+              <li><a href="https://developers.openai.com/api/docs/guides/prompt-caching" target="_blank" rel="noopener">OpenAI API Docs: Prompt caching</a></li>
+            </ul>
+          </section>
+
+          <section class="article-cta">
+            <h2>Want the starter kit?</h2>
+            <p>Grab the free JWTechDev.com starter kit if you want a practical way to connect cloud basics, AI workflows, and approval gates.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
