@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' https://img.youtube.com data:; script-src 'self' 'unsafe-inline' https://www.tiktok.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io https://jwtechdev-leads-api.jw-lead-worker.workers.dev; frame-src https://www.tiktok.com https://www.youtube.com; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>A notebook agent is not a production agent | JWTechDev.com</title>
+  <meta name="description" content="AWS AgentCore migration guidance is a reminder that the hard part of agent work is moving from a local demo into runtime, gateway, memory, identity, guardrails, logs, and ownership." />
+  <link rel="canonical" href="https://jwtechdev.com/articles/notebook-agent-is-not-production-agent.html" />
+  <meta property="og:title" content="A notebook agent is not a production agent" />
+  <meta property="og:description" content="AWS AgentCore migration guidance is a reminder that the hard part of agent work is moving from a local demo into runtime, gateway, memory, identity, guardrails, logs, and ownership." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/notebook-agent-is-not-production-agent.svg" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20260911-aws-agentcore-cluster" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"A notebook agent is not a production agent","description":"AWS AgentCore migration guidance is a reminder that the hard part of agent work is moving from a local demo into runtime, gateway, memory, identity, guardrails, logs, and ownership.","datePublished":"2026-09-11","dateModified":"2026-09-11","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":"https://jwtechdev.com/assets/articles/notebook-agent-is-not-production-agent.svg","mainEntityOfPage":"https://jwtechdev.com/articles/notebook-agent-is-not-production-agent.html"}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">AI production</p>
+    <article class="article-body">
+      <h1>A notebook agent is not a production agent</h1>
+      <p class="section__lede">AWS AgentCore migration guidance is a reminder that the hard part of agent work is moving from a local demo into runtime, gateway, memory, identity, guardrails, logs, and ownership.</p>
+      <div class="article-kicker"><span>Production agents</span><span>AWS</span><span>Agent systems</span><span>9 min read</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/notebook-agent-is-not-production-agent.svg" alt="Hand-drawn production path diagram showing notebook demo moving through runtime, gateway, memory, identity, guardrails, and observability." />
+        <figcaption class="article-meta"><span>Published 2026-09-11</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+<a href="#the-useful-signal">The useful signal</a>
+<a href="#what-changes-in-production">What changes in production</a>
+<a href="#the-local-demo-trap">The local demo trap</a>
+<a href="#the-builder-checklist">The builder checklist</a>
+<a href="#jwt-read">JWT read</a>
+<a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section class="quick-answer" id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>A notebook agent becomes production-ready only when the runtime, identity, tool access, memory, guardrails, observability, cost, and ownership model are designed around it. The model is not the system. The operating layer is the system.</p>
+          </section>
+          
+          <section id="the-useful-signal">
+            <h2>The useful signal</h2>
+            <p>AWS framed AgentCore as a migration path from notebook or demo agents into production operations. That is the right conversation. A working loop in a notebook proves an idea can respond. It does not prove the idea can survive users, permissions, sessions, retries, monitoring, or change.</p>
+            <p>For builders, the lesson is simple: stop treating the prototype as the product. The prototype is the sketch. Production is where the system earns trust.</p>
+          </section>
+
+          <section id="what-changes-in-production">
+            <h2>What changes in production</h2>
+            <p>Production agent work introduces boring questions that become very expensive when ignored. Where does the agent run? How are sessions isolated? How is state carried across turns? Which tools can it call? Which credentials does it use? Who can approve risky actions? Where do traces and logs land?</p>
+            <p>AWS highlights Runtime, Gateway, Memory, Identity, policy, guardrails, VPC configuration, WAF rules, IAM policies, and secrets rotation as separate concerns. That separation matters because agent reliability is not one setting. It is an operating model.</p>
+          </section>
+
+          <section id="the-local-demo-trap">
+            <h2>The local demo trap</h2>
+            <p>A local demo is allowed to be fragile. It can use one user, one dataset, one environment variable, and one happy-path workflow. A production path cannot live like that.</p>
+            <p>If an agent only works on your laptop, it is not deployed. If nobody knows the IAM boundary, it is not governed. If nobody can see traces or logs, it is not observable. If nobody owns the runbook, it is not operational.</p>
+          </section>
+
+          <section id="the-builder-checklist">
+            <h2>The builder checklist</h2>
+            <p>Before calling an agent production-ready, ask whether it has a runtime boundary, scoped identity, tool policy, memory policy, observability, cost visibility, rollback behavior, and a human approval path for high-impact actions.</p>
+            <p>That is not overengineering. That is the minimum translation from interesting AI behavior into infrastructure someone can actually support.</p>
+          </section>
+
+          <section id="jwt-read">
+            <h2>JWT read</h2>
+            <p>The headline is not “use this one AWS service.” The headline is that cloud discipline is entering agent work. The builders who win will understand the model, but they will also understand the operating layer around the model.</p>
+            <p>That is why AWS keeps showing up in this lane for us: it gives learners a concrete way to talk about runtime, identity, networking, logs, guardrails, and cost without pretending a prompt is the whole architecture.</p>
+          </section>
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://aws.amazon.com/blogs/machine-learning/migrate-agentic-workloads-to-amazon-bedrock-agentcore/" target="_blank" rel="noopener">AWS ML Blog: Migrate agentic workloads to Amazon Bedrock AgentCore</a></li>
+<li><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/release-notes.html" target="_blank" rel="noopener">AWS AgentCore release notes</a></li>
+            </ul>
+          </section>
+          <section class="article-cta">
+            <h2>Want the starter kit?</h2>
+            <p>Grab the free JWTechDev.com starter kit if you want a practical way to connect AWS, AI workflows, and approval gates.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

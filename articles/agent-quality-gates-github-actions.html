@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' https://img.youtube.com data:; script-src 'self' 'unsafe-inline' https://www.tiktok.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io https://jwtechdev-leads-api.jw-lead-worker.workers.dev; frame-src https://www.tiktok.com https://www.youtube.com; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>Your agent needs a CI quality gate before it needs more prompts | JWTechDev.com</title>
+  <meta name="description" content="AWS using Bedrock AgentCore Evaluations with GitHub Actions shows where agent delivery is going: deploy, evaluate, score behavior, and block regressions before they hit users." />
+  <link rel="canonical" href="https://jwtechdev.com/articles/agent-quality-gates-github-actions.html" />
+  <meta property="og:title" content="Your agent needs a CI quality gate before it needs more prompts" />
+  <meta property="og:description" content="AWS using Bedrock AgentCore Evaluations with GitHub Actions shows where agent delivery is going: deploy, evaluate, score behavior, and block regressions before they hit users." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/agent-quality-gates-github-actions.svg" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20260911-aws-agentcore-cluster" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Your agent needs a CI quality gate before it needs more prompts","description":"AWS using Bedrock AgentCore Evaluations with GitHub Actions shows where agent delivery is going: deploy, evaluate, score behavior, and block regressions before they hit users.","datePublished":"2026-09-11","dateModified":"2026-09-11","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":"https://jwtechdev.com/assets/articles/agent-quality-gates-github-actions.svg","mainEntityOfPage":"https://jwtechdev.com/articles/agent-quality-gates-github-actions.html"}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">AI release assurance</p>
+    <article class="article-body">
+      <h1>Your agent needs a CI quality gate before it needs more prompts</h1>
+      <p class="section__lede">AWS using Bedrock AgentCore Evaluations with GitHub Actions shows where agent delivery is going: deploy, evaluate, score behavior, and block regressions before they hit users.</p>
+      <div class="article-kicker"><span>Eval gates</span><span>AWS</span><span>Agent systems</span><span>8 min read</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/agent-quality-gates-github-actions.svg" alt="Hand-drawn CI quality gate diagram showing pull request, deploy, eval prompts, score, and merge decision." />
+        <figcaption class="article-meta"><span>Published 2026-09-11</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+<a href="#the-useful-signal">The useful signal</a>
+<a href="#why-manual-testing-is-not-enough">Why manual testing is not enough</a>
+<a href="#what-the-pipeline-should-prove">What the pipeline should prove</a>
+<a href="#the-jwt-release-assurance-model">The JWT release-assurance model</a>
+<a href="#what-builders-should-do-next">What builders should do next</a>
+<a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section class="quick-answer" id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>Agent quality should be tested in CI the same way teams test normal software changes. If a prompt, tool config, or model change makes the agent worse, the pull request should show that before production users do.</p>
+          </section>
+          
+          <section id="the-useful-signal">
+            <h2>The useful signal</h2>
+            <p>AWS published a GitHub Actions pattern that deploys an agent and OAuth-protected MCP server, runs evaluation prompts, scores behavior, and blocks pull requests when quality drops. That is a strong signal: agent quality is becoming a release-engineering problem.</p>
+            <p>This matters because agent regressions often look subtle. A system prompt changes. A tool schema changes. A model responds differently. The agent still talks, but it may choose the wrong tool, pass the wrong parameter, or miss the user goal.</p>
+          </section>
+
+          <section id="why-manual-testing-is-not-enough">
+            <h2>Why manual testing is not enough</h2>
+            <p>Manual checks are useful for exploration, but they do not scale as a release gate. If every agent change depends on one person remembering the right prompts to test, quality becomes folklore.</p>
+            <p>A CI gate turns expected behavior into a repeatable contract. Representative prompts, expected outcomes, tool-selection checks, and threshold scores become part of the pull request conversation.</p>
+          </section>
+
+          <section id="what-the-pipeline-should-prove">
+            <h2>What the pipeline should prove</h2>
+            <p>A useful agent gate should prove more than “the code runs.” It should check whether the agent achieved the goal, selected the right tool, passed valid parameters, respected role boundaries, and produced an answer that still fits the product’s quality bar.</p>
+            <p>AWS’s pattern also shows the identity problem clearly: CI has to evaluate an agent that may normally operate through OAuth-protected MCP tools. That means test identity, scoped credentials, and machine-to-machine access need explicit design.</p>
+          </section>
+
+          <section id="the-jwt-release-assurance-model">
+            <h2>The JWT release-assurance model</h2>
+            <p>For our mental model, every reusable agent capability should carry release metadata: owner, runtime, eval suite, approved tools, allowed write actions, approval gates, cost policy, and rollback path.</p>
+            <p>That metadata should live with the workbench, not in someone’s head. If the capability cannot be evaluated before promotion, it is not ready to become shared infrastructure.</p>
+          </section>
+
+          <section id="what-builders-should-do-next">
+            <h2>What builders should do next</h2>
+            <p>Start small. Pick five prompts that represent the job your agent is supposed to do. Add one bad-path prompt. Add one permission-sensitive prompt. Decide what “good enough” means before you run the test.</p>
+            <p>Then make the result visible in the same place you review code. The point is not to make AI perfect. The point is to catch obvious regressions before users become the test suite.</p>
+          </section>
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://aws.amazon.com/blogs/machine-learning/automated-agent-evaluation-with-amazon-bedrock-agentcore-and-github-actions/" target="_blank" rel="noopener">AWS ML Blog: Automated agent evaluation with Amazon Bedrock AgentCore and GitHub Actions</a></li>
+<li><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluate-agents.html" target="_blank" rel="noopener">AWS AgentCore Evaluations documentation</a></li>
+            </ul>
+          </section>
+          <section class="article-cta">
+            <h2>Want the starter kit?</h2>
+            <p>Grab the free JWTechDev.com starter kit if you want a practical way to connect AWS, AI workflows, and approval gates.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

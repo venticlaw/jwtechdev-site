@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' https://img.youtube.com data:; script-src 'self' 'unsafe-inline' https://www.tiktok.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; frame-src https://www.tiktok.com https://www.youtube.com; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' https://img.youtube.com data:; script-src 'self' 'unsafe-inline' https://www.tiktok.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io https://jwtechdev-leads-api.jw-lead-worker.workers.dev; frame-src https://www.tiktok.com https://www.youtube.com; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
   <title>JWTechDev.ai — AWS cloud infrastructure and practical tech education</title>
@@ -136,6 +136,61 @@
           <a class="link-arrow" href="#connect" data-inquiry-interest="Speaking engagements">Ask about speaking <span aria-hidden="true">→</span></a>
         </header>
         <div class="aeo-grid">
+          <article class="aeo-card reveal">
+            <span class="badge badge--green">Platform UI</span>
+            <h3>The next AI platform UI is not a chat box</h3>
+            <p>The next useful AI platform interface will be a governed workbench, not just a chat box. Chat can stay, but the production UI needs to show the operating state around the agent.</p>
+            <ul>
+              <li>Plain-English AWS signal read</li>
+              <li>Builder mental model</li>
+              <li>Practical platform takeaway</li>
+            </ul>
+            <a href="articles/next-ai-platform-ui-not-chat-box.html">Read article -></a>
+          </article>
+          <article class="aeo-card reveal">
+            <span class="badge badge--green">Workbench contract</span>
+            <h3>The agent workbench contract is becoming real</h3>
+            <p>A serious agent workbench should expose the contract around an agent: framework, runtime, eval coverage, consent state, owner, allowed data, allowed tools, approval mode, cost policy, and deployment status.</p>
+            <ul>
+              <li>Plain-English AWS signal read</li>
+              <li>Builder mental model</li>
+              <li>Practical platform takeaway</li>
+            </ul>
+            <a href="articles/agent-workbench-contract-agentcore.html">Read article -></a>
+          </article>
+          <article class="aeo-card reveal">
+            <span class="badge badge--green">Evidence rails</span>
+            <h3>Observability agents need evidence rails, not just summaries</h3>
+            <p>Observability agents should not only summarize incidents. They should return evidence the human can inspect: traces, charts, service maps, log patterns, and the exact context behind the recommendation.</p>
+            <ul>
+              <li>Plain-English AWS signal read</li>
+              <li>Builder mental model</li>
+              <li>Practical platform takeaway</li>
+            </ul>
+            <a href="articles/opensearch-mcp-apps-evidence-rails.html">Read article -></a>
+          </article>
+          <article class="aeo-card reveal">
+            <span class="badge badge--green">Eval gates</span>
+            <h3>Your agent needs a CI quality gate before it needs more prompts</h3>
+            <p>Agent quality should be tested in CI the same way teams test normal software changes. If a prompt, tool config, or model change makes the agent worse, the pull request should show that before production users do.</p>
+            <ul>
+              <li>Plain-English AWS signal read</li>
+              <li>Builder mental model</li>
+              <li>Practical platform takeaway</li>
+            </ul>
+            <a href="articles/agent-quality-gates-github-actions.html">Read article -></a>
+          </article>
+          <article class="aeo-card reveal">
+            <span class="badge badge--green">Production agents</span>
+            <h3>A notebook agent is not a production agent</h3>
+            <p>A notebook agent becomes production-ready only when the runtime, identity, tool access, memory, guardrails, observability, cost, and ownership model are designed around it. The model is not the system. The operating layer is the system.</p>
+            <ul>
+              <li>Plain-English AWS signal read</li>
+              <li>Builder mental model</li>
+              <li>Practical platform takeaway</li>
+            </ul>
+            <a href="articles/notebook-agent-is-not-production-agent.html">Read article -></a>
+          </article>
           <article class="aeo-card reveal">
             <span class="badge badge--green">AI model routing</span>
             <h3>OpenAI latest model guidance is really a routing lesson</h3>
@@ -1010,9 +1065,9 @@
           id="inquiryForm"
           action=""
           method="post"
-          data-brand="JWTechDev.ai"
+          data-brand="JWTechDev.com"
           data-formspree-endpoint=""
-          data-local-mirror-endpoint=""
+          data-local-mirror-endpoint="https://jwtechdev-leads-api.jw-lead-worker.workers.dev/v1/leads"
           data-fallback-email="jwtechdev@gmail.com"
           novalidate
         >
@@ -1073,7 +1128,7 @@
           <input type="hidden" id="selectedAsset" name="selected_asset" value="">
           <input type="hidden" id="leadId" name="lead_id" value="">
           <input type="hidden" id="capturedAt" name="captured_at" value="">
-          <input type="hidden" name="source_site" value="JWTechDev.ai">
+          <input type="hidden" name="source_site" value="JWTechDev.com">
           <button type="submit" class="btn btn--primary btn--lg">Send inquiry</button>
           <p class="newsletter__msg" id="inquiryMsg" role="status" aria-live="polite"></p>
         </form>
@@ -1134,7 +1189,6 @@
         <ul>
           <li><a href="#assets">Study guides</a></li>
           <li><a href="#assets">Workflow templates</a></li>
-          <li><a href="#articles">Articles</a></li>
           <li><a href="#connect">Contact</a></li>
         </ul>
       </div>
@@ -1293,10 +1347,10 @@
       const payload = Object.fromEntries(formData.entries());
       const normalizedPayload = {
         ...payload,
-        brand: 'JWTechDev.ai',
-        source_site: 'JWTechDev.ai',
+        brand: form.dataset.brand || 'JWTechDev.com',
+        source_site: payload.source_site || 'JWTechDev.com',
         source_url: window.location.href,
-        ingestion_method: localMirrorEndpoint ? 'mac_mini_csv' : (formspreeEndpoint ? 'formspree' : 'static_form_mailto'),
+        ingestion_method: localMirrorEndpoint ? 'cloudflare_d1' : (formspreeEndpoint ? 'formspree' : 'static_form_mailto'),
         status: 'new'
       };
 
@@ -1343,13 +1397,17 @@
         'Source: JWTechDev.ai inquiry form'
       ].join('\n'));
 
-      const mirrorLead = () => {
+      const mirrorLead = async () => {
         if (!localMirrorEndpoint) return Promise.resolve();
-        return fetch(localMirrorEndpoint, {
+        const response = await fetch(localMirrorEndpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(normalizedPayload)
-        }).catch(() => {});
+        });
+        if (!response.ok) {
+          throw new Error('Lead endpoint rejected the submission.');
+        }
+        return response.json().catch(() => ({}));
       };
 
       const submitLead = async () => {
@@ -1376,7 +1434,16 @@
           return;
         }
 
-        await mirrorLead();
+        if (localMirrorEndpoint) {
+          await mirrorLead();
+          form.classList.add('is-success');
+          msg.textContent = `Got it, ${firstName}. Your inquiry is in the JWTechDev.com queue.`;
+          form.reset();
+          selectedAsset.value = '';
+          updateDecisionTree();
+          return;
+        }
+
         window.location.href = `mailto:${fallbackEmail}?subject=${subject}&body=${body}`;
         form.classList.add('is-success');
         msg.textContent = `Opening your email app so you can send the inquiry for ${interest}.`;

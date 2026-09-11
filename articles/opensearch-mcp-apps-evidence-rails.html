@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' https://img.youtube.com data:; script-src 'self' 'unsafe-inline' https://www.tiktok.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io https://jwtechdev-leads-api.jw-lead-worker.workers.dev; frame-src https://www.tiktok.com https://www.youtube.com; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>Observability agents need evidence rails, not just summaries | JWTechDev.com</title>
+  <meta name="description" content="AWS OpenSearch MCP Apps point to a better agentic observability workflow: text summaries plus deterministic charts, trace waterfalls, service topology, and log views inside the assistant surface." />
+  <link rel="canonical" href="https://jwtechdev.com/articles/opensearch-mcp-apps-evidence-rails.html" />
+  <meta property="og:title" content="Observability agents need evidence rails, not just summaries" />
+  <meta property="og:description" content="AWS OpenSearch MCP Apps point to a better agentic observability workflow: text summaries plus deterministic charts, trace waterfalls, service topology, and log views inside the assistant surface." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/opensearch-mcp-apps-evidence-rails.svg" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20260911-aws-agentcore-cluster" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Observability agents need evidence rails, not just summaries","description":"AWS OpenSearch MCP Apps point to a better agentic observability workflow: text summaries plus deterministic charts, trace waterfalls, service topology, and log views inside the assistant surface.","datePublished":"2026-09-11","dateModified":"2026-09-11","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":"https://jwtechdev.com/assets/articles/opensearch-mcp-apps-evidence-rails.svg","mainEntityOfPage":"https://jwtechdev.com/articles/opensearch-mcp-apps-evidence-rails.html"}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">Agentic observability</p>
+    <article class="article-body">
+      <h1>Observability agents need evidence rails, not just summaries</h1>
+      <p class="section__lede">AWS OpenSearch MCP Apps point to a better agentic observability workflow: text summaries plus deterministic charts, trace waterfalls, service topology, and log views inside the assistant surface.</p>
+      <div class="article-kicker"><span>Evidence rails</span><span>AWS</span><span>Agent systems</span><span>8 min read</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/opensearch-mcp-apps-evidence-rails.svg" alt="Hand-drawn evidence rail diagram showing agent summary beside trace waterfall, service map, and log pattern proof." />
+        <figcaption class="article-meta"><span>Published 2026-09-11</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+<a href="#the-useful-signal">The useful signal</a>
+<a href="#why-summaries-are-not-enough">Why summaries are not enough</a>
+<a href="#what-evidence-rails-should-show">What evidence rails should show</a>
+<a href="#how-this-changes-workbench-design">How this changes workbench design</a>
+<a href="#jwt-read">JWT read</a>
+<a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section class="quick-answer" id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>Observability agents should not only summarize incidents. They should return evidence the human can inspect: traces, charts, service maps, log patterns, and the exact context behind the recommendation.</p>
+          </section>
+          
+          <section id="the-useful-signal">
+            <h2>The useful signal</h2>
+            <p>AWS’s OpenSearch MCP Apps post focuses on a real workflow bottleneck: observability agents can query alerts, logs, and traces quickly, but humans still lose time verifying the answer across other tabs.</p>
+            <p>The interesting part is the dual response pattern. The agent can return a text summary and an interactive visualization in the same workflow, such as a trace waterfall, service topology, log pattern, or chart.</p>
+          </section>
+
+          <section id="why-summaries-are-not-enough">
+            <h2>Why summaries are not enough</h2>
+            <p>An incident summary without evidence creates a trust problem. The agent might be right, but the engineer still has to leave the assistant, open observability tools, re-run queries, inspect dashboards, and rebuild confidence manually.</p>
+            <p>That means the agent saved query time but did not remove the verification burden. In production work, verification is not extra. Verification is the work.</p>
+          </section>
+
+          <section id="what-evidence-rails-should-show">
+            <h2>What evidence rails should show</h2>
+            <p>A good evidence rail should show the source of the claim. If the agent says checkout errors spiked, show the chart. If the agent says one service is the likely failure point, show the trace path. If it says one dependency is noisy, show the topology.</p>
+            <p>The goal is not to make the interface flashy. The goal is to make the agent’s reasoning auditable by putting the proof next to the recommendation.</p>
+          </section>
+
+          <section id="how-this-changes-workbench-design">
+            <h2>How this changes workbench design</h2>
+            <p>This is a useful design signal for AI workbenches. The interface should not be only chat. It should show workflow state, consent state, tool calls, traces, evals, cost, owner, and evidence.</p>
+            <p>For incident response, that might mean a timeline. For agent release assurance, it might mean an eval panel. For data workflows, it might mean source snippets and permissions. The pattern is the same: do not ask humans to trust invisible work.</p>
+          </section>
+
+          <section id="jwt-read">
+            <h2>JWT read</h2>
+            <p>This is why I keep saying AI agents need infrastructure, not just prompts. The agent can help reason, but infrastructure has to make the work observable.</p>
+            <p>The more serious the workflow, the more the assistant surface needs proof rails. Otherwise the human becomes a tab-switching verification machine while the agent gets credit for being fast.</p>
+          </section>
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://aws.amazon.com/blogs/machine-learning/agentic-observability-with-amazon-opensearch-service-mcp-apps/" target="_blank" rel="noopener">AWS ML Blog: Agentic observability with Amazon OpenSearch Service MCP Apps</a></li>
+<li><a href="https://docs.aws.amazon.com/opensearch-service/" target="_blank" rel="noopener">Amazon OpenSearch Service documentation</a></li>
+            </ul>
+          </section>
+          <section class="article-cta">
+            <h2>Want the starter kit?</h2>
+            <p>Grab the free JWTechDev.com starter kit if you want a practical way to connect AWS, AI workflows, and approval gates.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

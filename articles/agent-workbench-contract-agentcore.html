@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' https://img.youtube.com data:; script-src 'self' 'unsafe-inline' https://www.tiktok.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io https://jwtechdev-leads-api.jw-lead-worker.workers.dev; frame-src https://www.tiktok.com https://www.youtube.com; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>The agent workbench contract is becoming real | JWTechDev.com</title>
+  <meta name="description" content="AWS AgentCore release notes show the shape of a serious agent workbench: framework support, evaluations, consent state, identity, registry metadata, access boundaries, and approval mode." />
+  <link rel="canonical" href="https://jwtechdev.com/articles/agent-workbench-contract-agentcore.html" />
+  <meta property="og:title" content="The agent workbench contract is becoming real" />
+  <meta property="og:description" content="AWS AgentCore release notes show the shape of a serious agent workbench: framework support, evaluations, consent state, identity, registry metadata, access boundaries, and approval mode." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/agent-workbench-contract-agentcore.svg" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20260911-aws-agentcore-cluster" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The agent workbench contract is becoming real","description":"AWS AgentCore release notes show the shape of a serious agent workbench: framework support, evaluations, consent state, identity, registry metadata, access boundaries, and approval mode.","datePublished":"2026-09-11","dateModified":"2026-09-11","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":"https://jwtechdev.com/assets/articles/agent-workbench-contract-agentcore.svg","mainEntityOfPage":"https://jwtechdev.com/articles/agent-workbench-contract-agentcore.html"}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">Agent workbench</p>
+    <article class="article-body">
+      <h1>The agent workbench contract is becoming real</h1>
+      <p class="section__lede">AWS AgentCore release notes show the shape of a serious agent workbench: framework support, evaluations, consent state, identity, registry metadata, access boundaries, and approval mode.</p>
+      <div class="article-kicker"><span>Workbench contract</span><span>AWS</span><span>Agent systems</span><span>8 min read</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/agent-workbench-contract-agentcore.svg" alt="Hand-drawn agent workbench contract diagram showing framework, evals, consent, identity, owner, and deployment status." />
+        <figcaption class="article-meta"><span>Published 2026-09-11</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+<a href="#the-useful-signal">The useful signal</a>
+<a href="#why-the-workbench-needs-first-class-fields">Why the workbench needs first-class fields</a>
+<a href="#consent-is-product-state">Consent is product state</a>
+<a href="#framework-support-changes-the-registry-conversation">Framework support changes the registry conversation</a>
+<a href="#jwt-read">JWT read</a>
+<a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section class="quick-answer" id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>A serious agent workbench should expose the contract around an agent: framework, runtime, eval coverage, consent state, owner, allowed data, allowed tools, approval mode, cost policy, and deployment status.</p>
+          </section>
+          
+          <section id="the-useful-signal">
+            <h2>The useful signal</h2>
+            <p>The September 2026 AgentCore release notes added TypeScript framework support for AgentCore Evaluations across Strands Agents, LangGraph, OpenAI Agents, and Vercel AI SDK. They also added a Consent Portal for AgentCore Identity, where users can approve an agent’s access before it proceeds.</p>
+            <p>That is not just a feature list. It is a product signal. Agent platforms are moving toward visible contracts around runtime, framework, evaluation, identity, and consent.</p>
+          </section>
+
+          <section id="why-the-workbench-needs-first-class-fields">
+            <h2>Why the workbench needs first-class fields</h2>
+            <p>Too many agent systems hide important facts in backend config. What framework is this agent built on? What runtime owns it? What eval suite covers it? What tools can it call? What consent has the user granted? What data classes are approved?</p>
+            <p>Those should not be trivia. They should be visible fields in the workbench because they define whether the agent is safe enough, tested enough, and owned enough to use.</p>
+          </section>
+
+          <section id="consent-is-product-state">
+            <h2>Consent is product state</h2>
+            <p>Consent should not be treated as a one-time checkbox. If an agent acts on behalf of a user, the workbench should show consent state, requested scopes, expiry or revocation behavior, and whether the current action needs a fresh approval.</p>
+            <p>That matters for trust. A user should know why an agent is asking for access, what the agent can do with that access, and what happens next.</p>
+          </section>
+
+          <section id="framework-support-changes-the-registry-conversation">
+            <h2>Framework support changes the registry conversation</h2>
+            <p>As evaluation support expands across frameworks, the registry needs to know more than “this is an agent.” It should know the framework, instrumentation path, eval rubrics, supported tool types, owners, deployment stage, and rollback handle.</p>
+            <p>That is how you avoid building a random drawer full of agent experiments. You create a catalog of capabilities with enough metadata to govern and reuse them.</p>
+          </section>
+
+          <section id="jwt-read">
+            <h2>JWT read</h2>
+            <p>The agent workbench should stop looking like a chat box with settings hidden behind the curtain. It should look like a control surface for production work.</p>
+            <p>The useful fields are not glamorous: consent, eval coverage, framework, runtime, owner, approval mode, cost policy, and deployment status. Those fields are the difference between agent experimentation and agent operations.</p>
+          </section>
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/release-notes.html" target="_blank" rel="noopener">AWS AgentCore release notes</a></li>
+<li><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/agent-registry.html" target="_blank" rel="noopener">AWS Agent Registry Developer Guide</a></li>
+            </ul>
+          </section>
+          <section class="article-cta">
+            <h2>Want the starter kit?</h2>
+            <p>Grab the free JWTechDev.com starter kit if you want a practical way to connect AWS, AI workflows, and approval gates.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
