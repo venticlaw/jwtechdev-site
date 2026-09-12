@@ -13,6 +13,18 @@
     <priority>0.4</priority>
   </url>
   <url>
+    <loc>https://jwtechdev.com/articles/aws-cloud-practitioner-vs-ai-practitioner-vs-solutions-architect.html</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jwtechdev.com/articles/best-aws-course-for-beginners.html</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://jwtechdev.com/articles/</loc>
     <lastmod>2026-09-11</lastmod>
     <changefreq>weekly</changefreq>
@@ -98,7 +110,7 @@
   </url>
   <url>
     <loc>https://jwtechdev.com/articles/which-aws-certification-should-a-beginner-take-first.html</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

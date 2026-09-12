@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' https://img.youtube.com data:; script-src 'self' 'unsafe-inline' https://www.tiktok.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; frame-src https://www.tiktok.com https://www.youtube.com; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' https://img.youtube.com data:; script-src 'self' 'unsafe-inline' https://www.tiktok.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io https://jwtechdev-leads-api.jw-lead-worker.workers.dev; frame-src https://www.tiktok.com https://www.youtube.com; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
   <title>Privacy and Data Handling | JWTechDev.ai</title>
@@ -30,7 +30,7 @@
       <div class="container">
         <p class="eyebrow">Privacy and data</p>
         <h1>How JWTechDev.ai handles user data right now.</h1>
-        <p class="lede">This page explains the current data paths for the static site, free kit requests, and inquiry emails.</p>
+        <p class="lede">This page explains the current data paths for the static site, free kit requests, and inquiry forms.</p>
       </div>
     </section>
 
@@ -39,20 +39,20 @@
         <article class="article-card">
           <span class="tag">Current setup</span>
           <h2>Short version</h2>
-          <p>JWTechDev.ai is currently a static website. Visitors can request the free Cloud Starter Kit, ask about speaking engagements, or inquire about social media asset creation. General inquiries open a structured email draft to <a href="mailto:jwtechdev@gmail.com">jwtechdev@gmail.com</a>.</p>
+          <p>JWTechDev.ai is currently a static website. Visitors can request the free Cloud Starter Kit, ask about speaking engagements, or inquire about social media asset creation. Inquiry forms submit to a private JWTechDev.com lead database hosted on Cloudflare. If the form endpoint is unavailable, the site may open a structured email draft to <a href="mailto:jwtechdev@gmail.com">jwtechdev@gmail.com</a>.</p>
         </article>
 
         <article class="article-card">
           <span class="tag">Free kit</span>
           <h2>Free kit request data</h2>
           <p>When you request the Cloud Starter Kit, JWTechDev.ai asks for your name, email address, and optional context about what you are trying to learn.</p>
-          <p>That information is used to send or follow up about the requested resource and related JWTechDev.ai educational content.</p>
+          <p>That information is stored in the JWTechDev.com lead database and used to send or follow up about the requested resource and related JWTechDev.ai educational content.</p>
         </article>
 
         <article class="article-card">
           <span class="tag">Inquiries</span>
-          <h2>Email inquiry data</h2>
-          <p>When you submit or send an inquiry, the information you provide may include your name, email address, organization, phone number, interest area, project context, and notes. That information is used to understand the request and decide whether it fits JWTechDev.ai boundaries for speaking engagements or social media asset work.</p>
+          <h2>Inquiry data</h2>
+          <p>When you submit an inquiry, the information you provide may include your name, email address, organization, phone number, interest area, project context, and notes. That information is used to understand the request and decide whether it fits JWTechDev.ai boundaries for speaking engagements or social media asset work.</p>
           <p>Do not send confidential employer, client, production-system, regulated workload, security, compliance, or legal information through the inquiry path.</p>
         </article>
 
