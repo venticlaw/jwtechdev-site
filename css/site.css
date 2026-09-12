@@ -3427,7 +3427,8 @@ a.article-mini-card:focus-visible {
 }
 
 .v2-home #about {
-  background: var(--bg-subtle);
+  background:
+    linear-gradient(180deg, var(--bg-subtle) 0%, var(--bg-subtle) 74%, rgba(224, 239, 233, .95) 100%);
   padding-top: clamp(38px, 5vw, 66px);
   padding-bottom: clamp(20px, 3vw, 34px);
 }
@@ -3458,8 +3459,7 @@ a.article-mini-card:focus-visible {
 .v2-home #services {
   margin-top: 0;
   padding-top: clamp(30px, 4vw, 48px);
-  background:
-    linear-gradient(180deg, rgba(224, 239, 233, .95) 0%, rgba(250, 250, 251, .98) 36%, var(--bg) 100%);
+  background: var(--bg);
   border-top: 1px solid var(--brand-green-100);
 }
 
