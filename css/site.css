@@ -2557,12 +2557,12 @@ a.article-mini-card:focus-visible {
   border-bottom: 1px solid var(--border);
 }
 
-.home-article-grid .aeo-card:nth-child(1)::before { background: center / cover url("../assets/articles/which-aws-certification-should-a-beginner-take-first.svg"); }
-.home-article-grid .aeo-card:nth-child(2)::before { background: center / cover url("../assets/articles/aws-cloud-practitioner-vs-ai-practitioner-vs-solutions-architect.svg"); }
-.home-article-grid .aeo-card:nth-child(3)::before { background: center / cover url("../assets/articles/best-aws-course-for-beginners.svg"); }
-.home-article-grid .aeo-card:nth-child(4)::before { background: center / cover url("../assets/articles/next-ai-platform-ui-not-chat-box.svg"); }
-.home-article-grid .aeo-card:nth-child(5)::before { background: center / cover url("../assets/articles/agent-workbench-contract-agentcore.svg"); }
-.home-article-grid .aeo-card:nth-child(6)::before { background: center / cover url("../assets/articles/opensearch-mcp-apps-evidence-rails.svg"); }
+.home-article-grid .aeo-card:nth-child(1)::before { background: center / cover url("../assets/articles/forward-deployed-engineer-traits.png"); }
+.home-article-grid .aeo-card:nth-child(2)::before { background: center / cover url("../assets/articles/agent-quality-gates-github-actions.png"); }
+.home-article-grid .aeo-card:nth-child(3)::before { background: center / cover url("../assets/articles/which-aws-certification-should-a-beginner-take-first.svg"); }
+.home-article-grid .aeo-card:nth-child(4)::before { background: center / cover url("../assets/articles/aws-cloud-practitioner-vs-ai-practitioner-vs-solutions-architect.svg"); }
+.home-article-grid .aeo-card:nth-child(5)::before { background: center / cover url("../assets/articles/best-aws-course-for-beginners.svg"); }
+.home-article-grid .aeo-card:nth-child(6)::before { background: center / cover url("../assets/articles/next-ai-platform-ui-not-chat-box.svg"); }
 
 .home-article-grid .aeo-card > * {
   margin-inline: var(--space-5);

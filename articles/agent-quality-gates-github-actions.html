@@ -12,10 +12,10 @@
   <meta property="og:title" content="Your agent needs a CI quality gate before it needs more prompts" />
   <meta property="og:description" content="AWS using Bedrock AgentCore Evaluations with GitHub Actions shows where agent delivery is going: deploy, evaluate, score behavior, and block regressions before they hit users." />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://jwtechdev.com/assets/articles/agent-quality-gates-github-actions.svg" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/agent-quality-gates-github-actions.png" />
   <link rel="stylesheet" href="../css/tokens.css" />
-  <link rel="stylesheet" href="../css/site.css?v=20260911-aws-agentcore-cluster" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Your agent needs a CI quality gate before it needs more prompts","description":"AWS using Bedrock AgentCore Evaluations with GitHub Actions shows where agent delivery is going: deploy, evaluate, score behavior, and block regressions before they hit users.","datePublished":"2026-09-11","dateModified":"2026-09-11","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":"https://jwtechdev.com/assets/articles/agent-quality-gates-github-actions.svg","mainEntityOfPage":"https://jwtechdev.com/articles/agent-quality-gates-github-actions.html"}</script>
+  <link rel="stylesheet" href="../css/site.css?v=20260913-agent-quality-gates" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Your agent needs a CI quality gate before it needs more prompts","description":"AWS using Bedrock AgentCore Evaluations with GitHub Actions shows where agent delivery is going: deploy, evaluate, score behavior, and block regressions before they hit users.","datePublished":"2026-09-11","dateModified":"2026-09-13","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":"https://jwtechdev.com/assets/articles/agent-quality-gates-github-actions.png","mainEntityOfPage":"https://jwtechdev.com/articles/agent-quality-gates-github-actions.html"}</script>
 </head>
 <body>
   <main class="article-shell">
@@ -26,54 +26,81 @@
       <p class="section__lede">AWS using Bedrock AgentCore Evaluations with GitHub Actions shows where agent delivery is going: deploy, evaluate, score behavior, and block regressions before they hit users.</p>
       <div class="article-kicker"><span>Eval gates</span><span>AWS</span><span>Agent systems</span><span>8 min read</span></div>
       <figure class="article-hero">
-        <img src="../assets/articles/agent-quality-gates-github-actions.svg" alt="Hand-drawn CI quality gate diagram showing pull request, deploy, eval prompts, score, and merge decision." />
-        <figcaption class="article-meta"><span>Published 2026-09-11</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+        <img src="../assets/articles/agent-quality-gates-github-actions.png" alt="Hand-drawn CI quality gate diagram showing a pull request moving through CI, AgentCore, MCP tools, evaluation scoring, and a merge decision." />
+        <figcaption class="article-meta"><span>Updated 2026-09-13</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
       </figure>
       <div class="article-layout">
         <nav class="article-toc" aria-label="Article contents">
           <strong>In this article</strong>
           <a href="#quick-answer">Quick answer</a>
-<a href="#the-useful-signal">The useful signal</a>
-<a href="#why-manual-testing-is-not-enough">Why manual testing is not enough</a>
-<a href="#what-the-pipeline-should-prove">What the pipeline should prove</a>
-<a href="#the-jwt-release-assurance-model">The JWT release-assurance model</a>
+<a href="#the-useful-signal">The AWS signal</a>
+<a href="#why-this-is-different">Why this is different</a>
+<a href="#what-the-gate-should-test">What the gate should test</a>
+<a href="#identity-problem">The identity problem</a>
+<a href="#builder-runbook">Builder runbook</a>
 <a href="#what-builders-should-do-next">What builders should do next</a>
 <a href="#sources">Sources checked</a>
         </nav>
         <div>
           <section class="quick-answer" id="quick-answer">
             <h2>Quick answer</h2>
-            <p>Agent quality should be tested in CI the same way teams test normal software changes. If a prompt, tool config, or model change makes the agent worse, the pull request should show that before production users do.</p>
+            <p>Agent quality needs a release gate. If a prompt, tool schema, model choice, or MCP permission change makes the agent worse, the pull request should show that before users do.</p>
+            <p>The AWS pattern is useful because it treats agent behavior like software delivery: deploy the candidate, run representative prompts, score the traces, compare against a threshold, and block the merge when the behavior regresses.</p>
           </section>
           
           <section id="the-useful-signal">
-            <h2>The useful signal</h2>
-            <p>AWS published a GitHub Actions pattern that deploys an agent and OAuth-protected MCP server, runs evaluation prompts, scores behavior, and blocks pull requests when quality drops. That is a strong signal: agent quality is becoming a release-engineering problem.</p>
-            <p>This matters because agent regressions often look subtle. A system prompt changes. A tool schema changes. A model responds differently. The agent still talks, but it may choose the wrong tool, pass the wrong parameter, or miss the user goal.</p>
+            <h2>The AWS signal</h2>
+            <p>AWS published a pattern for automated agent evaluation with Amazon Bedrock AgentCore and GitHub Actions. The flow deploys an agent and an OAuth-protected MCP server, runs evaluation prompts, scores behavior with AgentCore Evaluations, and fails the pull request if quality falls below the bar.</p>
+            <p>That is the part builders should pay attention to. The interesting thing is not only the specific services. The interesting thing is the operating model: agents are being pulled into the same delivery discipline as normal software systems.</p>
+            <p>In the AWS walkthrough, AgentCore Runtime hosts the agent, an MCP server exposes tools, CloudWatch/OpenTelemetry traces provide the evidence, and the evaluation step gives CI something concrete to enforce.</p>
           </section>
 
-          <section id="why-manual-testing-is-not-enough">
-            <h2>Why manual testing is not enough</h2>
-            <p>Manual checks are useful for exploration, but they do not scale as a release gate. If every agent change depends on one person remembering the right prompts to test, quality becomes folklore.</p>
-            <p>A CI gate turns expected behavior into a repeatable contract. Representative prompts, expected outcomes, tool-selection checks, and threshold scores become part of the pull request conversation.</p>
+          <section id="why-this-is-different">
+            <h2>Why this is different from normal app testing</h2>
+            <p>A normal unit test can usually tell you whether a function returned the expected value. Agents are messier. They may choose a tool, pass parameters, call multiple steps, summarize evidence, or ask for approval before acting.</p>
+            <p>That means the quality gate has to check behavior, not just syntax. Did the agent reach the goal? Did it choose the right tool? Did it pass the right inputs? Did it respect the permission boundary? Did it produce an answer a human can actually trust?</p>
+            <p>This is why manual testing gets weak fast. If every agent release depends on one person remembering the right prompts to try, the quality system is just memory and vibes. CI turns those expectations into a repeatable contract.</p>
           </section>
 
-          <section id="what-the-pipeline-should-prove">
-            <h2>What the pipeline should prove</h2>
-            <p>A useful agent gate should prove more than “the code runs.” It should check whether the agent achieved the goal, selected the right tool, passed valid parameters, respected role boundaries, and produced an answer that still fits the product’s quality bar.</p>
-            <p>AWS’s pattern also shows the identity problem clearly: CI has to evaluate an agent that may normally operate through OAuth-protected MCP tools. That means test identity, scoped credentials, and machine-to-machine access need explicit design.</p>
+          <section id="what-the-gate-should-test">
+            <h2>What the gate should test</h2>
+            <p>A serious agent quality gate should cover at least five things:</p>
+            <ul>
+              <li><strong>Goal success:</strong> did the agent complete the task the user actually asked for?</li>
+              <li><strong>Correctness:</strong> was the answer or action grounded in the available evidence?</li>
+              <li><strong>Tool selection:</strong> did the agent call the right tool for the job?</li>
+              <li><strong>Tool parameters:</strong> did it pass the right values, filters, IDs, dates, and scopes?</li>
+              <li><strong>Safety boundary:</strong> did it avoid actions that should require approval or a different identity?</li>
+            </ul>
+            <p>AWS calls out built-in evaluators for dimensions like helpfulness, correctness, goal success rate, tool selection accuracy, and tool parameter accuracy. That maps directly to what agent builders need: not a vibe check, a scorecard.</p>
           </section>
 
-          <section id="the-jwt-release-assurance-model">
-            <h2>The JWT release-assurance model</h2>
-            <p>For our mental model, every reusable agent capability should carry release metadata: owner, runtime, eval suite, approved tools, allowed write actions, approval gates, cost policy, and rollback path.</p>
-            <p>That metadata should live with the workbench, not in someone’s head. If the capability cannot be evaluated before promotion, it is not ready to become shared infrastructure.</p>
+          <section id="identity-problem">
+            <h2>The identity problem is the real lesson</h2>
+            <p>The AWS post spends real time on OAuth-protected MCP servers because CI does not behave like a normal user. A headless pipeline does not click a consent screen. It needs a deliberate authentication path.</p>
+            <p>The post describes three approaches: evaluate stored traces, use a service account with pre-authorized consent, or support machine-to-machine authentication for CI while keeping user-scoped authorization for interactive flows.</p>
+            <p>That distinction matters. If CI uses a machine identity that bypasses role checks, it can test the agent’s behavior, but it is not proving user-role enforcement. If you need to test role boundaries, your eval design has to include that path on purpose.</p>
+          </section>
+
+          <section id="builder-runbook">
+            <h2>A simple builder runbook</h2>
+            <p>If you are building agents and you want to borrow the pattern without overcomplicating it, start here:</p>
+            <ol>
+              <li>Pick five prompts that represent the agent’s real job.</li>
+              <li>Add one bad-path prompt where the agent should refuse, ask a question, or avoid a tool.</li>
+              <li>Add one permission-sensitive prompt where access should matter.</li>
+              <li>Capture traces for each run: input, output, tool calls, parameters, and final decision.</li>
+              <li>Define a minimum score before the pull request can merge.</li>
+              <li>Put the result where developers already review changes: the PR.</li>
+            </ol>
+            <p>That is the shift. You are not asking, “Did the agent sound smart?” You are asking, “Did this change make the system safer, more useful, or worse?”</p>
           </section>
 
           <section id="what-builders-should-do-next">
             <h2>What builders should do next</h2>
-            <p>Start small. Pick five prompts that represent the job your agent is supposed to do. Add one bad-path prompt. Add one permission-sensitive prompt. Decide what “good enough” means before you run the test.</p>
-            <p>Then make the result visible in the same place you review code. The point is not to make AI perfect. The point is to catch obvious regressions before users become the test suite.</p>
+            <p>Start with stored traces if your setup is not ready for live end-to-end evaluation. It is more deterministic, cheaper to reason about, and gives you a quality gate quickly.</p>
+            <p>Then graduate toward live staging evaluation when the agent is stable enough and the identity model is clear. If the agent touches real tools, the eval system needs to understand runtime, identity, tool access, approval mode, cost policy, logging, and rollback.</p>
+            <p>The point is not to make AI perfect. The point is to stop using production users as the first reliable test suite.</p>
           </section>
           <section id="sources">
             <h2>Sources checked</h2>
@@ -85,7 +112,7 @@
           <section class="article-cta">
             <h2>Want the starter kit?</h2>
             <p>Grab the free JWTechDev.com starter kit if you want a practical way to connect AWS, AI workflows, and approval gates.</p>
-            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+            <a class="btn btn--primary btn--lg" href="../index.html#assets">Get resources</a>
           </section>
         </div>
       </div>
