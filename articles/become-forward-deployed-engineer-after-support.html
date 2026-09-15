@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' https://img.youtube.com data:; script-src 'self' 'unsafe-inline' https://www.tiktok.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; frame-src https://www.tiktok.com https://www.youtube.com; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>How to become a forward deployed engineer after years away from product code | JWTechDev.com</title>
+  <meta name="description" content="A practical path for people who have supported live products for years but feel rusty on product coding: refresh one stack, build production-shaped portfolio projects, learn cloud deployment, and document your work." />
+  <meta property="og:title" content="How to become a forward deployed engineer after years away from product code" />
+  <meta property="og:description" content="A practical path for people who have supported live products for years but feel rusty on product coding: refresh one stack, build production-shaped portfolio projects, learn cloud deployment, and document your work." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/become-forward-deployed-engineer-after-support.png" />
+  <link rel="canonical" href="https://jwtechdev.com/articles/become-forward-deployed-engineer-after-support.html" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20260915-1" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to become a forward deployed engineer after years away from product code","description":"A practical path for people who have supported live products for years but feel rusty on product coding: refresh one stack, build production-shaped portfolio projects, learn cloud deployment, and document your work.","datePublished":"2026-09-15","dateModified":"2026-09-15","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":"https://jwtechdev.com/assets/articles/become-forward-deployed-engineer-after-support.png","mainEntityOfPage":"https://jwtechdev.com/articles/become-forward-deployed-engineer-after-support.html"}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">Tech career path</p>
+    <article class="article-body">
+      <h1>How to become a forward deployed engineer after years away from product code</h1>
+      <p class="section__lede">If you have been supporting live products but feel rusty on product coding, you are not starting from zero. You are starting with field experience. Now the job is to turn that experience into build receipts.</p>
+      <div class="article-kicker"><span>FDE path</span><span>Portfolio</span><span>AWS cloud</span><span>Production thinking</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/become-forward-deployed-engineer-after-support.png" alt="Hand-drawn roadmap from support experience to portfolio projects, cloud production basics, and field-ready engineering judgment" />
+        <figcaption class="article-meta"><span>Published 2026-09-15</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#support-counts">Your support experience counts</a>
+          <a href="#role-target">What FDE roles reward</a>
+          <a href="#ninety-day-plan">A 90-day rebuild plan</a>
+          <a href="#portfolio">Portfolio projects</a>
+          <a href="#cloud">AWS and production basics</a>
+          <a href="#runbooks">Runbooks</a>
+          <a href="#story">How to tell the story</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>If you have supported live products for years but have not written recent product code, the move is not to apologize for the gap. The move is to refresh one modern stack, build three production-shaped portfolio projects, deploy or document the deployment path, and use your support experience as proof that you understand real users, incidents, edge cases, and operational mess.</p>
+            <p>Forward deployed engineering rewards people who can turn ambiguity into working systems. Product code can be refreshed. Production judgment is harder to fake.</p>
+          </section>
+
+          <section id="support-counts">
+            <h2>Your support experience counts</h2>
+            <p>Six years supporting live products is not dead time. It is exposure to the place where software meets reality.</p>
+            <p>You have likely seen the same patterns a forward deployed engineer has to care about: confusing workflows, unclear ownership, missing logs, weird edge cases, frustrated users, fragile handoffs, urgent bugs, and product decisions that look simple until they touch a real customer environment.</p>
+            <p>That experience gives you a useful advantage: you probably understand how systems fail in the field better than someone who has only built clean tutorial apps.</p>
+            <p>The gap is not whether your experience matters. The gap is evidence that you can still build.</p>
+          </section>
+
+          <section id="role-target">
+            <h2>What forward deployed roles reward</h2>
+            <p>Modern FDE roles are not only about writing isolated features. OpenAI describes FDE work as end-to-end deployment work: discovery, scoping, system design, build, production rollout, adoption, feedback, and reusable patterns. Palantir describes its FDSE role as engineers embedded with customers to understand hard problems, build solutions, and work across technical and non-technical teams.</p>
+            <p>That means your target skill stack is broader than "can code." You want to show that you can:</p>
+            <ul>
+              <li>Understand a messy workflow.</li>
+              <li>Translate user pain into technical scope.</li>
+              <li>Build a small useful slice.</li>
+              <li>Think through identity, data, permissions, logs, deployment, and ownership.</li>
+              <li>Communicate tradeoffs clearly.</li>
+              <li>Leave behind documentation and operating instructions.</li>
+            </ul>
+            <p>That is why support/product experience can become a strength if you pair it with fresh build receipts.</p>
+          </section>
+
+          <section id="ninety-day-plan">
+            <h2>A 90-day rebuild plan</h2>
+            <p>Do not try to relearn every framework at once. Pick one build lane and finish things.</p>
+            <p><strong>Weeks 1-2: refresh one stack.</strong> Choose TypeScript or Python. Build a simple web app with a database, auth-shaped access, API routes, error handling, and a deployment plan.</p>
+            <p><strong>Weeks 3-6: build project one from your support world.</strong> Turn a real support pattern into software: intake, triage, prioritization, status, routing, or response drafting.</p>
+            <p><strong>Weeks 7-10: build project two with AI or automation.</strong> Add a constrained assistant that uses approved context, drafts recommendations, and requires human approval before any write action.</p>
+            <p><strong>Weeks 11-12: polish and publish the story.</strong> Write the README, architecture notes, runbook, security assumptions, limitations, demo script, and what you would improve next.</p>
+            <p>The goal is not to look like you never stepped away from product code. The goal is to prove that you can rebuild the coding muscle while using the field judgment you already earned.</p>
+          </section>
+
+          <section id="portfolio">
+            <h2>Build portfolio projects that look like real work</h2>
+            <p>A weak portfolio says, "I followed a tutorial." A strong FDE portfolio says, "I understand a real workflow and can turn it into a working system."</p>
+            <p>Good project ideas from a support background:</p>
+            <ul>
+              <li><strong>Support triage queue:</strong> intake form, categories, severity, owner, status, and escalation path.</li>
+              <li><strong>Customer-safe response assistant:</strong> approved knowledge base, draft response, required human review, and audit log.</li>
+              <li><strong>Incident pattern dashboard:</strong> group recurring issues by product area, source, severity, and time window.</li>
+              <li><strong>Release readiness checklist:</strong> feature launch checklist with approval gates, rollback notes, and owner assignments.</li>
+              <li><strong>Internal workflow assistant:</strong> answer only from approved docs, cite sources, and log unanswered questions.</li>
+            </ul>
+            <p>Every project should have a problem statement, user persona, data model, system diagram, deployment notes, and a short demo. That turns the project from "code sample" into "field-ready thinking."</p>
+          </section>
+
+          <section id="cloud">
+            <h2>Learn AWS through deployment, not vocabulary</h2>
+            <p>Since JWTechDev.com is AWS-heavy, I would make at least one portfolio project AWS-shaped.</p>
+            <p>You do not have to make it complicated. You do need to show that your local machine is not the final destination. AWS Well-Architected is useful here because it pushes you to think about secure, reliable, efficient, cost-aware systems instead of only features. IAM matters because real systems need authentication and authorization boundaries, not just code that runs.</p>
+            <p>For each project, write down:</p>
+            <ul>
+              <li>Where the app would run.</li>
+              <li>Where the data would live.</li>
+              <li>What identity or role the app would use.</li>
+              <li>What the app can read and write.</li>
+              <li>What gets logged.</li>
+              <li>How you would monitor it.</li>
+              <li>What happens when something fails.</li>
+              <li>Who owns it after handoff.</li>
+            </ul>
+            <p>This is the difference between "I can make an app" and "I can help ship a system."</p>
+          </section>
+
+          <section id="runbooks">
+            <h2>Write runbooks because they prove maturity</h2>
+            <p>Runbooks are underrated portfolio assets.</p>
+            <p>For each project, include a short operator guide:</p>
+            <ul>
+              <li>How to run it locally.</li>
+              <li>How to deploy it.</li>
+              <li>What configuration is required.</li>
+              <li>What logs matter.</li>
+              <li>What common failures look like.</li>
+              <li>How to recover or roll back.</li>
+              <li>What assumptions are still unsafe for production.</li>
+            </ul>
+            <p>This is where your support background shines. You know the pain of systems that have no operating instructions. Make that your advantage.</p>
+          </section>
+
+          <section id="story">
+            <h2>How to tell the story</h2>
+            <p>Do not say, "I have not coded in six years, so I am behind."</p>
+            <p>Say this:</p>
+            <p><strong>"I have spent the last six years close to live products, users, issues, and operational reality. I am rebuilding my product coding muscle by shipping small production-shaped systems that turn real workflow problems into working software."</strong></p>
+            <p>That is a much stronger story because it connects your past to the role you want.</p>
+            <p>Your next move is simple: pick one stack, build three workflow-based projects, make one AWS-shaped, and document each like a system someone else could operate.</p>
+            <p>Support experience counts. Now build the receipts.</p>
+          </section>
+
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://openai.com/careers/forward-deployed-engineer-(fde)-seattle-seattle/" target="_blank" rel="noopener">OpenAI Careers: Forward Deployed Engineer</a></li>
+              <li><a href="https://jobs.lever.co/palantir/dab396d4-2f14-4796-aac0-0d82883dccf0" target="_blank" rel="noopener">Palantir Careers: Forward Deployed Software Engineer</a></li>
+              <li><a href="https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html" target="_blank" rel="noopener">AWS Well-Architected Framework</a></li>
+              <li><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html" target="_blank" rel="noopener">AWS IAM User Guide</a></li>
+            </ul>
+          </section>
+
+          <section class="article-cta">
+            <h2>Want the starter kit?</h2>
+            <p>Grab the free JWTechDev.com starter kit if you want a practical way to connect cloud basics, AI workflows, and approval gates.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
