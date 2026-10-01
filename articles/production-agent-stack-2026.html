@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' https://img.youtube.com data:; script-src 'self' 'unsafe-inline' https://www.tiktok.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; frame-src https://www.tiktok.com https://www.youtube.com; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>The production AI agent stack is hardening | JWTechDev.com</title>
+  <meta name="description" content="Runtime, gateways, evaluations, observability, MCP, A2A, and vendor-native agents are becoming one production stack." />
+  <link rel="canonical" href="https://jwtechdev.com/articles/production-agent-stack-2026.html" />
+  <meta property="og:title" content="The production AI agent stack is hardening" />
+  <meta property="og:description" content="The market is moving past agent demos toward a governed operating layer for agent work." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/production-agent-stack-2026.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20261001-agent-stack" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The production AI agent stack is hardening","description":"Runtime, gateways, evaluations, observability, MCP, A2A, and vendor-native agents are becoming one production stack.","datePublished":"2026-10-01","dateModified":"2026-10-01","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com"},"image":"https://jwtechdev.com/assets/articles/production-agent-stack-2026.png","mainEntityOfPage":"https://jwtechdev.com/articles/production-agent-stack-2026.html"}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">AI infrastructure</p>
+    <article class="article-body">
+      <h1>The production AI agent stack is hardening</h1>
+      <p class="section__lede">The important AI story is no longer the chat interface. Runtime, gateway, evaluations, observability, MCP, A2A, identity, and vendor-native agents are becoming the operating layer around the model.</p>
+      <div class="article-kicker"><span>Agent infrastructure</span><span>MCP</span><span>A2A</span><span>Governance</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/production-agent-stack-2026.png" alt="Hand-drawn production agent stack showing runtime, gateway, evaluations, observability, MCP, A2A, and vendor agents inside a governance shield" />
+        <figcaption class="article-meta"><span>Published 2026-10-01</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#signals">Three market signals</a>
+          <a href="#stack">The seven-layer stack</a>
+          <a href="#design">What good design looks like</a>
+          <a href="#builders">What builders should do next</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>AI agents are becoming distributed software systems. The model may decide what to do, but the production system still has to run the work, mediate tools, authorize actions, measure quality, preserve evidence, and recover when something fails.</p>
+            <p>That is why the durable product is not an agent UI. It is a governed control layer around agent work.</p>
+          </section>
+          <section id="signals">
+            <h2>Three market signals</h2>
+            <p>First, AWS made a new AgentCore Runtime generally available with serverless microVM compute, scale-to-zero behavior, memory reclamation, and hardware-enforced session isolation. That is infrastructure language, not demo language.</p>
+            <p>Second, the July 2026 MCP revision removed the initialize handshake and session identifier from the core protocol. Requests now carry the context they need, which makes MCP easier to scale behind normal load balancing patterns.</p>
+            <p>Third, Adobe's Marketo MCP server exposes more than 100 operations across leads, forms, programs, smart campaigns, emails, snippets, lists, and folders. Vendor systems are becoming callable by agents, which increases both speed and write-back risk.</p>
+          </section>
+          <section id="stack">
+            <h2>The seven-layer production stack</h2>
+            <p><strong>Runtime</strong> executes the work with isolation and lifecycle controls. <strong>Gateway</strong> mediates tools, authentication, policy, and protocol. <strong>Evaluations</strong> test whether behavior meets a release threshold. <strong>Observability</strong> connects model decisions to tool calls, approvals, latency, cost, and outcomes.</p>
+            <p><strong>MCP</strong> exposes tools and data. <strong>A2A</strong> gives independent agents a delegation contract. <strong>Vendor-native agents</strong> bring domain actions into the products teams already use.</p>
+            <p>The common layer across all seven is governance: who can act, on what data, through which tool, under what budget, with whose approval, and with what evidence.</p>
+          </section>
+          <section id="design">
+            <h2>What good design looks like</h2>
+            <p>Keep transport concerns separate from workflow state. An MCP server should not become the hidden home of task, approval, artifact, or escalation state. Keep those states explicit in the workflow layer.</p>
+            <p>Treat every write action as a policy decision. Reading a campaign, drafting an email, updating a lead, publishing a program, and deleting an asset should not share one permission level.</p>
+            <p>Make quality gates real. If an evaluation can fail without blocking promotion, it is a dashboard, not a release control.</p>
+          </section>
+          <section id="builders">
+            <h2>What builders should do next</h2>
+            <p>Start with one end-to-end workflow and document its runtime, tools, data classes, approval gates, trace fields, eval suite, cost limits, failure states, and rollback path. That contract will reveal more than another round of prompt tuning.</p>
+            <p>The model remains important. But production trust is created by the system around it.</p>
+          </section>
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://aws.amazon.com/about-aws/whats-new/2026/09/new-agentcore-runtime-generally-available/" target="_blank" rel="noopener">AWS: New Amazon Bedrock AgentCore Runtime generally available</a></li>
+              <li><a href="https://aws.amazon.com/blogs/architecture/mcp-went-stateless-is-your-aws-mcp-server-deployment-well-architected/" target="_blank" rel="noopener">AWS Architecture Blog: MCP went stateless</a></li>
+              <li><a href="https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/mcp-server" target="_blank" rel="noopener">Adobe: Marketo MCP Server</a></li>
+              <li><a href="https://a2a-protocol.org/latest/blog/" target="_blank" rel="noopener">A2A Protocol: A new chapter for A2A</a></li>
+              <li><a href="https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/mcp.md" target="_blank" rel="noopener">OpenTelemetry: MCP semantic conventions</a></li>
+            </ul>
+          </section>
+          <section class="article-cta">
+            <h2>Want the starter kit?</h2>
+            <p>Get practical maps for connecting cloud fundamentals, AI workflows, and approval gates.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

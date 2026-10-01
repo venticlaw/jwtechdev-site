@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>AgentCore Runtime GA: agent hosting became infrastructure | JWTechDev.com</title>
+  <meta name="description" content="What AWS AgentCore Runtime GA says about isolation, scale-to-zero, cold starts, and production agent hosting." />
+  <link rel="canonical" href="https://jwtechdev.com/articles/agentcore-runtime-ga.html" />
+  <meta property="og:title" content="AgentCore Runtime GA: agent hosting became infrastructure" />
+  <meta property="og:description" content="The agent runtime is becoming a managed infrastructure primitive." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/agentcore-runtime-ga.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20261001-agentcore-runtime" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AgentCore Runtime GA: agent hosting became infrastructure","description":"What AWS AgentCore Runtime GA says about isolation, scale-to-zero, cold starts, and production agent hosting.","datePublished":"2026-10-01","dateModified":"2026-10-01","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com"},"image":"https://jwtechdev.com/assets/articles/agentcore-runtime-ga.png","mainEntityOfPage":"https://jwtechdev.com/articles/agentcore-runtime-ga.html"}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">AWS agent infrastructure</p>
+    <article class="article-body">
+      <h1>AgentCore Runtime GA: agent hosting became infrastructure</h1>
+      <p class="section__lede">AWS is treating agent execution like a serverless workload with isolation, lifecycle management, resource reclamation, and measurable cold-start behavior.</p>
+      <div class="article-kicker"><span>AWS</span><span>AgentCore</span><span>Runtime</span><span>Serverless agents</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/agentcore-runtime-ga.png" alt="Hand-drawn diagram of a serverless agent runtime scheduling isolated microVM sessions with scale-to-zero and memory reclamation" />
+        <figcaption class="article-meta"><span>Published 2026-10-01</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#changed">What changed</a>
+          <a href="#microvm">Why microVM isolation matters</a>
+          <a href="#cold-start">Cold starts and scale-to-zero</a>
+          <a href="#architecture">Architecture questions to ask</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>AgentCore Runtime is evidence that production agents need a real execution substrate. A prompt is not a runtime. The system still needs to schedule work, isolate sessions, manage memory, tear down compute, scale, and expose operational evidence.</p>
+          </section>
+          <section id="changed">
+            <h2>What AWS announced</h2>
+            <p>On September 18, 2026, AWS announced a new generally available AgentCore Runtime built on serverless microVM compute. AWS says it provides elastic memory management, memory reclamation, hardware-enforced session isolation, no pre-provisioning, and scale-to-zero behavior.</p>
+            <p>AWS also reports P75 cold starts around 1.9 to 2.0 seconds for container images ranging from 200 MB to 2 GB, compared with 5.4 to 30 seconds in the previous runtime. Those numbers are AWS measurements, but the design direction is the useful signal.</p>
+          </section>
+          <section id="microvm">
+            <h2>Why microVM isolation matters</h2>
+            <p>An agent session may hold temporary files, tool credentials, retrieved context, generated artifacts, and intermediate state. Session isolation reduces the risk that one execution can interfere with or observe another.</p>
+            <p>Isolation does not replace authorization. It protects the execution boundary. IAM, scoped tool credentials, data policy, and approval gates still determine what the isolated workload may do.</p>
+          </section>
+          <section id="cold-start">
+            <h2>Cold starts and scale-to-zero are product decisions</h2>
+            <p>Scale-to-zero is attractive for bursty agent workloads because teams do not pay for idle workers. The tradeoff is startup latency. A support copilot can tolerate a different cold-start target than a real-time voice agent or an automated incident responder.</p>
+            <p>The right question is not whether cold starts exist. It is whether the runtime behavior matches the user journey, timeout budget, concurrency profile, and cost model.</p>
+          </section>
+          <section id="architecture">
+            <h2>Architecture questions to ask</h2>
+            <p>Ask what creates a session, what data enters it, where credentials come from, how temporary files are handled, when memory is reclaimed, how cancellation works, how tool calls are traced, what happens on retry, and how the system proves a session was isolated.</p>
+            <p>Also keep portability in view. A managed runtime can remove operational work, but your workflow contract, tool interfaces, trace schema, and evaluation suite should remain understandable outside one vendor.</p>
+          </section>
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul><li><a href="https://aws.amazon.com/about-aws/whats-new/2026/09/new-agentcore-runtime-generally-available/" target="_blank" rel="noopener">AWS: New Amazon Bedrock AgentCore Runtime generally available</a></li></ul>
+          </section>
+          <section class="article-cta">
+            <h2>Want the starter kit?</h2>
+            <p>Learn the cloud layers that sit underneath production AI systems.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

@@ -188,7 +188,7 @@
   </url>
   <url>
     <loc>https://jwtechdev.com/articles/stateless-mcp-explained.html</loc>
-    <lastmod>2026-08-18</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -260,7 +260,7 @@
   </url>
   <url>
     <loc>https://jwtechdev.com/articles/a2a-horizontal-agent-infrastructure.html</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -290,7 +290,7 @@
   </url>
   <url>
     <loc>https://jwtechdev.com/articles/agent-quality-gates-github-actions.html</loc>
-    <lastmod>2026-09-13</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -323,5 +323,47 @@
     <lastmod>2026-09-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://jwtechdev.com/articles/production-agent-stack-2026.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://jwtechdev.com/articles/agentcore-runtime-ga.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://jwtechdev.com/articles/marketo-mcp-writeback-risk.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://jwtechdev.com/articles/mcp-opentelemetry-trace-contract.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://jwtechdev.com/articles/orchestrate-vendor-native-agents.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://jwtechdev.com/articles/three-agent-platform-accelerators.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://jwtechdev.com/articles/five-production-agent-risks.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 </urlset>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>Do not rebuild vendor-native agents. Orchestrate them. | JWTechDev.com</title>
+  <meta name="description" content="Why cross-system orchestration, policy, approval, and evidence matter more than duplicating every vendor-native AI workflow." />
+  <link rel="canonical" href="https://jwtechdev.com/articles/orchestrate-vendor-native-agents.html" />
+  <meta property="og:title" content="Do not rebuild vendor-native agents. Orchestrate them." />
+  <meta property="og:description" content="The durable layer is cross-system workflow control, not another copy of every vendor feature." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/orchestrate-vendor-native-agents.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20261001-vendor-agents" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Do not rebuild vendor-native agents. Orchestrate them.","description":"Why cross-system orchestration, policy, approval, and evidence matter more than duplicating every vendor-native AI workflow.","datePublished":"2026-10-01","dateModified":"2026-10-01","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com"},"image":"https://jwtechdev.com/assets/articles/orchestrate-vendor-native-agents.png","mainEntityOfPage":"https://jwtechdev.com/articles/orchestrate-vendor-native-agents.html"}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">AI platform strategy</p>
+    <article class="article-body">
+      <h1>Do not rebuild vendor-native agents. Orchestrate them.</h1>
+      <p class="section__lede">Adobe, Salesforce, AWS, and other platforms will keep adding native agents. The useful cross-system layer is policy, approval, traceability, and handoff, not another copy of every product feature.</p>
+      <div class="article-kicker"><span>Orchestration</span><span>Vendor agents</span><span>MCP</span><span>A2A</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/orchestrate-vendor-native-agents.png" alt="Hand-drawn diagram showing vendor-native agents flowing through policy, approval, and trace controls into one governed workflow" />
+        <figcaption class="article-meta"><span>Published 2026-10-01</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#wrong-layer">The wrong layer to rebuild</a>
+          <a href="#control-layer">The control layer</a>
+          <a href="#contracts">MCP and A2A contracts</a>
+          <a href="#questions">Five design questions</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>Let vendor-native agents do the domain work they are designed for. Build the value around how work crosses systems: identity, allowed actions, handoffs, approval gates, shared evidence, cost policy, and recovery.</p>
+          </section>
+          <section id="wrong-layer">
+            <h2>The wrong layer to rebuild</h2>
+            <p>A marketing platform already knows its campaigns, leads, programs, assets, and object model. A cloud platform already knows its runtime, identity, observability, and service boundaries. Rebuilding those capabilities usually creates a thinner version with more maintenance.</p>
+            <p>The harder problem appears when one business outcome crosses several products and no single vendor owns the full workflow.</p>
+          </section>
+          <section id="control-layer">
+            <h2>The control layer</h2>
+            <p>A governed orchestration layer should know the goal, participating agents, tool permissions, data classes, write-action risk, approval mode, evidence requirements, cost policy, current state, and rollback path.</p>
+            <p>It should make handoffs visible. If a research agent passes work to a campaign agent, the system should preserve the request, constraints, evidence, permissions, expected return shape, and trace identity.</p>
+          </section>
+          <section id="contracts">
+            <h2>MCP and A2A solve different contracts</h2>
+            <p>MCP is a strong fit for exposing tools and data. A2A is aimed at discovery, delegation, and collaboration between independent agents. They can coexist: agents communicate horizontally through A2A and call tools vertically through MCP.</p>
+            <p>The orchestration layer ties both to business policy and human accountability.</p>
+          </section>
+          <section id="questions">
+            <h2>Five design questions</h2>
+            <p>Which system owns the source of truth? Which actions may run without approval? What context must cross an agent handoff? How will one trace span vendor boundaries? What happens when a vendor agent succeeds technically but violates the workflow's business constraint?</p>
+            <p>Those questions create a more durable platform than recreating another vendor's assistant.</p>
+          </section>
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/mcp-server" target="_blank" rel="noopener">Adobe: Marketo MCP Server</a></li>
+              <li><a href="https://a2a-protocol.org/latest/blog/" target="_blank" rel="noopener">A2A Protocol: A new chapter for A2A</a></li>
+              <li><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/release-notes.html" target="_blank" rel="noopener">Amazon Bedrock AgentCore release notes</a></li>
+            </ul>
+          </section>
+          <section class="article-cta">
+            <h2>Want the starter kit?</h2>
+            <p>Learn the systems thinking behind agents, tools, cloud infrastructure, and safe handoffs.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

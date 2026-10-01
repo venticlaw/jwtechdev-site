@@ -8,13 +8,14 @@
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
   <title>What stateless MCP means in plain English | JWTechDev.com</title>
   <meta name="description" content="Stateless MCP means every request carries the context it needs. Here is why that matters for AI tools, cloud infrastructure, load balancing, approvals, and production agent workflows." />
+  <link rel="canonical" href="https://jwtechdev.com/articles/stateless-mcp-explained.html" />
   <meta property="og:title" content="What stateless MCP means in plain English" />
   <meta property="og:description" content="Every MCP request now needs to carry its own context. That is a cloud infrastructure lesson, not just an AI tooling update." />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="https://jwtechdev.com/assets/articles/stateless-mcp.png" />
   <link rel="stylesheet" href="../css/tokens.css" />
-  <link rel="stylesheet" href="../css/site.css?v=20260818-1" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What stateless MCP means in plain English","description":"Stateless MCP means every request carries the context it needs. Here is why that matters for AI tools, cloud infrastructure, load balancing, approvals, and production agent workflows.","datePublished":"2026-08-18","dateModified":"2026-08-18","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":"https://jwtechdev.com/assets/articles/stateless-mcp.png","mainEntityOfPage":"https://jwtechdev.com/articles/stateless-mcp-explained.html"}</script>
+  <link rel="stylesheet" href="../css/site.css?v=20261001-stateless-mcp" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"What stateless MCP means in plain English","description":"Stateless MCP means every request carries the context it needs. Here is why that matters for AI tools, cloud infrastructure, load balancing, approvals, and production agent workflows.","datePublished":"2026-08-18","dateModified":"2026-10-01","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":"https://jwtechdev.com/assets/articles/stateless-mcp.png","mainEntityOfPage":"https://jwtechdev.com/articles/stateless-mcp-explained.html"}</script>
 </head>
 <body>
   <main class="article-shell">
@@ -26,7 +27,7 @@
       <div class="article-kicker"><span>MCP</span><span>AI agents</span><span>Cloud scale</span><span>Approval gates</span></div>
       <figure class="article-hero">
         <img src="../assets/articles/stateless-mcp.png" alt="Hand-drawn diagram comparing stateful MCP sessions with stateless MCP requests routed through a load balancer" />
-        <figcaption class="article-meta"><span>Published 2026-08-18</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+        <figcaption class="article-meta"><span>Updated 2026-10-01</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
       </figure>
       <div class="article-layout">
         <nav class="article-toc" aria-label="Article contents">
@@ -74,6 +75,7 @@
             <p>Stateless does not mean your whole application forgets everything. It means the protocol is no longer the place where hidden session state lives. If an agent needs to keep working on a task, the system should use explicit handles, task IDs, database records, or other durable state.</p>
             <p>That is good design, but it also forces discipline. If your MCP server changes something important, the workflow still needs logs, idempotency, human approval for risky actions, and a recovery path when a later tool call fails.</p>
             <p>The clean version is: make requests self-contained, make state explicit, and make side effects reviewable.</p>
+            <p>AWS's September architecture guidance adds two practical requirements: propagate trace context through request metadata, and keep legacy session infrastructure until older clients are no longer in use. A clean target architecture still needs a deliberate migration path.</p>
           </section>
 
           <section id="sources">
@@ -83,6 +85,7 @@
               <li><a href="https://blog.modelcontextprotocol.io/posts/2026-07-28/" target="_blank" rel="noopener">Model Context Protocol: The 2026-07-28 Specification</a></li>
               <li><a href="https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/" target="_blank" rel="noopener">Model Context Protocol: 2026-07-28 Release Candidate</a></li>
               <li><a href="https://csharp.sdk.modelcontextprotocol.io/v2/concepts/stateless/stateless.html" target="_blank" rel="noopener">MCP C# SDK: Stateless and stateful mode</a></li>
+              <li><a href="https://aws.amazon.com/blogs/architecture/mcp-went-stateless-is-your-aws-mcp-server-deployment-well-architected/" target="_blank" rel="noopener">AWS Architecture Blog: MCP went stateless</a></li>
             </ul>
           </section>
 

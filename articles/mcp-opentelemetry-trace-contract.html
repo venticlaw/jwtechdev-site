@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>How to trace an MCP tool call with OpenTelemetry | JWTechDev.com</title>
+  <meta name="description" content="A practical MCP trace contract covering trace context, tool identity, approvals, duration, status, and sensitive data." />
+  <link rel="canonical" href="https://jwtechdev.com/articles/mcp-opentelemetry-trace-contract.html" />
+  <meta property="og:title" content="How to trace an MCP tool call with OpenTelemetry" />
+  <meta property="og:description" content="Trace the full path from user intent to agent, MCP server, tool, result, and approval." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/mcp-opentelemetry-trace-contract.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20261001-mcp-trace" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to trace an MCP tool call with OpenTelemetry","description":"A practical MCP trace contract covering trace context, tool identity, approvals, duration, status, and sensitive data.","datePublished":"2026-10-01","dateModified":"2026-10-01","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com"},"image":"https://jwtechdev.com/assets/articles/mcp-opentelemetry-trace-contract.png","mainEntityOfPage":"https://jwtechdev.com/articles/mcp-opentelemetry-trace-contract.html"}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">Agent observability</p>
+    <article class="article-body">
+      <h1>How to trace an MCP tool call with OpenTelemetry</h1>
+      <p class="section__lede">A useful trace connects user intent, agent reasoning, MCP transport, tool execution, approval, result, duration, and error state without dumping sensitive content into telemetry.</p>
+      <div class="article-kicker"><span>OpenTelemetry</span><span>MCP</span><span>Tracing</span><span>Evidence</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/mcp-opentelemetry-trace-contract.png" alt="Hand-drawn end-to-end MCP tool call trace from user through agent, client, server, tool, and result" />
+        <figcaption class="article-meta"><span>Published 2026-10-01</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#trace">The end-to-end trace</a>
+          <a href="#fields">Minimum useful fields</a>
+          <a href="#context">Context propagation</a>
+          <a href="#privacy">What not to record by default</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>Give every agent task one trace identity and carry it across the model call, MCP client, MCP server, tool execution, approval decision, and final result. Record enough metadata to explain what happened, but treat tool arguments and outputs as sensitive by default.</p>
+          </section>
+          <section id="trace">
+            <h2>The end-to-end trace</h2>
+            <p>A user requests an outcome. The agent selects a tool. The MCP client sends the request. The MCP server validates it and calls the underlying system. The result returns to the agent. A complete trace links those stages so an operator can answer: who asked, what acted, which tool ran, what target changed, who approved it, how long it took, and whether it succeeded.</p>
+          </section>
+          <section id="fields">
+            <h2>Minimum useful fields</h2>
+            <p>Start with workflow ID, task ID, user or service identity, agent name and version, model, MCP protocol version, MCP method, tool name, target system, operation class, approval state, start time, duration, status, error type, cost, and artifact reference.</p>
+            <p>Add deployment and tenant context so the same tool call can be separated across development, sandbox, and production.</p>
+          </section>
+          <section id="context">
+            <h2>Context propagation</h2>
+            <p>OpenTelemetry's developing MCP conventions describe propagating W3C trace context through <code>params._meta</code>, including <code>traceparent</code>, <code>tracestate</code>, and baggage. That allows the MCP hop to remain part of the wider distributed trace.</p>
+            <p>The AWS stateless MCP guidance reinforces the same idea: every request should carry the protocol and client context needed to handle it. Stateless transport does not mean invisible work.</p>
+          </section>
+          <section id="privacy">
+            <h2>What not to record by default</h2>
+            <p>Tool arguments and results can contain credentials, customer data, prompts, campaign content, personal information, or regulated records. OpenTelemetry marks argument and result capture as opt-in for a reason.</p>
+            <p>Prefer structured metadata and artifact references. Apply redaction, field allowlists, retention limits, access controls, and environment-specific sampling before collecting payloads.</p>
+          </section>
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/mcp.md" target="_blank" rel="noopener">OpenTelemetry: MCP semantic conventions</a></li>
+              <li><a href="https://aws.amazon.com/blogs/architecture/mcp-went-stateless-is-your-aws-mcp-server-deployment-well-architected/" target="_blank" rel="noopener">AWS Architecture Blog: MCP went stateless</a></li>
+            </ul>
+          </section>
+          <section class="article-cta">
+            <h2>Want the starter kit?</h2>
+            <p>Build the cloud and AI vocabulary behind traces, tools, and approval gates.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

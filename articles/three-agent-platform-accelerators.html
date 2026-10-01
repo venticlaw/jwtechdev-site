@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>Three accelerators every production agent platform needs | JWTechDev.com</title>
+  <meta name="description" content="A practical MCP readiness pack, A2A handoff validator, and trace completeness dashboard for production agent systems." />
+  <link rel="canonical" href="https://jwtechdev.com/articles/three-agent-platform-accelerators.html" />
+  <meta property="og:title" content="Three accelerators every production agent platform needs" />
+  <meta property="og:description" content="Safe tools, clean handoffs, and complete evidence turn agent demos into governed releases." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/three-agent-platform-accelerators.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20261001-agent-accelerators" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Three accelerators every production agent platform needs","description":"A practical MCP readiness pack, A2A handoff validator, and trace completeness dashboard for production agent systems.","datePublished":"2026-10-01","dateModified":"2026-10-01","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com"},"image":"https://jwtechdev.com/assets/articles/three-agent-platform-accelerators.png","mainEntityOfPage":"https://jwtechdev.com/articles/three-agent-platform-accelerators.html"}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">Agent platform patterns</p>
+    <article class="article-body">
+      <h1>Three accelerators every production agent platform needs</h1>
+      <p class="section__lede">Three small building blocks can remove a surprising amount of production risk: an MCP readiness pack, an A2A handoff validator, and a trace completeness dashboard.</p>
+      <div class="article-kicker"><span>MCP readiness</span><span>A2A validation</span><span>Trace evidence</span><span>Release control</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/three-agent-platform-accelerators.png" alt="Hand-drawn cards for MCP readiness, A2A handoff validation, and trace completeness feeding a governed release" />
+        <figcaption class="article-meta"><span>Published 2026-10-01</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#mcp">MCP readiness pack</a>
+          <a href="#a2a">A2A handoff validator</a>
+          <a href="#trace">Trace completeness dashboard</a>
+          <a href="#release">How they become a release gate</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>Before building a giant control plane, create three opinionated checks: can the tool surface be used safely, can agents hand work to each other without losing context, and can operators reconstruct what happened?</p>
+          </section>
+          <section id="mcp">
+            <h2>1. MCP readiness pack</h2>
+            <p>Check protocol-version handling, stateless compatibility, authentication, tenant boundaries, tool allowlists, read and write permissions, schema validation, idempotency, error behavior, trace propagation, and legacy-client support.</p>
+            <p>The output should be a machine-readable profile plus a human review summary. Treat publish and destructive tools as separate risk classes, not normal variations of read access.</p>
+          </section>
+          <section id="a2a">
+            <h2>2. A2A handoff validator</h2>
+            <p>Validate the task goal, constraints, evidence references, allowed data, delegated permissions, expected return shape, status model, artifact references, trace identity, budget, and deadline.</p>
+            <p>A handoff should fail early when required context is missing. Silent improvisation between agents is not resilience.</p>
+          </section>
+          <section id="trace">
+            <h2>3. Trace completeness dashboard</h2>
+            <p>Measure whether each workflow captured identity, agent version, model, tool, target, approval, status, duration, cost, errors, and artifact links. A dashboard should highlight missing evidence, not merely display colorful spans.</p>
+            <p>Make completeness a percentage with explicit required fields by risk class.</p>
+          </section>
+          <section id="release">
+            <h2>How they become a release gate</h2>
+            <p>Run the readiness pack when a tool server changes. Run the handoff validator in contract tests. Run trace-completeness checks during evaluation and in production sampling. Block promotion when a required threshold fails.</p>
+            <p>That turns governance from a slide into executable delivery infrastructure.</p>
+          </section>
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://aws.amazon.com/blogs/architecture/mcp-went-stateless-is-your-aws-mcp-server-deployment-well-architected/" target="_blank" rel="noopener">AWS Architecture Blog: MCP went stateless</a></li>
+              <li><a href="https://a2a-protocol.org/latest/blog/" target="_blank" rel="noopener">A2A Protocol: A new chapter for A2A</a></li>
+              <li><a href="https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/mcp.md" target="_blank" rel="noopener">OpenTelemetry MCP semantic conventions</a></li>
+              <li><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/release-notes.html" target="_blank" rel="noopener">Amazon Bedrock AgentCore release notes</a></li>
+            </ul>
+          </section>
+          <section class="article-cta">
+            <h2>Want the starter kit?</h2>
+            <p>Build the cloud fundamentals behind safer agent systems.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

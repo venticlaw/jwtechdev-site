@@ -14,8 +14,8 @@
   <meta property="og:type" content="article" />
   <meta property="og:image" content="https://jwtechdev.com/assets/articles/agent-quality-gates-github-actions.png" />
   <link rel="stylesheet" href="../css/tokens.css" />
-  <link rel="stylesheet" href="../css/site.css?v=20260913-agent-quality-gates" />
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Your agent needs a CI quality gate before it needs more prompts","description":"AWS using Bedrock AgentCore Evaluations with GitHub Actions shows where agent delivery is going: deploy, evaluate, score behavior, and block regressions before they hit users.","datePublished":"2026-09-11","dateModified":"2026-09-13","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":"https://jwtechdev.com/assets/articles/agent-quality-gates-github-actions.png","mainEntityOfPage":"https://jwtechdev.com/articles/agent-quality-gates-github-actions.html"}</script>
+  <link rel="stylesheet" href="../css/site.css?v=20261001-agent-quality-gates" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Your agent needs a CI quality gate before it needs more prompts","description":"AWS using Bedrock AgentCore Evaluations with GitHub Actions shows where agent delivery is going: deploy, evaluate, score behavior, and block regressions before they hit users.","datePublished":"2026-09-11","dateModified":"2026-10-01","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":"https://jwtechdev.com/assets/articles/agent-quality-gates-github-actions.png","mainEntityOfPage":"https://jwtechdev.com/articles/agent-quality-gates-github-actions.html"}</script>
 </head>
 <body>
   <main class="article-shell">
@@ -27,7 +27,7 @@
       <div class="article-kicker"><span>Eval gates</span><span>AWS</span><span>Agent systems</span><span>8 min read</span></div>
       <figure class="article-hero">
         <img src="../assets/articles/agent-quality-gates-github-actions.png" alt="Hand-drawn CI quality gate diagram showing a pull request moving through CI, AgentCore, MCP tools, evaluation scoring, and a merge decision." />
-        <figcaption class="article-meta"><span>Updated 2026-09-13</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+        <figcaption class="article-meta"><span>Updated 2026-10-01</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
       </figure>
       <div class="article-layout">
         <nav class="article-toc" aria-label="Article contents">
@@ -101,18 +101,20 @@
             <p>Start with stored traces if your setup is not ready for live end-to-end evaluation. It is more deterministic, cheaper to reason about, and gives you a quality gate quickly.</p>
             <p>Then graduate toward live staging evaluation when the agent is stable enough and the identity model is clear. If the agent touches real tools, the eval system needs to understand runtime, identity, tool access, approval mode, cost policy, logging, and rollback.</p>
             <p>The point is not to make AI perfect. The point is to stop using production users as the first reliable test suite.</p>
+            <p>AgentCore's release notes now add batch evaluations, online evaluations, recommendations, A/B testing, and framework coverage across LangGraph, OpenAI Agents, LlamaIndex, Google ADK, Claude Agent SDK, Strands, and TypeScript ecosystems. The release-assurance pattern is becoming broader than one framework or one pipeline.</p>
           </section>
           <section id="sources">
             <h2>Sources checked</h2>
             <ul>
               <li><a href="https://aws.amazon.com/blogs/machine-learning/automated-agent-evaluation-with-amazon-bedrock-agentcore-and-github-actions/" target="_blank" rel="noopener">AWS ML Blog: Automated agent evaluation with Amazon Bedrock AgentCore and GitHub Actions</a></li>
 <li><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluate-agents.html" target="_blank" rel="noopener">AWS AgentCore Evaluations documentation</a></li>
+              <li><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/release-notes.html" target="_blank" rel="noopener">Amazon Bedrock AgentCore release notes</a></li>
             </ul>
           </section>
           <section class="article-cta">
             <h2>Want the starter kit?</h2>
             <p>Grab the free JWTechDev.com starter kit if you want a practical way to connect AWS, AI workflows, and approval gates.</p>
-            <a class="btn btn--primary btn--lg" href="../index.html#assets">Get resources</a>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
           </section>
         </div>
       </div>

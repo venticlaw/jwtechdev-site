@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>Adobe Marketo MCP turns marketing automation into a permission problem | JWTechDev.com</title>
+  <meta name="description" content="Marketo's MCP server exposes more than 100 operations. Here is how to govern read, draft, update, publish, and destructive actions." />
+  <link rel="canonical" href="https://jwtechdev.com/articles/marketo-mcp-writeback-risk.html" />
+  <meta property="og:title" content="Adobe Marketo MCP turns marketing automation into a permission problem" />
+  <meta property="og:description" content="Callable marketing systems need risk classes, approvals, sandboxes, and audit trails." />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/marketo-mcp-writeback-risk.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20261001-marketo-mcp" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Adobe Marketo MCP turns marketing automation into a permission problem","description":"Marketo's MCP server exposes more than 100 operations. Here is how to govern read, draft, update, publish, and destructive actions.","datePublished":"2026-10-01","dateModified":"2026-10-01","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com"},"image":"https://jwtechdev.com/assets/articles/marketo-mcp-writeback-risk.png","mainEntityOfPage":"https://jwtechdev.com/articles/marketo-mcp-writeback-risk.html"}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">AI and MarTech</p>
+    <article class="article-body">
+      <h1>Adobe Marketo MCP turns marketing automation into a permission problem</h1>
+      <p class="section__lede">More than 100 callable operations can make agents useful fast. They also make permission design, sandbox testing, approvals, and audit evidence unavoidable.</p>
+      <div class="article-kicker"><span>Marketo</span><span>MCP</span><span>Write-back risk</span><span>Approval gates</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/marketo-mcp-writeback-risk.png" alt="Hand-drawn risk ladder for marketing MCP operations from read and draft through update, publish, and delete" />
+        <figcaption class="article-meta"><span>Published 2026-10-01</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#surface">The new action surface</a>
+          <a href="#matrix">A five-class risk model</a>
+          <a href="#controls">Controls that matter</a>
+          <a href="#rollout">A safer rollout</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>Do not give a marketing agent one broad permission called “Marketo access.” Separate read, draft, update, publish, and destructive operations. Put stronger identity, approval, evidence, and rollback requirements around each step up the ladder.</p>
+          </section>
+          <section id="surface">
+            <h2>The new action surface</h2>
+            <p>Adobe documents more than 100 Marketo MCP operations across forms, programs, smart campaigns, leads, emails, snippets, lists, and folders. Some operations read data. Others create or update content. Some can approve assets or activate and deactivate campaigns.</p>
+            <p>That is the practical shift: an agent is no longer only writing copy. It can cross into systems of record and systems of action.</p>
+          </section>
+          <section id="matrix">
+            <h2>A five-class risk model</h2>
+            <p><strong>Read</strong> retrieves records without changing them. <strong>Draft</strong> creates a proposed artifact in a non-public state. <strong>Update</strong> modifies an existing record. <strong>Publish</strong> approves, activates, or exposes work to customers. <strong>Destructive</strong> deletes, removes membership, disables, or performs a change that is difficult to reverse.</p>
+            <p>Each class should map to allowed identities, environments, data classes, approval requirements, test evidence, idempotency behavior, and rollback options.</p>
+          </section>
+          <section id="controls">
+            <h2>Controls that matter</h2>
+            <p>Use a sandbox first. Issue scoped credentials to the calling identity. Allowlist tools rather than granting the full server surface. Validate arguments before execution. Require human approval at publish and destructive boundaries. Log the actor, workflow, tool, target, input, result, and approval decision.</p>
+            <p>Adobe itself advises customers to test in sandboxes and validate MCP-initiated actions. That warning should be treated as an architecture requirement, not a legal footnote.</p>
+          </section>
+          <section id="rollout">
+            <h2>A safer rollout</h2>
+            <p>Start read-only. Add draft actions after the team can reliably trace them. Add updates only for narrow, reversible use cases. Delay publish and destructive actions until approval, rollback, and evidence paths are tested under failure.</p>
+            <p>Autonomy should be earned by a workflow, not granted because the demo looked smooth.</p>
+          </section>
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul><li><a href="https://experienceleague.adobe.com/en/docs/marketo-developer/marketo/mcp-server" target="_blank" rel="noopener">Adobe Experience League: Marketo MCP Server</a></li></ul>
+          </section>
+          <section class="article-cta">
+            <h2>Want the starter kit?</h2>
+            <p>Get a plain-English foundation for cloud, permissions, and AI workflows.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get resources</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
