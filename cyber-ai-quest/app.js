@@ -179,7 +179,7 @@ const trainingPlans = {
       ]
     },
     pros: ["Lowest weekly stress and easiest pace to sustain around work and relationships.", "More time for repetition, deeper understanding, and careful portfolio polish.", "A missed week rarely threatens the entire plan."],
-    cons: ["The first concentrated application campaign starts more than a year from launch.", "Monthly learning subscriptions cost more over a longer timeline.", "She delays access to higher-paying interviews and risks learning without enough urgency or feedback."]
+    cons: ["Your first concentrated application campaign starts more than a year from launch.", "Monthly learning subscriptions cost more over a longer timeline.", "You delay access to higher-paying interviews and risk learning without enough urgency or feedback."]
   }
 };
 
