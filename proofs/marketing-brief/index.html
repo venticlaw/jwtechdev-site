@@ -3,106 +3,99 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' https://img.youtube.com data:; script-src 'self' 'unsafe-inline' https://www.tiktok.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; frame-src https://www.tiktok.com https://www.youtube.com; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
-  <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
-  <meta name="robots" content="noindex, nofollow" />
-    <title>Monetization Marketing Brief | TecDev</title>
-    <meta
-      name="description"
-      content="A static marketing brief ranking the fastest monetization opportunities across Your Mix Sucks, JWTechDev.ai, The Nucleus, and rights-safe content."
-    />
+    <meta name="color-scheme" content="light" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; frame-src 'none'; form-action 'none'; upgrade-insecure-requests" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Emily's Marketing Operating Brief | JWT + Fix Your Sound</title>
+    <meta name="description" content="The 12-week marketing operating brief for JWTechDev and Fix Your Sound, starting October 10, 2026." />
     <style>
       :root {
         color-scheme: light;
-        --ink: #17211d;
-        --muted: #64706b;
-        --paper: #f5f7f2;
-        --panel: #ffffff;
-        --line: #d9dfd7;
-        --teal: #0f766e;
-        --blue: #1d4ed8;
-        --gold: #b7791f;
-        --rose: #be123c;
-        --shadow: 0 18px 52px rgba(23, 33, 29, 0.08);
+        --ink: #15201c;
+        --muted: #5e6c66;
+        --paper: #f3f6f1;
+        --surface: #ffffff;
+        --surface-soft: #eaf0eb;
+        --line: #ccd6cf;
+        --line-strong: #9caaa1;
+        --teal: #0c6b61;
+        --teal-soft: #d8eee9;
+        --blue: #2454a6;
+        --gold: #8d6418;
+        --gold-soft: #f3ead3;
+        --rose: #9e3047;
+        --rose-soft: #f5e2e6;
+        --shadow: 0 14px 40px rgba(21, 32, 28, 0.07);
       }
 
-      * {
-        box-sizing: border-box;
-      }
-
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
       body {
         margin: 0;
         min-width: 320px;
         color: var(--ink);
-        background:
-          linear-gradient(180deg, rgba(15, 118, 110, 0.08), transparent 280px),
-          var(--paper);
-        font-family:
-          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          sans-serif;
+        background: var(--paper);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       }
-
-      a {
-        color: inherit;
+      a { color: inherit; }
+      .skip-link {
+        position: absolute;
+        top: -60px;
+        left: 16px;
+        z-index: 20;
+        padding: 10px 14px;
+        color: #fff;
+        background: var(--ink);
+        font-weight: 800;
       }
-
+      .skip-link:focus { top: 12px; }
       .page {
-        width: min(1120px, calc(100% - 36px));
+        width: min(1180px, calc(100% - 32px));
         margin: 0 auto;
-        padding: 32px 0 70px;
+        padding: 24px 0 64px;
       }
-
-      .nav {
+      .topbar {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 16px;
-        margin-bottom: 22px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--line);
       }
-
       .brand {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 11px;
         font-weight: 900;
       }
-
       .brand-mark {
         display: grid;
         width: 38px;
         height: 38px;
         place-items: center;
-        border-radius: 8px;
-        color: #ffffff;
+        border-radius: 6px;
+        color: #fff;
         background: var(--teal);
       }
-
-      .nav a {
+      .topbar nav { display: flex; flex-wrap: wrap; gap: 14px; }
+      .topbar nav a {
         color: var(--muted);
-        font-size: 0.9rem;
+        font-size: 0.86rem;
         font-weight: 800;
         text-decoration: none;
       }
-
-      .hero,
-      .panel,
-      .offer-card,
-      .rank-card {
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: var(--panel);
-        box-shadow: var(--shadow);
-      }
-
-      .hero {
+      .topbar nav a:hover,
+      .topbar nav a:focus-visible { color: var(--teal); }
+      .command-header {
         display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(280px, 0.48fr);
-        gap: 26px;
+        grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.5fr);
+        gap: 28px;
         align-items: end;
-        padding: clamp(22px, 5vw, 44px);
+        padding: 38px 0 26px;
+        border-bottom: 1px solid var(--line);
       }
-
       .eyebrow {
         margin: 0 0 8px;
         color: var(--teal);
@@ -111,474 +104,459 @@
         letter-spacing: 0;
         text-transform: uppercase;
       }
-
-      h1,
-      h2,
-      h3,
-      p {
-        margin-top: 0;
-      }
-
+      h1, h2, h3, p { margin-top: 0; }
       h1 {
-        max-width: 780px;
+        max-width: 860px;
         margin-bottom: 14px;
-        font-size: clamp(2.4rem, 8vw, 5.8rem);
-        line-height: 0.92;
+        font-size: clamp(2.45rem, 6vw, 5rem);
+        line-height: 0.96;
+        letter-spacing: 0;
       }
-
       h2 {
         margin-bottom: 10px;
-        font-size: clamp(1.55rem, 3.5vw, 2.7rem);
-        line-height: 1;
+        font-size: clamp(1.55rem, 3vw, 2.35rem);
+        line-height: 1.05;
+        letter-spacing: 0;
       }
-
-      h3 {
-        margin-bottom: 8px;
-        font-size: 1.2rem;
-        line-height: 1.15;
-      }
-
+      h3 { margin-bottom: 8px; font-size: 1.08rem; line-height: 1.25; }
       .lead {
-        max-width: 720px;
+        max-width: 780px;
         margin-bottom: 0;
         color: var(--muted);
-        font-size: 1.08rem;
+        font-size: 1.06rem;
         line-height: 1.55;
       }
-
-      .hero-aside {
+      .status-panel {
         display: grid;
         gap: 10px;
-      }
-
-      .hero-aside article {
-        padding: 14px;
+        padding: 18px;
         border: 1px solid var(--line);
-        border-radius: 8px;
-        background: #f8faf8;
+        background: var(--surface);
+        box-shadow: var(--shadow);
       }
-
-      .hero-aside span,
-      .stat span,
-      .rank-card span {
-        display: block;
+      .status-line {
+        display: grid;
+        grid-template-columns: 10px 1fr;
+        gap: 10px;
+        align-items: start;
         color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.35;
+      }
+      .status-dot {
+        width: 10px;
+        height: 10px;
+        margin-top: 3px;
+        border-radius: 50%;
+        background: var(--teal);
+      }
+      .status-line strong { display: block; color: var(--ink); }
+      .start-strip {
+        display: grid;
+        grid-template-columns: 170px 1fr auto;
+        gap: 18px;
+        align-items: center;
+        margin-top: 18px;
+        padding: 17px 18px;
+        color: #fff;
+        background: var(--ink);
+      }
+      .start-strip span {
+        color: #bcd3ca;
         font-size: 0.76rem;
         font-weight: 900;
         text-transform: uppercase;
       }
-
-      .hero-aside strong {
-        display: block;
-        margin-top: 6px;
-        font-size: 1.05rem;
+      .start-strip strong { line-height: 1.35; }
+      .start-strip a {
+        padding: 9px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.38);
+        border-radius: 6px;
+        font-size: 0.82rem;
+        font-weight: 900;
+        text-decoration: none;
       }
-
-      .section {
-        margin-top: 18px;
+      .section { padding: 34px 0; border-bottom: 1px solid var(--line); }
+      .section-heading {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        align-items: end;
+        margin-bottom: 18px;
       }
-
-      .panel {
-        padding: 22px;
-      }
-
-      .stats {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 10px;
-      }
-
-      .stat {
-        min-height: 116px;
-        padding: 16px;
-        border: 1px solid var(--line);
-        border-radius: 8px;
-        background: #f8faf8;
-      }
-
-      .stat strong {
-        display: block;
-        margin-top: 8px;
-        font-size: 1.7rem;
-        line-height: 1;
-      }
-
-      .rank-grid {
-        display: grid;
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 12px;
-      }
-
-      .rank-card {
-        display: grid;
-        gap: 8px;
-        min-height: 210px;
-        padding: 18px;
-      }
-
-      .rank-card strong {
-        display: block;
-        font-size: 1.15rem;
-        line-height: 1.1;
-      }
-
-      .rank-card p {
+      .section-heading p {
+        max-width: 600px;
         margin-bottom: 0;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+      .launch-grid, .brand-grid, .ownership-grid, .score-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+      .work-card, .brand-card, .owner-card, .score-card {
+        min-width: 0;
+        border: 1px solid var(--line);
+        border-radius: 7px;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+      }
+      .work-card, .brand-card, .owner-card { padding: 20px; }
+      .card-topline {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+      .content-id {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.8rem;
+        font-weight: 900;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        padding: 5px 9px;
+        border-radius: 999px;
+        color: #064c45;
+        background: var(--teal-soft);
+        font-size: 0.72rem;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+      .work-card > p, .brand-card > p, .owner-card > p { color: var(--muted); line-height: 1.5; }
+      .detail-list, .task-list, .boundary-list { margin: 14px 0 0; padding: 0; list-style: none; }
+      .detail-list li, .task-list li, .boundary-list li {
+        position: relative;
+        padding-left: 22px;
         color: var(--muted);
         line-height: 1.45;
       }
-
-      .rank-card b {
-        align-self: end;
+      .detail-list li::before, .boundary-list li::before {
+        position: absolute;
+        left: 0;
         color: var(--teal);
-        font-size: 0.82rem;
-        text-transform: uppercase;
-      }
-
-      .offer-grid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
-      }
-
-      .offer-card {
-        padding: 20px;
-      }
-
-      .offer-card.primary {
-        border-left: 5px solid var(--teal);
-      }
-
-      .offer-card.secondary {
-        border-left: 5px solid var(--blue);
-      }
-
-      .offer-card.tertiary {
-        border-left: 5px solid var(--gold);
-      }
-
-      .offer-card.quiet {
-        border-left: 5px solid var(--muted);
-      }
-
-      .offer-card p,
-      .offer-card li,
-      .panel p,
-      .panel li {
-        color: var(--muted);
-        line-height: 1.5;
-      }
-
-      ul {
-        margin: 12px 0 0 18px;
-        padding: 0;
-      }
-
-      li + li {
-        margin-top: 6px;
-      }
-
-      .tag-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 7px;
-        margin-top: 12px;
-      }
-
-      .tag {
-        padding: 5px 8px;
-        border-radius: 999px;
-        color: #17423e;
-        background: #dff4ef;
-        font-size: 0.76rem;
+        content: "•";
         font-weight: 900;
       }
-
-      .ad-grid {
+      .task-list li::before {
+        position: absolute;
+        top: 3px;
+        left: 0;
+        width: 12px;
+        height: 12px;
+        border: 2px solid var(--line-strong);
+        content: "";
+      }
+      .detail-list li + li, .task-list li + li, .boundary-list li + li { margin-top: 8px; }
+      .agenda {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 14px;
+        grid-template-columns: 120px minmax(0, 1fr) minmax(240px, 0.55fr);
+        border-top: 1px solid var(--line);
       }
-
-      .ad-card {
-        padding: 18px;
+      .agenda > div {
+        min-width: 0;
+        padding: 15px 12px;
+        border-bottom: 1px solid var(--line);
+      }
+      .agenda-time { color: var(--teal); font-size: 0.8rem; font-weight: 900; }
+      .agenda-owner { color: var(--muted); font-size: 0.86rem; line-height: 1.4; }
+      .workflow {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
         border: 1px solid var(--line);
-        border-radius: 8px;
-        background: #f8faf8;
+        background: var(--surface);
+        box-shadow: var(--shadow);
       }
-
-      .ad-card strong {
+      .workflow article {
+        min-height: 164px;
+        padding: 15px;
+        border-right: 1px solid var(--line);
+      }
+      .workflow article:last-child { border-right: 0; }
+      .workflow span {
+        display: block;
+        margin-bottom: 12px;
+        color: var(--teal);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.78rem;
+        font-weight: 900;
+      }
+      .workflow p { margin-bottom: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.45; }
+      .brand-card.jwt { border-top: 5px solid var(--blue); }
+      .brand-card.fys { border-top: 5px solid var(--gold); }
+      .positioning {
+        margin: 16px 0 0;
+        padding: 15px;
+        border-left: 4px solid var(--gold);
+        color: var(--ink);
+        background: var(--gold-soft);
+        font-weight: 750;
+        line-height: 1.5;
+      }
+      .owner-card.emily { border-left: 5px solid var(--teal); }
+      .owner-card.josh { border-left: 5px solid var(--blue); }
+      .brand-loop {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 16px;
+      }
+      .brand-loop div {
+        min-height: 112px;
+        padding: 13px;
+        border: 1px solid var(--line);
+        background: var(--surface);
+      }
+      .brand-loop span {
         display: block;
         margin-bottom: 8px;
+        color: var(--teal);
+        font-size: 0.74rem;
+        font-weight: 900;
       }
-
-      .gates {
-        border-left: 5px solid var(--rose);
+      .brand-loop strong { font-size: 0.88rem; line-height: 1.3; }
+      .cadence-table, .metric-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--surface);
+        box-shadow: var(--shadow);
       }
-
-      .footer {
-        margin-top: 24px;
+      .cadence-table th, .cadence-table td, .metric-table th, .metric-table td {
+        padding: 13px 14px;
+        border: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+      }
+      .cadence-table th, .metric-table th {
         color: var(--muted);
-        font-size: 0.9rem;
+        background: var(--surface-soft);
+        font-size: 0.76rem;
+        text-transform: uppercase;
+      }
+      .cadence-table td, .metric-table td { font-size: 0.9rem; line-height: 1.4; }
+      .metric-table td:last-child { font-weight: 900; }
+      .approval {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        gap: 20px;
+        align-items: start;
+        padding: 22px;
+        border: 1px solid #dab9c0;
+        background: var(--rose-soft);
+      }
+      .approval strong { color: var(--rose); text-transform: uppercase; }
+      .approval ul { margin: 0; padding-left: 18px; color: #673543; line-height: 1.5; }
+      .footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        padding-top: 24px;
+        color: var(--muted);
+        font-size: 0.86rem;
         line-height: 1.5;
       }
 
-      @media (max-width: 900px) {
-        .hero,
-        .stats,
-        .rank-grid,
-        .offer-grid,
-        .ad-grid {
-          grid-template-columns: 1fr;
-        }
-
-        .rank-card {
+      @media (max-width: 960px) {
+        .command-header, .launch-grid, .brand-grid, .ownership-grid, .score-grid { grid-template-columns: 1fr; }
+        .workflow, .brand-loop { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .workflow article:nth-child(2n) { border-right: 0; }
+        .agenda { grid-template-columns: 105px minmax(0, 1fr); }
+        .agenda-owner { grid-column: 2; padding-top: 0 !important; }
+      }
+      @media (max-width: 660px) {
+        .page { width: min(100% - 22px, 1180px); padding-top: 14px; }
+        .topbar, .section-heading, .footer { align-items: flex-start; flex-direction: column; }
+        .topbar nav { gap: 9px 12px; }
+        .command-header { padding-top: 28px; }
+        h1 { font-size: 2.5rem; }
+        .start-strip { grid-template-columns: 1fr; }
+        .workflow, .brand-loop { grid-template-columns: 1fr; }
+        .workflow article, .workflow article:nth-child(2n) {
           min-height: 0;
+          border-right: 0;
+          border-bottom: 1px solid var(--line);
         }
+        .workflow article:last-child { border-bottom: 0; }
+        .agenda { grid-template-columns: 1fr; }
+        .agenda-owner { grid-column: 1; }
+        .cadence-table, .metric-table {
+          table-layout: fixed;
+          white-space: normal;
+        }
+        .cadence-table th:first-child,
+        .cadence-table td:first-child { width: 24%; }
+        .cadence-table th,
+        .cadence-table td,
+        .metric-table th,
+        .metric-table td {
+          padding: 10px 8px;
+          overflow-wrap: anywhere;
+        }
+        .metric-table th:last-child,
+        .metric-table td:last-child { width: 28%; }
+        .approval { grid-template-columns: 1fr; }
       }
-
-      @media (max-width: 560px) {
-        .page {
-          width: min(100% - 24px, 1120px);
-          padding-top: 18px;
-        }
-
-        .nav {
-          align-items: flex-start;
-          flex-direction: column;
-        }
-
-        .hero,
-        .panel,
-        .offer-card {
-          padding: 16px;
-        }
-
-        h1 {
-          font-size: 2.55rem;
-        }
-      }
+      @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
     </style>
   </head>
   <body>
-    <main class="page">
-      <nav class="nav" aria-label="Proof navigation">
-        <div class="brand">
-          <span class="brand-mark" aria-hidden="true">N</span>
-          <span>TecDev Monetization Brief</span>
-        </div>
-        <a href="../">Back to proofs</a>
-      </nav>
+    <a class="skip-link" href="#main">Skip to operating brief</a>
+    <main class="page" id="main">
+      <header class="topbar">
+        <div class="brand"><span class="brand-mark" aria-hidden="true">E</span><span>Emily's Marketing Desk</span></div>
+        <nav aria-label="Page sections">
+          <a href="#tomorrow">Tomorrow</a><a href="#cycle">Cycle</a><a href="#brands">Brands</a><a href="#ownership">Ownership</a><a href="#scorecard">Scorecard</a>
+        </nav>
+      </header>
 
-      <section class="hero">
+      <section class="command-header">
         <div>
-          <p class="eyebrow">Marketing brief</p>
-          <h1>Fastest paths to new revenue.</h1>
-          <p class="lead">
-            A review-ready monetization brief using Alex Hormozi's $100M Offers, $100M Leads,
-            and $100M Money Models lens across JoshYouWut, Your Mix Sucks, JWTechDev.ai,
-            The Nucleus, and rights-safe content. BOT Funding is intentionally excluded.
-          </p>
+          <p class="eyebrow">12-week marketing operating brief</p>
+          <h1>Build the factory. Protect the voice.</h1>
+          <p class="lead">Starting Saturday, October 10, Josh records the raw authority. Emily turns it into a disciplined content, distribution, audience-learning, and brand-partnership system for JWTechDev and Fix Your Sound.</p>
         </div>
-        <aside class="hero-aside" aria-label="Top recommendations">
-          <article>
-            <span>Fastest direct cash</span>
-            <strong>Your Mix Sucks Early Access Pack</strong>
-          </article>
-          <article>
-            <span>Best education path</span>
-            <strong>JW Cloud Career Starter Kit</strong>
-          </article>
-          <article>
-            <span>Best upside service</span>
-            <strong>AI Agent Ops Starter Kit</strong>
-          </article>
+        <aside class="status-panel" aria-label="Launch readiness">
+          <div class="status-line"><span class="status-dot" aria-hidden="true"></span><div><strong>Direction approved</strong>Both pilot topics and primary CTAs are locked.</div></div>
+          <div class="status-line"><span class="status-dot" aria-hidden="true"></span><div><strong>Production ready</strong>Scripts, hooks, cutdowns, and run of show are complete.</div></div>
+          <div class="status-line"><span class="status-dot" aria-hidden="true"></span><div><strong>System ready</strong>Recording setup will be ready for Saturday's session.</div></div>
         </aside>
       </section>
 
-      <section class="section stats" aria-label="Brief summary stats">
-        <article class="stat">
-          <span>Ranked offers</span>
-          <strong>4</strong>
-        </article>
-        <article class="stat">
-          <span>Fastest launch</span>
-          <strong>YMS</strong>
-        </article>
-        <article class="stat">
-          <span>Ad tests</span>
-          <strong>2</strong>
-        </article>
-        <article class="stat">
-          <span>External actions</span>
-          <strong>0</strong>
-        </article>
+      <div class="start-strip"><span>Start date</span><strong>Saturday, October 10, 2026 · Cycle 01 begins with two pilot recordings.</strong><a href="#tomorrow">See the handoff</a></div>
+
+      <section class="section" id="tomorrow">
+        <div class="section-heading">
+          <div><p class="eyebrow">Tomorrow</p><h2>What happens first</h2></div>
+          <p>Saturday is a controlled pilot, not a full campaign launch. The goal is to create clean source material, establish the handoff, and begin Emily's research queue.</p>
+        </div>
+        <div class="launch-grid">
+          <article class="work-card">
+            <div class="card-topline"><span class="content-id">JWT-001</span><span class="badge">Approved to record</span></div>
+            <h3>Why Every Company Suddenly Wants AI Agents</h3>
+            <p>A broad, accessible entrance into JWT's established enterprise AI, cloud, identity, governance, and architecture expertise.</p>
+            <ul class="detail-list">
+              <li>One 8-15 minute modular video</li><li>Three alternate openings and two CTA takes</li><li>Four planned short-form cuts</li><li>Primary CTA: Cloud Starter Kit and email list</li><li>Brand categories: cloud, AI, identity, security, observability, developer tools</li>
+            </ul>
+          </article>
+          <article class="work-card">
+            <div class="card-topline"><span class="content-id">FYS-001</span><span class="badge">Approved to record</span></div>
+            <h3>Why A 20-Year Music Veteran Is Building Fix Your Sound</h3>
+            <p>The opening chapter of a 12-week founder journey built on music credibility, engineering discipline, useful education, and visible client outcomes.</p>
+            <ul class="detail-list">
+              <li>One 8-12 minute modular founder video</li><li>Three alternate openings and two CTA takes</li><li>Four planned short-form cuts</li><li>Primary CTA: follow the journey and submit a mix problem</li><li>Proof basis: 20 years in music, international placements, NCAA placement</li>
+            </ul>
+          </article>
+        </div>
+        <div class="agenda" aria-label="Saturday operating schedule">
+          <div class="agenda-time">Before noon</div><div><strong>Emily reviews both content briefs</strong></div><div class="agenda-owner">Flag packaging questions only. Do not rewrite Josh's technical position.</div>
+          <div class="agenda-time">Recording block</div><div><strong>Josh records both pilots, hooks, CTAs, and supporting footage</strong></div><div class="agenda-owner">Approximately three hours. No publishing or outreach.</div>
+          <div class="agenda-time">In parallel</div><div><strong>Emily opens the Cycle 01 research and prospect queues</strong></div><div class="agenda-owner">Ten JWT brands, ten FYS pain points, and initial contact research.</div>
+          <div class="agenda-time">End of day</div><div><strong>Raw files land in the content factory by content ID</strong></div><div class="agenda-owner">Editing begins from preserved originals; preferred takes are noted.</div>
+        </div>
       </section>
 
-      <section class="section panel">
-        <p class="eyebrow">Ranking</p>
-        <h2>ASAP launch order</h2>
-        <div class="rank-grid">
-          <article class="rank-card">
-            <span>01</span>
-            <strong>Your Mix Sucks Early Access Pack</strong>
-            <p>
-              The clearest immediate buyer, pain, price point, and offer stack. Best path once
-              checkout, refund, support, and delivery are approved.
-            </p>
-            <b>Fastest direct money</b>
+      <section class="section" id="cycle">
+        <div class="section-heading">
+          <div><p class="eyebrow">Two-week production cycle</p><h2>Josh records once. The system carries the week.</h2></div>
+          <p>Josh's Monday-Friday involvement is limited to technical accuracy, relationship approval, and a short final review. Emily owns the operating motion.</p>
+        </div>
+        <div class="workflow" aria-label="Two-week content workflow">
+          <article><span>01 · Mine</span><h3>Audience demand</h3><p>Emily gathers questions, comments, objections, competitor gaps, and commercial signals.</p></article>
+          <article><span>02 · Brief</span><h3>Package the idea</h3><p>AI drafts the modular script; Emily sharpens hooks, titles, CTA, and audience language.</p></article>
+          <article><span>03 · Match</span><h3>Find brand fit</h3><p>Emily identifies natural partner categories, ranks prospects, and drafts outreach.</p></article>
+          <article><span>04 · Record</span><h3>Batch on Saturday</h3><p>Josh records long-form modules, alternate hooks, CTAs, demos, and pickups.</p></article>
+          <article><span>05 · Produce</span><h3>Edit locally</h3><p>AI creates the long cut, shorts, captions, reframes, audio cleanup, and review files.</p></article>
+          <article><span>06 · Approve</span><h3>One review packet</h3><p>Emily reviews first. Josh sees only final claims, relationships, and publish-ready assets.</p></article>
+          <article><span>07 · Learn</span><h3>Publish and measure</h3><p>After approval, Emily schedules, tracks response, follows up, and feeds evidence forward.</p></article>
+        </div>
+        <table class="cadence-table" aria-label="Weekly operating cadence">
+          <thead><tr><th>Day</th><th>Emily + system</th><th>Josh</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Monday</strong></td><td>Mine audience demand, update briefs, review live-content response.</td><td>No scheduled work.</td></tr>
+            <tr><td><strong>Tuesday</strong></td><td>Package scripts, titles, thumbnails, captions, and distribution copy.</td><td>Optional 5-10 minute claim check only if flagged.</td></tr>
+            <tr><td><strong>Wednesday</strong></td><td>Review edits, request revisions, and prepare newsletter/LinkedIn derivatives.</td><td>No scheduled work.</td></tr>
+            <tr><td><strong>Thursday</strong></td><td>Rank brands, prepare outreach, and assemble the final review packet.</td><td>10-15 minute final approval window.</td></tr>
+            <tr><td><strong>Friday</strong></td><td>Schedule approved assets, update pipeline, close follow-ups, prepare next briefs.</td><td>Qualified relationship responses only.</td></tr>
+            <tr><td><strong>Every other Saturday</strong></td><td>Manage run of show and verify asset handoff.</td><td>2.5-3 hour batch recording.</td></tr>
+            <tr><td><strong>Sunday</strong></td><td>Send one concise direction packet for the next batch.</td><td>15-20 minute direction approval.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="section" id="brands">
+        <div class="section-heading">
+          <div><p class="eyebrow">Brand strategy</p><h2>Two brands, two promises</h2></div>
+          <p>Do not blend their audiences or voice. The shared system creates efficiency; the public identities remain distinct.</p>
+        </div>
+        <div class="brand-grid">
+          <article class="brand-card jwt">
+            <p class="eyebrow">JWTechDev</p><h3>Keep the expertise. Widen the entrance.</h3>
+            <p>JWT remains focused on AWS, cloud, enterprise AI, agents, architecture, governance, identity, security, and career translation. Wider appeal comes from the hook, story, analogy, demonstration, and consequence, not from becoming a generic gadget-review brand.</p>
+            <ul class="detail-list"><li>Accessible curiosity at the top</li><li>Real architecture in the middle</li><li>Practical action at the end</li><li>Aligned speaking, workshop, content, and brand opportunities</li></ul>
           </article>
-          <article class="rank-card">
-            <span>02</span>
-            <strong>JW Cloud Career Starter Kit</strong>
-            <p>
-              Turns existing cloud/AWS study assets into a lead magnet, low-ticket starter kit,
-              and audit/cohort upsells.
-            </p>
-            <b>Best learning funnel</b>
-          </article>
-          <article class="rank-card">
-            <span>03</span>
-            <strong>AI Agent Ops Starter Kit</strong>
-            <p>
-              Packages Nucleus patterns into templates and setup services after internal proof
-              is stable enough to show.
-            </p>
-            <b>Best service upside</b>
-          </article>
-          <article class="rank-card">
-            <span>04</span>
-            <strong>Rights-Safe Content Engine</strong>
-            <p>
-              Useful attention layer for JW/JYW, but weaker immediate buyer urgency than YMS
-              or JW learning products.
-            </p>
-            <b>Best content engine</b>
+          <article class="brand-card fys">
+            <p class="eyebrow">Fix Your Sound</p><h3>Turn earned experience into visible guidance.</h3>
+            <p class="positioning">Josh is a 20-year music veteran with international placements and an NCAA placement, now using his engineering background to help music makers diagnose problems, make better decisions, and finish music with confidence.</p>
+            <ul class="detail-list"><li>Veteran: lessons the tutorials leave out</li><li>Engineer: clearer diagnosis without replacing taste</li><li>Builder: honest tests, mistakes, and product development</li><li>Guide: education, teardowns, client journeys, and proof</li></ul>
           </article>
         </div>
       </section>
 
-      <section class="section offer-grid" aria-label="Offer concepts">
-        <article class="offer-card primary">
-          <p class="eyebrow">Offer 01</p>
-          <h2>Your Mix Sucks Early Access Pack</h2>
-          <p>
-            For Logic Pro users who want timestamped AI mix notes before sending, releasing,
-            or second-guessing the track for another week.
-          </p>
-          <ul>
-            <li>Core: Your Mix Sucks plugin access.</li>
-            <li>Bonuses: quickstart, first-mix checklist, reference-track setup templates.</li>
-            <li>Upsell: paid human review or producer consult.</li>
-            <li>Price path: planned $59 launch, $99-$199 review upsell.</li>
-          </ul>
-          <div class="tag-row">
-            <span class="tag">Fastest</span>
-            <span class="tag">Direct payment</span>
-            <span class="tag">Niche pain</span>
-          </div>
-        </article>
-
-        <article class="offer-card secondary">
-          <p class="eyebrow">Offer 02</p>
-          <h2>JW Cloud Career Starter Kit</h2>
-          <p>
-            For beginners who need a plain-English cloud infrastructure map, AWS cert path,
-            30-day study plan, and portfolio prompts.
-          </p>
-          <ul>
-            <li>Free lead magnet: Cloud Infrastructure First Map.</li>
-            <li>Paid kit: AWS cert decision path, study calendar, portfolio templates.</li>
-            <li>Upsell: 1-hour study plan audit.</li>
-            <li>Price path: $19-$49 starter kit, $99-$199 audit.</li>
-          </ul>
-          <div class="tag-row">
-            <span class="tag">Lead magnet</span>
-            <span class="tag">Tripwire</span>
-            <span class="tag">Education</span>
-          </div>
-        </article>
-
-        <article class="offer-card tertiary">
-          <p class="eyebrow">Offer 03</p>
-          <h2>AI Agent Ops Starter Kit</h2>
-          <p>
-            For solo builders and small teams who need channel ownership, approval gates,
-            backlog, status, and daily execution loops for AI agent work.
-          </p>
-          <ul>
-            <li>Core: Nucleus template pack.</li>
-            <li>Bonuses: channel registry, approval ledger, runbooks, Todoist sync plan.</li>
-            <li>Upsell: done-with-you setup.</li>
-            <li>Price path: $49-$149 template, $500-$2,500 setup.</li>
-          </ul>
-          <div class="tag-row">
-            <span class="tag">Productized service</span>
-            <span class="tag">Proof needed</span>
-            <span class="tag">Higher upside</span>
-          </div>
-        </article>
-
-        <article class="offer-card quiet">
-          <p class="eyebrow">Offer 04</p>
-          <h2>Rights-Safe Nerd Culture Content Engine</h2>
-          <p>
-            For tech creators who want original, rights-safe content prompts and visual briefs
-            without protected screenshots, logos, clips, or affiliation claims.
-          </p>
-          <ul>
-            <li>Core: monthly content queue.</li>
-            <li>Bonuses: carousel templates and rights-safety checklist.</li>
-            <li>Upsell: generated image pack.</li>
-            <li>Price path: $29-$99 starter pack, $99-$500 monthly.</li>
-          </ul>
-          <div class="tag-row">
-            <span class="tag">Content volume</span>
-            <span class="tag">Rights-safe</span>
-            <span class="tag">Later-stage</span>
-          </div>
-        </article>
+      <section class="section" id="ownership">
+        <div class="section-heading">
+          <div><p class="eyebrow">Operating boundaries</p><h2>Emily should move without chasing Josh.</h2></div>
+          <p>Routine marketing execution belongs to Emily. Josh enters only where his voice, expertise, relationship, or approval is genuinely required.</p>
+        </div>
+        <div class="ownership-grid">
+          <article class="owner-card emily">
+            <h3>Emily owns</h3>
+            <ul class="boundary-list"><li>Audience, search, competitor, and comment research</li><li>Editorial calendar, briefs, hooks, titles, and captions</li><li>Thumbnail and visual briefs</li><li>First review of long-form and short-form edits</li><li>Repurposing, distribution preparation, and scheduling after approval</li><li>Topic-matched brand research and contact discovery</li><li>First-draft outreach, follow-up tracking, and campaign reporting</li><li>Analytics, audience learning, and next-topic recommendations</li><li>FYS testimonial, beta, client-journey, and community packaging</li></ul>
+          </article>
+          <article class="owner-card josh">
+            <h3>Josh owns</h3>
+            <ul class="boundary-list"><li>Founder point of view and final brand strategy</li><li>On-camera recording and product demonstrations</li><li>Technical, placement, client, and employer-sensitive claims</li><li>Which brands and relationships are appropriate</li><li>Prices, offers, budgets, deliverables, and commercial commitments</li><li>Final approval until a narrower standing approval is documented</li><li>High-value sponsor, speaking, customer, and event conversations</li></ul>
+          </article>
+        </div>
+        <div class="brand-loop" aria-label="Topic to brand workflow">
+          <div><span>01</span><strong>Topic approved</strong></div><div><span>02</span><strong>Categories identified</strong></div><div><span>03</span><strong>10 prospects found</strong></div><div><span>04</span><strong>Best five ranked</strong></div><div><span>05</span><strong>Top three pitches drafted</strong></div><div><span>06</span><strong>Josh approves</strong></div><div><span>07</span><strong>Emily sends and tracks</strong></div>
+        </div>
       </section>
 
-      <section class="section panel">
-        <p class="eyebrow">Paid acceleration</p>
-        <h2>Ad tests worth considering</h2>
-        <div class="ad-grid">
-          <article class="ad-card">
-            <strong>Your Mix Sucks demand test</strong>
-            <p>
-              Run a $10-$30/day, 7-day validation test to an early-access or purchase-interest
-              page. Use Logic Pro, home studio, producers, mixing, and self-producing artist
-              targeting. Measure cost per signup and purchase-intent quality.
-            </p>
+      <section class="section" id="scorecard">
+        <div class="section-heading">
+          <div><p class="eyebrow">12-week finish line</p><h2>Measure business motion, not posting theater.</h2></div>
+          <p>Views matter only when they teach us what the audience values or move someone into an owned relationship, qualified conversation, product experience, or sale.</p>
+        </div>
+        <div class="score-grid">
+          <article class="score-card">
+            <table class="metric-table" aria-label="JWTechDev 12-week targets">
+              <thead><tr><th>JWTechDev target</th><th>12 weeks</th></tr></thead>
+              <tbody><tr><td>Accessible authority videos</td><td>8</td></tr><tr><td>Short-form videos</td><td>24+</td></tr><tr><td>Newsletter issues</td><td>6</td></tr><tr><td>Qualified inquiries</td><td>6</td></tr><tr><td>Paid engagement or partnership</td><td>1</td></tr><tr><td>Gross revenue target</td><td>$2,500</td></tr></tbody>
+            </table>
           </article>
-          <article class="ad-card">
-            <strong>JW cloud lead magnet test</strong>
-            <p>
-              Run a $10-$25/day, 7-day test around "cloud infrastructure explained in 20 minutes"
-              or "pick the right AWS cert path." Measure cost per lead and readiness for the
-              starter kit.
-            </p>
+          <article class="score-card">
+            <table class="metric-table" aria-label="Fix Your Sound 12-week targets">
+              <thead><tr><th>Fix Your Sound target</th><th>12 weeks</th></tr></thead>
+              <tbody><tr><td>Long-form founder/education/proof videos</td><td>6</td></tr><tr><td>Short-form videos</td><td>24+</td></tr><tr><td>Verified Lite users</td><td>100</td></tr><tr><td>Paying customers</td><td>25</td></tr><tr><td>Qualified product/service conversations</td><td>10</td></tr><tr><td>Paid journey clients</td><td>3</td></tr><tr><td>Gross product revenue target</td><td>$1,500</td></tr></tbody>
+            </table>
           </article>
         </div>
       </section>
 
-      <section class="section panel gates">
-        <p class="eyebrow">Approval gates</p>
-        <h2>No launch actions are active from this page.</h2>
-        <ul>
-          <li>No ads launched without approval.</li>
-          <li>Public offer paths stay scoped to approved resource and inquiry flows.</li>
-          <li>No public lead capture activated without approval.</li>
-          <li>No Slack, email, forms, or outbound sends without approval.</li>
-          <li>No Google Drive uploads or moves without exact approval.</li>
-        </ul>
+      <section class="section">
+        <div class="section-heading"><div><p class="eyebrow">Emily's immediate checklist</p><h2>Start here Saturday</h2></div><p>These actions can begin before the first raw file is delivered.</p></div>
+        <ul class="task-list"><li>Review `JWT-001` and `FYS-001` for packaging questions, not thesis rewrites.</li><li>Create both content records and their deliverables in monday.com.</li><li>Open the JWT brand-fit queue: 10 prospects, five ranked, three draft pitches.</li><li>Collect 10 recurring Fix Your Sound audience problems from public evidence.</li><li>Prepare three title and thumbnail directions for each pilot.</li><li>Prepare platform-copy drafts and comment prompts for each pilot.</li><li>Confirm where raw files, review drafts, approvals, and published links will live.</li><li>Do not send, publish, buy, promise, or activate anything without approval.</li></ul>
       </section>
 
-      <p class="footer">
-        Static GitHub Pages proof. Strategy source:
-        <code>_data/channel-work/nucleus/2026-06-07-hormozi-monetization-review.md</code>.
-      </p>
+      <section class="section">
+        <div class="approval"><strong>Approval gate</strong><ul><li>No public posting, scheduling, outreach, email, forms, ads, purchases, or brand commitments without Josh's approval.</li><li>No employer, client, artist, placement, income, legal, compatibility, or performance claim without Josh's review.</li><li>No checkout, payment, lead capture, DNS, backend, storage, or file-movement change is authorized by this brief.</li></ul></div>
+      </section>
+
+      <footer class="footer"><span>Cycle 01: October 10-23, 2026</span><span>Last refreshed: October 9, 2026 · Source of truth: approved 12-week plan and pilot production briefs.</span></footer>
     </main>
   </body>
 </html>
