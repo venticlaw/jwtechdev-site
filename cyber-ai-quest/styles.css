@@ -115,7 +115,7 @@ h3 { margin-bottom: .55rem; font-size: 1.3rem; line-height: 1.15; }
 .hero-visual img { width: 100%; min-height: 470px; border: 1px solid var(--line); border-radius: 8px; object-fit: cover; object-position: center; box-shadow: var(--shadow); }
 .hero-visual figcaption { position: absolute; right: 1rem; bottom: 1rem; max-width: 280px; padding: .75rem .9rem; border: 2px solid var(--ink); background: var(--yellow); font-weight: 700; font-size: .85rem; transform: rotate(1deg); }
 
-.benefit-band, .path-section, .roadmap-section, .role-section, .portfolio-section, .reality-section, .challenge-section, .sources { padding: clamp(4.5rem, 9vw, 8rem) max(1rem, calc((100vw - var(--max)) / 2)); }
+.benefit-band, .path-section, .training-section, .roadmap-section, .role-section, .portfolio-section, .reality-section, .challenge-section, .sources { padding: clamp(4.5rem, 9vw, 8rem) max(1rem, calc((100vw - var(--max)) / 2)); }
 .benefit-band { background: var(--ink); color: white; }
 .benefit-band .eyebrow { color: var(--yellow); }
 .section-heading { max-width: 760px; margin-bottom: clamp(2rem, 4vw, 3.5rem); }
@@ -158,6 +158,77 @@ h3 { margin-bottom: .55rem; font-size: 1.3rem; line-height: 1.15; }
 .path-fit { margin: 1rem 0 0; font-size: .88rem; }
 .path-note { display: grid; grid-template-columns: .55fr 1.45fr; gap: 1rem; margin-top: 1rem; padding: 1rem 1.2rem; border-left: 6px solid var(--lilac); background: var(--lilac-soft); }
 .path-note p { margin: 0; }
+
+.training-section { background: #f0f7f5; }
+.training-path-banner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: .85rem 1rem;
+  border: 1px solid var(--ink);
+  background: var(--yellow);
+}
+.training-path-banner span { font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.training-path-banner strong { font-family: "Fraunces", Georgia, serif; font-size: 1.3rem; }
+.training-path-banner a { font-weight: 800; text-underline-offset: .2rem; }
+.pace-picker { display: grid; grid-template-columns: repeat(3, 1fr); gap: .55rem; margin-bottom: .75rem; }
+.pace-tab {
+  display: grid;
+  gap: .2rem;
+  min-height: 5rem;
+  padding: .9rem 1rem;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  background: var(--paper);
+  color: var(--ink);
+  cursor: pointer;
+  text-align: left;
+}
+.pace-tab span { font-weight: 800; }
+.pace-tab small { color: #635e67; }
+.pace-tab b { display: inline-block; margin-left: .35rem; padding: .15rem .35rem; background: var(--yellow); font-size: .62rem; text-transform: uppercase; }
+.pace-tab:hover, .pace-tab:focus-visible { background: var(--yellow-soft); }
+.pace-tab.is-active { background: var(--ink); color: white; box-shadow: 5px 5px 0 var(--coral); }
+.pace-tab.is-active small { color: #ded9e1; }
+.pace-dashboard { display: grid; grid-template-columns: repeat(4, 1fr); margin-bottom: 1rem; border: 1px solid var(--ink); background: var(--ink); gap: 1px; }
+.pace-dashboard div { min-width: 0; padding: 1rem; background: var(--paper); }
+.pace-dashboard span { display: block; margin-bottom: .35rem; color: #655f69; font-size: .68rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.pace-dashboard strong { display: block; font-family: "Fraunces", Georgia, serif; font-size: 1.25rem; line-height: 1.08; }
+.weekly-rhythm { display: grid; grid-template-columns: 1.2fr .8fr; gap: 1rem; align-items: stretch; margin-bottom: 3.5rem; padding: 1.25rem; border-left: 8px solid var(--teal); background: var(--teal-soft); }
+.weekly-rhythm h3 { font-family: "Fraunces", Georgia, serif; font-size: 1.8rem; }
+.weekly-rhythm p:last-child { margin-bottom: 0; }
+.rhythm-guardrail { padding: 1rem; border: 1px dashed var(--ink); background: rgba(255,255,255,.62); }
+.rhythm-guardrail strong { display: block; margin-bottom: .4rem; }
+.training-layout { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr); gap: 2rem; align-items: start; }
+.training-layout h3, .speed-tradeoff h3, .hiring-loop h3 { font-family: "Fraunces", Georgia, serif; font-size: 1.8rem; }
+.training-timeline { display: grid; gap: .7rem; margin: 1.25rem 0 0; padding: 0; list-style: none; }
+.training-step { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding: 1rem 0; border-top: 1px solid rgba(21,20,26,.24); }
+.training-step:last-child { border-bottom: 1px solid rgba(21,20,26,.24); }
+.training-step time { color: var(--cobalt); font-size: .78rem; font-weight: 800; line-height: 1.35; text-transform: uppercase; }
+.training-step h4 { margin: 0 0 .35rem; font-size: 1.05rem; }
+.training-step p { margin: 0; color: #56515a; font-size: .9rem; }
+.training-step .deadline-proof { display: inline-block; margin-top: .55rem; padding: .2rem .4rem; background: var(--yellow-soft); font-size: .74rem; font-weight: 800; }
+.cost-board { position: sticky; top: 5.5rem; padding: 1.25rem; border: 2px solid var(--ink); background: var(--paper); box-shadow: 7px 7px 0 var(--yellow); }
+.cost-board h3 { font-family: "Fraunces", Georgia, serif; font-size: 1.8rem; }
+.cost-row { display: grid; grid-template-columns: 1fr auto; gap: .75rem; padding: .7rem 0; border-top: 1px solid var(--line); font-size: .86rem; }
+.cost-row strong { text-align: right; }
+.cost-row.total { margin-top: .3rem; border-top: 2px solid var(--ink); font-size: 1rem; }
+.cost-note { margin: .85rem 0 0; color: #6c6670; font-size: .72rem; }
+.speed-tradeoff { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 3.5rem; }
+.speed-tradeoff > div { padding: 1.35rem; border: 1px solid var(--ink); }
+.tradeoff-good { background: var(--teal-soft); }
+.tradeoff-cost { background: var(--coral-soft); }
+.speed-tradeoff ul { display: grid; gap: .6rem; margin: 1rem 0 0; padding-left: 1.1rem; }
+.hiring-loop { display: grid; grid-template-columns: .7fr 1.3fr; gap: 2rem; margin-top: 1rem; padding: 1.5rem; border: 2px solid var(--ink); background: var(--yellow-soft); }
+.hiring-steps { display: grid; gap: .65rem; }
+.hiring-steps p { margin: 0; padding: .75rem; background: rgba(255,255,255,.7); }
+.training-receipts { margin-top: 3.5rem; }
+.receipt-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: .7rem; }
+.receipt-links a { display: grid; gap: .3rem; min-height: 115px; padding: .9rem; border: 1px solid var(--line); background: var(--paper); text-decoration: none; }
+.receipt-links a:hover { border-color: var(--ink); transform: translateY(-2px); }
+.receipt-links span { color: #66606a; font-size: .8rem; }
 
 .roadmap-section { overflow: hidden; background: var(--mist); }
 .quest-map { position: relative; display: grid; gap: 1.2rem; max-width: 990px; margin: 0 auto; padding: 0; list-style: none; }
@@ -245,6 +316,11 @@ footer a { font-weight: 700; text-underline-offset: .2rem; }
   .hero-visual { grid-row: 1; }
   .hero-visual img { min-height: 360px; aspect-ratio: 16 / 10; }
   .benefit-grid { grid-template-columns: repeat(2, 1fr); }
+  .pace-dashboard { grid-template-columns: repeat(2, 1fr); }
+  .training-layout { grid-template-columns: 1fr; }
+  .cost-board { position: static; }
+  .weekly-rhythm, .hiring-loop { grid-template-columns: 1fr; }
+  .receipt-links { grid-template-columns: repeat(2, 1fr); }
   .role-panel { grid-template-columns: 1fr; }
   .role-detail { padding: 1rem 0 0; border-top: 1px solid rgba(21,20,26,.25); border-left: 0; }
   .path-grid, .challenge-layout, .reality-card, .scholarship-band { grid-template-columns: 1fr; }
@@ -265,7 +341,7 @@ footer a { font-weight: 700; text-underline-offset: .2rem; }
   .hero-actions { align-items: flex-start; flex-direction: column; }
   .hero-stats { grid-template-columns: 1fr; }
   .hero-stats div { display: grid; grid-template-columns: 5.2rem 1fr; gap: .7rem; align-items: center; }
-  .benefit-band, .path-section, .roadmap-section, .role-section, .portfolio-section, .reality-section, .challenge-section, .sources { padding: 4rem .75rem; }
+  .benefit-band, .path-section, .training-section, .roadmap-section, .role-section, .portfolio-section, .reality-section, .challenge-section, .sources { padding: 4rem .75rem; }
   .benefit-grid, .project-grid, .source-grid { grid-template-columns: 1fr; }
   .benefit { min-height: 230px; }
   .benefit-number { margin-bottom: 2.5rem; }
@@ -281,6 +357,11 @@ footer a { font-weight: 700; text-underline-offset: .2rem; }
   .path-switcher { display: grid; grid-template-columns: 1fr 1fr; width: 100%; }
   .path-columns, .path-note { grid-template-columns: 1fr; }
   .path-card.is-selected { box-shadow: 4px 4px 0 var(--ink); }
+  .training-path-banner { grid-template-columns: 1fr auto; }
+  .training-path-banner span { grid-column: 1 / -1; }
+  .pace-picker, .pace-dashboard, .speed-tradeoff, .receipt-links { grid-template-columns: 1fr; }
+  .pace-tab { min-height: 4.4rem; }
+  .training-step { grid-template-columns: 1fr; gap: .35rem; }
   .challenge-progress { align-items: flex-start; flex-direction: column; }
   .scholarship-band { padding: 4rem .75rem; }
   footer { align-items: flex-start; flex-direction: column; padding: 2rem .75rem; }
