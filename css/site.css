@@ -2557,12 +2557,12 @@ a.article-mini-card:focus-visible {
   border-bottom: 1px solid var(--border);
 }
 
-.home-article-grid .aeo-card:nth-child(1)::before { background: center / cover url("../assets/articles/forward-deployed-engineer-traits.png"); }
-.home-article-grid .aeo-card:nth-child(2)::before { background: center / cover url("../assets/articles/agent-quality-gates-github-actions.png"); }
-.home-article-grid .aeo-card:nth-child(3)::before { background: center / cover url("../assets/articles/which-aws-certification-should-a-beginner-take-first.svg"); }
-.home-article-grid .aeo-card:nth-child(4)::before { background: center / cover url("../assets/articles/aws-cloud-practitioner-vs-ai-practitioner-vs-solutions-architect.svg"); }
-.home-article-grid .aeo-card:nth-child(5)::before { background: center / cover url("../assets/articles/best-aws-course-for-beginners.svg"); }
-.home-article-grid .aeo-card:nth-child(6)::before { background: center / cover url("../assets/articles/next-ai-platform-ui-not-chat-box.svg"); }
+.home-article-grid .aeo-card:nth-child(1)::before { background: center / cover url("../assets/articles/production-agent-stack-2026.png"); }
+.home-article-grid .aeo-card:nth-child(2)::before { background: center / cover url("../assets/articles/agentcore-runtime-ga.png"); }
+.home-article-grid .aeo-card:nth-child(3)::before { background: center / cover url("../assets/articles/marketo-mcp-writeback-risk.png"); }
+.home-article-grid .aeo-card:nth-child(4)::before { background: center / cover url("../assets/articles/mcp-opentelemetry-trace-contract.png"); }
+.home-article-grid .aeo-card:nth-child(5)::before { background: center / cover url("../assets/articles/orchestrate-vendor-native-agents.png"); }
+.home-article-grid .aeo-card:nth-child(6)::before { background: center / cover url("../assets/articles/three-agent-platform-accelerators.png"); }
 
 .home-article-grid .aeo-card > * {
   margin-inline: var(--space-5);
@@ -3242,15 +3242,40 @@ a.article-mini-card:focus-visible {
     grid-column: 1 / -1;
     display: grid;
     grid-template-columns: minmax(260px, .8fr) 1fr;
-    gap: var(--space-6);
+    grid-template-rows: auto auto auto 1fr auto;
+    column-gap: var(--space-6);
+    row-gap: var(--space-3);
     min-height: 320px;
   }
 
   .v2-home .home-article-grid .aeo-card:first-child::before {
+    grid-column: 1;
+    grid-row: 1 / -1;
     min-height: 100%;
     margin: calc(var(--space-6) * -1) 0 calc(var(--space-6) * -1) calc(var(--space-6) * -1);
     border-right: 1px solid var(--border);
     border-bottom: 0;
+  }
+
+  .v2-home .home-article-grid .aeo-card:first-child > * {
+    grid-column: 2;
+    margin: 0;
+  }
+
+  .v2-home .home-article-grid .aeo-card:first-child > .badge {
+    grid-row: 1;
+    align-self: start;
+  }
+
+  .v2-home .home-article-grid .aeo-card:first-child > h3 { grid-row: 2; }
+  .v2-home .home-article-grid .aeo-card:first-child > p { grid-row: 3; }
+  .v2-home .home-article-grid .aeo-card:first-child > ul { grid-row: 4; }
+
+  .v2-home .home-article-grid .aeo-card:first-child > a {
+    grid-row: 5;
+    align-self: end;
+    margin: 0;
+    padding-top: var(--space-3);
   }
 }
 
