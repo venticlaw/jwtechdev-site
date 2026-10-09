@@ -341,7 +341,8 @@ footer a { font-weight: 700; text-underline-offset: .2rem; }
   .hero-actions { align-items: flex-start; flex-direction: column; }
   .hero-stats { grid-template-columns: 1fr; }
   .hero-stats div { display: grid; grid-template-columns: 5.2rem 1fr; gap: .7rem; align-items: center; }
-  .benefit-band, .path-section, .training-section, .roadmap-section, .role-section, .portfolio-section, .reality-section, .challenge-section, .sources { padding: 4rem .75rem; }
+  .benefit-band, .path-section, .roadmap-section, .role-section, .portfolio-section, .reality-section, .challenge-section, .sources { padding: 4rem .75rem; }
+  .training-section { padding: 4rem 1rem; }
   .benefit-grid, .project-grid, .source-grid { grid-template-columns: 1fr; }
   .benefit { min-height: 230px; }
   .benefit-number { margin-bottom: 2.5rem; }
@@ -359,8 +360,18 @@ footer a { font-weight: 700; text-underline-offset: .2rem; }
   .path-card.is-selected { box-shadow: 4px 4px 0 var(--ink); }
   .training-path-banner { grid-template-columns: 1fr auto; }
   .training-path-banner span { grid-column: 1 / -1; }
+  .training-path-banner,
+  .pace-picker,
+  .pace-dashboard,
+  .weekly-rhythm,
+  .training-layout,
+  .speed-tradeoff,
+  .hiring-loop,
+  .training-receipts { width: 100%; min-width: 0; max-width: 100%; }
   .pace-picker, .pace-dashboard, .speed-tradeoff, .receipt-links { grid-template-columns: 1fr; }
   .pace-tab { min-height: 4.4rem; }
+  .pace-tab.is-active { box-shadow: 3px 3px 0 var(--coral); }
+  .cost-board { box-shadow: 3px 3px 0 var(--yellow); }
   .training-step { grid-template-columns: 1fr; gap: .35rem; }
   .challenge-progress { align-items: flex-start; flex-direction: column; }
   .scholarship-band { padding: 4rem .75rem; }
