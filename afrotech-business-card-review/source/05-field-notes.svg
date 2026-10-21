@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1500" viewBox="0 0 1500 1500">
+    
+  <defs>
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="170%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0E0E11" flood-opacity=".17"/>
+    </filter>
+    <clipPath id="photoCircle"><circle cx="0" cy="0" r="112"/></clipPath>
+    <clipPath id="photoTall"><rect x="0" y="0" width="400" height="600" rx="24"/></clipPath>
+    <clipPath id="cardClip"><rect x="0" y="0" width="1050" height="600" rx="28"/></clipPath>
+    <pattern id="gridDark" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" fill="none" stroke="#FFFFFF" stroke-opacity=".065" stroke-width="1"/>
+    </pattern>
+    <pattern id="gridLight" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M46 0H0V46" fill="none" stroke="#2B4162" stroke-opacity=".08" stroke-width="1"/>
+    </pattern>
+    <style>
+      .display { font-family: 'Avenir Next Condensed','Arial Narrow',Arial,sans-serif; font-weight: 800; letter-spacing: 0; }
+      .body { font-family: 'Avenir Next',Arial,sans-serif; letter-spacing: 0; }
+      .mono { font-family: 'SFMono-Regular',Consolas,monospace; letter-spacing: 0; }
+      .label { font-family: 'Avenir Next',Arial,sans-serif; font-weight: 700; letter-spacing: 2px; }
+    </style>
+  </defs>
+    <rect width="1500" height="1500" fill="#E9E4D7"/>
+    <text x="225" y="58" class="label" font-size="19" fill="#0B6E4F">05  FIELD NOTES  /  FRONT</text>
+    <text x="225" y="758" class="label" font-size="19" fill="#2B4162">05  FIELD NOTES  /  BACK</text>
+    <g transform="translate(225 85)" filter="url(#shadow)"><g clip-path="url(#cardClip)">
+      <rect width="1050" height="600" rx="28" fill="#F7F3EA"/>
+      <line x1="80" y1="0" x2="80" y2="600" stroke="#721817" stroke-width="3" opacity=".45"/>
+      <g opacity=".28" stroke="#2B4162" stroke-width="2"><line x1="0" y1="120" x2="1050" y2="120"/><line x1="0" y1="170" x2="1050" y2="170"/><line x1="0" y1="220" x2="1050" y2="220"/><line x1="0" y1="270" x2="1050" y2="270"/><line x1="0" y1="320" x2="1050" y2="320"/><line x1="0" y1="370" x2="1050" y2="370"/><line x1="0" y1="420" x2="1050" y2="420"/><line x1="0" y1="470" x2="1050" y2="470"/><line x1="0" y1="520" x2="1050" y2="520"/></g>
+      <text x="118" y="90" class="body" font-size="22" font-weight="800" fill="#0B6E4F">JWTechDev.com</text>
+      <text x="118" y="228" class="display" font-size="78" fill="#0E0E11">Joshua Walker</text>
+      <path d="M120 248C312 231 522 236 695 250" stroke="#FA9F42" stroke-width="8" fill="none" stroke-linecap="round"/>
+      <text x="120" y="320" class="body" font-size="25" font-weight="700" fill="#2B4162">Cloud &amp; AI Technology Leader</text>
+      <text x="120" y="375" class="body" font-size="21" fill="#4A4A51">I make the complicated part make sense.</text>
+      <text x="120" y="473" font-family="Noteworthy, 'Bradley Hand', cursive" font-size="35" font-weight="700" fill="#0B6E4F">Let’s build the next useful thing.</text>
+      <path d="M785 94c55-31 124-20 160 33 33 49 18 116-32 146-49 29-113 14-143-34-29-46-17-108 15-145z" fill="none" stroke="#0E0E11" stroke-width="5"/>
+      <text x="857" y="198" text-anchor="middle" class="display" font-size="56" fill="#0E0E11">JW</text></g></g>
+    <g transform="translate(225 785)" filter="url(#shadow)"><g clip-path="url(#cardClip)">
+      <rect width="1050" height="600" rx="28" fill="#F7F3EA"/>
+      <line x1="80" y1="0" x2="80" y2="600" stroke="#721817" stroke-width="3" opacity=".45"/>
+      <g opacity=".28" stroke="#2B4162" stroke-width="2"><line x1="0" y1="120" x2="1050" y2="120"/><line x1="0" y1="170" x2="1050" y2="170"/><line x1="0" y1="220" x2="1050" y2="220"/><line x1="0" y1="270" x2="1050" y2="270"/><line x1="0" y1="320" x2="1050" y2="320"/><line x1="0" y1="370" x2="1050" y2="370"/><line x1="0" y1="420" x2="1050" y2="420"/><line x1="0" y1="470" x2="1050" y2="470"/><line x1="0" y1="520" x2="1050" y2="520"/></g>
+      <text x="118" y="95" font-family="Noteworthy, 'Bradley Hand', cursive" font-size="35" font-weight="700" fill="#0E0E11">You met Josh at AFROTECH.</text>
+      <text x="118" y="176" class="body" font-size="20" font-weight="700" fill="#0B6E4F">DON’T LET THE CONVERSATION DIE IN YOUR CAMERA ROLL.</text>
+      
+    <text x="120" y="285" class="body" font-size="24" font-weight="700" fill="#2B4162">jwtechdev.com</text>
+    <text x="120" y="332" class="body" font-size="20" fill="#4A4A51">jwtechdev@gmail.com</text>
+    <text x="120" y="373" class="body" font-size="20" fill="#4A4A51">linkedin.com/in/jwtechdev</text>
+      
+    <rect x="792" y="268" width="174" height="174" rx="18" fill="#FFFFFF"/>
+    <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAJYAQMAAACEqAqfAAAABlBMVEX///8AAABVwtN+AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAByUlEQVR4nO3V0W6DMBAEQPjy/LldiYbjDKaVqkhRL7MPDhjvOG+3LC/Mo08SX7+ft72WSuus1FgsFovFere1jIl+rKnc9tc2llYWi8VisepZ+9Hcz3obOscaF7BYLBaL9RHWaSeFxWKxWKzPtaZD9+9zm8VisVisf2jl9KSna6Ic1uUOFovFYrEKWddkcVvzfM1TNofFYrFYrDrWD8l06v/YYbFYLBarhPXoQzLRj3GbofVmZbFYLBarjnWaqZkbX79Pr6O47JssFovFYlWzTjkpiQjl7oHFYrFYrCLWY/sNJYjY3F5b4uIvXMYti8VisVh1rTt6V/KIzXewWCwWi/V2azx9QMuRGIVXqB1fWSwWi8UqZ0WvjzupnB8i6ROLxWKxWOWsyJRO1pK4tp9aWSwWi8WqZ+XmCe3Dgemg3UUWi8VisapYd8lKqvVxvvbfIRaLxWKx/qH16JOcrFRbZ2t/fmWxWCwWq5C1jOmznX2mrrNZu7JYLBaLVdLqe8KK1+05z9Sc2axlsVgsFqu0tUyyzhQWi8VisT7IGs49oTaj2/MTi8VisVi1rJyrmGrXpGtYLBaLxSpkXRNKsiL3KIvFYrFYVawX5gu2gnODltnpYAAAAABJRU5ErkJggg==" x="805" y="281" width="148" height="148" style="image-rendering:pixelated"/>
+    <rect x="859" y="335" width="40" height="40" rx="10" fill="#0B6E4F"/>
+    <text x="879" y="362" text-anchor="middle" class="display" font-size="18" fill="#FFFFFF">JW</text>
+      <path d="M118 452c151 14 343 15 531-3" stroke="#FA9F42" stroke-width="7" fill="none" stroke-linecap="round"/>
+      <text x="120" y="522" class="body" font-size="18" fill="#4A4A51">AWS • infrastructure • AI systems • community</text></g></g>
+  </svg>

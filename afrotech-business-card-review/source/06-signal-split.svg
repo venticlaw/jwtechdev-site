@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1500" viewBox="0 0 1500 1500">
+    
+  <defs>
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="170%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0E0E11" flood-opacity=".17"/>
+    </filter>
+    <clipPath id="photoCircle"><circle cx="0" cy="0" r="112"/></clipPath>
+    <clipPath id="photoTall"><rect x="0" y="0" width="400" height="600" rx="24"/></clipPath>
+    <clipPath id="cardClip"><rect x="0" y="0" width="1050" height="600" rx="28"/></clipPath>
+    <pattern id="gridDark" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" fill="none" stroke="#FFFFFF" stroke-opacity=".065" stroke-width="1"/>
+    </pattern>
+    <pattern id="gridLight" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M46 0H0V46" fill="none" stroke="#2B4162" stroke-opacity=".08" stroke-width="1"/>
+    </pattern>
+    <style>
+      .display { font-family: 'Avenir Next Condensed','Arial Narrow',Arial,sans-serif; font-weight: 800; letter-spacing: 0; }
+      .body { font-family: 'Avenir Next',Arial,sans-serif; letter-spacing: 0; }
+      .mono { font-family: 'SFMono-Regular',Consolas,monospace; letter-spacing: 0; }
+      .label { font-family: 'Avenir Next',Arial,sans-serif; font-weight: 700; letter-spacing: 2px; }
+    </style>
+  </defs>
+    <rect width="1500" height="1500" fill="#E9EDF0"/>
+    <text x="225" y="58" class="label" font-size="19" fill="#0B6E4F">06  SIGNAL SPLIT  /  FRONT</text>
+    <text x="225" y="758" class="label" font-size="19" fill="#2B4162">06  SIGNAL SPLIT  /  BACK</text>
+    <g transform="translate(225 85)" filter="url(#shadow)"><g clip-path="url(#cardClip)">
+      <rect width="1050" height="600" rx="28" fill="#FFFFFF"/>
+      <path d="M0 0H392L540 600H0Z" fill="#0B6E4F"/>
+      <path d="M392 0H472L620 600H540Z" fill="#FA9F42"/>
+      <text x="62" y="92" class="label" font-size="18" fill="#D7EEE7">JWTECHDEV.COM</text>
+      <text x="62" y="224" class="display" font-size="66" fill="#FFFFFF">Joshua</text><text x="62" y="286" class="display" font-size="66" fill="#FFFFFF">Walker</text>
+      <text x="62" y="382" class="body" font-size="22" font-weight="700" fill="#FFFFFF">AWS COMMUNITY</text><text x="62" y="416" class="body" font-size="22" font-weight="700" fill="#FFFFFF">BUILDER</text>
+      <text x="610" y="194" class="display" font-size="61" fill="#0E0E11">Cloud.</text>
+      <text x="610" y="257" class="display" font-size="61" fill="#0E0E11">AI.</text>
+      <text x="610" y="320" class="display" font-size="61" fill="#0E0E11">Infrastructure.</text>
+      <text x="614" y="387" class="body" font-size="22" fill="#4A4A51">Explained like a human.</text>
+      <text x="614" y="506" class="label" font-size="17" fill="#2B4162">AFROTECH 2026  •  HOUSTON</text></g></g>
+    <g transform="translate(225 785)" filter="url(#shadow)"><g clip-path="url(#cardClip)">
+      <rect width="1050" height="600" rx="28" fill="#2B4162"/>
+      <path d="M710 0H1050V600H855Z" fill="#0B6E4F"/>
+      <path d="M665 0H725L870 600H810Z" fill="#FA9F42"/>
+      <text x="72" y="112" class="display" font-size="58" fill="#FFFFFF">Keep the signal.</text>
+      <text x="72" y="168" class="body" font-size="22" fill="#C7D4E8">Articles, diagrams, videos, and community.</text>
+      
+    <text x="74" y="302" class="body" font-size="24" font-weight="700" fill="#FFFFFF">jwtechdev.com</text>
+    <text x="74" y="349" class="body" font-size="20" fill="#DDE5EF">jwtechdev@gmail.com</text>
+    <text x="74" y="390" class="body" font-size="20" fill="#DDE5EF">linkedin.com/in/jwtechdev</text>
+      
+    <rect x="790" y="317" width="174" height="174" rx="18" fill="#FFFFFF"/>
+    <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAJYAQMAAACEqAqfAAAABlBMVEX///8AAABVwtN+AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAByUlEQVR4nO3V0W6DMBAEQPjy/LldiYbjDKaVqkhRL7MPDhjvOG+3LC/Mo08SX7+ft72WSuus1FgsFovFere1jIl+rKnc9tc2llYWi8VisepZ+9Hcz3obOscaF7BYLBaL9RHWaSeFxWKxWKzPtaZD9+9zm8VisVisf2jl9KSna6Ic1uUOFovFYrEKWddkcVvzfM1TNofFYrFYrDrWD8l06v/YYbFYLBarhPXoQzLRj3GbofVmZbFYLBarjnWaqZkbX79Pr6O47JssFovFYlWzTjkpiQjl7oHFYrFYrCLWY/sNJYjY3F5b4uIvXMYti8VisVh1rTt6V/KIzXewWCwWi/V2azx9QMuRGIVXqB1fWSwWi8UqZ0WvjzupnB8i6ROLxWKxWOWsyJRO1pK4tp9aWSwWi8WqZ+XmCe3Dgemg3UUWi8VisapYd8lKqvVxvvbfIRaLxWKx/qH16JOcrFRbZ2t/fmWxWCwWq5C1jOmznX2mrrNZu7JYLBaLVdLqe8KK1+05z9Sc2axlsVgsFqu0tUyyzhQWi8VisT7IGs49oTaj2/MTi8VisVi1rJyrmGrXpGtYLBaLxSpkXRNKsiL3KIvFYrFYVawX5gu2gnODltnpYAAAAABJRU5ErkJggg==" x="803" y="330" width="148" height="148" style="image-rendering:pixelated"/>
+    <rect x="857" y="384" width="40" height="40" rx="10" fill="#0B6E4F"/>
+    <text x="877" y="411" text-anchor="middle" class="display" font-size="18" fill="#FFFFFF">JW</text>
+      <text x="74" y="500" class="body" font-size="19" font-weight="700" fill="#FA9F42">SCAN IT BEFORE THE WIFI GETS WEIRD.</text></g></g>
+  </svg>

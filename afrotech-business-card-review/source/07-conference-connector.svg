@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1500" viewBox="0 0 1500 1500">
+    
+  <defs>
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="170%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#0E0E11" flood-opacity=".17"/>
+    </filter>
+    <clipPath id="photoCircle"><circle cx="0" cy="0" r="112"/></clipPath>
+    <clipPath id="photoTall"><rect x="0" y="0" width="400" height="600" rx="24"/></clipPath>
+    <clipPath id="cardClip"><rect x="0" y="0" width="1050" height="600" rx="28"/></clipPath>
+    <pattern id="gridDark" width="42" height="42" patternUnits="userSpaceOnUse">
+      <path d="M42 0H0V42" fill="none" stroke="#FFFFFF" stroke-opacity=".065" stroke-width="1"/>
+    </pattern>
+    <pattern id="gridLight" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M46 0H0V46" fill="none" stroke="#2B4162" stroke-opacity=".08" stroke-width="1"/>
+    </pattern>
+    <style>
+      .display { font-family: 'Avenir Next Condensed','Arial Narrow',Arial,sans-serif; font-weight: 800; letter-spacing: 0; }
+      .body { font-family: 'Avenir Next',Arial,sans-serif; letter-spacing: 0; }
+      .mono { font-family: 'SFMono-Regular',Consolas,monospace; letter-spacing: 0; }
+      .label { font-family: 'Avenir Next',Arial,sans-serif; font-weight: 700; letter-spacing: 2px; }
+    </style>
+  </defs>
+    <rect width="1500" height="1500" fill="#E9EDF0"/>
+    <text x="225" y="58" class="label" font-size="19" fill="#0B6E4F">07  CONFERENCE CONNECTOR  /  FRONT</text>
+    <text x="225" y="758" class="label" font-size="19" fill="#2B4162">07  CONFERENCE CONNECTOR  /  BACK</text>
+    <g transform="translate(225 85)" filter="url(#shadow)"><g clip-path="url(#cardClip)">
+      <rect width="1050" height="600" rx="28" fill="#0B6E4F"/>
+      <rect x="0" y="0" width="1050" height="86" rx="28" fill="#0E0E11"/>
+      <rect x="0" y="58" width="1050" height="28" fill="#0E0E11"/>
+      <text x="62" y="57" class="label" font-size="20" fill="#FA9F42">AFROTECH 2026  •  LET'S CONNECT</text>
+      <text x="62" y="234" class="display" font-size="86" fill="#FFFFFF">I make cloud</text>
+      <text x="62" y="320" class="display" font-size="86" fill="#FFFFFF">actually click.</text>
+      <text x="66" y="390" class="body" font-size="26" font-weight="700" fill="#CFE9E1">Joshua Walker</text>
+      <text x="66" y="434" class="body" font-size="21" fill="#FFFFFF">Cloud &amp; AI Technology Leader</text>
+      <g transform="translate(736 370)"><circle cx="105" cy="75" r="105" fill="#FA9F42"/><text x="105" y="94" text-anchor="middle" class="display" font-size="65" fill="#0E0E11">JW</text></g></g></g>
+    <g transform="translate(225 785)" filter="url(#shadow)"><g clip-path="url(#cardClip)">
+      <rect width="1050" height="600" rx="28" fill="#FFFFFF"/>
+      <text x="70" y="96" class="label" font-size="19" fill="#0B6E4F">THE NEXT STEP IS SIMPLE</text>
+      <text x="70" y="205" class="display" font-size="63" fill="#0E0E11">Scan. Connect.</text>
+      <text x="70" y="268" class="display" font-size="63" fill="#0E0E11">Follow through.</text>
+      <rect x="67" y="303" width="585" height="3" fill="#E0E0E2"/>
+      
+    <text x="70" y="365" class="body" font-size="24" font-weight="700" fill="#2B4162">jwtechdev.com</text>
+    <text x="70" y="412" class="body" font-size="20" fill="#4A4A51">jwtechdev@gmail.com</text>
+    <text x="70" y="453" class="body" font-size="20" fill="#4A4A51">linkedin.com/in/jwtechdev</text>
+      
+    <rect x="787" y="293" width="174" height="174" rx="18" fill="#FFFFFF"/>
+    <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAlgAAAJYAQMAAACEqAqfAAAABlBMVEX///8AAABVwtN+AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAByUlEQVR4nO3V0W6DMBAEQPjy/LldiYbjDKaVqkhRL7MPDhjvOG+3LC/Mo08SX7+ft72WSuus1FgsFovFere1jIl+rKnc9tc2llYWi8VisepZ+9Hcz3obOscaF7BYLBaL9RHWaSeFxWKxWKzPtaZD9+9zm8VisVisf2jl9KSna6Ic1uUOFovFYrEKWddkcVvzfM1TNofFYrFYrDrWD8l06v/YYbFYLBarhPXoQzLRj3GbofVmZbFYLBarjnWaqZkbX79Pr6O47JssFovFYlWzTjkpiQjl7oHFYrFYrCLWY/sNJYjY3F5b4uIvXMYti8VisVh1rTt6V/KIzXewWCwWi/V2azx9QMuRGIVXqB1fWSwWi8UqZ0WvjzupnB8i6ROLxWKxWOWsyJRO1pK4tp9aWSwWi8WqZ+XmCe3Dgemg3UUWi8VisapYd8lKqvVxvvbfIRaLxWKx/qH16JOcrFRbZ2t/fmWxWCwWq5C1jOmznX2mrrNZu7JYLBaLVdLqe8KK1+05z9Sc2axlsVgsFqu0tUyyzhQWi8VisT7IGs49oTaj2/MTi8VisVi1rJyrmGrXpGtYLBaLxSpkXRNKsiL3KIvFYrFYVawX5gu2gnODltnpYAAAAABJRU5ErkJggg==" x="800" y="306" width="148" height="148" style="image-rendering:pixelated"/>
+    <rect x="854" y="360" width="40" height="40" rx="10" fill="#0B6E4F"/>
+    <text x="874" y="387" text-anchor="middle" class="display" font-size="18" fill="#FFFFFF">JW</text>
+      <rect x="70" y="506" width="355" height="42" rx="21" fill="#FA9F42"/><text x="247" y="534" text-anchor="middle" class="label" font-size="15" fill="#0E0E11">CLOUD • AI • COMMUNITY</text></g></g>
+  </svg>
