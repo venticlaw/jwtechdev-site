@@ -7,6 +7,6 @@ A focused business-card family based on the selected bottom-right Human in the L
 3. Executive Constellation
 4. Decision Circuit
 
-The original remains unchanged. Each spin-off keeps Joshua “TechDev” Walker’s portrait central, uses the exact Deloitte title, emphasizes 10+ years in technology, and uses the selected “Turning AI strategy into governed production systems” back.
+Each direction keeps Joshua “TechDev” Walker’s portrait central, uses the exact Deloitte title, and uses the selected “Turning AI strategy into governed production systems” back. The typography follows the JWTechDev brand system: Roboto Condensed for display text and Roboto for supporting copy. Technology tenure is shown as 13+ years, based on an August 2013 HRsoft start date.
 
 The combined review image is `human-in-the-loop-card-family.png`. Individual PNGs and editable SVG sources are included in their respective folders.
