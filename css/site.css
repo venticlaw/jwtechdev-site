@@ -1814,16 +1814,19 @@ button { font: inherit; }
 .article-body {
   display: grid;
   gap: var(--space-6);
+  min-width: 0;
   margin-top: var(--space-5);
 }
 
 .article-body h1 {
   max-width: 16ch;
+  min-width: 0;
   margin: 0;
   color: var(--ink-900);
   font-size: clamp(2.75rem, 6.8vw, 5.1rem);
   letter-spacing: 0;
   line-height: 1.08;
+  overflow-wrap: anywhere;
 }
 
 .article-body section {
@@ -1879,6 +1882,7 @@ button { font: inherit; }
   display: grid;
   gap: var(--space-3);
   width: min(720px, 100%);
+  min-width: 0;
   margin: 0 auto;
   padding: var(--space-4);
   border: 1px solid var(--border);
@@ -1891,6 +1895,7 @@ button { font: inherit; }
 
 .article-hero img {
   width: 100%;
+  min-width: 0;
   height: auto;
   border-radius: var(--radius-md);
   background: var(--ink-900);
@@ -1910,6 +1915,12 @@ button { font: inherit; }
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   gap: var(--space-8);
+  min-width: 0;
+}
+
+.article-layout > *,
+.article-layout > * > * {
+  min-width: 0;
 }
 
 .article-toc {
@@ -2136,7 +2147,7 @@ a.article-mini-card:focus-visible {
   .article-grid { grid-template-columns: 1fr; }
   .article-body h1 {
     max-width: none;
-    font-size: clamp(2.45rem, 11vw, 3.55rem);
+    font-size: clamp(2.2rem, 10vw, 3.2rem);
     line-height: 1.06;
   }
   .article-hero {
@@ -2557,12 +2568,12 @@ a.article-mini-card:focus-visible {
   border-bottom: 1px solid var(--border);
 }
 
-.home-article-grid .aeo-card:nth-child(1)::before { background: center / cover url("../assets/articles/production-agent-stack-2026.png"); }
-.home-article-grid .aeo-card:nth-child(2)::before { background: center / cover url("../assets/articles/agentcore-runtime-ga.png"); }
-.home-article-grid .aeo-card:nth-child(3)::before { background: center / cover url("../assets/articles/marketo-mcp-writeback-risk.png"); }
-.home-article-grid .aeo-card:nth-child(4)::before { background: center / cover url("../assets/articles/mcp-opentelemetry-trace-contract.png"); }
-.home-article-grid .aeo-card:nth-child(5)::before { background: center / cover url("../assets/articles/orchestrate-vendor-native-agents.png"); }
-.home-article-grid .aeo-card:nth-child(6)::before { background: center / cover url("../assets/articles/three-agent-platform-accelerators.png"); }
+.home-article-grid .aeo-card:nth-child(1)::before { background: center / cover url("../assets/articles/ai-prototype-organization-operating-model.png"); }
+.home-article-grid .aeo-card:nth-child(2)::before { background: center / cover url("../assets/articles/production-agent-stack-2026.png"); }
+.home-article-grid .aeo-card:nth-child(3)::before { background: center / cover url("../assets/articles/agentcore-runtime-ga.png"); }
+.home-article-grid .aeo-card:nth-child(4)::before { background: center / cover url("../assets/articles/marketo-mcp-writeback-risk.png"); }
+.home-article-grid .aeo-card:nth-child(5)::before { background: center / cover url("../assets/articles/mcp-opentelemetry-trace-contract.png"); }
+.home-article-grid .aeo-card:nth-child(6)::before { background: center / cover url("../assets/articles/orchestrate-vendor-native-agents.png"); }
 
 .home-article-grid .aeo-card > * {
   margin-inline: var(--space-5);
@@ -3561,4 +3572,20 @@ a.article-mini-card:focus-visible {
   .v2-board-flow i:nth-of-type(n+2) {
     display: none;
   }
+}
+.aeo-card--link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.aeo-card--link:hover,
+.aeo-card--link:focus-visible {
+  border-color: var(--brand-green);
+  box-shadow: 0 10px 26px rgba(11, 23, 19, 0.12);
+  transform: translateY(-2px);
+}
+
+.aeo-card--link .card-link {
+  color: var(--brand-green-700);
+  font-weight: 800;
 }
