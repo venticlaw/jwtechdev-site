@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200" role="img" aria-labelledby="title desc">
+  <title id="title">The BADGE operating contract for AI agents</title>
+  <desc id="desc">A hand-drawn operating card showing badge, allowance, duties, grade, and exit controls required before an AI agent enters production.</desc>
+  <defs>
+    <filter id="rough" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="30" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <pattern id="paper" width="34" height="34" patternUnits="userSpaceOnUse">
+      <rect width="34" height="34" fill="#f7f6f1"/>
+      <path d="M0 33.5H34" stroke="#d7e6df" stroke-width="1" opacity=".55"/>
+    </pattern>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M1 1l10 5-10 5" fill="none" stroke="#0b1713" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="1200" fill="url(#paper)"/>
+  <rect x="48" y="46" width="1504" height="1108" rx="24" fill="none" stroke="#0e7a58" stroke-width="5" filter="url(#rough)"/>
+  <text x="92" y="108" font-family="Roboto Condensed, Arial, sans-serif" font-size="28" font-weight="700" fill="#0e7a58" letter-spacing="2">JWTECHDEV.COM  /  FIELD NOTE 30</text>
+  <text x="92" y="205" font-family="Roboto Condensed, Arial, sans-serif" font-size="70" font-weight="900" fill="#0b0c0e">YOUR AI AGENT NEEDS</text>
+  <text x="92" y="282" font-family="Roboto Condensed, Arial, sans-serif" font-size="70" font-weight="900" fill="#0e7a58">AN OPERATING CONTRACT.</text>
+  <path d="M95 305c230 12 476-12 720 3 198 11 382-8 609 1" fill="none" stroke="#ee8b2d" stroke-width="10" stroke-linecap="round" filter="url(#rough)"/>
+
+  <g transform="translate(78 385)" filter="url(#rough)">
+    <rect width="330" height="500" rx="28" fill="#ffffff" stroke="#0b1713" stroke-width="5"/>
+    <rect x="28" y="30" width="274" height="76" rx="14" fill="#0e7a58"/>
+    <text x="40" y="80" font-family="Roboto Condensed, Arial, sans-serif" font-size="27" font-weight="900" fill="#ffffff">AGENT ID BADGE</text>
+    <circle cx="165" cy="222" r="82" fill="#e8f4ee" stroke="#0e7a58" stroke-width="6"/>
+    <path d="M119 226c11-47 81-50 94-4M130 263c24-23 49-23 72 0" fill="none" stroke="#0b1713" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="165" cy="194" r="25" fill="none" stroke="#ee8b2d" stroke-width="7"/>
+    <text x="34" y="350" font-family="Roboto Condensed, Arial, sans-serif" font-size="28" font-weight="900" fill="#0b0c0e">OWNER: PLATFORM TEAM</text>
+    <text x="34" y="394" font-family="Roboto Condensed, Arial, sans-serif" font-size="25" font-weight="700" fill="#52575c">VERSION: 3.2</text>
+    <text x="34" y="432" font-family="Roboto Condensed, Arial, sans-serif" font-size="25" font-weight="700" fill="#52575c">MODE: SUPERVISED</text>
+    <path d="M34 466h262" stroke="#ee8b2d" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <path d="M430 633c42-31 77-31 120 2" fill="none" stroke="#0b1713" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)" filter="url(#rough)"/>
+
+  <g transform="translate(565 365)" font-family="Roboto Condensed, Arial, sans-serif">
+    <text x="0" y="0" font-size="34" font-weight="900" fill="#0e7a58">THE BADGE CONTRACT</text>
+    <g transform="translate(0 50)" filter="url(#rough)">
+      <rect width="620" height="95" rx="18" fill="#0e7a58"/>
+      <circle cx="48" cy="47" r="29" fill="#f7f6f1"/>
+      <text x="38" y="58" font-size="32" font-weight="900" fill="#0e7a58">B</text>
+      <text x="94" y="41" font-size="29" font-weight="900" fill="#ffffff">BADGE</text>
+      <text x="94" y="71" font-size="21" font-weight="700" fill="#e8f4ee">identity + owner + version</text>
+    </g>
+    <g transform="translate(16 162)" filter="url(#rough)">
+      <rect width="620" height="95" rx="18" fill="#ffffff" stroke="#0b1713" stroke-width="4"/>
+      <circle cx="48" cy="47" r="29" fill="#ee8b2d"/>
+      <text x="37" y="58" font-size="32" font-weight="900" fill="#0b0c0e">A</text>
+      <text x="94" y="41" font-size="29" font-weight="900" fill="#0b0c0e">ALLOWANCE</text>
+      <text x="94" y="71" font-size="21" font-weight="700" fill="#52575c">budget + attribution + alert</text>
+    </g>
+    <g transform="translate(-7 274)" filter="url(#rough)">
+      <rect width="620" height="95" rx="18" fill="#ffffff" stroke="#0b1713" stroke-width="4"/>
+      <circle cx="48" cy="47" r="29" fill="#e8f4ee" stroke="#0e7a58" stroke-width="3"/>
+      <text x="37" y="58" font-size="32" font-weight="900" fill="#0e7a58">D</text>
+      <text x="94" y="41" font-size="29" font-weight="900" fill="#0b0c0e">DUTIES</text>
+      <text x="94" y="71" font-size="21" font-weight="700" fill="#52575c">tools + data + decision limits</text>
+    </g>
+    <g transform="translate(14 386)" filter="url(#rough)">
+      <rect width="620" height="95" rx="18" fill="#ffffff" stroke="#0b1713" stroke-width="4"/>
+      <circle cx="48" cy="47" r="29" fill="#e8f4ee" stroke="#0e7a58" stroke-width="3"/>
+      <text x="37" y="58" font-size="32" font-weight="900" fill="#0e7a58">G</text>
+      <text x="94" y="41" font-size="29" font-weight="900" fill="#0b0c0e">GRADE</text>
+      <text x="94" y="71" font-size="21" font-weight="700" fill="#52575c">task + safety + cost + outcome</text>
+    </g>
+    <g transform="translate(0 498)" filter="url(#rough)">
+      <rect width="620" height="95" rx="18" fill="#ee8b2d"/>
+      <circle cx="48" cy="47" r="29" fill="#0b0c0e"/>
+      <text x="38" y="58" font-size="32" font-weight="900" fill="#ffffff">E</text>
+      <text x="94" y="41" font-size="29" font-weight="900" fill="#0b0c0e">EXIT</text>
+      <text x="94" y="71" font-size="21" font-weight="800" fill="#2e241b">escalate + revoke + retire</text>
+    </g>
+  </g>
+
+  <path d="M1215 633c34-28 67-28 102 1" fill="none" stroke="#0b1713" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)" filter="url(#rough)"/>
+
+  <g transform="translate(1305 410)" filter="url(#rough)">
+    <rect width="215" height="445" rx="24" fill="#0b1713" stroke="#0e7a58" stroke-width="6"/>
+    <circle cx="108" cy="105" r="58" fill="#e8f4ee" stroke="#ffffff" stroke-width="5"/>
+    <path d="M76 105l21 22 44-52" fill="none" stroke="#0e7a58" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="34" y="215" font-family="Roboto Condensed, Arial, sans-serif" font-size="31" font-weight="900" fill="#ffffff">RELEASE</text>
+    <text x="34" y="255" font-family="Roboto Condensed, Arial, sans-serif" font-size="31" font-weight="900" fill="#ffffff">DECISION</text>
+    <text x="34" y="318" font-family="Roboto Condensed, Arial, sans-serif" font-size="22" font-weight="700" fill="#9ad4bd">PROMOTE</text>
+    <text x="34" y="355" font-family="Roboto Condensed, Arial, sans-serif" font-size="22" font-weight="700" fill="#9ad4bd">CONSTRAIN</text>
+    <text x="34" y="392" font-family="Roboto Condensed, Arial, sans-serif" font-size="22" font-weight="700" fill="#9ad4bd">RETIRE</text>
+  </g>
+
+  <path d="M420 1010c220 42 494 43 770 0" fill="none" stroke="#0e7a58" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)" filter="url(#rough)"/>
+  <text x="475" y="1082" font-family="Roboto Condensed, Arial, sans-serif" font-size="34" font-weight="900" fill="#0b0c0e">NO ANONYMOUS AUTHORITY.</text>
+  <text x="475" y="1124" font-family="Roboto Condensed, Arial, sans-serif" font-size="34" font-weight="900" fill="#0e7a58">NO UNMEASURED AUTONOMY.</text>
+</svg>

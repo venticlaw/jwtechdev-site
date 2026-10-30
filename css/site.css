@@ -2568,12 +2568,12 @@ a.article-mini-card:focus-visible {
   border-bottom: 1px solid var(--border);
 }
 
-.home-article-grid .aeo-card:nth-child(1)::before { background: center / cover url("../assets/articles/ai-prototype-organization-operating-model.png"); }
-.home-article-grid .aeo-card:nth-child(2)::before { background: center / cover url("../assets/articles/production-agent-stack-2026.png"); }
-.home-article-grid .aeo-card:nth-child(3)::before { background: center / cover url("../assets/articles/agentcore-runtime-ga.png"); }
-.home-article-grid .aeo-card:nth-child(4)::before { background: center / cover url("../assets/articles/marketo-mcp-writeback-risk.png"); }
-.home-article-grid .aeo-card:nth-child(5)::before { background: center / cover url("../assets/articles/mcp-opentelemetry-trace-contract.png"); }
-.home-article-grid .aeo-card:nth-child(6)::before { background: center / cover url("../assets/articles/orchestrate-vendor-native-agents.png"); }
+.home-article-grid .aeo-card:nth-child(1)::before { background: center / cover url("../assets/articles/ai-agent-employee-badge-budget-performance-review.png"); }
+.home-article-grid .aeo-card:nth-child(2)::before { background: center / cover url("../assets/articles/ai-prototype-organization-operating-model.png"); }
+.home-article-grid .aeo-card:nth-child(3)::before { background: center / cover url("../assets/articles/production-agent-stack-2026.png"); }
+.home-article-grid .aeo-card:nth-child(4)::before { background: center / cover url("../assets/articles/agentcore-runtime-ga.png"); }
+.home-article-grid .aeo-card:nth-child(5)::before { background: center / cover url("../assets/articles/marketo-mcp-writeback-risk.png"); }
+.home-article-grid .aeo-card:nth-child(6)::before { background: center / cover url("../assets/articles/mcp-opentelemetry-trace-contract.png"); }
 
 .home-article-grid .aeo-card > * {
   margin-inline: var(--space-5);
