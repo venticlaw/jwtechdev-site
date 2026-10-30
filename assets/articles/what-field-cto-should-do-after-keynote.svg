@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200" role="img" aria-labelledby="title desc">
+  <title id="title">The FIELD operating loop for field CTO leadership</title>
+  <desc id="desc">A hand-drawn workflow showing how a field CTO moves from an executive keynote to a decision, operating context, proof, product loop, and reusable field capability.</desc>
+  <defs>
+    <filter id="rough" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.012" numOctaves="2" seed="31" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <pattern id="paper" width="34" height="34" patternUnits="userSpaceOnUse">
+      <rect width="34" height="34" fill="#f7f6f1"/>
+      <path d="M0 33.5H34" stroke="#d7e6df" stroke-width="1" opacity=".55"/>
+    </pattern>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M1 1l10 5-10 5" fill="none" stroke="#0b1713" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#paper)"/>
+  <rect x="48" y="46" width="1504" height="1108" rx="24" fill="none" stroke="#0e7a58" stroke-width="5" filter="url(#rough)"/>
+  <text x="92" y="108" font-family="Roboto Condensed, Arial, sans-serif" font-size="28" font-weight="700" fill="#0e7a58" letter-spacing="2">JWTECHDEV.COM  /  FIELD NOTE 31</text>
+  <text x="92" y="202" font-family="Roboto Condensed, Arial, sans-serif" font-size="67" font-weight="900" fill="#0b0c0e">THE KEYNOTE IS NOT</text>
+  <text x="92" y="278" font-family="Roboto Condensed, Arial, sans-serif" font-size="67" font-weight="900" fill="#0e7a58">THE DELIVERABLE.</text>
+  <path d="M94 303c252 12 512-10 766 3 188 10 359-8 568 1" fill="none" stroke="#ee8b2d" stroke-width="10" stroke-linecap="round" filter="url(#rough)"/>
+
+  <g transform="translate(82 382)" filter="url(#rough)">
+    <rect width="270" height="430" rx="28" fill="#0b1713" stroke="#0e7a58" stroke-width="6"/>
+    <path d="M48 104h174M48 151h135M48 198h155" stroke="#f7f6f1" stroke-width="8" stroke-linecap="round"/>
+    <path d="M70 278c39-38 90-36 130 0" fill="none" stroke="#ee8b2d" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="135" cy="254" r="34" fill="none" stroke="#f7f6f1" stroke-width="7"/>
+    <text x="42" y="355" font-family="Roboto Condensed, Arial, sans-serif" font-size="30" font-weight="900" fill="#ffffff">KEYNOTE</text>
+    <text x="42" y="397" font-family="Roboto Condensed, Arial, sans-serif" font-size="21" font-weight="700" fill="#9ad4bd">STORY + SIGNAL</text>
+  </g>
+
+  <path d="M377 598c38-28 69-28 108 1" fill="none" stroke="#0b1713" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)" filter="url(#rough)"/>
+
+  <g transform="translate(500 352)" font-family="Roboto Condensed, Arial, sans-serif">
+    <text x="0" y="0" font-size="36" font-weight="900" fill="#0e7a58">THE FIELD OPERATING LOOP</text>
+    <g transform="translate(0 48)" filter="url(#rough)">
+      <rect width="650" height="100" rx="18" fill="#0e7a58"/>
+      <circle cx="50" cy="50" r="30" fill="#f7f6f1"/>
+      <text x="40" y="61" font-size="32" font-weight="900" fill="#0e7a58">F</text>
+      <text x="98" y="43" font-size="29" font-weight="900" fill="#ffffff">FRAME THE DECISION</text>
+      <text x="98" y="76" font-size="21" font-weight="700" fill="#e8f4ee">outcome + owner + decision date</text>
+    </g>
+    <g transform="translate(16 166)" filter="url(#rough)">
+      <rect width="650" height="100" rx="18" fill="#ffffff" stroke="#0b1713" stroke-width="4"/>
+      <circle cx="50" cy="50" r="30" fill="#ee8b2d"/>
+      <text x="45" y="61" font-size="32" font-weight="900" fill="#0b0c0e">I</text>
+      <text x="98" y="43" font-size="29" font-weight="900" fill="#0b0c0e">INSPECT THE CONTEXT</text>
+      <text x="98" y="76" font-size="21" font-weight="700" fill="#52575c">people + platform + risk + economics</text>
+    </g>
+    <g transform="translate(-8 284)" filter="url(#rough)">
+      <rect width="650" height="100" rx="18" fill="#ffffff" stroke="#0b1713" stroke-width="4"/>
+      <circle cx="50" cy="50" r="30" fill="#e8f4ee" stroke="#0e7a58" stroke-width="3"/>
+      <text x="40" y="61" font-size="32" font-weight="900" fill="#0e7a58">E</text>
+      <text x="98" y="43" font-size="29" font-weight="900" fill="#0b0c0e">ESTABLISH PROOF</text>
+      <text x="98" y="76" font-size="21" font-weight="700" fill="#52575c">small + reversible + observable</text>
+    </g>
+    <g transform="translate(14 402)" filter="url(#rough)">
+      <rect width="650" height="100" rx="18" fill="#ffffff" stroke="#0b1713" stroke-width="4"/>
+      <circle cx="50" cy="50" r="30" fill="#e8f4ee" stroke="#0e7a58" stroke-width="3"/>
+      <text x="40" y="61" font-size="32" font-weight="900" fill="#0e7a58">L</text>
+      <text x="98" y="43" font-size="29" font-weight="900" fill="#0b0c0e">LOOP TO PRODUCT</text>
+      <text x="98" y="76" font-size="21" font-weight="700" fill="#52575c">evidence + pattern + roadmap signal</text>
+    </g>
+    <g transform="translate(0 520)" filter="url(#rough)">
+      <rect width="650" height="100" rx="18" fill="#ee8b2d"/>
+      <circle cx="50" cy="50" r="30" fill="#0b0c0e"/>
+      <text x="39" y="61" font-size="32" font-weight="900" fill="#ffffff">D</text>
+      <text x="98" y="43" font-size="29" font-weight="900" fill="#0b0c0e">DISTRIBUTE THE WIN</text>
+      <text x="98" y="76" font-size="21" font-weight="800" fill="#2e241b">architecture + playbook + enablement</text>
+    </g>
+  </g>
+
+  <path d="M1185 598c34-28 67-28 102 1" fill="none" stroke="#0b1713" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)" filter="url(#rough)"/>
+
+  <g transform="translate(1278 390)" filter="url(#rough)">
+    <rect width="245" height="465" rx="24" fill="#ffffff" stroke="#0e7a58" stroke-width="6"/>
+    <path d="M48 96h149M48 137h112M48 178h135" stroke="#0b1713" stroke-width="7" stroke-linecap="round"/>
+    <circle cx="123" cy="274" r="61" fill="#e8f4ee" stroke="#0e7a58" stroke-width="5"/>
+    <path d="M88 275l23 23 49-57" fill="none" stroke="#0e7a58" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="35" y="375" font-family="Roboto Condensed, Arial, sans-serif" font-size="28" font-weight="900" fill="#0b0c0e">DECISION</text>
+    <text x="35" y="414" font-family="Roboto Condensed, Arial, sans-serif" font-size="28" font-weight="900" fill="#0e7a58">WITH EVIDENCE</text>
+  </g>
+
+  <path d="M402 1014c232 40 520 42 808 0" fill="none" stroke="#0e7a58" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)" filter="url(#rough)"/>
+  <text x="430" y="1082" font-family="Roboto Condensed, Arial, sans-serif" font-size="34" font-weight="900" fill="#0b0c0e">MOVE THE MARKET STORY</text>
+  <text x="430" y="1124" font-family="Roboto Condensed, Arial, sans-serif" font-size="34" font-weight="900" fill="#0e7a58">INTO AN OPERATING DECISION.</text>
+</svg>
