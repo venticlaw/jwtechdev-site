@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200" role="img" aria-labelledby="title desc">
+  <title id="title">The six owners every production AI agent needs</title>
+  <desc id="desc">A hand-drawn six-seat ownership card showing business outcome, workflow, data and tools, identity and security, evaluation and risk, and runtime operations around a production AI agent.</desc>
+  <defs>
+    <pattern id="paper" width="34" height="34" patternUnits="userSpaceOnUse">
+      <rect width="34" height="34" fill="#fbfaf6"/>
+      <path d="M0 33.5H34" stroke="#dfe8e3" stroke-width="1"/>
+    </pattern>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#112019" flood-opacity=".12"/>
+    </filter>
+    <style>
+      .ink{fill:#101713}.green{fill:#087a57}.orange{fill:#f28c28}.muted{fill:#506159}
+      .title{font:900 70px Arial,sans-serif;letter-spacing:0}.sub{font:700 30px Arial,sans-serif}
+      .label{font:900 25px Arial,sans-serif}.body{font:700 20px Arial,sans-serif}.tiny{font:800 17px Arial,sans-serif}
+      .rough{fill:none;stroke:#101713;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}
+      .rough2{fill:none;stroke:#087a57;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#paper)"/>
+  <rect x="34" y="34" width="1532" height="1132" rx="30" fill="none" stroke="#087a57" stroke-width="5"/>
+  <path d="M48 56 Q410 25 790 52 T1547 50" fill="none" stroke="#101713" stroke-width="2" opacity=".5"/>
+
+  <text x="90" y="105" class="tiny green">JWTECHDEV.COM / AGENT OPERATING MODEL</text>
+  <text x="90" y="202" class="title ink">A PRODUCTION AGENT</text>
+  <text x="90" y="282" class="title green">NEEDS SIX OWNERS.</text>
+  <path d="M90 312 Q720 325 1350 308" class="rough2"/>
+
+  <g filter="url(#soft)">
+    <g transform="rotate(-1 300 490)">
+      <rect x="105" y="370" width="390" height="210" rx="22" fill="#fff" stroke="#087a57" stroke-width="6"/>
+      <text x="140" y="425" class="tiny green">SEAT 01</text>
+      <text x="140" y="472" class="label ink">BUSINESS OUTCOME</text>
+      <text x="140" y="518" class="body muted">Value, funding, keep or stop</text>
+      <path d="M140 542 Q286 532 451 544" class="rough2"/>
+    </g>
+    <g transform="rotate(.8 1300 490)">
+      <rect x="1105" y="370" width="390" height="210" rx="22" fill="#fff" stroke="#101713" stroke-width="6"/>
+      <text x="1140" y="425" class="tiny green">SEAT 02</text>
+      <text x="1140" y="472" class="label ink">WORKFLOW + PRODUCT</text>
+      <text x="1140" y="518" class="body muted">Scope, user fit, adoption</text>
+      <path d="M1140 542 Q1286 532 1451 544" class="rough" stroke-width="4"/>
+    </g>
+    <g transform="rotate(.7 300 760)">
+      <rect x="105" y="650" width="390" height="210" rx="22" fill="#fff" stroke="#101713" stroke-width="6"/>
+      <text x="140" y="705" class="tiny green">SEAT 03</text>
+      <text x="140" y="752" class="label ink">DATA + TOOLS</text>
+      <text x="140" y="798" class="body muted">Quality, contracts, write scope</text>
+      <path d="M140 822 Q286 812 451 824" class="rough" stroke-width="4"/>
+    </g>
+    <g transform="rotate(-.8 1300 760)">
+      <rect x="1105" y="650" width="390" height="210" rx="22" fill="#fff" stroke="#087a57" stroke-width="6"/>
+      <text x="1140" y="705" class="tiny green">SEAT 04</text>
+      <text x="1140" y="752" class="label ink">IDENTITY + SECURITY</text>
+      <text x="1140" y="798" class="body muted">Credentials, access, containment</text>
+      <path d="M1140 822 Q1286 812 1451 824" class="rough2"/>
+    </g>
+    <g transform="rotate(-.6 470 1010)">
+      <rect x="275" y="900" width="390" height="210" rx="22" fill="#fff" stroke="#f28c28" stroke-width="6"/>
+      <text x="310" y="955" class="tiny orange">SEAT 05</text>
+      <text x="310" y="1002" class="label ink">EVALUATION + RISK</text>
+      <text x="310" y="1048" class="body muted">Thresholds, evidence, release</text>
+    </g>
+    <g transform="rotate(.6 1130 1010)">
+      <rect x="935" y="900" width="390" height="210" rx="22" fill="#101713" stroke="#087a57" stroke-width="6"/>
+      <text x="970" y="955" class="tiny" fill="#9fe2c5">SEAT 06</text>
+      <text x="970" y="1002" class="label" fill="#fff">RUNTIME + OPERATIONS</text>
+      <text x="970" y="1048" class="body" fill="#dfe8e3">SLO, cost, incident, rollback</text>
+    </g>
+  </g>
+
+  <path d="M495 475 Q590 500 650 545 M1105 475 Q1010 500 950 545 M495 755 Q590 730 650 695 M1105 755 Q1010 730 950 695 M665 915 Q710 820 742 760 M935 915 Q890 820 858 760" class="rough2" opacity=".85"/>
+
+  <g transform="rotate(-.5 800 625)">
+    <rect x="610" y="480" width="380" height="290" rx="32" fill="#101713" stroke="#f28c28" stroke-width="7"/>
+    <circle cx="800" cy="565" r="46" fill="#087a57"/>
+    <path d="M778 565 l16 17 31 -39" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="800" y="646" class="sub" fill="#fff" text-anchor="middle">PRODUCTION AGENT</text>
+    <text x="800" y="700" class="body" fill="#9fe2c5" text-anchor="middle">ONE NAME PER DECISION RIGHT</text>
+    <text x="800" y="735" class="tiny" fill="#dfe8e3" text-anchor="middle">NOT SIX COMMITTEES</text>
+  </g>
+
+  <text x="90" y="1142" class="tiny muted">If a decision has no named owner, the agent is still a prototype.</text>
+  <text x="1510" y="1142" class="tiny green" text-anchor="end">JWTechDev.com</text>
+</svg>

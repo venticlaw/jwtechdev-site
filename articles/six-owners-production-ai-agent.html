@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>The six owners every production AI agent needs | JWTechDev.com</title>
+  <meta name="description" content="Use the Six-Seat Agent Ownership Card to assign business, workflow, data, security, evaluation, and runtime decision rights before an AI agent reaches production." />
+  <link rel="canonical" href="https://jwtechdev.com/articles/six-owners-production-ai-agent.html" />
+  <meta property="og:title" content="The six owners every production AI agent needs" />
+  <meta property="og:description" content="A practical operating model for giving every consequential agent decision one accountable owner." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://jwtechdev.com/articles/six-owners-production-ai-agent.html" />
+  <meta property="og:site_name" content="JWTechDev.com" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/six-owners-production-ai-agent.png" />
+  <meta property="og:image:width" content="1600" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt" content="Hand-drawn Six-Seat Agent Ownership Card showing business, workflow, data, security, evaluation, and runtime owners" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The six owners every production AI agent needs" />
+  <meta name="twitter:description" content="One named owner for each decision right that keeps an AI agent valuable, safe, and operable." />
+  <meta name="twitter:image" content="https://jwtechdev.com/assets/articles/six-owners-production-ai-agent.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20261031-six-owners" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The six owners every production AI agent needs","description":"Use the Six-Seat Agent Ownership Card to assign business, workflow, data, security, evaluation, and runtime decision rights before an AI agent reaches production.","datePublished":"2026-10-31T16:00:00-04:00","dateModified":"2026-10-31T16:00:00-04:00","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","url":"https://jwtechdev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/articles/six-owners-production-ai-agent.png","width":1600,"height":1200},"mainEntityOfPage":{"@type":"WebPage","@id":"https://jwtechdev.com/articles/six-owners-production-ai-agent.html"},"keywords":["AI agent ownership","agent operating model","AI governance","AgentCore","production AI"]}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">Platform operating model</p>
+    <article class="article-body">
+      <h1>The six owners every production AI agent needs.</h1>
+      <p class="section__lede">A production agent crosses business outcomes, user workflows, data, tools, identity, risk, and operations. Giving all of that to one technical owner creates hidden decisions. Giving it to a committee creates no decisions. The answer is six explicit seats with one named person for each decision right.</p>
+      <div class="article-kicker"><span>Decision rights</span><span>Agent ownership</span><span>Production operations</span><span>Risk accountability</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/six-owners-production-ai-agent.png" alt="Hand-drawn Six-Seat Agent Ownership Card showing business, workflow, data, security, evaluation, and runtime owners" width="1600" height="1200" />
+        <figcaption class="article-meta"><span>Published 2026-10-31</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#one-owner-fails">Why one owner fails</a>
+          <a href="#six-seats">The six ownership seats</a>
+          <a href="#decision-rights">Make ownership executable</a>
+          <a href="#monday">What to do Monday</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>Every production AI agent needs six ownership seats: <strong>business outcome; workflow and product; data and tools; identity and security; evaluation and risk; and runtime and operations.</strong> These seats do not require six full-time people. One person may hold more than one seat in a small team. What matters is that every consequential decision has one named owner, a defined authority, an escalation path, and a backup.</p>
+            <p>I call this the <strong>Six-Seat Agent Ownership Card.</strong> It turns “the AI team owns it” into an operating contract. The card should travel with the agent from intake through release, incident response, material change, and retirement.</p>
+          </section>
+
+          <section id="one-owner-fails">
+            <h2>Why one owner fails</h2>
+            <p>An agent is not only a model endpoint. It may act on behalf of a user, retrieve credentials, call tools, write into systems, retain memory, spend money, and make choices that affect a workflow. AWS AgentCore now separates runtime, identity, gateway, policy, observability, evaluations, and optimization into distinct production capabilities. That separation is an architecture signal: the operating decisions are different too.</p>
+            <p>A model engineer can tune prompts and still lack authority to accept business risk. A security leader can restrict access and still be unable to decide whether the workflow creates value. A product owner can prioritize adoption and still be unable to restore a failed runtime. When the roles stay implicit, incidents become meetings where everyone is informed and nobody can act.</p>
+            <p>NIST's AI Risk Management Framework calls for documented roles, responsibilities, communication lines, ongoing monitoring, system inventory, and safe decommissioning. AWS Well-Architected similarly emphasizes shared goals, clear authority, and an operating model in which teams understand their role in the workload and in one another's success. Ownership is therefore part of the production design, not paperwork added after launch.</p>
+          </section>
+
+          <section id="six-seats">
+            <h2>The Six-Seat Agent Ownership Card</h2>
+            <p><strong>1. Business outcome owner.</strong> This person owns the result, funding, success measure, and decision to scale, repair, hold, or stop. They answer whether the agent is improving a real outcome rather than accumulating impressive activity. They do not approve technical changes by default, but they decide whether continued investment is justified.</p>
+            <p><strong>2. Workflow and product owner.</strong> This person owns the user journey, scope, adoption, exception path, and change backlog. They decide where the agent may assist, where a human must decide, and how users recover when the agent is wrong. Their evidence includes completion, abandonment, override, escalation, and user feedback.</p>
+            <p><strong>3. Data and tool owner.</strong> This person owns source quality, data classification, tool contracts, allowed reads, allowed writes, and downstream change impact. An MCP tool being callable does not make every operation appropriate. The data and tool owner decides which actions exist, what parameters are valid, and what must be reversible.</p>
+            <p><strong>4. Identity and security owner.</strong> This person owns workload identity, user delegation, credential storage, least privilege, authorization policy, secret rotation, and containment. AgentCore Identity uses workload identities as stable anchors, while Gateway can enforce access at gateway, tool, operation, and parameter levels. Somebody must own those boundaries and be able to revoke access quickly.</p>
+            <p><strong>5. Evaluation and risk owner.</strong> This person owns release thresholds, test suites, policy evidence, risk review, drift criteria, and exceptions. AgentCore Evaluations can assess task completion, tool use, safety, and response quality using telemetry from sessions, traces, and spans. The owner decides which evidence blocks release and what residual risk needs formal acceptance.</p>
+            <p><strong>6. Runtime and operations owner.</strong> This person owns service objectives, deployment, capacity, telemetry, cost alarms, incident response, rollback, and recovery. AgentCore Observability exposes sessions, latency, duration, token use, errors, traces, and intermediate workflow steps through CloudWatch and OpenTelemetry-compatible data. Metrics only matter when someone is accountable for responding.</p>
+          </section>
+
+          <section id="decision-rights">
+            <h2>Make ownership executable</h2>
+            <p>Do not turn the six seats into six committees. For each seat, write one person's name, one backup, the decisions they may make, the evidence they must review, the threshold that requires escalation, and the review cadence. The same person can hold multiple seats, but two people should not believe they have final authority over the same decision.</p>
+            <p>Then test the card with scenarios. Who can pause the agent after unauthorized tool use? Who can lower a spending limit? Who approves a new write action? Who accepts a quality regression for a time-sensitive launch? Who tells users the workflow changed? Who retires memory and credentials when the agent is shut down? If the answer is “we would assemble the team,” the operating model is unfinished.</p>
+            <p>The card should be visible in the capability registry, release record, on-call documentation, and observability surface. Ownership that exists only in a slide deck will disappear exactly when production pressure arrives.</p>
+          </section>
+
+          <section id="monday">
+            <h2>What to do next Monday</h2>
+            <ol>
+              <li><strong>Choose one agent that can take action.</strong> Start with the capability that has the highest write, data, or customer impact.</li>
+              <li><strong>Fill the six seats.</strong> Name the primary and backup for outcome, workflow, data and tools, identity and security, evaluation and risk, and runtime operations.</li>
+              <li><strong>Assign one decision to each seat.</strong> Examples include stop funding, change workflow scope, approve a write action, revoke access, block release, and roll back deployment.</li>
+              <li><strong>Run three tabletop scenarios.</strong> Test unauthorized access, quality regression, and runaway cost. Record who acts first and what evidence they need.</li>
+              <li><strong>Attach the card to release.</strong> Do not promote the agent if a critical seat is blank or an escalation path is untested.</li>
+              <li><strong>Review after every material change.</strong> New tools, data classes, models, user populations, permissions, and markets can change ownership and risk.</li>
+            </ol>
+            <p>A production agent is ready when the organization can explain not only what it does, but who can decide what happens next.</p>
+            <p>I will be at AFROTECH in Houston November 2-6. If you are building an enterprise AI platform, global delivery organization, or technical go-to-market motion, I would be glad to compare notes.</p>
+          </section>
+
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/" target="_blank" rel="noopener">Amazon Bedrock AgentCore developer guide overview</a></li>
+              <li><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity.html" target="_blank" rel="noopener">AWS: AgentCore Identity and credential management</a></li>
+              <li><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-fine-grained-access-control.html" target="_blank" rel="noopener">AWS: fine-grained access control for AgentCore Gateway</a></li>
+              <li><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability.html" target="_blank" rel="noopener">AWS: AgentCore Observability</a></li>
+              <li><a href="https://airc.nist.gov/airmf-resources/airmf/5-sec-core/" target="_blank" rel="noopener">NIST AI Risk Management Framework Core</a></li>
+              <li><a href="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/operating-model.html" target="_blank" rel="noopener">AWS Well-Architected: operating model</a></li>
+            </ul>
+          </section>
+
+          <section class="article-cta">
+            <h2>Give every agent decision an owner</h2>
+            <p>Explore more practical frameworks for production AI, cloud architecture, governance, and technical leadership.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get the free starter kit</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
