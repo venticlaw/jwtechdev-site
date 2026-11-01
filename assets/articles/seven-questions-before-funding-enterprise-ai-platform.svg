@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Seven questions before funding an enterprise AI platform</title>
+  <desc id="desc">A hand-drawn Platform Capital Gate with seven questions leading to scale, repair, hold, or stop decisions.</desc>
+  <defs>
+    <pattern id="paper" width="36" height="36" patternUnits="userSpaceOnUse">
+      <rect width="36" height="36" fill="#fbfaf6"/>
+      <path d="M0 35.5H36" stroke="#dfe8e3" stroke-width="1"/>
+    </pattern>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#112019" flood-opacity=".12"/>
+    </filter>
+    <style>
+      .ink{fill:#101713}.green{fill:#087a57}.orange{fill:#f28c28}.muted{fill:#506159}
+      .title{font:900 62px Arial,sans-serif;letter-spacing:0}.sub{font:900 28px Arial,sans-serif}
+      .label{font:900 22px Arial,sans-serif}.body{font:700 18px Arial,sans-serif}.tiny{font:800 16px Arial,sans-serif}
+      .rough{fill:none;stroke:#101713;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+      .rough2{fill:none;stroke:#087a57;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#paper)"/>
+  <rect x="34" y="34" width="1532" height="1132" rx="30" fill="none" stroke="#087a57" stroke-width="5"/>
+  <path d="M48 56 Q420 25 805 52 T1548 50" fill="none" stroke="#101713" stroke-width="2" opacity=".5"/>
+
+  <text x="90" y="104" class="tiny green">JWTECHDEV.COM / PLATFORM CAPITAL REVIEW</text>
+  <text x="90" y="197" class="title ink">DON'T FUND THE PLATFORM PROMISE.</text>
+  <text x="90" y="272" class="title green">FUND THE NEXT PROOF.</text>
+  <path d="M90 307 Q705 324 1440 306" class="rough2"/>
+
+  <g filter="url(#soft)">
+    <g transform="rotate(-.6 390 420)">
+      <rect x="90" y="350" width="600" height="140" rx="22" fill="#fff" stroke="#087a57" stroke-width="5"/>
+      <circle cx="145" cy="420" r="30" fill="#087a57"/><text x="145" y="430" class="sub" fill="#fff" text-anchor="middle">1</text>
+      <text x="195" y="408" class="label ink">REPEATED PROBLEM?</text><text x="195" y="448" class="body muted">Two consumers + measurable friction</text>
+    </g>
+    <g transform="rotate(.5 1210 420)">
+      <rect x="910" y="350" width="600" height="140" rx="22" fill="#fff" stroke="#101713" stroke-width="5"/>
+      <circle cx="965" cy="420" r="30" fill="#101713"/><text x="965" y="430" class="sub" fill="#fff" text-anchor="middle">2</text>
+      <text x="1015" y="408" class="label ink">PLATFORM BOUNDARY?</text><text x="1015" y="448" class="body muted">Shared capability vs workload ownership</text>
+    </g>
+    <g transform="rotate(.4 390 585)">
+      <rect x="90" y="515" width="600" height="140" rx="22" fill="#fff" stroke="#101713" stroke-width="5"/>
+      <circle cx="145" cy="585" r="30" fill="#101713"/><text x="145" y="595" class="sub" fill="#fff" text-anchor="middle">3</text>
+      <text x="195" y="573" class="label ink">COMMITTED CONSUMERS?</text><text x="195" y="613" class="body muted">First teams + work they stop building</text>
+    </g>
+    <g transform="rotate(-.5 1210 585)">
+      <rect x="910" y="515" width="600" height="140" rx="22" fill="#fff" stroke="#087a57" stroke-width="5"/>
+      <circle cx="965" cy="585" r="30" fill="#087a57"/><text x="965" y="595" class="sub" fill="#fff" text-anchor="middle">4</text>
+      <text x="1015" y="573" class="label ink">CONTROLS + EVIDENCE?</text><text x="1015" y="613" class="body muted">Identity, policy, evals, approvals, audit</text>
+    </g>
+    <g transform="rotate(-.4 390 750)">
+      <rect x="90" y="680" width="600" height="140" rx="22" fill="#fff" stroke="#087a57" stroke-width="5"/>
+      <circle cx="145" cy="750" r="30" fill="#087a57"/><text x="145" y="760" class="sub" fill="#fff" text-anchor="middle">5</text>
+      <text x="195" y="738" class="label ink">OPERATING MODEL?</text><text x="195" y="778" class="body muted">SLO, support, change, incident, rollback</text>
+    </g>
+    <g transform="rotate(.5 1210 750)">
+      <rect x="910" y="680" width="600" height="140" rx="22" fill="#fff" stroke="#f28c28" stroke-width="5"/>
+      <circle cx="965" cy="750" r="30" fill="#f28c28"/><text x="965" y="760" class="sub" fill="#fff" text-anchor="middle">6</text>
+      <text x="1015" y="738" class="label ink">UNIT ECONOMICS?</text><text x="1015" y="778" class="body muted">Loaded cost per successful outcome</text>
+    </g>
+    <g transform="rotate(-.3 800 910)">
+      <rect x="500" y="845" width="600" height="132" rx="22" fill="#101713" stroke="#087a57" stroke-width="6"/>
+      <circle cx="555" cy="911" r="30" fill="#087a57"/><text x="555" y="921" class="sub" fill="#fff" text-anchor="middle">7</text>
+      <text x="605" y="899" class="label" fill="#fff">NEXT EVIDENCE GATE?</text><text x="605" y="939" class="body" fill="#dfe8e3">Owner, artifact, threshold, decision date</text>
+    </g>
+  </g>
+
+  <path d="M690 420 Q800 385 910 420 M690 585 Q800 620 910 585 M690 750 Q800 715 910 750 M800 820 L800 845" class="rough2" opacity=".78"/>
+
+  <g>
+    <path d="M230 1055 Q800 1002 1370 1055" class="rough" opacity=".55"/>
+    <rect x="225" y="1018" width="250" height="78" rx="20" fill="#087a57"/><text x="350" y="1068" class="label" fill="#fff" text-anchor="middle">SCALE</text>
+    <rect x="525" y="1018" width="250" height="78" rx="20" fill="#fff" stroke="#f28c28" stroke-width="5"/><text x="650" y="1068" class="label orange" text-anchor="middle">REPAIR</text>
+    <rect x="825" y="1018" width="250" height="78" rx="20" fill="#fff" stroke="#101713" stroke-width="5"/><text x="950" y="1068" class="label ink" text-anchor="middle">HOLD</text>
+    <rect x="1125" y="1018" width="250" height="78" rx="20" fill="#101713"/><text x="1250" y="1068" class="label" fill="#fff" text-anchor="middle">STOP</text>
+  </g>
+
+  <text x="90" y="1142" class="tiny muted">Every answer needs an owner, artifact, metric, and decision date.</text>
+  <text x="1510" y="1142" class="tiny green" text-anchor="end">JWTechDev.com</text>
+</svg>
