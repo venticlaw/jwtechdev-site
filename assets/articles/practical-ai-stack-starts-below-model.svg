@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200" role="img" aria-labelledby="title desc">
+  <title id="title">The practical AI stack starts below the model</title>
+  <desc id="desc">A hand-drawn BELOW Model Review showing five production foundations beneath an AI model.</desc>
+  <defs>
+    <pattern id="paper" width="34" height="34" patternUnits="userSpaceOnUse">
+      <rect width="34" height="34" fill="#fbfaf6"/>
+      <path d="M0 33.5H34" stroke="#dfe8e3" stroke-width="1"/>
+    </pattern>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#112019" flood-opacity=".13"/>
+    </filter>
+    <style>
+      .ink{fill:#101713}.green{fill:#087a57}.orange{fill:#f28c28}.muted{fill:#506159}
+      .title{font:900 66px Arial,sans-serif}.sub{font:900 28px Arial,sans-serif}.label{font:900 24px Arial,sans-serif}.body{font:700 18px Arial,sans-serif}.tiny{font:800 16px Arial,sans-serif}
+      .rough{fill:none;stroke:#101713;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.rough2{fill:none;stroke:#087a57;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#paper)"/>
+  <rect x="34" y="34" width="1532" height="1132" rx="30" fill="none" stroke="#087a57" stroke-width="5"/>
+  <path d="M50 58 Q430 25 815 52 T1548 50" fill="none" stroke="#101713" stroke-width="2" opacity=".5"/>
+
+  <text x="90" y="104" class="tiny green">JWTECHDEV.COM / CLOUD + PLATFORM FOUNDATIONS</text>
+  <text x="90" y="194" class="title ink">THE PRACTICAL AI STACK</text>
+  <text x="90" y="270" class="title green">STARTS BELOW THE MODEL.</text>
+  <path d="M90 305 Q740 326 1455 305" class="rough2"/>
+
+  <g filter="url(#soft)" transform="rotate(-.3 800 430)">
+    <rect x="515" y="345" width="570" height="145" rx="28" fill="#101713" stroke="#f28c28" stroke-width="6"/>
+    <text x="800" y="405" class="sub" fill="#fff" text-anchor="middle">MODEL + ROUTER</text>
+    <text x="800" y="450" class="body" fill="#dfe8e3" text-anchor="middle">Capability lives here. Production trust does not.</text>
+  </g>
+
+  <path d="M800 490 Q780 525 800 558" class="rough2"/>
+  <path d="M780 540 L800 560 L820 540" class="rough2"/>
+
+  <g filter="url(#soft)">
+    <g transform="rotate(-.35 800 620)">
+      <rect x="120" y="565" width="1360" height="110" rx="22" fill="#fff" stroke="#087a57" stroke-width="5"/>
+      <circle cx="180" cy="620" r="32" fill="#087a57"/><text x="180" y="631" class="sub" fill="#fff" text-anchor="middle">B</text>
+      <text x="235" y="610" class="label ink">BOUNDARIES</text><text x="235" y="646" class="body muted">Identity / tenants / network / tools / approvals</text>
+    </g>
+    <g transform="rotate(.25 800 745)">
+      <rect x="120" y="690" width="1360" height="110" rx="22" fill="#fff" stroke="#101713" stroke-width="5"/>
+      <circle cx="180" cy="745" r="32" fill="#101713"/><text x="180" y="756" class="sub" fill="#fff" text-anchor="middle">E</text>
+      <text x="235" y="735" class="label ink">ENTERPRISE DATA</text><text x="235" y="771" class="body muted">Authority / access / freshness / quality / lineage</text>
+    </g>
+    <g transform="rotate(-.2 800 870)">
+      <rect x="120" y="815" width="1360" height="110" rx="22" fill="#fff" stroke="#087a57" stroke-width="5"/>
+      <circle cx="180" cy="870" r="32" fill="#087a57"/><text x="180" y="881" class="sub" fill="#fff" text-anchor="middle">L</text>
+      <text x="235" y="860" class="label ink">LIFECYCLE</text><text x="235" y="896" class="body muted">Version / evaluate / release / rollback / retire</text>
+    </g>
+    <g transform="rotate(.3 800 995)">
+      <rect x="120" y="940" width="660" height="110" rx="22" fill="#101713" stroke="#101713" stroke-width="5"/>
+      <circle cx="180" cy="995" r="32" fill="#f28c28"/><text x="180" y="1006" class="sub" fill="#fff" text-anchor="middle">O</text>
+      <text x="235" y="985" class="label" fill="#fff">OPERATIONS</text><text x="235" y="1021" class="body" fill="#dfe8e3">SLO / trace / incident / recover</text>
+    </g>
+    <g transform="rotate(-.3 1150 995)">
+      <rect x="820" y="940" width="660" height="110" rx="22" fill="#fff" stroke="#f28c28" stroke-width="5"/>
+      <circle cx="880" cy="995" r="32" fill="#f28c28"/><text x="880" y="1006" class="sub" fill="#fff" text-anchor="middle">W</text>
+      <text x="935" y="985" class="label ink">WORKLOAD ECONOMICS</text><text x="935" y="1021" class="body muted">Outcome / latency / loaded unit cost</text>
+    </g>
+  </g>
+
+  <path d="M95 1096 Q390 1069 695 1095 T1505 1090" class="rough" opacity=".48"/>
+  <text x="90" y="1142" class="tiny muted">A better model cannot repair a weak operating foundation.</text>
+  <text x="1510" y="1142" class="tiny green" text-anchor="end">JWTechDev.com</text>
+</svg>
