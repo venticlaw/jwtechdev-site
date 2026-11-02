@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Infrastructure is the difference between an AI demo and an AI business</title>
+  <desc id="desc">A hand-drawn RUNTIME Business Gate showing seven infrastructure capabilities between a promising AI demo and a dependable AI business.</desc>
+  <defs>
+    <pattern id="paper" width="34" height="34" patternUnits="userSpaceOnUse">
+      <rect width="34" height="34" fill="#fbfaf6"/>
+      <path d="M0 33.5H34" stroke="#dfe8e3" stroke-width="1"/>
+    </pattern>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#112019" flood-opacity=".13"/>
+    </filter>
+    <style>
+      .ink{fill:#101713}.green{fill:#087a57}.orange{fill:#f28c28}.muted{fill:#506159}
+      .title{font:900 64px Arial,sans-serif}.sub{font:900 28px Arial,sans-serif}.label{font:900 21px Arial,sans-serif}.body{font:700 17px Arial,sans-serif}.tiny{font:800 16px Arial,sans-serif}
+      .rough{fill:none;stroke:#101713;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.rough2{fill:none;stroke:#087a57;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#paper)"/>
+  <rect x="34" y="34" width="1532" height="1132" rx="30" fill="none" stroke="#087a57" stroke-width="5"/>
+  <path d="M50 58 Q430 25 815 52 T1548 50" fill="none" stroke="#101713" stroke-width="2" opacity=".5"/>
+
+  <text x="90" y="104" class="tiny green">JWTECHDEV.COM / ENTERPRISE ARCHITECTURE</text>
+  <text x="90" y="194" class="title ink">FROM AI DEMO</text>
+  <text x="90" y="270" class="title green">TO AI BUSINESS.</text>
+  <path d="M90 305 Q740 326 1455 305" class="rough2"/>
+
+  <g filter="url(#soft)" transform="rotate(-.5 290 470)">
+    <rect x="90" y="370" width="400" height="205" rx="28" fill="#fff" stroke="#101713" stroke-width="5"/>
+    <text x="290" y="425" class="sub ink" text-anchor="middle">DEMO</text>
+    <text x="290" y="470" class="body muted" text-anchor="middle">Works once</text>
+    <text x="290" y="505" class="body muted" text-anchor="middle">for the builder</text>
+    <text x="290" y="540" class="body muted" text-anchor="middle">under ideal conditions</text>
+  </g>
+
+  <g filter="url(#soft)" transform="rotate(.35 800 700)">
+    <rect x="550" y="342" width="500" height="680" rx="30" fill="#101713" stroke="#f28c28" stroke-width="6"/>
+    <text x="800" y="405" class="sub" fill="#fff" text-anchor="middle">RUNTIME BUSINESS GATE</text>
+    <g>
+      <circle cx="620" cy="478" r="29" fill="#087a57"/><text x="620" y="488" class="label" fill="#fff" text-anchor="middle">R</text><text x="670" y="486" class="label" fill="#fff">RELIABILITY UNDER LOAD</text>
+      <circle cx="620" cy="558" r="29" fill="#087a57"/><text x="620" y="568" class="label" fill="#fff" text-anchor="middle">U</text><text x="670" y="566" class="label" fill="#fff">USER + DATA BOUNDARIES</text>
+      <circle cx="620" cy="638" r="29" fill="#087a57"/><text x="620" y="648" class="label" fill="#fff" text-anchor="middle">N</text><text x="670" y="646" class="label" fill="#fff">NAMED OPERATIONS</text>
+      <circle cx="620" cy="718" r="29" fill="#f28c28"/><text x="620" y="728" class="label" fill="#fff" text-anchor="middle">T</text><text x="670" y="726" class="label" fill="#fff">TELEMETRY + EVIDENCE</text>
+      <circle cx="620" cy="798" r="29" fill="#f28c28"/><text x="620" y="808" class="label" fill="#fff" text-anchor="middle">I</text><text x="670" y="806" class="label" fill="#fff">INTEGRATION SAFETY</text>
+      <circle cx="620" cy="878" r="29" fill="#f28c28"/><text x="620" y="888" class="label" fill="#fff" text-anchor="middle">M</text><text x="670" y="886" class="label" fill="#fff">MEASURED ECONOMICS</text>
+      <circle cx="620" cy="958" r="29" fill="#087a57"/><text x="620" y="968" class="label" fill="#fff" text-anchor="middle">E</text><text x="670" y="966" class="label" fill="#fff">EVOLUTION + ROLLBACK</text>
+    </g>
+  </g>
+
+  <path d="M490 470 Q515 455 548 470" class="rough2"/><path d="M525 450 L550 470 L525 490" class="rough2"/>
+  <path d="M1050 470 Q1075 455 1108 470" class="rough2"/><path d="M1085 450 L1110 470 L1085 490" class="rough2"/>
+
+  <g filter="url(#soft)" transform="rotate(.45 1310 470)">
+    <rect x="1110" y="370" width="400" height="205" rx="28" fill="#087a57" stroke="#101713" stroke-width="5"/>
+    <text x="1310" y="425" class="sub" fill="#fff" text-anchor="middle">BUSINESS</text>
+    <text x="1310" y="470" class="body" fill="#fff" text-anchor="middle">Works repeatedly</text>
+    <text x="1310" y="505" class="body" fill="#fff" text-anchor="middle">for real users</text>
+    <text x="1310" y="540" class="body" fill="#fff" text-anchor="middle">with owned outcomes</text>
+  </g>
+
+  <path d="M90 1088 Q390 1068 695 1092 T1510 1088" class="rough" opacity=".48"/>
+  <text x="90" y="1142" class="tiny muted">A repeatable outcome is the product. Infrastructure makes it repeatable.</text>
+  <text x="1510" y="1142" class="tiny green" text-anchor="end">JWTechDev.com</text>
+</svg>
