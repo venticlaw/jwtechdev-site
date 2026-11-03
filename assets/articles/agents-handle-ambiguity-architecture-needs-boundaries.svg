@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Agents handle ambiguity. Architecture still needs boundaries.</title>
+  <desc id="desc">A hand-drawn BOUNDARY Contract showing an AI agent operating inside explicit scope, tool, approval, evidence, and recovery boundaries.</desc>
+  <defs>
+    <pattern id="paper" width="36" height="36" patternUnits="userSpaceOnUse">
+      <rect width="36" height="36" fill="#fbfaf6"/>
+      <path d="M0 35.5H36" stroke="#dfe8e3" stroke-width="1"/>
+    </pattern>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#112019" flood-opacity=".13"/>
+    </filter>
+    <style>
+      .ink{fill:#101713}.green{fill:#087a57}.orange{fill:#f28c28}.muted{fill:#506159}.white{fill:#fff}
+      .title{font:900 62px Arial,sans-serif}.sub{font:900 30px Arial,sans-serif}.label{font:900 21px Arial,sans-serif}.body{font:700 18px Arial,sans-serif}.tiny{font:800 16px Arial,sans-serif}
+      .rough{fill:none;stroke:#101713;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.roughg{fill:none;stroke:#087a57;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.rougho{fill:none;stroke:#f28c28;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#paper)"/>
+  <rect x="34" y="34" width="1532" height="1132" rx="30" fill="none" stroke="#087a57" stroke-width="5"/>
+  <path d="M54 60 Q400 27 785 54 T1544 52" fill="none" stroke="#101713" stroke-width="2" opacity=".45"/>
+
+  <text x="88" y="102" class="tiny green">JWTECHDEV.COM / AGENT ARCHITECTURE</text>
+  <text x="88" y="188" class="title ink">LET THE AGENT REASON.</text>
+  <text x="88" y="264" class="title green">BOUND WHAT IT CAN DO.</text>
+  <path d="M88 300 Q710 322 1510 299" class="roughg"/>
+
+  <g transform="rotate(-.4 800 710)" filter="url(#soft)">
+    <rect x="95" y="350" width="1410" height="720" rx="32" fill="#fff" stroke="#101713" stroke-width="5"/>
+    <rect x="525" y="430" width="550" height="510" rx="150" fill="#101713" stroke="#087a57" stroke-width="8"/>
+    <circle cx="800" cy="575" r="84" fill="#087a57" stroke="#fff" stroke-width="6"/>
+    <path d="M762 570 Q800 530 838 570 M764 596 Q800 628 836 596" class="rough" stroke="#fff"/>
+    <text x="800" y="710" class="sub white" text-anchor="middle">AGENT REASONING</text>
+    <text x="800" y="754" class="body" fill="#d6e8df" text-anchor="middle">interpret • compare • propose • adapt</text>
+    <rect x="645" y="806" width="310" height="68" rx="18" fill="#f28c28"/>
+    <text x="800" y="850" class="label white" text-anchor="middle">BOUNDED AUTONOMY</text>
+
+    <g>
+      <rect x="145" y="414" width="315" height="92" rx="18" fill="#f4f8f5" stroke="#087a57" stroke-width="4"/>
+      <text x="176" y="451" class="label green">B • BUSINESS</text><text x="176" y="481" class="body muted">goal + stopping condition</text>
+      <rect x="145" y="536" width="315" height="92" rx="18" fill="#f4f8f5" stroke="#087a57" stroke-width="4"/>
+      <text x="176" y="573" class="label green">O • OWNER</text><text x="176" y="603" class="body muted">identity + accountability</text>
+      <rect x="145" y="658" width="315" height="92" rx="18" fill="#fff7ed" stroke="#f28c28" stroke-width="4"/>
+      <text x="176" y="695" class="label orange">U • USER + DATA</text><text x="176" y="725" class="body muted">scope + classification</text>
+      <rect x="145" y="780" width="315" height="92" rx="18" fill="#fff7ed" stroke="#f28c28" stroke-width="4"/>
+      <text x="176" y="817" class="label orange">N • NARROW TOOLS</text><text x="176" y="847" class="body muted">actions + parameter limits</text>
+    </g>
+
+    <g>
+      <rect x="1140" y="414" width="315" height="92" rx="18" fill="#f4f8f5" stroke="#087a57" stroke-width="4"/>
+      <text x="1171" y="451" class="label green">D • DECISIONS</text><text x="1171" y="481" class="body muted">risk + confidence thresholds</text>
+      <rect x="1140" y="536" width="315" height="92" rx="18" fill="#f4f8f5" stroke="#087a57" stroke-width="4"/>
+      <text x="1171" y="573" class="label green">A • APPROVAL</text><text x="1171" y="603" class="body muted">review + escalation path</text>
+      <rect x="1140" y="658" width="315" height="92" rx="18" fill="#fff7ed" stroke="#f28c28" stroke-width="4"/>
+      <text x="1171" y="695" class="label orange">R • RECORDS</text><text x="1171" y="725" class="body muted">trace + policy evidence</text>
+      <rect x="1140" y="780" width="315" height="92" rx="18" fill="#fff7ed" stroke="#f28c28" stroke-width="4"/>
+      <text x="1171" y="817" class="label orange">Y • YIELD</text><text x="1171" y="847" class="body muted">rollback + recovery</text>
+    </g>
+
+    <path d="M460 460 Q510 455 520 500" class="roughg"/><path d="M500 482 L520 502 L495 512" class="roughg"/>
+    <path d="M460 826 Q510 822 520 778" class="rougho"/><path d="M497 786 L520 776 L518 804" class="rougho"/>
+    <path d="M1080 500 Q1090 455 1140 460" class="roughg"/><path d="M1118 442 L1142 460 L1117 474" class="roughg"/>
+    <path d="M1080 778 Q1090 822 1140 826" class="rougho"/><path d="M1118 811 L1142 828 L1117 842" class="rougho"/>
+  </g>
+
+  <text x="90" y="1122" class="sub ink">PROMPTS DESCRIBE THE BOUNDARY.</text>
+  <text x="1510" y="1122" class="sub green" text-anchor="end">THE PLATFORM ENFORCES IT.</text>
+</svg>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>Agents handle ambiguity. Your architecture still needs boundaries. | JWTechDev.com</title>
+  <meta name="description" content="Use the BOUNDARY Contract to define scope, identity, tools, approvals, evidence, and recovery before an AI agent acts inside real systems." />
+  <link rel="canonical" href="https://jwtechdev.com/articles/agents-handle-ambiguity-architecture-needs-boundaries.html" />
+  <meta property="og:title" content="Agents handle ambiguity. Your architecture still needs boundaries." />
+  <meta property="og:description" content="The model can reason through ambiguity. The architecture must make authority explicit." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://jwtechdev.com/articles/agents-handle-ambiguity-architecture-needs-boundaries.html" />
+  <meta property="og:site_name" content="JWTechDev.com" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/agents-handle-ambiguity-architecture-needs-boundaries.png" />
+  <meta property="og:image:width" content="1600" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt" content="Hand-drawn BOUNDARY Contract showing an AI agent operating inside explicit scope, tool, approval, evidence, and recovery boundaries" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Agents handle ambiguity. Architecture still needs boundaries." />
+  <meta name="twitter:description" content="A practical eight-part contract for bounded agent autonomy." />
+  <meta name="twitter:image" content="https://jwtechdev.com/assets/articles/agents-handle-ambiguity-architecture-needs-boundaries.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20261103-boundary-contract" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Agents handle ambiguity. Your architecture still needs boundaries.","description":"Use the BOUNDARY Contract to define scope, identity, tools, approvals, evidence, and recovery before an AI agent acts inside real systems.","datePublished":"2026-11-03T10:00:00-05:00","dateModified":"2026-11-03T10:00:00-05:00","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","url":"https://jwtechdev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/articles/agents-handle-ambiguity-architecture-needs-boundaries.png","width":1600,"height":1200},"mainEntityOfPage":{"@type":"WebPage","@id":"https://jwtechdev.com/articles/agents-handle-ambiguity-architecture-needs-boundaries.html"},"keywords":["AI agent architecture","bounded autonomy","agent permissions","human approval","AgentCore","agent governance"]}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">Agent architecture</p>
+    <article class="article-body">
+      <h1>Agents handle ambiguity. Your architecture still needs boundaries.</h1>
+      <p class="section__lede">An agent is useful because it can interpret an unclear request, choose a path, and adapt when conditions change. That flexibility belongs inside a deliberately rigid operating envelope. The model can reason through ambiguity. The architecture must make authority explicit.</p>
+      <div class="article-kicker"><span>Bounded autonomy</span><span>Tool permissions</span><span>Risk-tiered approval</span><span>Traceability</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/agents-handle-ambiguity-architecture-needs-boundaries.png" alt="Hand-drawn BOUNDARY Contract showing an AI agent operating inside explicit scope, tool, approval, evidence, and recovery boundaries" width="1600" height="1200" />
+        <figcaption class="article-meta"><span>Published 2026-11-03</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#paradox">The autonomy paradox</a>
+          <a href="#boundary-contract">The BOUNDARY Contract</a>
+          <a href="#enforcement">Prompts are not boundaries</a>
+          <a href="#monday">What to do Monday</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>Good agent architecture does not eliminate ambiguity. It contains it. Let the model interpret language, compare options, and propose a plan, but make identity, data access, allowed tools, approval thresholds, spending limits, evidence, and recovery deterministic wherever the consequence matters.</p>
+            <p>I use the <strong>BOUNDARY Contract</strong>: <strong>business objective, owner and identity, user and data scope, narrow tools, decision thresholds, approval paths, records, and yield or recovery.</strong> It defines where the agent may improvise and where the platform must enforce a rule.</p>
+          </section>
+
+          <section id="paradox">
+            <h2>The autonomy paradox</h2>
+            <p>Traditional software follows explicit branches. An agent can interpret a request the team did not predict, decide which information matters, and select a tool dynamically. That is the value. It is also why the system cannot depend on the prompt as its only control surface.</p>
+            <p>AWS now makes the same distinction in its Well-Architected Agentic AI Lens. Its design principles call for specialized, bounded agents; end-to-end traces; versioned behavior; proportionate human oversight; and explicit contracts. The guidance also separates deterministic enforcement such as IAM, schema validation, and policy engines from probabilistic controls such as content filtering and behavioral evaluation.</p>
+            <p>The architectural mistake is to treat autonomy as a binary choice. A system is not simply manual or autonomous. One agent might answer a knowledge question without review, draft a customer response for approval, update a low-risk record within limits, and require a named human before moving money. Autonomy should change with the action, not with the enthusiasm of the demo.</p>
+          </section>
+
+          <section id="boundary-contract">
+            <h2>The BOUNDARY Contract</h2>
+            <p><strong>B: Business objective and stopping condition.</strong> Define the job in operational terms: the user, desired outcome, success evidence, and conditions that force the agent to stop. “Help with invoices” is vague. “Explain an invoice using approved account data, but do not modify charges” creates an enforceable boundary.</p>
+            <p><strong>O: Owner and operating identity.</strong> Name the business owner, technical owner, and identity under which the workload acts. Preserve the end-user identity when authorization depends on the person. A shared service account may be convenient, but it can erase the context needed to decide what a tool call should be allowed to do.</p>
+            <p><strong>U: User and data scope.</strong> Declare which users, tenants, records, classifications, regions, and retention rules apply. The agent should retrieve only the data required for the task. This is where tenant isolation, row-level filtering, session boundaries, and privacy policy become architecture rather than documentation.</p>
+            <p><strong>N: Narrow tools and parameter shapes.</strong> Expose the smallest useful action. Prefer `draft_refund_request` over a generic administrative endpoint. Validate schemas, restrict resources, and separate read, draft, approve, write, publish, and destructive operations. AWS AgentCore Gateway guidance recommends least privilege, fail-safe defaults, structured identity claims, and logged authorization decisions.</p>
+            <p><strong>D: Decision thresholds.</strong> Classify actions by consequence, reversibility, confidence, amount, and policy sensitivity. Low-risk retrieval can proceed automatically. A reversible update may proceed below a limit. A legal commitment, payment, destructive action, or policy exception should cross a higher threshold.</p>
+            <p><strong>A: Approval and escalation paths.</strong> Human review should be risk-tiered. Requiring approval for everything creates fatigue; requiring it for nothing creates unbounded autonomy. Give reviewers the proposed action, supporting data, expected consequence, deadline, and fallback. Record who approved what and when.</p>
+            <p><strong>R: Records and traceability.</strong> Capture the user request, agent version, model, retrieved evidence, policy decision, tool parameters, result, latency, cost, approval, and final outcome in one trace. Logs are not merely for debugging. They are the evidence needed to investigate behavior, evaluate quality, and improve policy.</p>
+            <p><strong>Y: Yield, rollback, and recovery.</strong> Define what happens when confidence falls, a tool fails, a limit is exceeded, or the action produces the wrong result. The system needs timeouts, bounded retries, compensating actions, rollback where possible, a kill switch, and a clean handoff to a human who receives the context.</p>
+          </section>
+
+          <section id="enforcement">
+            <h2>Prompts describe the boundary. Platforms enforce it.</h2>
+            <p>A system prompt can tell an agent not to issue a refund over a threshold. That instruction is useful, but it is probabilistic. The refund tool or policy layer should independently reject the request. A prompt can tell an agent to use only one customer’s records. The data path should still apply authorization and tenant filters.</p>
+            <p>Amazon Bedrock AgentCore reflects this layered model. IAM controls who can invoke and manage resources. Resource policies protect runtimes, gateways, and memory. Gateway policy can make authorization decisions about actions and conditions. Human approval handles consequential exceptions. Evaluations test behavior, while traces show what actually happened.</p>
+            <p>NIST’s Generative AI Profile reinforces the organizational side: higher-risk use can require additional human review, tracking, documentation, and management oversight. The practical takeaway is that governance cannot live only in a policy document. It must appear in the request path, the tool contract, the release process, and the operating evidence.</p>
+          </section>
+
+          <section id="monday">
+            <h2>What to do next Monday</h2>
+            <ol>
+              <li><strong>Pick one agent action.</strong> Choose a real read, draft, update, payment, publish, or delete operation.</li>
+              <li><strong>Complete the BOUNDARY Contract.</strong> Write one sentence for each of the eight fields and identify any field without an owner.</li>
+              <li><strong>Move one rule out of the prompt.</strong> Enforce it with IAM, a policy engine, schema validation, data filtering, or the tool itself.</li>
+              <li><strong>Tier the action by risk.</strong> Define when it proceeds, when it pauses for approval, and when it must stop.</li>
+              <li><strong>Test a hostile and a broken path.</strong> Try prompt injection, excessive parameters, missing identity, a tool timeout, and an unavailable reviewer.</li>
+              <li><strong>Inspect the evidence.</strong> Confirm that one trace can reconstruct the request, decision, action, approval, outcome, and cost.</li>
+              <li><strong>Practice recovery.</strong> Revoke access, disable the tool, roll back the configuration, and hand the case to a human with context.</li>
+            </ol>
+            <p>The strongest agent systems do not choose between flexibility and control. They put flexibility inside a control envelope the organization can explain, operate, and change.</p>
+            <p>I will be at AFROTECH in Houston November 2-6. If you are building an enterprise AI platform, global delivery organization, or technical go-to-market motion, I would be glad to compare notes.</p>
+          </section>
+
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://docs.aws.amazon.com/wellarchitected/latest/agentic-ai-lens/design-principles.html" target="_blank" rel="noopener">AWS Well-Architected Agentic AI Lens: design principles</a></li>
+              <li><a href="https://docs.aws.amazon.com/wellarchitected/latest/agentic-ai-lens/agentsec04.html" target="_blank" rel="noopener">AWS Agentic AI Lens: goal alignment and manipulation prevention</a></li>
+              <li><a href="https://docs.aws.amazon.com/wellarchitected/latest/agentic-ai-lens/agentsec04-bp02.html" target="_blank" rel="noopener">AWS Agentic AI Lens: human-in-the-loop for critical decisions</a></li>
+              <li><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-fine-grained-access-control.html" target="_blank" rel="noopener">Amazon Bedrock AgentCore Gateway: fine-grained access control</a></li>
+              <li><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/resource-based-policies.html" target="_blank" rel="noopener">Amazon Bedrock AgentCore: resource-based policies</a></li>
+              <li><a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf" target="_blank" rel="noopener">NIST AI 600-1: Generative Artificial Intelligence Profile</a></li>
+            </ul>
+          </section>
+
+          <section class="article-cta">
+            <h2>Give agent autonomy an operating envelope</h2>
+            <p>Explore more practical frameworks for enterprise AI, cloud architecture, governance, and technical leadership.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get the free starter kit</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
