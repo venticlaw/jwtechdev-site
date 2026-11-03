@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>AI engineering needs product, security, and operations at the same table | JWTechDev.com</title>
+  <meta name="description" content="Use the SHIP Release Table to align product outcomes, security boundaries, operational readiness, and the production decision for AI systems." />
+  <link rel="canonical" href="https://jwtechdev.com/articles/ai-engineering-product-security-operations-same-table.html" />
+  <meta property="og:title" content="AI engineering needs product, security, and operations at the same table" />
+  <meta property="og:description" content="A model team can build the capability. A cross-functional release table turns it into an owned production system." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://jwtechdev.com/articles/ai-engineering-product-security-operations-same-table.html" />
+  <meta property="og:site_name" content="JWTechDev.com" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/ai-engineering-product-security-operations-same-table.png" />
+  <meta property="og:image:width" content="1600" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt" content="Hand-drawn SHIP Release Table connecting product, security, and operations around one AI production decision" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Put product, security, and operations at one AI release table" />
+  <meta name="twitter:description" content="The SHIP operating model for cross-functional AI delivery." />
+  <meta name="twitter:image" content="https://jwtechdev.com/assets/articles/ai-engineering-product-security-operations-same-table.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20261103-ship-table" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"AI engineering needs product, security, and operations at the same table","description":"Use the SHIP Release Table to align product outcomes, security boundaries, operational readiness, and the production decision for AI systems.","datePublished":"2026-11-03T16:00:00-05:00","dateModified":"2026-11-03T16:00:00-05:00","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","url":"https://jwtechdev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/articles/ai-engineering-product-security-operations-same-table.png","width":1600,"height":1200},"mainEntityOfPage":{"@type":"WebPage","@id":"https://jwtechdev.com/articles/ai-engineering-product-security-operations-same-table.html"},"keywords":["AI engineering operating model","AgentOps","DevSecOps","AI product management","AI security","AI operations"]}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">Cross-functional leadership</p>
+    <article class="article-body">
+      <h1>AI engineering needs product, security, and operations at the same table.</h1>
+      <p class="section__lede">AI systems fail organizationally when product defines value, security defines controls, and operations inherits the consequences in three separate meetings. Production requires one shared decision about outcomes, authority, evidence, support, and release readiness.</p>
+      <div class="article-kicker"><span>Product outcomes</span><span>Security boundaries</span><span>Operational readiness</span><span>Shared release decision</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/ai-engineering-product-security-operations-same-table.png" alt="Hand-drawn SHIP Release Table connecting product, security, and operations around one AI production decision" width="1600" height="1200" />
+        <figcaption class="article-meta"><span>Published 2026-11-03</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#handoff-failure">The handoff failure</a>
+          <a href="#ship-table">The SHIP Release Table</a>
+          <a href="#cadence">The operating cadence</a>
+          <a href="#monday">What to do Monday</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>Product, security, and operations should jointly own the release contract for every production AI capability. Product defines the user outcome and acceptable experience. Security defines identity, data, tool, and autonomy boundaries. Operations defines reliability, observability, incident response, support, cost, and recovery. Engineering implements the contract and returns evidence.</p>
+            <p>I use the <strong>SHIP Release Table</strong>: <strong>success contract, hazard and authority map, instrumentation and incident plan, and promotion decision.</strong> It is a short, recurring decision forum with shared artifacts, not another steering committee.</p>
+          </section>
+
+          <section id="handoff-failure">
+            <h2>The problem is sequential ownership</h2>
+            <p>Many AI programs move through the organization as a chain of handoffs. Product writes a use case. A model or engineering team proves the happy path. Security reviews the design near launch. Operations receives a deployment with dashboards to be added later. Each group performs its own work, yet nobody owns the full production outcome.</p>
+            <p>That structure was already weak for cloud software. Agents make it worse because behavior can depend on natural-language input, retrieved context, model selection, memory, policy, and dynamic tool calls. A product decision about “helpfulness” can change security exposure. A security control can change completion rate. A model upgrade can change latency and cost. An operations alert can reveal that the product is succeeding technically while users abandon the workflow.</p>
+            <p>AWS Prescriptive Guidance now describes cross-functional AgentOps teams that include AI and ML practitioners, software and distributed-systems engineers, product owners, compliance leads, and platform architects. The point is joint lifecycle ownership from design and deployment through monitoring and improvement. AWS Well-Architected guidance makes the same operating-model argument: teams need shared business goals, clear decision authority, observability, reversible change, and the ability to anticipate failure.</p>
+          </section>
+
+          <section id="ship-table">
+            <h2>The SHIP Release Table</h2>
+            <p><strong>S: Success contract.</strong> Product leads, but all three functions sign. Name the user, job, expected result, quality threshold, adoption signal, and loaded unit cost. Include the failure experience: what should the user see when the agent is uncertain, a tool is unavailable, or the request is outside policy? A release is not successful because the model answered. It is successful because the user completed the intended job within the agreed limits.</p>
+            <p><strong>H: Hazard and authority map.</strong> Security leads with product context and operational input. Classify the data, identities, tools, write actions, external dependencies, and business consequences. Define which actions are read-only, reversible, approval-gated, prohibited, or available only under specific conditions. Include prompt injection, excessive agency, data leakage, tenant crossing, unsafe tool parameters, and compromised dependencies. Security should produce enforceable policies and test cases, not only prose.</p>
+            <p><strong>I: Instrumentation and incident plan.</strong> Operations leads, but product and security specify what the evidence must answer. Trace the user request, agent and model version, retrieved context, policy decision, tool calls, approval, latency, cost, final outcome, and escalation. Define service objectives, alarms, runbooks, support ownership, rollback, kill switch, and break-glass access. Product needs outcome and adoption telemetry; security needs authorization and intervention evidence; operations needs workload health and recovery signals. One trace should serve all three.</p>
+            <p><strong>P: Promotion decision.</strong> The table decides whether to release, limit, repair, or stop. Engineering brings evaluation results, security tests, operational drills, cost evidence, and unresolved exceptions. Product brings evidence that the workflow is worth operating. No function receives an informal veto after the fact because its concerns are built into the entry criteria. The decision and accepted risks are recorded with owners and expiration dates.</p>
+            <p>The table is intentionally small. Product owns value. Security owns enforceable risk boundaries. Operations owns the system’s ability to run and recover. Engineering owns implementation evidence. Legal, privacy, data, and domain specialists join when the workload requires them, but the core release decision stays clear.</p>
+          </section>
+
+          <section id="cadence">
+            <h2>Use a cadence, not a ceremony</h2>
+            <p>The SHIP Table should operate at three moments. At discovery, it classifies the workflow and identifies non-negotiable constraints before the team overinvests. Before production, it reviews evidence against the release contract. After launch, it reviews user outcomes, policy interventions, reliability, incidents, cost, and drift.</p>
+            <p>This is not permission to schedule more meetings. Use one page, one evidence packet, and clear asynchronous preparation. Routine low-risk releases can follow a paved path with automated checks. High-risk actions get deeper review. Repeated findings should become platform capabilities: approved tool patterns, evaluation suites, policy templates, dashboards, incident playbooks, and deployment gates.</p>
+            <p>NIST’s DevSecOps work supports this shift from late review to security integrated throughout delivery, backed by automated and standardized practices. The AWS Agentic AI Lens adds agent-specific concerns such as memory, tool use, identity, goal manipulation, multi-agent orchestration, observability, containment, and break-glass runbooks. These concerns cannot be handed to one team at the end.</p>
+          </section>
+
+          <section id="monday">
+            <h2>What to do next Monday</h2>
+            <ol>
+              <li><strong>Select one production-bound AI workflow.</strong> Avoid a platform-wide debate. Start where a real release decision is approaching.</li>
+              <li><strong>Name one accountable product, security, operations, and engineering representative.</strong> Give each person explicit decision rights.</li>
+              <li><strong>Draft the four SHIP artifacts.</strong> Keep each section short enough to review in one sitting and link to deeper evidence.</li>
+              <li><strong>Choose five release measures.</strong> Include user success, quality, authorization safety, reliability, and loaded cost.</li>
+              <li><strong>Run one failure drill together.</strong> Test a bad tool parameter, missing identity, model timeout, policy intervention, or rollback.</li>
+              <li><strong>Record the promotion decision.</strong> Release, limit, repair, or stop, with named owners for every open exception.</li>
+              <li><strong>Turn one repeated control into a paved path.</strong> Automate the test or platform capability so the next team moves faster.</li>
+            </ol>
+            <p>The fastest AI organizations will not be the ones that remove product, security, or operations from the process. They will be the ones that give those functions a shared contract, earlier evidence, and fewer late surprises.</p>
+            <p>I will be at AFROTECH in Houston November 2-6. If you are building an enterprise AI platform, global delivery organization, or technical go-to-market motion, I would be glad to compare notes.</p>
+          </section>
+
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://docs.aws.amazon.com/prescriptive-guidance/latest/strategy-operationalizing-agentic-ai/preparing-business.html" target="_blank" rel="noopener">AWS Prescriptive Guidance: preparing the business for agentic AI at scale</a></li>
+              <li><a href="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/operational-excellence.html" target="_blank" rel="noopener">AWS Well-Architected: operational excellence</a></li>
+              <li><a href="https://docs.aws.amazon.com/wellarchitected/latest/operational-excellence-pillar/operating-model.html" target="_blank" rel="noopener">AWS Well-Architected: operating model</a></li>
+              <li><a href="https://docs.aws.amazon.com/wellarchitected/latest/agentic-ai-lens/security.html" target="_blank" rel="noopener">AWS Well-Architected Agentic AI Lens: security</a></li>
+              <li><a href="https://csrc.nist.gov/pubs/other/2026/03/24/devsecops-practices/iprd" target="_blank" rel="noopener">NIST NCCoE: Secure Software Development, Security, and Operations practices</a></li>
+            </ul>
+          </section>
+
+          <section class="article-cta">
+            <h2>Make production readiness a shared decision</h2>
+            <p>Explore more practical frameworks for enterprise AI, cloud architecture, governance, and technical leadership.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get the free starter kit</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

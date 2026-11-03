@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200" role="img" aria-labelledby="title desc">
+  <title id="title">AI engineering needs product, security, and operations at the same table</title>
+  <desc id="desc">A hand-drawn SHIP Release Table connecting product, security, and operations around one AI production decision.</desc>
+  <defs>
+    <pattern id="paper" width="36" height="36" patternUnits="userSpaceOnUse"><rect width="36" height="36" fill="#fbfaf6"/><path d="M0 35.5H36" stroke="#dfe8e3" stroke-width="1"/></pattern>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#112019" flood-opacity=".14"/></filter>
+    <style>
+      .ink{fill:#101713}.green{fill:#087a57}.orange{fill:#f28c28}.muted{fill:#506159}.white{fill:#fff}
+      .title{font:900 59px Arial,sans-serif}.sub{font:900 30px Arial,sans-serif}.label{font:900 22px Arial,sans-serif}.body{font:700 18px Arial,sans-serif}.tiny{font:800 16px Arial,sans-serif}
+      .rough{fill:none;stroke:#101713;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.roughg{fill:none;stroke:#087a57;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.rougho{fill:none;stroke:#f28c28;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#paper)"/>
+  <rect x="34" y="34" width="1532" height="1132" rx="30" fill="none" stroke="#087a57" stroke-width="5"/>
+  <path d="M52 58 Q430 26 820 52 T1548 50" fill="none" stroke="#101713" stroke-width="2" opacity=".45"/>
+  <text x="88" y="102" class="tiny green">JWTECHDEV.COM / CROSS-FUNCTIONAL LEADERSHIP</text>
+  <text x="88" y="184" class="title ink">ONE AI RELEASE.</text>
+  <text x="88" y="258" class="title green">ONE SHARED TABLE.</text>
+  <path d="M88 296 Q730 318 1510 296" class="roughg"/>
+
+  <g filter="url(#soft)" transform="rotate(-.3 800 700)">
+    <rect x="105" y="355" width="1390" height="705" rx="34" fill="#fff" stroke="#101713" stroke-width="5"/>
+
+    <g>
+      <rect x="145" y="405" width="350" height="178" rx="28" fill="#087a57"/>
+      <text x="320" y="463" class="sub white" text-anchor="middle">PRODUCT</text>
+      <text x="320" y="510" class="body white" text-anchor="middle">user outcome • adoption</text>
+      <text x="320" y="544" class="body white" text-anchor="middle">quality • unit value</text>
+    </g>
+    <g>
+      <rect x="1105" y="405" width="350" height="178" rx="28" fill="#101713"/>
+      <text x="1280" y="463" class="sub white" text-anchor="middle">SECURITY</text>
+      <text x="1280" y="510" class="body white" text-anchor="middle">identity • data • tools</text>
+      <text x="1280" y="544" class="body white" text-anchor="middle">autonomy • policy</text>
+    </g>
+    <g>
+      <rect x="625" y="826" width="350" height="178" rx="28" fill="#f28c28"/>
+      <text x="800" y="884" class="sub white" text-anchor="middle">OPERATIONS</text>
+      <text x="800" y="931" class="body white" text-anchor="middle">SLOs • traces • support</text>
+      <text x="800" y="965" class="body white" text-anchor="middle">incident • rollback • cost</text>
+    </g>
+
+    <rect x="535" y="428" width="530" height="340" rx="52" fill="#fbfaf6" stroke="#087a57" stroke-width="7"/>
+    <text x="800" y="485" class="sub ink" text-anchor="middle">THE SHIP RELEASE TABLE</text>
+    <path d="M600 520 Q800 536 1000 520" class="rougho"/>
+    <g>
+      <circle cx="615" cy="592" r="31" fill="#087a57"/><text x="615" y="602" class="label white" text-anchor="middle">S</text><text x="667" y="600" class="label ink">SUCCESS CONTRACT</text>
+      <circle cx="615" cy="665" r="31" fill="#101713"/><text x="615" y="675" class="label white" text-anchor="middle">H</text><text x="667" y="673" class="label ink">HAZARD + AUTHORITY MAP</text>
+      <circle cx="615" cy="738" r="31" fill="#f28c28"/><text x="615" y="748" class="label white" text-anchor="middle">I</text><text x="667" y="746" class="label ink">INSTRUMENT + INCIDENT PLAN</text>
+    </g>
+    <path d="M800 826 Q800 790 800 770" class="rougho"/><path d="M782 793 L800 768 L818 793" class="rougho"/>
+    <rect x="652" y="783" width="296" height="66" rx="18" fill="#087a57"/>
+    <text x="800" y="826" class="label white" text-anchor="middle">P • PROMOTION DECISION</text>
+
+    <path d="M495 495 Q525 490 540 520" class="roughg"/><path d="M517 507 L541 521 L521 538" class="roughg"/>
+    <path d="M1105 495 Q1075 490 1060 520" class="rough"/><path d="M1083 507 L1059 521 L1079 538" class="rough"/>
+  </g>
+
+  <text x="90" y="1118" class="sub ink">NO LATE HANDOFFS.</text>
+  <text x="1510" y="1118" class="sub green" text-anchor="end">ONE EVIDENCE-BASED RELEASE DECISION.</text>
+</svg>
