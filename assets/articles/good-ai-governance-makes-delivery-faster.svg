@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Good AI governance should make delivery faster</title>
+  <desc id="desc">A hand-drawn FAST Governance Lanes diagram routing AI work through standard, controlled, and restricted delivery paths.</desc>
+  <defs>
+    <pattern id="paper" width="36" height="36" patternUnits="userSpaceOnUse"><rect width="36" height="36" fill="#fbfaf6"/><path d="M0 35.5H36" stroke="#dfe8e3" stroke-width="1"/></pattern>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#112019" flood-opacity=".14"/></filter>
+    <style>
+      .ink{fill:#101713}.green{fill:#087a57}.orange{fill:#f28c28}.muted{fill:#506159}.white{fill:#fff}
+      .title{font:900 59px Arial,sans-serif}.sub{font:900 30px Arial,sans-serif}.label{font:900 22px Arial,sans-serif}.body{font:700 18px Arial,sans-serif}.tiny{font:800 16px Arial,sans-serif}
+      .rough{fill:none;stroke:#101713;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.roughg{fill:none;stroke:#087a57;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.rougho{fill:none;stroke:#f28c28;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+  <rect width="1600" height="1200" fill="url(#paper)"/>
+  <rect x="34" y="34" width="1532" height="1132" rx="30" fill="none" stroke="#087a57" stroke-width="5"/>
+  <path d="M52 58 Q430 26 820 52 T1548 50" fill="none" stroke="#101713" stroke-width="2" opacity=".45"/>
+  <text x="88" y="102" class="tiny green">JWTECHDEV.COM / RESPONSIBLE AI LEADERSHIP</text>
+  <text x="88" y="184" class="title ink">GOOD GOVERNANCE</text>
+  <text x="88" y="258" class="title green">SHOULD SPEED UP DELIVERY.</text>
+  <path d="M88 296 Q730 318 1510 296" class="roughg"/>
+
+  <g filter="url(#soft)" transform="rotate(-.25 800 690)">
+    <rect x="105" y="350" width="1390" height="710" rx="34" fill="#fff" stroke="#101713" stroke-width="5"/>
+    <rect x="145" y="398" width="1310" height="120" rx="28" fill="#101713"/>
+    <text x="800" y="448" class="sub white" text-anchor="middle">THE FAST GOVERNANCE LANES</text>
+    <text x="800" y="488" class="body white" text-anchor="middle">FRAME → ASSIGN → SUPPLY EVIDENCE → TIME-BOX EXCEPTIONS</text>
+
+    <g>
+      <rect x="160" y="585" width="385" height="320" rx="32" fill="#e6f4ee" stroke="#087a57" stroke-width="6"/>
+      <circle cx="220" cy="645" r="34" fill="#087a57"/><text x="220" y="655" class="label white" text-anchor="middle">1</text>
+      <text x="275" y="655" class="sub green">STANDARD</text>
+      <path d="M195 690 Q350 700 505 690" class="roughg"/>
+      <text x="352" y="744" class="label ink" text-anchor="middle">LOW IMPACT</text>
+      <text x="352" y="790" class="body muted" text-anchor="middle">approved data • assistive</text>
+      <text x="352" y="824" class="body muted" text-anchor="middle">no consequential write</text>
+      <rect x="218" y="850" width="268" height="58" rx="18" fill="#087a57"/>
+      <text x="352" y="888" class="label white" text-anchor="middle">AUTOMATED PATH</text>
+    </g>
+
+    <g>
+      <rect x="608" y="585" width="385" height="320" rx="32" fill="#fff3e3" stroke="#f28c28" stroke-width="6"/>
+      <circle cx="668" cy="645" r="34" fill="#f28c28"/><text x="668" y="655" class="label white" text-anchor="middle">2</text>
+      <text x="723" y="655" class="sub orange">CONTROLLED</text>
+      <path d="M643 690 Q800 700 958 690" class="rougho"/>
+      <text x="800" y="744" class="label ink" text-anchor="middle">ELEVATED IMPACT</text>
+      <text x="800" y="790" class="body muted" text-anchor="middle">sensitive data • external</text>
+      <text x="800" y="824" class="body muted" text-anchor="middle">reversible write actions</text>
+      <rect x="666" y="850" width="268" height="58" rx="18" fill="#f28c28"/>
+      <text x="800" y="888" class="label white" text-anchor="middle">TARGETED REVIEW</text>
+    </g>
+
+    <g>
+      <rect x="1055" y="585" width="385" height="320" rx="32" fill="#edf0ee" stroke="#101713" stroke-width="6"/>
+      <circle cx="1115" cy="645" r="34" fill="#101713"/><text x="1115" y="655" class="label white" text-anchor="middle">3</text>
+      <text x="1170" y="655" class="sub ink">RESTRICTED</text>
+      <path d="M1090 690 Q1248 700 1405 690" class="rough"/>
+      <text x="1248" y="744" class="label ink" text-anchor="middle">HIGH IMPACT</text>
+      <text x="1248" y="790" class="body muted" text-anchor="middle">regulated • irreversible</text>
+      <text x="1248" y="824" class="body muted" text-anchor="middle">powerful autonomy</text>
+      <rect x="1114" y="850" width="268" height="58" rx="18" fill="#101713"/>
+      <text x="1248" y="888" class="label white" text-anchor="middle">DEEPER OVERSIGHT</text>
+    </g>
+
+    <path d="M545 744 Q575 728 608 744" class="roughg"/><path d="M584 722 L609 744 L581 760" class="roughg"/>
+    <path d="M993 744 Q1023 728 1055 744" class="rougho"/><path d="M1031 722 L1056 744 L1028 760" class="rougho"/>
+    <text x="800" y="982" class="label ink" text-anchor="middle">RISK CHANGES → THE LANE CHANGES</text>
+  </g>
+
+  <text x="90" y="1118" class="sub ink">FEWER IMPROVISED CONTROLS.</text>
+  <text x="1510" y="1118" class="sub green" text-anchor="end">FASTER, EVIDENCE-BASED DECISIONS.</text>
+</svg>

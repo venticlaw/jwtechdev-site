@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>Good AI governance should make delivery faster | JWTechDev.com</title>
+  <meta name="description" content="Use the FAST Governance Lanes to route AI work by risk, automate evidence, time-box exceptions, and move responsible systems into production faster." />
+  <link rel="canonical" href="https://jwtechdev.com/articles/good-ai-governance-makes-delivery-faster.html" />
+  <meta property="og:title" content="Good AI governance should make delivery faster" />
+  <meta property="og:description" content="The FAST Governance Lanes replace one-size-fits-all review with risk-based paths, automated evidence, and clear decisions." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://jwtechdev.com/articles/good-ai-governance-makes-delivery-faster.html" />
+  <meta property="og:site_name" content="JWTechDev.com" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/good-ai-governance-makes-delivery-faster.png" />
+  <meta property="og:image:width" content="1600" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt" content="Hand-drawn FAST Governance Lanes routing AI work through standard, controlled, and restricted delivery paths" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Govern AI by risk, not by meeting count" />
+  <meta name="twitter:description" content="A faster operating model for responsible AI delivery." />
+  <meta name="twitter:image" content="https://jwtechdev.com/assets/articles/good-ai-governance-makes-delivery-faster.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20261104-fast-governance" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Good AI governance should make delivery faster","description":"Use the FAST Governance Lanes to route AI work by risk, automate evidence, time-box exceptions, and move responsible systems into production faster.","datePublished":"2026-11-04T10:00:00-05:00","dateModified":"2026-11-04T10:00:00-05:00","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","url":"https://jwtechdev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/articles/good-ai-governance-makes-delivery-faster.png","width":1600,"height":1200},"mainEntityOfPage":{"@type":"WebPage","@id":"https://jwtechdev.com/articles/good-ai-governance-makes-delivery-faster.html"},"keywords":["AI governance","responsible AI","AI risk management","AI delivery","Amazon Bedrock Guardrails","NIST AI RMF"]}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">Responsible AI leadership</p>
+    <article class="article-body">
+      <h1>Good AI governance should make delivery faster.</h1>
+      <p class="section__lede">Governance fails when every AI use case enters the same queue, creates a new committee, and waits for controls to be invented from scratch. A strong system classifies risk early, routes work to a known path, collects evidence automatically, and reserves human judgment for consequential decisions.</p>
+      <div class="article-kicker"><span>Risk-tiered paths</span><span>Automated evidence</span><span>Time-boxed exceptions</span><span>Faster approvals</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/good-ai-governance-makes-delivery-faster.png" alt="Hand-drawn FAST Governance Lanes routing AI work through standard, controlled, and restricted delivery paths" width="1600" height="1200" />
+        <figcaption class="article-meta"><span>Published 2026-11-04</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#slow-governance">Why governance gets slow</a>
+          <a href="#fast-model">The FAST model</a>
+          <a href="#lanes">Three delivery lanes</a>
+          <a href="#monday">What to do Monday</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>Good AI governance should reduce uncertainty before a team invests heavily. It should tell builders which data, models, tools, evaluations, approvals, and monitoring patterns are already acceptable for a defined risk tier. The result is fewer late surprises, less duplicate review, and a shorter path from idea to controlled production use.</p>
+            <p>I use the <strong>FAST Governance Lanes</strong>: <strong>frame the use case, assign a risk lane, supply reusable evidence, and time-box exceptions.</strong> Standard work moves through automated paved paths. Controlled work receives targeted review. Restricted work gets deeper oversight because the consequences justify it.</p>
+          </section>
+
+          <section id="slow-governance">
+            <h2>Slow governance is usually an operating-model problem</h2>
+            <p>Most teams do not object to responsible AI. They object to uncertainty. They do not know who can approve a workflow, what evidence is sufficient, whether the policy will change during review, or why a low-impact internal assistant is following the same process as an agent that can modify customer records.</p>
+            <p>That uncertainty creates two bad behaviors. Builders either wait for a central group to interpret every decision, or they avoid the process until the end and present governance teams with a nearly finished system. The first path creates a bottleneck. The second creates redesign, conflict, and risk.</p>
+            <p>NIST's AI Risk Management Framework treats governance as a cross-cutting function that informs mapping, measurement, and management throughout the lifecycle. It also calls for risk activity to match organizational tolerance and for roles, responsibilities, inventories, and monitoring to be clear. That is a design for repeatability, not a demand that every use case receive identical treatment.</p>
+            <p>AWS makes the delivery implication explicit in its Path-to-Value framework: organizations that operationalize responsible AI early can accelerate approvals. Amazon Bedrock Guardrails also illustrates the platform pattern. Teams can define reusable policies for content, denied topics, sensitive information, and other safeguards, then apply and test them consistently instead of rebuilding controls inside every application.</p>
+          </section>
+
+          <section id="fast-model">
+            <h2>The FAST Governance Lanes</h2>
+            <p><strong>F: Frame the decision.</strong> Start with the user, intended outcome, data, model, tools, autonomy, audience, and consequence of failure. Distinguish an assistant that drafts internal text from an agent that can approve a refund, change infrastructure, or make an employment recommendation. Governance cannot be proportional until the work is described in operational terms.</p>
+            <p><strong>A: Assign a risk lane.</strong> Use a small number of transparent criteria: data sensitivity, external exposure, write authority, reversibility, regulated impact, human oversight, and potential harm. The lane determines required controls and evidence. Teams should know the likely path during discovery, not after development.</p>
+            <p><strong>S: Supply reusable evidence.</strong> Build evidence into templates and pipelines: owner, purpose, data classification, model and prompt version, evaluation results, guardrail tests, identity policy, tool permissions, cost limit, human approval, monitoring, rollback, and incident contact. Pre-approved architectures, policy-as-code, evaluation suites, and standard dashboards should satisfy recurring requirements automatically.</p>
+            <p><strong>T: Time-box exceptions.</strong> Novel systems will not fit every paved path. Give each exception one accountable decision owner, a response deadline, the missing evidence, and an expiration date for accepted risk. An exception queue without service levels is simply a hidden backlog.</p>
+          </section>
+
+          <section id="lanes">
+            <h2>Route work through three delivery lanes</h2>
+            <p><strong>Standard lane.</strong> Use this for low-impact, assistive workflows with approved data, no consequential write action, clear human review, and established platform patterns. The team completes a lightweight registration, runs automated checks, and deploys through the paved path. Governance is mostly encoded in the platform.</p>
+            <p><strong>Controlled lane.</strong> Use this when the system touches sensitive data, serves external users, makes reversible changes, or uses tools with meaningful business impact. Require targeted security and domain review, scenario-based evaluations, explicit approval boundaries, stronger monitoring, and a limited launch. Review focuses on the elevated risks instead of reopening every standard control.</p>
+            <p><strong>Restricted lane.</strong> Use this for regulated or high-impact decisions, irreversible actions, powerful autonomous workflows, or risks the organization is not prepared to absorb. Require executive risk ownership, independent testing where appropriate, formal legal and compliance input, human authorization, containment controls, and staged evidence before scale. Some ideas should remain experiments or be stopped.</p>
+            <p>The lanes should not become permanent labels. A controlled workflow can move toward the standard lane when the organization turns repeated review findings into tested platform controls. A standard workflow should move up when its data, audience, authority, or impact changes. Governance is a routing system with feedback, not a one-time certificate.</p>
+          </section>
+
+          <section id="monday">
+            <h2>What to do next Monday</h2>
+            <ol>
+              <li><strong>Inventory five active AI use cases.</strong> Capture user, data, model, tools, autonomy, audience, and failure consequence in one page.</li>
+              <li><strong>Define seven routing questions.</strong> Cover sensitive data, external exposure, write authority, reversibility, regulated impact, human review, and potential harm.</li>
+              <li><strong>Assign each use case to a lane.</strong> Document why it belongs there and who owns the decision.</li>
+              <li><strong>Publish the evidence contract for each lane.</strong> Builders should know what “ready” means before they build.</li>
+              <li><strong>Automate one repeated control.</strong> Start with an identity check, guardrail test, evaluation threshold, deployment gate, or trace-completeness check.</li>
+              <li><strong>Set service levels for review and exceptions.</strong> Track response time, rework, exception age, and reasons for escalation.</li>
+              <li><strong>Review the system monthly.</strong> Move proven controls into paved paths and retire requirements that no longer reduce meaningful risk.</li>
+            </ol>
+            <p>The goal is not fewer controls. It is fewer improvised controls, fewer ambiguous owners, and fewer decisions discovered at the end. Governance earns trust when teams can predict the path and leaders can see the evidence.</p>
+            <p>I will be at AFROTECH in Houston November 2-6. If you are building an enterprise AI platform, global delivery organization, or technical go-to-market motion, I would be glad to compare notes.</p>
+          </section>
+
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://airc.nist.gov/airmf-resources/airmf/5-sec-core/" target="_blank" rel="noopener">NIST AI RMF Core: Govern, Map, Measure, and Manage</a></li>
+              <li><a href="https://airc.nist.gov/airmf-resources/playbook/" target="_blank" rel="noopener">NIST AI RMF Playbook</a></li>
+              <li><a href="https://aws.amazon.com/blogs/machine-learning/navigating-the-generative-ai-journey-the-path-to-value-framework-from-aws/" target="_blank" rel="noopener">AWS: the generative AI Path-to-Value framework</a></li>
+              <li><a href="https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-how.html" target="_blank" rel="noopener">Amazon Bedrock: how Guardrails works</a></li>
+              <li><a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf" target="_blank" rel="noopener">NIST AI 600-1: Generative AI Profile</a></li>
+            </ul>
+          </section>
+
+          <section class="article-cta">
+            <h2>Turn governance into a delivery system</h2>
+            <p>Explore more practical frameworks for enterprise AI, cloud architecture, governance, and technical leadership.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get the free starter kit</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
