@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>How to scale one AI agent across markets without losing control | JWTechDev.com</title>
+  <meta name="description" content="Use the One Core, Local Contracts model to scale an AI agent across markets while preserving data boundaries, permissions, evaluations, and operating control." />
+  <link rel="canonical" href="https://jwtechdev.com/articles/scale-one-ai-agent-across-markets.html" />
+  <meta property="og:title" content="How to scale one AI agent across markets without losing control" />
+  <meta property="og:description" content="One shared agent core is not one shared deployment. Use local market contracts for data, authority, language, evaluation, and recovery." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://jwtechdev.com/articles/scale-one-ai-agent-across-markets.html" />
+  <meta property="og:site_name" content="JWTechDev.com" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/scale-one-ai-agent-across-markets.png" />
+  <meta property="og:image:width" content="1600" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt" content="Hand-drawn One Core, Local Contracts diagram showing a governed AI agent core connected to market-specific deployment contracts" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="One AI agent. Different market contracts." />
+  <meta name="twitter:description" content="A practical operating model for global AI delivery without losing local control." />
+  <meta name="twitter:image" content="https://jwtechdev.com/assets/articles/scale-one-ai-agent-across-markets.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20261104-global-agent" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to scale one AI agent across markets without losing control","description":"Use the One Core, Local Contracts model to scale an AI agent across markets while preserving data boundaries, permissions, evaluations, and operating control.","datePublished":"2026-11-04T16:00:00-05:00","dateModified":"2026-11-04T16:00:00-05:00","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","url":"https://jwtechdev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/articles/scale-one-ai-agent-across-markets.png","width":1600,"height":1200},"mainEntityOfPage":{"@type":"WebPage","@id":"https://jwtechdev.com/articles/scale-one-ai-agent-across-markets.html"},"keywords":["global AI platform","AI agent architecture","Amazon Bedrock","cross-region inference","data residency","AI governance"]}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">Global platform delivery</p>
+    <article class="article-body">
+      <h1>How to scale one AI agent across markets without losing control.</h1>
+      <p class="section__lede">Do not deploy one global agent configuration and call it scale. Keep a shared product core, then require every market to declare its own data boundary, authority, language, evaluation, operating owner, and recovery path before traffic is promoted.</p>
+      <div class="article-kicker"><span>Shared product core</span><span>Local market contracts</span><span>Regional runtime</span><span>Evidence before promotion</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/scale-one-ai-agent-across-markets.png" alt="Hand-drawn One Core, Local Contracts diagram showing a governed AI agent core connected to market-specific deployment contracts" width="1600" height="1200" />
+        <figcaption class="article-meta"><span>Published 2026-11-04</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#false-choice">The false global-local choice</a>
+          <a href="#model">One Core, Local Contracts</a>
+          <a href="#promotion">Market promotion rings</a>
+          <a href="#monday">What to do Monday</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>Scale the capability globally, not every implementation detail. Reuse the agent's workflow, tool interfaces, release metadata, evaluation schema, observability fields, and core product behavior. Localize the controls that depend on market context: data residency, language, laws and norms, approved models, tool permissions, write actions, human approval, escalation, and fallback.</p>
+            <p>I call this <strong>One Core, Local Contracts</strong>. The global platform team owns the reusable core and the contract schema. Each market signs its contract with evidence. A deployment cannot inherit production status merely because another market passed.</p>
+          </section>
+
+          <section id="false-choice">
+            <h2>The false choice between global consistency and local control</h2>
+            <p>Global teams often drift toward one of two failures. In the first, every market builds its own agent. Local fit improves, but architecture, security, cost, and quality fragment. In the second, headquarters ships one configuration everywhere. Reuse improves, but important differences become late exceptions: where prompts can be processed, which data can leave a country, how users express intent, which tools may write to systems, and who is accountable when the agent is wrong.</p>
+            <p>The better design separates what should be stable from what must remain contextual. NIST's AI Risk Management Framework begins with mapping intended purpose, users, laws, norms, expectations, and deployment settings. That matters because the same model and workflow can carry different risks when the audience, language, authority, or operating environment changes.</p>
+            <p>Infrastructure decisions carry the same context. Amazon Bedrock supports in-Region, geographic cross-Region, and global cross-Region inference. AWS documents different data-residency and routing implications for each option. Geographic profiles keep processing within a defined geography, while global profiles may route to supported commercial Regions worldwide. That is not a configuration detail to bury in a deployment script. It is a market-level decision tied to policy, cost, capacity, and evidence.</p>
+          </section>
+
+          <section id="model">
+            <h2>The One Core, Local Contracts model</h2>
+            <p><strong>1. Governed product core.</strong> Reuse the outcome definition, orchestration pattern, tool contracts, prompt and model versioning, evaluation schema, trace fields, cost telemetry, deployment metadata, and rollback interface. The core should say what the product does and how evidence is captured. It should not assume every market can use the same data path or authority.</p>
+            <p><strong>2. Market deployment contract.</strong> Create one version-controlled record per market. It should name the business owner, supported users and languages, approved data classes, processing geography, model and inference profile, tool allowlist, permitted write actions, approval gates, retention rules, support hours, escalation route, and accepted residual risk. If a field is unknown, the market is not production-ready.</p>
+            <p><strong>3. Regional runtime envelope.</strong> Enforce the contract through architecture: identity boundaries, regional data stores, network routing, encryption keys, inference profiles, policy checks, secrets, quotas, and audit logs. AWS Well-Architected guidance for generative AI recommends mapping critical network paths, designing redundant topology, configuring failover, and regularly validating it. Global delivery requires those controls to be testable, not described in a slide.</p>
+            <p><strong>4. Local evaluation pack.</strong> Keep a common evaluation taxonomy, but test with local tasks, language, terminology, cultural assumptions, edge cases, policy boundaries, and tool outcomes. Aggregate comparable metrics globally while preserving market-specific failure analysis. A translation benchmark alone does not prove that the agent understands a local workflow.</p>
+            <p><strong>5. Named operating owner.</strong> Every market needs someone who can approve launch, interpret local evidence, stop the system, and coordinate an incident. The global platform team cannot be the substitute for local business accountability. Ownership is part of the architecture because it determines who can change policy and how quickly the system can recover.</p>
+          </section>
+
+          <section id="promotion">
+            <h2>Promote markets through evidence rings</h2>
+            <p>A market launch should advance through four rings. <strong>Shadow</strong> runs the agent against real or representative work without acting. <strong>Assisted</strong> lets a human inspect every recommendation. <strong>Bounded production</strong> permits narrowly defined actions with approvals, limits, and rollback. <strong>Scaled production</strong> expands volume or authority only after local quality, safety, cost, and operational targets hold.</p>
+            <p>Use one release board to compare markets, but do not reduce the decision to a single global score. The board should see common measures such as task success, tool errors, latency, unit cost, approval rate, overrides, incidents, and rollback readiness, alongside local measures. A market can be healthy on global averages and still fail a critical local policy or language case.</p>
+            <p>Also treat routing as observable. AWS notes that CloudTrail records Bedrock cross-Region inference activity in the source Region and exposes the destination inference Region in event data. Capture that evidence with the agent trace so operators can answer where processing occurred, which policy allowed it, and which market contract governed the request.</p>
+          </section>
+
+          <section id="monday">
+            <h2>What to do next Monday</h2>
+            <ol>
+              <li><strong>Choose one agent and two markets.</strong> Use a real comparison instead of designing an abstract global framework.</li>
+              <li><strong>Split core from contract.</strong> Mark each configuration item as globally reusable, market-specific, or prohibited from inheritance.</li>
+              <li><strong>Publish the contract schema.</strong> Include ownership, users, language, data, routing, tools, authority, evaluation, operations, and recovery.</li>
+              <li><strong>Verify the inference path.</strong> Query supported profiles from each source Region and confirm destination Regions rather than trusting a name or assumption.</li>
+              <li><strong>Build ten local evaluation cases.</strong> Cover language, terminology, policy, tool use, and failure handling with local reviewers.</li>
+              <li><strong>Run a shadow comparison.</strong> Measure quality, routing, latency, cost, overrides, and unexpected tool behavior in both markets.</li>
+              <li><strong>Hold a promotion decision.</strong> Record the evidence, unresolved risks, owner, approved ring, and rollback trigger for each market.</li>
+            </ol>
+            <p>The executive question is not, “Can this agent run in another country?” It is, “Can we prove which parts are shared, which controls are local, and who can stop it when reality differs from the global design?” That is how a platform scales without turning every market into either a fork or an exception.</p>
+            <p>I will be at AFROTECH in Houston November 2-6. If you are building an enterprise AI platform, global delivery organization, or technical go-to-market motion, I would be glad to compare notes.</p>
+          </section>
+
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html" target="_blank" rel="noopener">Amazon Bedrock: route model inference requests across AWS Regions</a></li>
+              <li><a href="https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html" target="_blank" rel="noopener">Amazon Bedrock: supported Regions and models for inference profiles</a></li>
+              <li><a href="https://docs.aws.amazon.com/wellarchitected/latest/generative-ai-lens/generative-ai-lens.html" target="_blank" rel="noopener">AWS Well-Architected Framework: Generative AI Lens</a></li>
+              <li><a href="https://airc.nist.gov/airmf-resources/playbook/map/" target="_blank" rel="noopener">NIST AI RMF Playbook: Map</a></li>
+            </ul>
+          </section>
+
+          <section class="article-cta">
+            <h2>Design global AI as a governed product</h2>
+            <p>Explore more practical frameworks for enterprise AI, cloud architecture, governance, and technical leadership.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get the free starter kit</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
