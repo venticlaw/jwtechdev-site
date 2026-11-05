@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200" role="img" aria-labelledby="title desc">
+  <title id="title">The BOARD Executive AI Platform Scorecard</title>
+  <desc id="desc">A hand-drawn executive scorecard with business result, operational health, authority and assurance, reuse and reach, and dollars and decision rows.</desc>
+  <defs>
+    <filter id="rough" x="-5%" y="-5%" width="110%" height="110%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="2" seed="21" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.2" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#061b14" flood-opacity="0.13" />
+    </filter>
+  </defs>
+  <rect width="1600" height="1200" fill="#f7f7f2" />
+  <path d="M0 0H1600V82H0Z" fill="#072d22" />
+  <path d="M0 82H1600" stroke="#f59e42" stroke-width="8" />
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="92" y="170" font-size="28" font-weight="700" fill="#087859" letter-spacing="2">BOARD AND EXECUTIVE COMMUNICATION</text>
+    <text x="92" y="254" font-size="65" font-weight="900" fill="#0a0b0b">THE EXECUTIVE AI</text>
+    <text x="92" y="330" font-size="65" font-weight="900" fill="#0a0b0b">PLATFORM SCORECARD</text>
+    <text x="98" y="382" font-size="28" font-weight="700" fill="#50544f">Ten signals. Five lenses. One explicit decision.</text>
+
+    <g filter="url(#shadow)">
+      <rect x="100" y="455" width="1400" height="545" rx="24" fill="#ffffff" stroke="#0a0b0b" stroke-width="5" filter="url(#rough)" />
+    </g>
+    <path d="M100 545H1500M100 635H1500M100 725H1500M100 815H1500M100 905H1500" stroke="#bfc5bf" stroke-width="3" filter="url(#rough)" />
+    <path d="M300 455V1000M860 455V1000M1240 455V1000" stroke="#bfc5bf" stroke-width="3" filter="url(#rough)" />
+    <rect x="100" y="455" width="1400" height="90" rx="20" fill="#072d22" />
+    <text x="145" y="510" font-size="25" font-weight="900" fill="#ffffff">LENS</text>
+    <text x="340" y="510" font-size="25" font-weight="900" fill="#ffffff">TWO DECISION SIGNALS</text>
+    <text x="900" y="510" font-size="25" font-weight="900" fill="#ffffff">EVIDENCE</text>
+    <text x="1280" y="510" font-size="25" font-weight="900" fill="#ffffff">TREND</text>
+
+    <g font-size="24" font-weight="800">
+      <text x="145" y="603" fill="#087859">B  BUSINESS</text>
+      <text x="340" y="582" fill="#0a0b0b">Outcome delta</text>
+      <text x="340" y="615" fill="#50544f">Successful-outcome rate</text>
+      <text x="900" y="598" fill="#0a0b0b">Owned business data</text>
+      <text x="1305" y="600" font-size="46" fill="#087859">↗</text>
+
+      <text x="145" y="693" fill="#087859">O  OPERATIONS</text>
+      <text x="340" y="672" fill="#0a0b0b">SLO attainment</text>
+      <text x="340" y="705" fill="#50544f">Recovery readiness</text>
+      <text x="900" y="688" fill="#0a0b0b">Traces + exercises</text>
+      <text x="1305" y="690" font-size="46" fill="#087859">→</text>
+
+      <text x="145" y="783" fill="#d87823">A  AUTHORITY</text>
+      <text x="340" y="762" fill="#0a0b0b">Evaluation performance</text>
+      <text x="340" y="795" fill="#50544f">Authority exceptions</text>
+      <text x="900" y="778" fill="#0a0b0b">Evals + policy logs</text>
+      <text x="1305" y="780" font-size="46" fill="#d87823">↘</text>
+
+      <text x="145" y="873" fill="#087859">R  REUSE</text>
+      <text x="340" y="852" fill="#0a0b0b">Adoption depth</text>
+      <text x="340" y="885" fill="#50544f">Launch reuse + speed</text>
+      <text x="900" y="868" fill="#0a0b0b">Usage + delivery data</text>
+      <text x="1305" y="870" font-size="46" fill="#087859">↗</text>
+
+      <text x="145" y="963" fill="#087859">D  DOLLARS</text>
+      <text x="340" y="942" fill="#0a0b0b">Cost per outcome</text>
+      <text x="340" y="975" fill="#50544f">Scale / repair / hold / stop</text>
+      <text x="900" y="958" fill="#0a0b0b">Loaded cost + threshold</text>
+      <text x="1305" y="960" font-size="46" fill="#087859">↗</text>
+    </g>
+
+    <path d="M100 1050H1500" stroke="#0a0b0b" stroke-width="4" stroke-linecap="round" filter="url(#rough)" />
+    <text x="100" y="1105" font-size="31" font-weight="900" fill="#0a0b0b">NO BLENDED SCORE.</text>
+    <text x="465" y="1105" font-size="31" font-weight="900" fill="#087859">Every red signal keeps its decision power.</text>
+    <text x="1495" y="1150" text-anchor="end" font-size="29" font-weight="900" fill="#0a0b0b">JWTechDev.com</text>
+  </g>
+</svg>

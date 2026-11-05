@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self' https://formspree.io; form-action 'self' mailto: https://formspree.io; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>The executive AI platform scorecard | JWTechDev.com</title>
+  <meta name="description" content="Use the BOARD Scorecard to give executives one decision-grade view of AI platform value, operations, authority, reuse, economics, and next actions." />
+  <link rel="canonical" href="https://jwtechdev.com/articles/executive-ai-platform-scorecard.html" />
+  <meta property="og:title" content="The executive AI platform scorecard" />
+  <meta property="og:description" content="A one-page BOARD Scorecard for deciding whether to scale, repair, hold, or stop an enterprise AI platform investment." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://jwtechdev.com/articles/executive-ai-platform-scorecard.html" />
+  <meta property="og:site_name" content="JWTechDev.com" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/executive-ai-platform-scorecard.png" />
+  <meta property="og:image:width" content="1600" />
+  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:alt" content="Hand-drawn BOARD Scorecard with business, operations, authority, reuse, and dollars lenses for an enterprise AI platform" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The executive AI platform scorecard" />
+  <meta name="twitter:description" content="Ten signals. Five lenses. One explicit platform decision." />
+  <meta name="twitter:image" content="https://jwtechdev.com/assets/articles/executive-ai-platform-scorecard.png" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20261105-platform-scorecard" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The executive AI platform scorecard","description":"Use the BOARD Scorecard to give executives one decision-grade view of AI platform value, operations, authority, reuse, economics, and next actions.","datePublished":"2026-11-05T16:00:00-05:00","dateModified":"2026-11-05T16:00:00-05:00","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com"},"publisher":{"@type":"Organization","name":"JWTechDev.com","url":"https://jwtechdev.com","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/articles/executive-ai-platform-scorecard.png","width":1600,"height":1200},"mainEntityOfPage":{"@type":"WebPage","@id":"https://jwtechdev.com/articles/executive-ai-platform-scorecard.html"},"keywords":["executive AI scorecard","enterprise AI platform","AgentCore observability","AI governance metrics","FinOps","AI platform operations"]}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">Board and executive communication</p>
+    <article class="article-body">
+      <h1>The executive AI platform scorecard.</h1>
+      <p class="section__lede">Executives do not need fifty agent metrics or one suspiciously green composite score. They need a short, traceable view of whether the platform is creating business value, operating reliably, staying inside its authority, increasing organizational leverage, and earning the next investment decision.</p>
+      <div class="article-kicker"><span>Business result</span><span>Operational health</span><span>Authority</span><span>Platform leverage</span><span>Unit economics</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/executive-ai-platform-scorecard.png" alt="Hand-drawn BOARD Scorecard with business, operations, authority, reuse, and dollars lenses for an enterprise AI platform" width="1600" height="1200" />
+        <figcaption class="article-meta"><span>Published 2026-11-05</span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#quick-answer">Quick answer</a>
+          <a href="#dashboard-trap">The dashboard trap</a>
+          <a href="#board">The BOARD Scorecard</a>
+          <a href="#review">Run the review</a>
+          <a href="#monday">What to do Monday</a>
+          <a href="#sources">Sources checked</a>
+        </nav>
+        <div>
+          <section id="quick-answer">
+            <h2>Quick answer</h2>
+            <p>Give the executive team one page with five lenses and ten signals. I call it the <strong>BOARD Scorecard: Business result, Operational health, Authority and assurance, Reuse and reach, and Dollars and decision.</strong></p>
+            <p>Every signal needs a named owner, baseline, current value, target, trend, evidence window, and decision threshold. Do not collapse the page into one score. A healthy average can hide a serious authority failure, poor adoption, or worsening unit economics. The purpose is not to declare the platform “green.” The purpose is to decide whether to scale, repair, hold, or stop.</p>
+          </section>
+
+          <section id="dashboard-trap">
+            <h2>The dashboard trap</h2>
+            <p>AI platforms generate abundant telemetry. Amazon Bedrock AgentCore can expose sessions, latency, duration, token usage, errors, traces, tool calls, evaluation results, and audit activity through CloudWatch and CloudTrail. Those signals are essential for operators. They are not automatically an executive scorecard.</p>
+            <p>The board-level failure is usually one of two extremes. In the first, leaders receive a technical dashboard full of invocations, tokens, and latency with no connection to a customer or business result. In the second, they receive a value slide that claims hours saved while hiding quality, authority, incident, adoption, and support costs.</p>
+            <p>The scorecard must preserve both views. NIST’s AI Risk Management Framework says production behavior should be monitored against the risks mapped for the system, and that measurement should inform management decisions. AWS’s Agentic AI Lens similarly recommends multiple evaluation dimensions because one metric misses too much. Executive communication should follow the same principle.</p>
+          </section>
+
+          <section id="board">
+            <h2>The BOARD Scorecard</h2>
+            <p><strong>B — Business result.</strong> Show the outcome delta and the successful-outcome rate. Outcome delta compares the current business measure with the agreed baseline: resolution time, conversion, cycle time, retention, error reduction, or another owned result. Successful-outcome rate divides completed outcomes by eligible work. This prevents a narrow pilot from appearing valuable because it handled only easy cases.</p>
+            <p><strong>O — Operational health.</strong> Show service-level attainment and recovery readiness. Service health should include the target that matters to the workflow, such as availability, latency, error rate, or task completion. Recovery readiness should report tested rollback, time to contain, and the age of the last exercise. AWS observability guidance supports tracing the complete execution path, tool invocations, errors, resource use, and recovery attempts. Use that evidence, not an owner’s confidence.</p>
+            <p><strong>A — Authority and assurance.</strong> Show evaluation performance and authority exceptions. Evaluation performance should combine relevant quality measures such as goal success, correctness, tool selection, policy compliance, and periodic human review. Authority exceptions should count prohibited actions, policy matches, approval bypasses, unexpected write attempts, and material incidents. Amazon Bedrock AgentCore Evaluations supports both built-in and custom measures, while online evaluations can monitor live production interactions over time.</p>
+            <p><strong>R — Reuse and reach.</strong> Show adoption depth and platform leverage. Adoption depth is not logins; it is repeated successful use across the eligible population, segmented by workflow, role, or market. Platform leverage measures how much the next workload reuses approved identity, gateway, evaluation, observability, deployment, and policy capabilities, plus the time from approved idea to bounded production. A platform is earning leverage when the next safe launch becomes measurably easier.</p>
+            <p><strong>D — Dollars and decision.</strong> Show cost per successful outcome and the current portfolio decision. Unit cost must include model, runtime, data, integration, observability, evaluation, security, support, and human review. FinOps unit economics connects incremental cost to incremental business value; token cost alone cannot do that. End the row with one word: scale, repair, hold, or stop, followed by the evidence threshold and date for reconsideration.</p>
+          </section>
+
+          <section id="review">
+            <h2>Run the review as a decision meeting</h2>
+            <p>The scorecard should fit on one page, but each metric should link to traceable evidence. Keep three reporting levels separate: portfolio, platform, and workload. Portfolio reporting shows capital allocation and concentration. Platform reporting shows reuse, operations, controls, and economics. Workload reporting shows adoption, quality, authority, and business outcome.</p>
+            <p>Use trends and thresholds, not isolated snapshots. A 95 percent goal-success score has little meaning without the task definition, sample, prior result, accepted threshold, and affected population. A falling cost per outcome can still be unhealthy if quality or human review is deteriorating. A high adoption rate can still be dangerous if the platform’s write authority expanded without equivalent controls.</p>
+            <p>Each review should produce a decision and an owner. <strong>Scale</strong> when value, assurance, operations, and economics hold under broader use. <strong>Repair</strong> when the outcome remains worthwhile but one lens is below threshold. <strong>Hold</strong> when evidence is incomplete or a dependency blocks a responsible decision. <strong>Stop</strong> when the business result is weak, risk exceeds tolerance, or the economics do not improve with a credible change.</p>
+            <p>Do not let teams negotiate the meaning of red after the meeting begins. Agree on thresholds, evidence windows, and escalation rules before the reporting period. That turns the scorecard from executive theater into part of the operating system.</p>
+          </section>
+
+          <section id="monday">
+            <h2>What to do next Monday</h2>
+            <ol>
+              <li><strong>Choose one production workload.</strong> Name its business owner, platform owner, users, permitted authority, and review date.</li>
+              <li><strong>Create the five BOARD rows.</strong> Add two signals per row and leave unsupported cells blank rather than inventing precision.</li>
+              <li><strong>Define every denominator.</strong> Document eligible work, successful outcomes, active users, evaluated sessions, and loaded cost.</li>
+              <li><strong>Connect metrics to evidence.</strong> Link business data, traces, evaluations, policy logs, incident records, cost allocation, and human review.</li>
+              <li><strong>Set thresholds in advance.</strong> Record target, tolerance, trend window, and the condition that triggers escalation or rollback.</li>
+              <li><strong>Hold a thirty-minute review.</strong> Spend five minutes on context, fifteen on exceptions and tradeoffs, and ten on the decision and owners.</li>
+              <li><strong>Publish the decision.</strong> Record scale, repair, hold, or stop, the next evidence threshold, and the date the team returns.</li>
+            </ol>
+            <p>An executive AI platform scorecard is useful only when it makes tradeoffs visible and changes what the organization does next. Ten honest signals with clear thresholds beat a hundred metrics and a green arrow.</p>
+            <p>I will be at AFROTECH in Houston November 2-6. If you are building an enterprise AI platform, global delivery organization, or technical go-to-market motion, I would be glad to compare notes.</p>
+          </section>
+
+          <section id="sources">
+            <h2>Sources checked</h2>
+            <ul>
+              <li><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/observability.html" target="_blank" rel="noopener">Amazon Bedrock AgentCore: observability, audit logging, and tracing</a></li>
+              <li><a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-types.html" target="_blank" rel="noopener">Amazon Bedrock AgentCore: evaluation types</a></li>
+              <li><a href="https://docs.aws.amazon.com/wellarchitected/latest/agentic-ai-lens/agentops06-bp02.html" target="_blank" rel="noopener">AWS Agentic AI Lens: evaluate and track ongoing agent performance</a></li>
+              <li><a href="https://airc.nist.gov/airmf-resources/airmf/5-sec-core/" target="_blank" rel="noopener">NIST AI Risk Management Framework Core</a></li>
+              <li><a href="https://www.finops.org/framework/capabilities/unit-economics/" target="_blank" rel="noopener">FinOps Foundation: Unit Economics</a></li>
+            </ul>
+          </section>
+
+          <section class="article-cta">
+            <h2>Turn platform metrics into an executive decision</h2>
+            <p>Explore more practical frameworks for enterprise AI, cloud architecture, governance, and technical leadership.</p>
+            <a class="btn btn--primary btn--lg" href="../index.html#connect">Get the free starter kit</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>
