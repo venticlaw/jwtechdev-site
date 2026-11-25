@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; form-action 'self'; upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <title>Collards that actually click | JWTechDev.com</title>
+  <meta name="description" content="A Thanksgiving collard greens recipe with smoked turkey, a kitchen checklist, and a practical example of turning a recipe screenshot into a tool with Claude." />
+  <link rel="canonical" href="https://jwtechdev.com/articles/collards-that-actually-click.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="JWTechDev.com" />
+  <meta property="og:title" content="Collards that actually click" />
+  <meta property="og:description" content="Smoked turkey, tender collards, and a Thanksgiving recipe note turned into a working checklist with Claude." />
+  <meta property="og:url" content="https://jwtechdev.com/articles/collards-that-actually-click.html" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/collards-that-actually-click.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="900" />
+  <meta property="og:image:alt" content="Hand-drawn Dutch oven of collard greens between a recipe note and a checklist" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Collards that actually click" />
+  <meta name="twitter:description" content="One recipe screenshot, one pot of greens, and a checklist you can cook from." />
+  <meta name="twitter:image" content="https://jwtechdev.com/assets/articles/collards-that-actually-click.jpg" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/site.css?v=20261125-collards" />
+  <style>
+    .recipe-checklist label { display: flex; align-items: flex-start; gap: .65rem; padding-block: .35rem; cursor: pointer; }
+    .recipe-checklist input { flex: 0 0 auto; width: 1rem; height: 1rem; margin: .28rem 0 0; accent-color: #0b6e4f; }
+    .recipe-checklist li + li { margin-top: .35rem; }
+    .recipe-checklist button { cursor: pointer; }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Collards that actually click","description":"A Thanksgiving collard greens recipe and a practical example of turning a recipe screenshot into a working checklist with Claude.","datePublished":"2026-11-25","dateModified":"2026-11-25","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com/"},"publisher":{"@type":"Organization","name":"JWTechDev.com","url":"https://jwtechdev.com/","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/articles/collards-that-actually-click.jpg","width":1200,"height":900},"mainEntityOfPage":{"@type":"WebPage","@id":"https://jwtechdev.com/articles/collards-that-actually-click.html"}}</script>
+</head>
+<body>
+  <main class="article-shell">
+    <a class="link-arrow" href="./">All articles <span aria-hidden="true">-&gt;</span></a>
+    <p class="eyebrow">Practical AI &middot; Thanksgiving build</p>
+    <article class="article-body">
+      <h1>Collards that actually click.</h1>
+      <p class="section__lede">I gave Claude a screenshot of my collard greens recipe and turned it into a checklist I could use at the stove. Here's my version of the recipe, plus what made this little AI build worth keeping.</p>
+      <div class="article-kicker"><span>Serves 5&ndash;8</span><span>Prep: about 10 min</span><span>Cook: about 3 hr</span></div>
+      <figure class="article-hero">
+        <img src="../assets/articles/collards-that-actually-click.jpg" alt="Hand-drawn Dutch oven of collard greens between a recipe note and a checklist" width="1200" height="900" />
+        <figcaption class="article-meta"><span><time datetime="2026-11-25">November 25, 2026</time></span><span>By Joshua Walker</span><span>JWTechDev.com</span></figcaption>
+      </figure>
+      <div class="article-layout">
+        <nav class="article-toc" aria-label="Article contents">
+          <strong>In this article</strong>
+          <a href="#ingredients">Ingredients</a>
+          <a href="#steps">Cooking steps</a>
+          <a href="#build">How I built it with Claude</a>
+          <a href="#sources">Sources</a>
+        </nav>
+        <div>
+          <form class="recipe-checklist" id="recipe">
+            <section id="ingredients">
+              <h2>Ingredients</h2>
+              <ul>
+                <li><label><input type="checkbox" name="smoked-meat" /><span><strong>2 lb smoked meat:</strong> turkey wings or leg, ham hocks, or shank</span></label></li>
+                <li><label><input type="checkbox" name="collards" /><span><strong>5&ndash;7 bunches collard greens</strong> (about 2&ndash;3 lb)</span></label></li>
+                <li><label><input type="checkbox" name="broth" /><span><strong>4 cups chicken broth</strong>, or 4 cups water with Better Than Bouillon</span></label></li>
+                <li><label><input type="checkbox" name="onion" /><span><strong>2 cups diced onion</strong></span></label></li>
+                <li><label><input type="checkbox" name="garlic" /><span><strong>4 garlic cloves</strong>, minced</span></label></li>
+                <li><label><input type="checkbox" name="green-pepper" /><span><strong>1 green pepper</strong>, diced (optional)</span></label></li>
+                <li><label><input type="checkbox" name="sweet-pepper" /><span><strong>1 sweet bell pepper</strong>, diced (optional)</span></label></li>
+                <li><label><input type="checkbox" name="jalapeno" /><span><strong>1 tbsp diced jalape&ntilde;o</strong> (optional; use less for milder greens)</span></label></li>
+                <li><label><input type="checkbox" name="cajun" /><span><strong>1&ndash;2 tbsp Cajun seasoning</strong> (optional; I use Level Up A Seasoning)</span></label></li>
+                <li><label><input type="checkbox" name="red-pepper" /><span><strong>2&ndash;3 tsp crushed red pepper</strong></span></label></li>
+                <li><label><input type="checkbox" name="onion-powder" /><span><strong>2 tsp onion powder</strong></span></label></li>
+                <li><label><input type="checkbox" name="garlic-powder" /><span><strong>2 tsp garlic powder</strong></span></label></li>
+                <li><label><input type="checkbox" name="vinegar" /><span><strong>2 tbsp distilled white vinegar</strong></span></label></li>
+                <li><label><input type="checkbox" name="sugar" /><span><strong>2 tbsp granulated sugar</strong></span></label></li>
+                <li><label><input type="checkbox" name="salt-pepper" /><span><strong>Salt and black pepper</strong>, to taste</span></label></li>
+                <li><label><input type="checkbox" name="oil" /><span><strong>1 tbsp vegetable oil</strong></span></label></li>
+              </ul>
+            </section>
+            <section id="steps">
+              <h2>Cooking steps</h2>
+              <ol>
+                <li><label><input type="checkbox" name="prep" /><span><strong>Prep the collards.</strong> Wash the leaves thoroughly, pull out the thick stems, then stack, roll, and slice the leaves.</span></label></li>
+                <li><label><input type="checkbox" name="saute" /><span><strong>Soften the onion and peppers.</strong> Heat the oil over medium heat in a large pot or Dutch oven. Cook the onion and whichever fresh peppers you're using until softened.</span></label></li>
+                <li><label><input type="checkbox" name="add-garlic" /><span><strong>Add the garlic.</strong> Stir it into the pot and let it cook for about a minute.</span></label></li>
+                <li><label><input type="checkbox" name="pot-liquor" /><span><strong>Build the pot liquor.</strong> Add the smoked meat, broth, crushed red pepper, and Cajun seasoning if using. Cover and simmer for about 1 hour.</span></label></li>
+                <li><label><input type="checkbox" name="add-greens" /><span><strong>Add the greens.</strong> Stir in the collards, vinegar, sugar, onion powder, garlic powder, salt, and pepper.</span></label></li>
+                <li><label><input type="checkbox" name="wilt" /><span><strong>Let them wilt.</strong> If the pot is crowded, stir and add the greens in batches as the first leaves cook down.</span></label></li>
+                <li><label><input type="checkbox" name="simmer" /><span><strong>Simmer until tender.</strong> Cover and cook for about 2 more hours, until the greens are tender and the meat pulls easily from the bone. Remove the bones and skin, shred the meat back into the pot, and adjust the salt.</span></label></li>
+                <li><label><input type="checkbox" name="serve" /><span><strong>Serve hot.</strong> Spoon the greens and some of the pot liquor over rice, or serve with cornbread.</span></label></li>
+              </ol>
+              <p>Simmer times are estimates. If the turkey is sold raw or not ready to eat, use a thermometer to verify it reaches 165&deg;F. Follow the package instructions for the smoked meat you choose.</p>
+              <button class="btn btn--sm" type="reset">Clear checks</button>
+            </section>
+          </form>
+          <section id="build">
+            <h2>What Claude actually did</h2>
+            <p>The recipe started as a note on my phone. Claude turned the screenshot into ingredients I could check off, steps I could scan from the stove, and two timers for the simmer. It didn't need to invent a better recipe. It needed to make the recipe I already had easier to use.</p>
+            <p>If you try this with your own notes, ask for the quantities and substitutions to stay intact, tell the model to flag anything it can't read, and check the result against your original before you use it. The smallest useful version here was a checklist, not a cooking chatbot.</p>
+          </section>
+          <section id="sources">
+            <h2>Sources</h2>
+            <ul>
+              <li>Recipe inspiration: <a href="https://whiskitrealgud.com/soul-food-collard-greens-recipe-southern/">Whisk It Real Gud's Southern Collard Greens</a></li>
+              <li>Food safety: <a href="https://ask.fsis.usda.gov/article/What-is-a-safe-internal-temperature-for-cooking-meat-and-poultry">USDA minimum internal temperatures</a></li>
+            </ul>
+          </section>
+          <section class="article-cta">
+            <h2>Cooking from your phone?</h2>
+            <p>The original checklist has a one-hour timer for the pot liquor and a two-hour timer for the greens.</p>
+            <a class="btn btn--primary btn--lg" href="https://claude.ai/artifact/92Eumg5X596QKX88Meqqgf">Open the checklist with timers</a>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+  <script>
+    const recipe = document.querySelector('#recipe');
+    const checks = [...recipe.querySelectorAll('input[type="checkbox"]')];
+    const key = 'jwtechdev:collards-checklist:v1';
+    try {
+      const saved = new Set(JSON.parse(localStorage.getItem(key) || '[]'));
+      checks.forEach(check => { check.checked = saved.has(check.name); });
+    } catch {}
+    recipe.addEventListener('change', () => {
+      try {
+        localStorage.setItem(key, JSON.stringify(checks.filter(check => check.checked).map(check => check.name)));
+      } catch {}
+    });
+    recipe.addEventListener('reset', () => {
+      try { localStorage.removeItem(key); } catch {}
+    });
+  </script>
+</body>
+</html>

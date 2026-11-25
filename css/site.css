@@ -2568,12 +2568,12 @@ a.article-mini-card:focus-visible {
   border-bottom: 1px solid var(--border);
 }
 
-.home-article-grid .aeo-card:nth-child(1)::before { background: center / cover url("../assets/articles/practical-ai-stack-starts-below-model.png"); }
-.home-article-grid .aeo-card:nth-child(2)::before { background: center / cover url("../assets/articles/seven-questions-before-funding-enterprise-ai-platform.png"); }
-.home-article-grid .aeo-card:nth-child(3)::before { background: center / cover url("../assets/articles/partnership-press-release-not-delivery-model.png"); }
-.home-article-grid .aeo-card:nth-child(4)::before { background: center / cover url("../assets/articles/six-owners-production-ai-agent.png"); }
-.home-article-grid .aeo-card:nth-child(5)::before { background: center / cover url("../assets/articles/ai-platform-roi-without-theater.png"); }
-.home-article-grid .aeo-card:nth-child(6)::before { background: center / cover url("../assets/articles/what-field-cto-should-do-after-keynote.png"); }
+.home-article-grid a[href="articles/collards-that-actually-click.html"]::before { background: center / cover url("../assets/articles/collards-that-actually-click.jpg"); }
+.home-article-grid a[href="articles/executive-ai-platform-scorecard.html"]::before { background: center / cover url("../assets/articles/executive-ai-platform-scorecard.png"); }
+.home-article-grid a[href="articles/enterprise-technology-leader-architecture-revenue-fluency.html"]::before { background: center / cover url("../assets/articles/enterprise-technology-leader-architecture-revenue-fluency.png"); }
+.home-article-grid a[href="articles/scale-one-ai-agent-across-markets.html"]::before { background: center / cover url("../assets/articles/scale-one-ai-agent-across-markets.png"); }
+.home-article-grid a[href="articles/good-ai-governance-makes-delivery-faster.html"]::before { background: center / cover url("../assets/articles/good-ai-governance-makes-delivery-faster.png"); }
+.home-article-grid a[href="articles/ai-engineering-product-security-operations-same-table.html"]::before { background: center / cover url("../assets/articles/ai-engineering-product-security-operations-same-table.png"); }
 
 .home-article-grid .aeo-card > * {
   margin-inline: var(--space-5);
