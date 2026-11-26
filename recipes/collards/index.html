@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src https://jwtechdev.com 'self'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Collards that actually click | JWTechDev Cooking Mode</title>
+  <meta name="description" content="A collard greens recipe you can cook from, with a saved checklist and separate simmer timers for the pot liquor and greens." />
+  <link rel="canonical" href="https://jwtechdev.com/recipes/collards/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Collards that actually click" />
+  <meta property="og:description" content="Smoked turkey, tender collards, and a cooking checklist with two simmer timers." />
+  <meta property="og:url" content="https://jwtechdev.com/recipes/collards/" />
+  <meta property="og:image" content="https://jwtechdev.com/assets/articles/collards-that-actually-click.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <style>
+    :root { color: #151719; background: #fafafb; color-scheme: light; font: 100%/1.55 system-ui, sans-serif; }
+    *, *::before, *::after { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    body { margin: 0; }
+    main, .sitebar { width: min(100% - 2rem, 48rem); margin-inline: auto; }
+    .sitebar { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; justify-content: space-between; align-items: center; padding-block: .75rem; border-bottom: 1px solid #d8dddc; }
+    a { color: #07553e; text-underline-offset: .18em; }
+    .sitebar a { display: inline-flex; align-items: center; min-height: 2.75rem; }
+    .brand { color: #151719; font-weight: 750; text-decoration: none; }
+    .recipe-head { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1rem; align-items: start; padding-block: 1.5rem 1rem; }
+    .recipe-head img { width: 5rem; height: 5rem; object-fit: cover; border-radius: 8px; }
+    .eyebrow { margin: 0; color: #07553e; font-size: .875rem; font-weight: 750; }
+    h1 { margin: .25rem 0 .35rem; font-size: 2rem; line-height: 1.12; overflow-wrap: anywhere; }
+    h2 { margin: 0 0 .5rem; font-size: 1.375rem; line-height: 1.25; }
+    p { margin: .4rem 0; }
+    .facts, .muted { color: #424946; }
+    .cook-tools { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; padding-block: .7rem 1rem; }
+    .cook-tools a { display: inline-flex; align-items: center; min-height: 2.75rem; padding-inline: .5rem; }
+    .progress-line { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; padding: .8rem 0; border-top: 1px solid #d8dddc; }
+    progress { width: min(10rem, 100%); height: .75rem; accent-color: #0b6e4f; }
+    button { min-height: 2.75rem; max-width: 100%; padding: .45rem .75rem; border: 1px solid #87948e; border-radius: 6px; background: #fff; color: #15251f; font: inherit; font-weight: 650; cursor: pointer; }
+    button.primary { border-color: #07553e; background: #07553e; color: #fff; }
+    button:disabled { opacity: .6; cursor: default; }
+    :focus-visible { outline: 3px solid #116eab; outline-offset: 3px; }
+    .recipe-section { padding-block: 1.25rem; border-top: 1px solid #d8dddc; }
+    .ingredients, .steps { margin: 0; padding: 0; list-style: none; }
+    .ingredients li, .steps li { border-bottom: 1px solid #e2e6e4; }
+    .ingredients label, .steps label { display: flex; align-items: flex-start; gap: .7rem; min-height: 2.75rem; padding: .58rem .1rem; cursor: pointer; }
+    input[type="checkbox"] { flex: 0 0 1.2rem; width: 1.2rem; height: 1.2rem; margin: .2rem 0 0; accent-color: #0b6e4f; }
+    .step-title { display: block; }
+    .timer { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem .75rem; margin: 0 0 .75rem; padding: .75rem; border: 1px solid #bfd5ca; border-radius: 8px; background: #eef6f1; }
+    .clock { min-width: 5.5rem; font-size: 1.25rem; font-variant-numeric: tabular-nums; font-weight: 750; }
+    .timer .muted, #cook-message { font-size: .9rem; }
+    .timer-warning { margin-bottom: 1rem; }
+    footer { padding-block: .75rem 2rem; }
+    dialog { width: min(100% - 2rem, 24rem); border: 1px solid #87948e; border-radius: 8px; padding: 1.25rem; color: #151719; background: #fff; }
+    dialog::backdrop { background: rgba(21, 23, 25, .55); }
+    .dialog-actions { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; }
+    @media (min-width: 42rem) {
+      .recipe-head img { width: 7rem; height: 7rem; }
+      .ingredients { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 1rem; }
+    }
+    @media print {
+      :root { background: #fff; color: #000; font-size: 10pt; }
+      main { width: 100%; }
+      .sitebar, .cook-tools, .progress-line, .timer, .timer-warning, #cook-message, .recipe-head img, dialog { display: none !important; }
+      .recipe-head, .recipe-section, footer { padding-block: .45rem; }
+      .ingredients { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 1rem; }
+      .ingredients label, .steps label { min-height: 0; padding: .15rem 0; }
+      li { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="sitebar" aria-label="Site">
+    <a class="brand" href="https://jwtechdev.com/">JWTechDev.com</a>
+    <a href="https://jwtechdev.com/articles/collards-that-actually-click.html">How I built it</a>
+  </nav>
+  <main>
+    <header class="recipe-head">
+      <div>
+        <p class="eyebrow">Cooking mode</p>
+        <h1>Collards that actually click.</h1>
+        <p class="facts">Serves 5&ndash;8 &middot; Prep about 10 min &middot; Cook about 3 hr</p>
+      </div>
+      <img src="https://jwtechdev.com/assets/articles/collards-that-actually-click.jpg" width="112" height="112" alt="" />
+    </header>
+    <nav class="cook-tools" aria-label="Recipe">
+      <a href="#ingredients">Ingredients</a>
+      <a href="#steps">Cooking steps</a>
+      <button type="button" id="print-recipe" hidden>Print recipe</button>
+    </nav>
+    <div class="progress-line" id="cook-progress" hidden>
+      <label for="progress">Checklist</label>
+      <progress id="progress" max="24" value="0"></progress>
+      <span id="progress-label">0 of 24 checked</span>
+      <button type="button" id="clear-checklist">Clear checklist</button>
+    </div>
+    <p id="cook-message" class="muted" role="status"></p>
+    <div id="recipe">
+      <section class="recipe-section" id="ingredients">
+        <h2>Ingredients</h2>
+        <ul class="ingredients">
+          <li><label><input type="checkbox" name="smoked-meat" /><span><strong>2 lb smoked meat:</strong> turkey wings or leg, ham hocks, or shank</span></label></li>
+          <li><label><input type="checkbox" name="collards" /><span><strong>5&ndash;7 bunches collard greens</strong> (about 2&ndash;3 lb)</span></label></li>
+          <li><label><input type="checkbox" name="broth" /><span><strong>4 cups chicken broth</strong>, or 4 cups water with Better Than Bouillon</span></label></li>
+          <li><label><input type="checkbox" name="onion" /><span><strong>2 cups diced onion</strong></span></label></li>
+          <li><label><input type="checkbox" name="garlic" /><span><strong>4 garlic cloves</strong>, minced</span></label></li>
+          <li><label><input type="checkbox" name="green-pepper" /><span><strong>1 green pepper</strong>, diced (optional)</span></label></li>
+          <li><label><input type="checkbox" name="sweet-pepper" /><span><strong>1 sweet bell pepper</strong>, diced (optional)</span></label></li>
+          <li><label><input type="checkbox" name="jalapeno" /><span><strong>1 tbsp diced jalape&ntilde;o</strong> (optional; use less for milder greens)</span></label></li>
+          <li><label><input type="checkbox" name="cajun" /><span><strong>1&ndash;2 tbsp Cajun seasoning</strong> (optional; I use Level Up A Seasoning)</span></label></li>
+          <li><label><input type="checkbox" name="red-pepper" /><span><strong>2&ndash;3 tsp crushed red pepper</strong></span></label></li>
+          <li><label><input type="checkbox" name="onion-powder" /><span><strong>2 tsp onion powder</strong></span></label></li>
+          <li><label><input type="checkbox" name="garlic-powder" /><span><strong>2 tsp garlic powder</strong></span></label></li>
+          <li><label><input type="checkbox" name="vinegar" /><span><strong>2 tbsp distilled white vinegar</strong></span></label></li>
+          <li><label><input type="checkbox" name="sugar" /><span><strong>2 tbsp granulated sugar</strong></span></label></li>
+          <li><label><input type="checkbox" name="salt-pepper" /><span><strong>Salt and black pepper</strong>, to taste</span></label></li>
+          <li><label><input type="checkbox" name="oil" /><span><strong>1 tbsp vegetable oil</strong></span></label></li>
+        </ul>
+      </section>
+      <section class="recipe-section" id="steps">
+        <h2>Cooking steps</h2>
+        <p class="timer-warning muted" id="timer-warning" hidden>Use your phone's Clock app as a backup. A browser countdown may not alert you while the page or phone is asleep.</p>
+        <ol class="steps">
+          <li><label><input type="checkbox" name="prep" /><span><strong class="step-title">1. Prep the collards</strong>Wash the leaves thoroughly, remove the thick stems, then stack, roll, and slice them.</span></label></li>
+          <li><label><input type="checkbox" name="saute" /><span><strong class="step-title">2. Soften the onion and peppers</strong>Heat the oil over medium heat in a large pot. Cook the onion and any fresh peppers until softened.</span></label></li>
+          <li><label><input type="checkbox" name="add-garlic" /><span><strong class="step-title">3. Add the garlic</strong>Stir it in and let it cook for about a minute.</span></label></li>
+          <li>
+            <label><input type="checkbox" name="pot-liquor" /><span><strong class="step-title" id="pot-liquor-title">4. Build the pot liquor</strong>Add the smoked meat, broth, crushed red pepper, and Cajun seasoning if using. Cover and simmer for about 1 hour.</span></label>
+            <div class="timer" data-timer="pot-liquor" data-minutes="60" role="group" aria-labelledby="pot-liquor-title" hidden>
+              <span class="clock" role="timer" aria-label="Pot liquor time remaining">1:00:00</span>
+              <button class="primary" type="button" data-action="toggle">Start</button>
+              <button type="button" data-action="reset">Reset</button>
+              <span class="muted" data-timer-status role="status"></span>
+            </div>
+          </li>
+          <li><label><input type="checkbox" name="add-greens" /><span><strong class="step-title">5. Add the greens</strong>Stir in the collards, vinegar, sugar, onion powder, garlic powder, salt, and pepper.</span></label></li>
+          <li><label><input type="checkbox" name="wilt" /><span><strong class="step-title">6. Let them wilt</strong>If the pot is crowded, add the greens in batches as the first leaves cook down.</span></label></li>
+          <li>
+            <label><input type="checkbox" name="simmer" /><span><strong class="step-title" id="greens-title">7. Simmer until tender</strong>Cover and simmer about 2 more hours, until the greens are tender and the meat pulls easily from the bone. Remove the bones and skin, shred the meat back into the pot, and adjust the salt.</span></label>
+            <div class="timer" data-timer="greens" data-minutes="120" role="group" aria-labelledby="greens-title" hidden>
+              <span class="clock" role="timer" aria-label="Greens time remaining">2:00:00</span>
+              <button class="primary" type="button" data-action="toggle">Start</button>
+              <button type="button" data-action="reset">Reset</button>
+              <span class="muted" data-timer-status role="status"></span>
+            </div>
+          </li>
+          <li><label><input type="checkbox" name="serve" /><span><strong class="step-title">8. Serve hot</strong>Spoon the greens and some pot liquor over rice, or serve with cornbread.</span></label></li>
+        </ol>
+        <p>Simmer times are estimates. If your turkey is sold raw or not ready to eat, verify it reaches an internal temperature of <a href="https://ask.fsis.usda.gov/article/What-is-a-safe-internal-temperature-for-cooking-meat-and-poultry">165&deg;F with a food thermometer</a>. Follow the package instructions for the smoked meat you choose.</p>
+      </section>
+    </div>
+    <footer class="muted">
+      <p>By Joshua Walker. Adapted from <a href="https://whiskitrealgud.com/soul-food-collard-greens-recipe-southern/">Whisk It Real Gud's Southern Collard Greens</a>.</p>
+    </footer>
+  </main>
+  <dialog id="confirm-clear" aria-labelledby="confirm-title">
+    <h2 id="confirm-title">Clear your checklist?</h2>
+    <p>This unchecks the ingredients and steps. Any running timers will keep going.</p>
+    <form class="dialog-actions" method="dialog">
+      <button type="submit" value="cancel" autofocus>Keep progress</button>
+      <button type="submit" class="primary" value="clear">Clear checklist</button>
+    </form>
+  </dialog>
+  <script>
+    (() => {
+      const key = 'jwtechdev:collards:cook-mode:v1';
+      const boxes = [...document.querySelectorAll('#recipe input[type="checkbox"]')];
+      const progress = document.querySelector('#progress');
+      const progressLabel = document.querySelector('#progress-label');
+      const pageMessage = document.querySelector('#cook-message');
+      const dialog = document.querySelector('#confirm-clear');
+      const clear = document.querySelector('#clear-checklist');
+      const print = document.querySelector('#print-recipe');
+      const timers = [...document.querySelectorAll('[data-timer]')].map(panel => ({
+        panel,
+        id: panel.dataset.timer,
+        duration: Number(panel.dataset.minutes) * 60_000,
+        clock: panel.querySelector('.clock'),
+        toggle: panel.querySelector('[data-action="toggle"]'),
+        reset: panel.querySelector('[data-action="reset"]'),
+        status: panel.querySelector('[data-timer-status]'),
+        state: null,
+      }));
+      let storageAvailable = true;
+      let saved = {};
+      try {
+        const raw = localStorage.getItem(key);
+        try { saved = JSON.parse(raw) || {}; } catch { /* Discard malformed saved state. */ }
+      } catch { storageAvailable = false; }
+      const failMessage = 'This browser is not saving progress. Keep this page open if you need the checklist or timers.';
+      function persist() {
+        if (!storageAvailable) return;
+        try {
+          localStorage.setItem(key, JSON.stringify({
+            checked: boxes.filter(box => box.checked).map(box => box.name),
+            timers: Object.fromEntries(timers.map(timer => [timer.id, timer.state])),
+          }));
+        } catch {
+          storageAvailable = false;
+          pageMessage.textContent = failMessage;
+        }
+      }
+      function restore(timer) {
+        const state = saved.timers?.[timer.id];
+        if (state?.mode === 'paused' && Number.isFinite(state.remaining) && state.remaining > 0 && state.remaining <= timer.duration) return state;
+        if ((state?.mode === 'running' || state?.mode === 'done') && Number.isFinite(state.endsAt) && state.endsAt > 0 && state.endsAt <= Date.now() + timer.duration) return state;
+        return { mode: 'idle' };
+      }
+      const finishedTime = new Intl.DateTimeFormat(undefined, { hour: 'numeric', minute: '2-digit' });
+      function countText(ms) {
+        const seconds = Math.ceil(ms / 1000);
+        const min = Math.floor(seconds / 60);
+        return [Math.floor(min / 60), String(min % 60).padStart(2, '0'), String(seconds % 60).padStart(2, '0')].join(':');
+      }
+      function setText(node, text) {
+        if (node.textContent !== text) node.textContent = text;
+      }
+      let ticker;
+      function updateTimers() {
+        const now = Date.now();
+        let hasRunningTimer = false;
+        let changed = false;
+        for (const timer of timers) {
+          let state = timer.state;
+          if (state.mode === 'running' && state.endsAt <= now) {
+            state = timer.state = { mode: 'done', endsAt: state.endsAt };
+            changed = true;
+          }
+          hasRunningTimer ||= state.mode === 'running';
+          const remaining = state.mode === 'running' ? Math.min(timer.duration, state.endsAt - now)
+            : state.mode === 'paused' ? state.remaining : state.mode === 'done' ? 0 : timer.duration;
+          setText(timer.clock, countText(remaining));
+          setText(timer.toggle, state.mode === 'running' ? 'Pause' : state.mode === 'paused' ? 'Resume' : 'Start');
+          timer.reset.disabled = state.mode === 'idle';
+          setText(timer.status, state.mode === 'done' ? 'Finished at ' + finishedTime.format(state.endsAt) + '. Check the pot.'
+            : state.mode === 'running' ? 'Running' : state.mode === 'paused' ? 'Paused' : 'Ready');
+        }
+        if (changed) persist();
+        if (hasRunningTimer && !ticker && !document.hidden) ticker = setInterval(updateTimers, 250);
+        if ((!hasRunningTimer || document.hidden) && ticker) {
+          clearInterval(ticker);
+          ticker = undefined;
+        }
+      }
+      const checked = new Set(Array.isArray(saved.checked) ? saved.checked : []);
+      for (const box of boxes) box.checked = checked.has(box.name);
+      function renderProgress() {
+        const count = boxes.filter(box => box.checked).length;
+        progress.value = count;
+        progressLabel.textContent = count + ' of ' + boxes.length + ' checked';
+      }
+      document.querySelector('#recipe').addEventListener('change', () => {
+        renderProgress();
+        persist();
+      });
+      clear.addEventListener('click', () => {
+        dialog.returnValue = 'cancel';
+        dialog.showModal();
+      });
+      dialog.addEventListener('close', () => {
+        if (dialog.returnValue !== 'clear') return;
+        for (const box of boxes) box.checked = false;
+        renderProgress();
+        persist();
+        pageMessage.textContent = storageAvailable ? 'Checklist cleared.' : failMessage;
+      });
+      for (const timer of timers) {
+        timer.state = restore(timer);
+        timer.toggle.addEventListener('click', () => {
+          const now = Date.now();
+          const state = timer.state;
+          if (state.mode === 'running') {
+            timer.state = state.endsAt > now ? { mode: 'paused', remaining: state.endsAt - now } : { mode: 'done', endsAt: state.endsAt };
+          } else {
+            timer.state = { mode: 'running', endsAt: now + (state.mode === 'paused' ? state.remaining : timer.duration) };
+          }
+          persist();
+          updateTimers();
+        });
+        timer.reset.addEventListener('click', () => {
+          timer.state = { mode: 'idle' };
+          persist();
+          updateTimers();
+          timer.toggle.focus();
+        });
+        timer.panel.hidden = false;
+      }
+      renderProgress();
+      updateTimers();
+      document.addEventListener('visibilitychange', updateTimers);
+      window.addEventListener('pageshow', updateTimers);
+      window.addEventListener('focus', updateTimers);
+      print.addEventListener('click', () => window.print());
+      print.hidden = false;
+      document.querySelector('#cook-progress').hidden = false;
+      document.querySelector('#timer-warning').hidden = false;
+      if (!storageAvailable) pageMessage.textContent = failMessage;
+    })();
+  </script>
+</body>
+</html>
