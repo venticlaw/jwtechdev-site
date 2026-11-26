@@ -7,12 +7,12 @@
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
   <title>Collards that actually click | JWTechDev.com</title>
-  <meta name="description" content="A Thanksgiving collard greens recipe with smoked turkey, a kitchen checklist, and a practical example of turning a recipe screenshot into a tool with Claude." />
+  <meta name="description" content="Follow the steps I used to turn a recipe screenshot into a Claude Artifact with checkboxes and timers. Includes a reusable prompt and my Thanksgiving collard greens recipe." />
   <link rel="canonical" href="https://jwtechdev.com/articles/collards-that-actually-click.html" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="JWTechDev.com" />
   <meta property="og:title" content="Collards that actually click" />
-  <meta property="og:description" content="Smoked turkey, tender collards, and a Thanksgiving recipe note turned into a working checklist with Claude." />
+  <meta property="og:description" content="Turn your own recipe photo into a kitchen checklist with Claude. Follow the walkthrough, copy the prompt, and try the collard greens example." />
   <meta property="og:url" content="https://jwtechdev.com/articles/collards-that-actually-click.html" />
   <meta property="og:image" content="https://jwtechdev.com/assets/articles/collards-that-actually-click.jpg" />
   <meta property="og:image:width" content="1200" />
@@ -20,7 +20,7 @@
   <meta property="og:image:alt" content="Hand-drawn Dutch oven of collard greens between a recipe note and a checklist" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Collards that actually click" />
-  <meta name="twitter:description" content="One recipe screenshot, one pot of greens, and a checklist you can cook from." />
+  <meta name="twitter:description" content="One recipe screenshot, two simmer timers, and a walkthrough you can use with your own recipe." />
   <meta name="twitter:image" content="https://jwtechdev.com/assets/articles/collards-that-actually-click.jpg" />
   <link rel="stylesheet" href="../css/tokens.css" />
   <link rel="stylesheet" href="../css/site.css?v=20261125-collards" />
@@ -29,8 +29,13 @@
     .recipe-checklist input { flex: 0 0 auto; width: 1rem; height: 1rem; margin: .28rem 0 0; accent-color: #0b6e4f; }
     .recipe-checklist li + li { margin-top: .35rem; }
     .recipe-checklist button { cursor: pointer; }
+    .recipe-jump { display: flex; flex-wrap: wrap; gap: .5rem 1rem; }
+    .recipe-prompt { margin: .75rem 0; padding: 1rem; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-muted, #f7f7f8); white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; }
+    .recipe-prompt-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
+    .recipe-prompt-actions button { cursor: pointer; }
+    .recipe-prompt-actions button[hidden] { display: none; }
   </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Collards that actually click","description":"A Thanksgiving collard greens recipe and a practical example of turning a recipe screenshot into a working checklist with Claude.","datePublished":"2026-11-25","dateModified":"2026-11-25","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com/"},"publisher":{"@type":"Organization","name":"JWTechDev.com","url":"https://jwtechdev.com/","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/articles/collards-that-actually-click.jpg","width":1200,"height":900},"mainEntityOfPage":{"@type":"WebPage","@id":"https://jwtechdev.com/articles/collards-that-actually-click.html"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Collards that actually click","description":"A step-by-step walkthrough for making a Claude Artifact from your own recipe, with a reusable prompt and a Thanksgiving collard greens example.","datePublished":"2026-11-25","dateModified":"2026-11-25","author":{"@type":"Person","name":"Joshua Walker","url":"https://jwtechdev.com/"},"publisher":{"@type":"Organization","name":"JWTechDev.com","url":"https://jwtechdev.com/","logo":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/jwtechdev-logo.png"}},"image":{"@type":"ImageObject","url":"https://jwtechdev.com/assets/articles/collards-that-actually-click.jpg","width":1200,"height":900},"mainEntityOfPage":{"@type":"WebPage","@id":"https://jwtechdev.com/articles/collards-that-actually-click.html"}}</script>
 </head>
 <body>
   <main class="article-shell">
@@ -38,7 +43,8 @@
     <p class="eyebrow">Practical AI &middot; Thanksgiving build</p>
     <article class="article-body">
       <h1>Collards that actually click.</h1>
-      <p class="section__lede">I gave Claude a screenshot of my collard greens recipe and turned it into a checklist I could use at the stove. Here's my version of the recipe, plus what made this little AI build worth keeping.</p>
+      <p class="section__lede">My Thanksgiving collards started as a screenshot from the Notes app. I used Claude to turn it into a checklist with two simmer timers. Here's how the build came together, how to make one from your own recipe, and the greens that started it.</p>
+      <p class="recipe-jump"><a href="#build">Build your own</a><a href="#ingredients">Jump to the recipe</a></p>
       <div class="article-kicker"><span>Serves 5&ndash;8</span><span>Prep: about 10 min</span><span>Cook: about 3 hr</span></div>
       <figure class="article-hero">
         <img src="../assets/articles/collards-that-actually-click.jpg" alt="Hand-drawn Dutch oven of collard greens between a recipe note and a checklist" width="1200" height="900" />
@@ -47,12 +53,40 @@
       <div class="article-layout">
         <nav class="article-toc" aria-label="Article contents">
           <strong>In this article</strong>
+          <a href="#build">Screenshot to working artifact</a>
+          <a href="#prompt">Copy the prompt</a>
           <a href="#ingredients">Ingredients</a>
           <a href="#steps">Cooking steps</a>
-          <a href="#build">How I built it with Claude</a>
           <a href="#sources">Sources</a>
         </nav>
         <div>
+          <section id="build">
+            <h2>From screenshot to working artifact</h2>
+            <p>The source was a recipe note on my phone, not a spreadsheet, a meal-planning app, or a polished spec. What I wanted at the stove was simple: see what I'd pulled out, know which step I was on, and time the two simmers separately. Claude handled the format. The recipe was still mine to check.</p>
+            <ol>
+              <li><strong>Start with one readable recipe.</strong> I used a screenshot of my Notes app. A clear photo of a recipe card or pasted text works as a starting point too. Capture the whole ingredient list and method in order. Crop out notifications, names, and anything else you wouldn't want to upload.</li>
+              <li><strong>Get the recipe right before you build the interface.</strong> For your version, ask Claude to transcribe the source into ingredients and numbered steps, then compare the result with the original. In mine, details like 4 cups of broth, the optional peppers, and the distinction between a one-hour broth simmer and a two-hour greens simmer were worth checking. Make it flag unreadable handwriting or a missing unit rather than guessing.</li>
+              <li><strong>Turn the checked recipe into a tool.</strong> Ask for a single-page interactive artifact. Keep ingredients and steps separate so you can tick off the groceries and your cooking progress independently. Put each timer beside the step it belongs to. In the collards artifact, that meant a one-hour timer for the pot liquor and a two-hour timer for the greens. Your banana bread might only need one bake timer.</li>
+              <li><strong>Do a dry run on your phone.</strong> Check an ingredient, finish a step, and try starting and resetting a timer. Reload the page and see what happens. If a timer stops when the phone locks, use your phone's Clock app as a backup. A timer is a reminder to check the food, not proof that it's done.</li>
+              <li><strong>Test the link before sharing.</strong> If you publish the artifact, open the public link in a private browsing window. Confirm you can read the recipe and use the controls without seeing the source screenshot or needing the original chat. Share only recipes you own or have permission to republish.</li>
+            </ol>
+            <p>Want to see the end result first? <a href="https://claude.ai/artifact/92Eumg5X596QKX88Meqqgf">Open my collards artifact</a> and try a checkbox or one of the timers.</p>
+          </section>
+          <section id="prompt">
+            <h2>Copy this prompt for your recipe</h2>
+            <p>Attach your recipe screenshot or paste the recipe as text. This is a reusable version of the workflow, not a transcript of my original chat.</p>
+            <pre class="recipe-prompt" id="recipe-build-prompt">Turn my attached recipe into a phone-friendly cooking checklist.
+
+First, show me the ingredients, quantities, units, servings, and numbered steps as you read them. Keep substitutions and optional items separate. Flag anything missing or unclear as [confirm] instead of guessing. Wait for me to verify the recipe.
+
+After I say "Build it," create a single-page interactive Artifact. Give ingredients and steps separate checkboxes, and add a reset button. Add timers only to steps with an explicit duration, and put each timer next to its step. Make the controls easy to read and tap on a phone.
+
+Do not include the original image in the artifact or add new ingredients, temperatures, or times. Give me a short test checklist before I share it.</pre>
+            <div class="recipe-prompt-actions">
+              <button class="btn btn--sm" id="copy-recipe-prompt" type="button" hidden>Copy prompt</button>
+              <span id="recipe-copy-status" role="status"></span>
+            </div>
+          </section>
           <form class="recipe-checklist" id="recipe">
             <section id="ingredients">
               <h2>Ingredients</h2>
@@ -91,11 +125,6 @@
               <button class="btn btn--sm" type="reset">Clear checks</button>
             </section>
           </form>
-          <section id="build">
-            <h2>What Claude actually did</h2>
-            <p>The recipe started as a note on my phone. Claude turned the screenshot into ingredients I could check off, steps I could scan from the stove, and two timers for the simmer. It didn't need to invent a better recipe. It needed to make the recipe I already had easier to use.</p>
-            <p>If you try this with your own notes, ask for the quantities and substitutions to stay intact, tell the model to flag anything it can't read, and check the result against your original before you use it. The smallest useful version here was a checklist, not a cooking chatbot.</p>
-          </section>
           <section id="sources">
             <h2>Sources</h2>
             <ul>
@@ -128,6 +157,20 @@
     recipe.addEventListener('reset', () => {
       try { localStorage.removeItem(key); } catch {}
     });
+    if (navigator.clipboard?.writeText) {
+      const copy = document.querySelector('#copy-recipe-prompt');
+      const prompt = document.querySelector('#recipe-build-prompt');
+      const status = document.querySelector('#recipe-copy-status');
+      copy.hidden = false;
+      copy.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(prompt.textContent);
+          status.textContent = 'Prompt copied.';
+        } catch {
+          status.textContent = 'Select and copy the prompt text above.';
+        }
+      });
+    }
   </script>
 </body>
 </html>
